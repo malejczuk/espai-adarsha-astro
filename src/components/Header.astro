@@ -1,0 +1,22 @@
+---
+import { images, navItems } from "../content/site";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isCurrent = (href: string) => {
+  const path = href.replace(/\/$/, "") || "/";
+  return currentPath === path;
+};
+---
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Navegación principal">
+    <a class="brand" href="/" aria-label="Espai Adarsha inicio">
+      <img src={images.logo.src} alt="Espai Adarsha" width={images.logo.width} height={images.logo.height} />
+    </a>
+    <div class="nav-links">
+      {navItems.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>
+      ))}
+    </div>
+  </nav>
+</header>

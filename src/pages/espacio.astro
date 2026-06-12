@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { contact, espacioCopy, images } from "../content/site";
+---
+
+<BaseLayout title="Alquiler de Sala de Yoga en Gràcia - Eixample | Espai Adarsha">
+  <section class="hero">
+    <div class="hero-media">
+      <img src={images.studioEmpty.src} alt="Sala vacía disponible para talleres y formaciones" width={images.studioEmpty.width} height={images.studioEmpty.height} />
+    </div>
+    <div class="hero-copy stack">
+      <h1>{espacioCopy.title}</h1>
+      <p class="subtitle">{espacioCopy.subtitle}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="image-pair">
+        <img src={images.studioWindow.src} alt="Luz natural de la sala" width={images.studioWindow.width} height={images.studioWindow.height} />
+        <img src={images.studioDetail.src} alt="Detalle decorativo del estudio" width={images.studioDetail.width} height={images.studioDetail.height} />
+      </div>
+      <div class="stack">
+        {espacioCopy.body.map((item) => <p class="lead">{item}</p>)}
+        <ul class="text-list">
+          {espacioCopy.uses.map((item) => <li>{item}</li>)}
+        </ul>
+        <p>Escríbenos en <a href={`mailto:${contact.email}`}>{contact.email}</a> para recibir más información.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container split split-top">
+      <img class="feature-image" src={images.studioShelf.src} alt="Entrada del espacio" width={images.studioShelf.width} height={images.studioShelf.height} />
+      <div class="stack">
+        <h2>Dirección</h2>
+        <p>Calle Girona 166, entresuelo 3<br />Barcelona</p>
+        <h2>Contacto</h2>
+        <p><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+        <h2>Visitas espacio</h2>
+        {espacioCopy.visits.map((item) => <p>{item}</p>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

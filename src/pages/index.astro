@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { contact, homeCopy, images } from "../content/site";
+---
+
+<BaseLayout>
+  <section class="home-hero">
+    <img class="home-hero-image" src={images.studioWide.src} alt="Sala luminosa de Espai Adarsha" width={images.studioWide.width} height={images.studioWide.height} />
+    <div class="home-hero-copy stack">
+      <h1>{homeCopy.title}</h1>
+      <p class="subtitle">{homeCopy.subtitle}</p>
+      {homeCopy.body.map((item) => <p>{item}</p>)}
+      <div class="actions">
+        <a class="button" href="/yoga/">HORARIO YOGA</a>
+        <a class="button button-secondary" href="/contacto/">Contacto</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="image-pair">
+        <img src={images.practiceAssist.src} alt="Práctica asistida de yoga" width={images.practiceAssist.width} height={images.practiceAssist.height} />
+        <img src={images.groupClass.src} alt="Clase grupal de yoga en Espai Adarsha" width={images.groupClass.width} height={images.groupClass.height} />
+      </div>
+      <div class="stack">
+        <h2>{homeCopy.practiceTitle}</h2>
+        {homeCopy.practiceBody.map((item) => <p class="lead">{item}</p>)}
+        <a href="/yoga/">Nuestro enfoque</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container purpose">
+      <img class="feature-image" src={images.studioShelf.src} alt="Entrada y detalles del estudio" width={images.studioShelf.width} height={images.studioShelf.height} />
+      <div class="purpose-copy stack">
+        {homeCopy.purpose.map((item) => <p class="lead">{item}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="stack">
+        <h2>{homeCopy.ecosystemTitle}</h2>
+        <p class="lead">{homeCopy.ecosystemBody}</p>
+        <p>{homeCopy.ecosystemFoot}</p>
+        <a class="button" href="/colaboradores/">CONCIENCIA PÉLVICA</a>
+      </div>
+      <div class="gallery">
+        <img src={images.floorPractice.src} alt="Movimiento consciente en clase" width={images.floorPractice.width} height={images.floorPractice.height} />
+        <img src={images.groupPortrait.src} alt="Equipo de colaboradoras de Espai Adarsha" width={images.groupPortrait.width} height={images.groupPortrait.height} />
+        <img src={images.prayer.src} alt="Momento de calma durante la práctica" width={images.prayer.width} height={images.prayer.height} />
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section section-soft">
+    <div class="container contact-layout">
+      <div class="stack">
+        <h2>Contacto</h2>
+        <p>Espai Adarsha</p>
+        <p>{contact.addressShort}</p>
+        <p><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+      </div>
+      <ContactForm subject="Contacto desde la página de inicio" />
+    </div>
+  </section>
+</BaseLayout>

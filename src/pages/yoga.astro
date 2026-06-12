@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { yogaCopy, images } from "../content/site";
+---
+
+<BaseLayout title="Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Espai Adarsha">
+  <section class="section">
+    <div class="container split split-top">
+      <img class="schedule" src={images.schedule.src} alt="Horario de clases Adarsha Yoga" width={images.schedule.width} height={images.schedule.height} />
+      <div class="stack">
+        <img class="feature-image" src={images.practiceAssist.src} alt="Clase personalizada de yoga" width={images.practiceAssist.width} height={images.practiceAssist.height} />
+        <h1 class="display">{yogaCopy.introTitle}</h1>
+        <p class="subtitle">{yogaCopy.introQuestion}</p>
+        <h2>{yogaCopy.rhythmTitle}</h2>
+        <p class="lead">{yogaCopy.intro}</p>
+        {yogaCopy.styles.map((style) => (
+          <div>
+            <h3>{style.title}</h3>
+            <p>{style.body}</p>
+          </div>
+        ))}
+        <a class="button" href="/contacto/">¿Quieres empezar?</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <h2>{yogaCopy.methodTitle}</h2>
+      <div class="price-grid">
+        {yogaCopy.method.map((item) => (
+          <section class="price-panel">
+            <p>{item}</p>
+          </section>
+        ))}
+      </div>
+      <p class="lead narrow" style="margin-top: 42px">{yogaCopy.closing}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Clases y cuotas</h2>
+      <div class="price-grid">
+        {yogaCopy.prices.map((group) => (
+          <section class="price-panel">
+            <h3>{group.title}</h3>
+            <ul>
+              {group.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container split">
+      <img class="feature-image" src={images.groupClass.src} alt="Clase grupal en Espai Adarsha" width={images.groupClass.width} height={images.groupClass.height} />
+      <div class="stack">
+        <p class="eyebrow">{yogaCopy.individualEyebrow}</p>
+        <h2>{yogaCopy.individualTitle}</h2>
+        {yogaCopy.individualBody.map((item) => <p>{item}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="stack">
+        <h2>Yoga para empresas, una práctica con beneficios para la salud y la productividad de tu equipo</h2>
+        <p>En los últimos años, el yoga se ha vuelto cada vez más popular en el entorno laboral, ya que ofrece beneficios para la salud y la productividad de los empleados.</p>
+        <ul class="text-list">
+          <li>Reducción del estrés y la ansiedad, gestión del estrés y salud mental.</li>
+          <li>Mejora de la concentración y la atención.</li>
+          <li>Mejora del bienestar general y motivación.</li>
+        </ul>
+        <a class="button" href="/contacto/">Más información</a>
+      </div>
+      <img class="feature-image" src={images.groupPortrait.src} alt="Equipo en la ventana del estudio" width={images.groupPortrait.width} height={images.groupPortrait.height} />
+    </div>
+  </section>
+</BaseLayout>

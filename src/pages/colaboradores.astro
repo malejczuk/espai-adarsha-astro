@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { colaboradoresCopy, images } from "../content/site";
+---
+
+<BaseLayout title="Colaboradores | Espai Adarsha">
+  <section class="hero">
+    <div class="hero-media">
+      <img src={images.floorPractice.src} alt="Práctica de conciencia corporal" width={images.floorPractice.width} height={images.floorPractice.height} />
+    </div>
+    <div class="hero-copy stack">
+      <h1>{colaboradoresCopy.title}</h1>
+      <p class="subtitle">{colaboradoresCopy.subtitle}</p>
+      <a class="button" href="/contacto/">Ponte en contacto</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div class="stack">
+        <p class="eyebrow">{colaboradoresCopy.teacher}</p>
+        <h2>{colaboradoresCopy.activity}</h2>
+        {colaboradoresCopy.body.map((item) => <p>{item}</p>)}
+        <h3>Horarios</h3>
+        <p>{colaboradoresCopy.schedule}</p>
+        <p>{colaboradoresCopy.booking}</p>
+      </div>
+      <div class="gallery">
+        <img src={images.groupPortrait.src} alt="Colaboradoras de Espai Adarsha" width={images.groupPortrait.width} height={images.groupPortrait.height} />
+        <img src={images.teamWindow.src} alt="Equipo en la ventana del estudio" width={images.teamWindow.width} height={images.teamWindow.height} />
+        <img src={images.prayer.src} alt="Práctica en calma" width={images.prayer.width} height={images.prayer.height} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container split split-top">
+      <div class="stack">
+        <h2>Sesiones Conciencia Pélvica</h2>
+        <ul class="text-list">
+          {colaboradoresCopy.prices.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="stack">
+        <h2>Acompañamiento personalizado</h2>
+        {colaboradoresCopy.personalized.map((item) => <p>{item}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div class="stack">
+        <h2>Contacto</h2>
+        <p>Cuéntanos qué propuesta quieres traer a Espai Adarsha.</p>
+      </div>
+      <ContactForm subject="Colaboradores desde espaiadarsha.com" />
+    </div>
+  </section>
+</BaseLayout>

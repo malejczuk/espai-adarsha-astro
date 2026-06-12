@@ -1,0 +1,29 @@
+---
+import { contact } from "../content/site";
+
+const subject = Astro.props.subject ?? "Nuevo mensaje desde espaiadarsha.com";
+---
+
+<form class="contact-form" action={`https://formsubmit.co/${contact.email}`} method="POST">
+  <input type="hidden" name="_subject" value={subject} />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display: none" />
+  <label class="field">
+    <span>Nombre</span>
+    <input name="name" autocomplete="name" required />
+  </label>
+  <label class="field">
+    <span>Email</span>
+    <input type="email" name="email" autocomplete="email" required />
+  </label>
+  <label class="field">
+    <span>Teléfono</span>
+    <input name="phone" autocomplete="tel" />
+  </label>
+  <label class="field">
+    <span>Mensaje</span>
+    <textarea name="message" required></textarea>
+  </label>
+  <button class="button" type="submit">Enviar</button>
+</form>
