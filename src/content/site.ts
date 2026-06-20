@@ -1,5 +1,5 @@
 import logo from "../../assets/espai adarsha.png";
-import schedule from "../../assets/INSTAGRAM_ESPAI ADARSHA.png";
+import scheduleCurrent from "../../assets/schedule-current.avif";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
 import studioWindow from "../../assets/1-DSC01027.jpg";
@@ -13,6 +13,19 @@ import floorPractice from "../../assets/SWEARxEspai Adarsha-39.jpg";
 import meditation from "../../assets/SWEARxEspai Adarsha-50.jpg";
 import prayer from "../../assets/SWEARxEspai Adarsha-57.jpg";
 import teamWindow from "../../assets/328-DSC01628.jpg";
+import homeHero from "../../assets/home-hero.jpg";
+import homePractice from "../../assets/home-practice.jpg";
+import homeGroup from "../../assets/home-group.png";
+import homeIndividual from "../../assets/home-individual.png";
+import homeEcosystem from "../../assets/home-ecosystem.jpg";
+import yogaIndividual from "../../assets/yoga-individual.jpg";
+import yogaOffice1 from "../../assets/yoga-office-1.jpg";
+import yogaOffice2 from "../../assets/yoga-office-2.jpg";
+import equipoLaia from "../../assets/equipo-laia.avif";
+import equipoKristoff from "../../assets/equipo-kristoff.avif";
+import equipoRaquel from "../../assets/equipo-raquel.avif";
+import colaboradoresMain from "../../assets/colaboradores-main.jpg";
+import colaboradoresPersonal from "../../assets/colaboradores-personal.jpg";
 
 export const contact = {
   email: "espaiadarsha@gmail.com",
@@ -23,7 +36,7 @@ export const contact = {
 
 export const images = {
   logo,
-  schedule,
+  schedule: scheduleCurrent,
   studioWide,
   studioShelf,
   studioWindow,
@@ -37,26 +50,40 @@ export const images = {
   meditation,
   prayer,
   teamWindow,
+  homeHero,
+  homePractice,
+  homeGroup,
+  homeIndividual,
+  homeEcosystem,
+  yogaIndividual,
+  yogaOffice1,
+  yogaOffice2,
+  equipoLaia,
+  equipoKristoff,
+  equipoRaquel,
+  colaboradoresMain,
+  colaboradoresPersonal,
 };
 
 export const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/yoga/", label: "YOGA" },
-  { href: "/espacio/", label: "Espacio" },
+  { href: "/equipo/", label: "Equipo" },
   { href: "/contacto/", label: "Contacto" },
-  { href: "/colaboradores/", label: "Colaboradores" },
+  { href: "/espacio/", label: "Espacio" },
 ];
 
 export const homeCopy = {
-  title: "Espai Adarsha, Tu refugio de yoga, conexión con el cuerpo y paz en medio de la ciudad.",
+  title: "Espai Adarsha, Un refugio de yoga, conexión con el cuerpo y paz en medio de la ciudad.",
   subtitle: "Somos un estudio intimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",
-    "Te acompañamos para que conectes contigo mismo, transformes tu mundo y evoluciones a tu propio ritmo.",
+    "Te acompañamos para que conectes contigo mismo a través de la practica de yoga y evoluciones a tu ritmo.",
   ],
   practiceTitle: "El valor de una práctica cuidada",
   practiceBody: [
-    "El ritmo actual a menudo nos desconecta de nuestras necesidades reales. El yoga, entendido como una disciplina de cuidado integral, es la herramienta para recuperar ese centro a través del cuerpo, la respiración y la concentración.",
+    "Nuestro propósito es ofrecerte un espacio donde puedas reconectarte contigo mismo, descubrir tu fuerza interior y cultivar la calma que tu mente y tu corazón necesitan. Cada práctica de yoga es una oportunidad para transformar tu cuerpo, equilibrar tus emociones y nutrir tu espíritu con herramientas que te acompañarán en tu día a día.",
+    "El ritmo actual a menudo nos desconecta de nuestras necesidades reales. El yoga, entendido como una disciplina de cuidado integral, es una herramienta milenaria para recuperar nuestro centro a través del cuerpo, la respiración y la concentración.",
     "En Espai Adarsha la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
   purpose: [
@@ -106,14 +133,14 @@ export const yogaCopy = {
       items: [
         "Mensualidad una clase por semana: 65€",
         "Mensualidad clases ilimitadas: 90€",
-        "Abono 10 clases: 170€ (tres meses)",
-        "Clase suelta: 20€ / Clase prueba: 10€",
+        "Abono 10 clases: 165€ (tres meses)",
+        "Clase suelta: 20€",
       ],
     },
     {
       title: "Clases individuales Yoga",
       items: [
-        "Sesión Individual + secuencia personalizada: 65€",
+        "Sesión Individual + secuencia personalizada: 60€",
         "Abono 4 clases individuales: 180€",
         "Abono 10 clases individuales: 400€",
       ],
@@ -138,7 +165,7 @@ export const espacioCopy = {
   uses: [
     "Formaciones intensivas de fin de semana.",
     "Workshops y talleres",
-    "Clases y charlas compartidas",
+    "Sesiones individuales",
     "Clases regulares en los horarios disponibles",
   ],
   visits: ["Lunes 18:15 - 18:30", "Jueves 13:15 - 13:30"],

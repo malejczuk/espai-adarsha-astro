@@ -4,80 +4,68 @@ import { yogaCopy, images } from "../content/site";
 ---
 
 <BaseLayout title="Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Espai Adarsha">
-  <section class="section">
-    <div class="container split split-top">
-      <img class="schedule" src={images.schedule.src} alt="Horario de clases Adarsha Yoga" width={images.schedule.width} height={images.schedule.height} />
-      <div class="stack">
-        <img class="feature-image" src={images.practiceAssist.src} alt="Clase personalizada de yoga" width={images.practiceAssist.width} height={images.practiceAssist.height} />
-        <h1 class="display">{yogaCopy.introTitle}</h1>
-        <p class="subtitle">{yogaCopy.introQuestion}</p>
-        <h2>{yogaCopy.rhythmTitle}</h2>
-        <p class="lead">{yogaCopy.intro}</p>
-        {yogaCopy.styles.map((style) => (
-          <div>
-            <h3>{style.title}</h3>
-            <p>{style.body}</p>
-          </div>
-        ))}
-        <a class="button" href="/contacto/">¿Quieres empezar?</a>
+  <section class="schedule-banner">
+    <img src={images.schedule.src} alt="Horario semanal de Adarsha Yoga" />
+  </section>
+
+  <section class="yoga-title">
+    <h1>Practica yoga en Adarsha</h1>
+    <p>¿Estas buscando un estudio<br />donde sentirte como en casa?</p>
+  </section>
+
+  <section class="yoga-rhythm">
+    <div class="yoga-rhythm-copy">
+      <h2>Tu práctica, tu ritmo</h2>
+      <p>{yogaCopy.intro}</p>
+      <ul class="yoga-style-list">
+        {yogaCopy.styles.map((style) => <li><strong>{style.title}:</strong> {style.body}</li>)}
+      </ul>
+    </div>
+    <div class="yoga-photo-stack">
+      <img src={images.groupClass.src} alt="Clase grupal de yoga" />
+      <img src={images.floorPractice.src} alt="Yin yoga y pranayama" />
+    </div>
+  </section>
+
+  <section class="container yoga-prices">
+    {yogaCopy.prices.map((group) => (
+      <div>
+        <h2>{group.title}</h2>
+        <ul class="plain-lines">{group.items.map((item) => <li>- {item}</li>)}</ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="method-section">
+    <div class="container method-inner">
+      <img src={images.meditation.src} alt="Práctica progresiva de yoga" />
+      <div>
+        <h2>{yogaCopy.methodTitle}</h2>
+        <ul class="method-list">{yogaCopy.method.map((item) => <li>{item}</li>)}</ul>
       </div>
     </div>
   </section>
 
-  <section class="section section-soft">
-    <div class="container">
-      <h2>{yogaCopy.methodTitle}</h2>
-      <div class="price-grid">
-        {yogaCopy.method.map((item) => (
-          <section class="price-panel">
-            <p>{item}</p>
-          </section>
-        ))}
-      </div>
-      <p class="lead narrow" style="margin-top: 42px">{yogaCopy.closing}</p>
+  <section id="individuales" class="individual-section">
+    <img src={images.yogaIndividual.src} alt="Clase individual adaptada" />
+    <div class="individual-copy">
+      <h2>Clases individuales<br />adaptadas a tu cuerpo<br />con Laia</h2>
+      {yogaCopy.individualBody.map((item) => <p>{item}</p>)}
+      <p>¿Quieres empezar el programa? Empecemos con una sesión de prueba para conocernos, escuchar tus necesidades y trazar el camino de tu práctica.</p>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2>Clases y cuotas</h2>
-      <div class="price-grid">
-        {yogaCopy.prices.map((group) => (
-          <section class="price-panel">
-            <h3>{group.title}</h3>
-            <ul>
-              {group.items.map((item) => <li>{item}</li>)}
-            </ul>
-          </section>
-        ))}
-      </div>
+  <section id="empresas" class="office-section">
+    <div class="office-copy">
+      <h2>Yoga en la oficina<br />para la salud física y mental de tu equipo</h2>
+      <p>La integración del yoga, la meditación y la respiración consciente en la oficina transforma el entorno laboral en un espacio de concentración y bienestar.</p>
+      <p>Al liberar las tensiones del sedentarismo y regular el sistema nervioso, el equipo recupera la movilidad física y la claridad mental necesarias para afrontar cada reto.</p>
+      <p>Cuidar la salud integral de los trabajadores cultiva una cultura de presencia y vitalidad.</p>
+      <p><a href="/contacto/">Solicita más información aquí</a></p>
     </div>
-  </section>
-
-  <section class="section section-soft">
-    <div class="container split">
-      <img class="feature-image" src={images.groupClass.src} alt="Clase grupal en Espai Adarsha" width={images.groupClass.width} height={images.groupClass.height} />
-      <div class="stack">
-        <p class="eyebrow">{yogaCopy.individualEyebrow}</p>
-        <h2>{yogaCopy.individualTitle}</h2>
-        {yogaCopy.individualBody.map((item) => <p>{item}</p>)}
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container split">
-      <div class="stack">
-        <h2>Yoga para empresas, una práctica con beneficios para la salud y la productividad de tu equipo</h2>
-        <p>En los últimos años, el yoga se ha vuelto cada vez más popular en el entorno laboral, ya que ofrece beneficios para la salud y la productividad de los empleados.</p>
-        <ul class="text-list">
-          <li>Reducción del estrés y la ansiedad, gestión del estrés y salud mental.</li>
-          <li>Mejora de la concentración y la atención.</li>
-          <li>Mejora del bienestar general y motivación.</li>
-        </ul>
-        <a class="button" href="/contacto/">Más información</a>
-      </div>
-      <img class="feature-image" src={images.groupPortrait.src} alt="Equipo en la ventana del estudio" width={images.groupPortrait.width} height={images.groupPortrait.height} />
+    <div class="office-images">
+      <img src={images.yogaOffice1.src} alt="Yoga para empresas" />
+      <img src={images.yogaOffice2.src} alt="Bienestar en la oficina" />
     </div>
   </section>
 </BaseLayout>
