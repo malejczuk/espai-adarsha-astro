@@ -28,7 +28,11 @@ import { colaboradoresCopy, images } from "../content/site";
     <img src={images.colaboradoresPersonal.src} alt="Acompañamiento personalizado" />
     <div class="editorial-copy">
       <h2>{colaboradoresCopy.personalizedHeading}</h2>
-      {colaboradoresCopy.personalized.map((item) => <p>{item}</p>)}
+      <p><strong>{colaboradoresCopy.personalizedLead}</strong></p>
+      <p>{colaboradoresCopy.personalizedIntro}</p>
+      <ul class="collab-options">
+        {colaboradoresCopy.personalizedOptions.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}
+      </ul>
     </div>
   </section>
 </BaseLayout>

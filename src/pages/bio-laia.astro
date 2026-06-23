@@ -6,11 +6,19 @@ const bio = bioCopy.laia;
 ---
 <BaseLayout title={bio.pageTitle}>
   <article class="bio-page">
-    <h1>{bio.heading}</h1>
-    {bio.beforeImage.map((item) => <p>{item}</p>)}
-    <img src={bio.image.src} alt="Laia Espejo Dotti" />
-    {bio.afterImage.map((item) => <p>{item}</p>)}
-    <h2 class="display">{bio.signoff}</h2>
-    <p><a href={bio.website.href}>{bio.website.label}</a></p>
+    {bio.sections.map((section, index) => (
+      <section class:list={["bio-section", { "bio-section-reverse": index % 2 === 1 }]}>
+        <div class="bio-copy">
+          {index === 0 && <h1>{bio.heading}</h1>}
+          {section.paragraphs.map((item) => <p>{item}</p>)}
+        </div>
+        <img src={section.image.src} alt={section.imageAlt} />
+      </section>
+    ))}
+    <div class="bio-links">
+      <h2>{bio.signoff}</h2>
+      <a href={bio.website.href}>{bio.website.label}</a>
+      <a href={bio.instagram.href}>{bio.instagram.label}</a>
+    </div>
   </article>
 </BaseLayout>

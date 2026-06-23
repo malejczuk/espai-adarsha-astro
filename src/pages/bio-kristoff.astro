@@ -6,10 +6,18 @@ const bio = bioCopy.kristoff;
 ---
 <BaseLayout title={bio.pageTitle}>
   <article class="bio-page">
-    <h1>{bio.heading}</h1>
-    {bio.beforeImage.map((item) => <p>{item}</p>)}
-    <img src={bio.image.src} alt="Kristoff Malejczuk" />
-    {bio.afterImage.map((item) => <p>{item}</p>)}
-    <p><a href={bio.website.href}>{bio.website.label}</a></p>
+    {bio.sections.map((section, index) => (
+      <section class:list={["bio-section", { "bio-section-reverse": index % 2 === 1 }]}>
+        <div class="bio-copy">
+          {index === 0 && <h1>{bio.heading}</h1>}
+          {section.paragraphs.map((item) => <p>{item}</p>)}
+        </div>
+        <img src={section.image.src} alt={section.imageAlt} />
+      </section>
+    ))}
+    <div class="bio-links">
+      <a href={bio.website.href}>{bio.website.label}</a>
+      <a href={bio.instagram.href}>{bio.instagram.label}</a>
+    </div>
   </article>
 </BaseLayout>
