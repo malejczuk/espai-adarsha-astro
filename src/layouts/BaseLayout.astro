@@ -1,11 +1,12 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { siteMeta } from "../content/site";
 import "../styles/global.css";
 
 const {
-  title = "Estudio de Yoga en Gràcia y Eixample | Clases Reducidas | Espai Adarsha",
-  description = "Espai Adarsha es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
+  title = siteMeta.defaultTitle,
+  description = siteMeta.description,
 } = Astro.props;
 ---
 

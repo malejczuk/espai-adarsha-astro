@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { images } from "../content/site";
+import { bioCopy } from "../content/site";
+
+const bio = bioCopy.kristoff;
 ---
-<BaseLayout title="Sobre Kristoff | Espai Adarsha">
+<BaseLayout title={bio.pageTitle}>
   <article class="bio-page">
-    <h1>Sobre Kristoff.</h1>
-    <p>In the summer of 2019, at the invitation of a friend, I began to attend a weekly yoga class. By the beginning of 2021, yoga had become my sole form of exercise.</p>
-    <p>In 2022, I joined HAUM Studios in San Francisco and quickly experienced big leaps in my practice. I completed a 200-hour Hatha Vinyasa teacher training in 2023 under Danni Pomplun and Yvonne Kingsley.</p>
-    <img src={images.equipoKristoff.src} alt="Kristoff Malejczuk" />
-    <p>Next began a year of backpacking around Latin America. In the Colombian Andes I devoted a month to Karma Yoga, followed by a month in the Amazon jungle.</p>
-    <p>In late 2025, I moved to Barcelona and began practicing Mysore-style Hatha Ashtanga under Aleix Griñó at Viveka Yoga Shala. As of 2026, I teach regularly at Espai Adarsha.</p>
-    <p><a href="https://thestudio.uno/">www.thestudio.uno</a></p>
+    <h1>{bio.heading}</h1>
+    {bio.beforeImage.map((item) => <p>{item}</p>)}
+    <img src={bio.image.src} alt="Kristoff Malejczuk" />
+    {bio.afterImage.map((item) => <p>{item}</p>)}
+    <p><a href={bio.website.href}>{bio.website.label}</a></p>
   </article>
 </BaseLayout>

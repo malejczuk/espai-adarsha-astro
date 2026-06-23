@@ -98,7 +98,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .schedule-banner img { width: 604px; height: 605px; object-fit: cover; object-position: center; }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 700 50px/1.2 var(--display); }
-.yoga-title p { margin-top: 42px; font: italic 400 29px/1.45 var(--display); }
+.yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
 .yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: 43% 57%; gap: 42px; padding-bottom: 86px; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }

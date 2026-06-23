@@ -3,31 +3,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { colaboradoresCopy, images } from "../content/site";
 ---
 
-<BaseLayout title="Colaboradores | Espai Adarsha">
+<BaseLayout title={colaboradoresCopy.pageTitle}>
   <section class="page-title-band">
-    <h1>Nuestro ecosistema de colaboradores</h1>
-    <p>Conoce otras actividades que tienen lugar en Espai Adarsha</p>
+    <h1>{colaboradoresCopy.title}</h1>
+    <p>{colaboradoresCopy.subtitle}</p>
   </section>
   <section class="editorial-grid collab-main">
     <div class="editorial-copy">
-      <h2>Movimiento &<br />Consciencia Pélvica</h2>
-      <p class="collab-subtitle">con Raquel Jaroslavsky</p>
-      <p class="collab-question">¿Te sientes desconectada de tu pélvis?</p>
-      {colaboradoresCopy.body.slice(1).map((item) => <p>{item}</p>)}
+      <h2>{colaboradoresCopy.activity}</h2>
+      <p class="collab-subtitle">{colaboradoresCopy.teacher}</p>
+      <p class="collab-question">{colaboradoresCopy.question}</p>
+      {colaboradoresCopy.body.map((item) => <p>{item}</p>)}
     </div>
     <img class="editorial-image" src={images.colaboradoresMain.src} alt="Sesión de movimiento y conciencia pélvica" />
   </section>
   <section class="collab-prices">
-    <h2>Horarios</h2>
-    <p>Sesiones grupales: Martes 17:45 - 19:00 / Jueves 17:45 - 19:00</p>
-    <p>Reservas: <a href="mailto:jarosraquel@gmail.com">jarosraquel@gmail.com</a></p>
-    <h3>Sesiones de Movimiento y Conciencia Pélvica</h3>
+    <h2>{colaboradoresCopy.scheduleHeading}</h2>
+    <p>{colaboradoresCopy.schedule}</p>
+    <p>{colaboradoresCopy.booking.prefix} <a href={`mailto:${colaboradoresCopy.booking.email}`}>{colaboradoresCopy.booking.email}</a></p>
+    <h3>{colaboradoresCopy.pricesHeading}</h3>
     {colaboradoresCopy.prices.map((item) => <p>- {item}</p>)}
   </section>
   <section class="collab-personal">
     <img src={images.colaboradoresPersonal.src} alt="Acompañamiento personalizado" />
     <div class="editorial-copy">
-      <h2>Acompañamiento personalizado</h2>
+      <h2>{colaboradoresCopy.personalizedHeading}</h2>
       {colaboradoresCopy.personalized.map((item) => <p>{item}</p>)}
     </div>
   </section>

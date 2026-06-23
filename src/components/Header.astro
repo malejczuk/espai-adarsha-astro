@@ -1,5 +1,5 @@
 ---
-import { images, navItems } from "../content/site";
+import { images, navItems, siteMeta } from "../content/site";
 
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isCurrent = (href: string) => {
@@ -9,9 +9,9 @@ const isCurrent = (href: string) => {
 ---
 
 <header class="site-header">
-  <nav class="container nav" aria-label="Navegación principal">
-    <a class="brand" href="/" aria-label="Espai Adarsha inicio">
-      <img src={images.logo.src} alt="Espai Adarsha" width={images.logo.width} height={images.logo.height} />
+  <nav class="container nav" aria-label={siteMeta.navigationLabel}>
+    <a class="brand" href="/" aria-label={siteMeta.homeLabel}>
+      <img src={images.logo.src} alt={siteMeta.name} width={images.logo.width} height={images.logo.height} />
     </a>
     <div class="nav-links">
       {navItems.map((item) => (

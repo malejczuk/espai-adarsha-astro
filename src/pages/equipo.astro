@@ -1,28 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { images } from "../content/site";
-
-const team = [
-  { name: "Laia Espejo Dotti", role: "Fundadora & Profesora de Yoga", href: "/bio-laia/", image: images.equipoLaia },
-  { name: "Kristoff Malejczuk", role: "Profesor de Yoga", href: "/bio-kristoff/", image: images.equipoKristoff },
-  { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica · Colaboradora", href: "/colaboradores/", image: images.equipoRaquel },
-];
+import { equipoCopy } from "../content/site";
 ---
 
-<BaseLayout title="Equipo | Espai Adarsha">
+<BaseLayout title={equipoCopy.pageTitle}>
   <section class="meaning-band">
-    <h1>Adarsha</h1>
-    <p class="sanskrit">Ādarśa (आदर्श)</p>
-    <p class="meaning">"Adarsha" significa "espejo" en sanskrito.<br />Espai Adarsha: un estudio para mirarse y transformarse desde adentro hacia fuera.</p>
+    <h1>{equipoCopy.name}</h1>
+    <p class="sanskrit">{equipoCopy.sanskrit}</p>
+    <p class="meaning">{equipoCopy.meaning.map((line) => <>{line}<br /></>)}</p>
   </section>
   <section class="team-section">
     <div class="container">
       <div class="team-intro">
-        <h2>Quienes somos</h2>
-        <p>Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.</p>
+        <h2>{equipoCopy.heading}</h2>
+        <p>{equipoCopy.intro}</p>
       </div>
       <div class="team-grid">
-        {team.map((member) => (
+        {equipoCopy.members.map((member) => (
           <article class="team-card">
             <a href={member.href}><img src={member.image.src} alt={member.name} /></a>
             <h3><a href={member.href}>{member.name}</a></h3>

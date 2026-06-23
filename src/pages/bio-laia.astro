@@ -1,18 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { images } from "../content/site";
+import { bioCopy } from "../content/site";
+
+const bio = bioCopy.laia;
 ---
-<BaseLayout title="Sobre Laia | Espai Adarsha">
+<BaseLayout title={bio.pageTitle}>
   <article class="bio-page">
-    <h1>Sobre Laia.</h1>
-    <p>El yoga es un camino para la búsqueda del infinito en el interior, y esa búsqueda es la que da propósito a mi vida.</p>
-    <p>Todo lo relacionado con el yoga ha despertado en mí una enorme curiosidad, desde muy temprana edad. Mi primer contacto con el Hatha Yoga fue de bien pequeña, cuando acompañaba a mi padre a practicar Vini Yoga según la tradición de Desikachar.</p>
-    <p>A los quince años mi interés por la práctica ya era firme. Desde el inicio recibí una enseñanza que me marcó profundamente: “todo está en la respiración”.</p>
-    <img src={images.equipoLaia.src} alt="Laia Espejo Dotti" />
-    <p>En el sentir de mi respiración encontré la calma que tanto necesitaba. El yoga se convirtió en mi refugio, en mi lugar seguro y en el pilar espiritual de mi vida.</p>
-    <p>En 2020 realicé mi primera formación de Hatha Vinyasa de 200h y una formación de Filosofía del Yoga. En 2022 completé 200h de Yoga Integral y fundé Espai Adarsha, un estudio de yoga holístico creado para acompañar el proceso de los alumnos de forma cercana.</p>
-    <p>Actualmente continúo formándome en Hatha Vinyasa y Terapia Gestalt para profundizar en la psicología moderna, el crecimiento humano y el acompañamiento emocional.</p>
-    <h2 class="display">¡Namasté!</h2>
-    <p><a href="https://www.laiaespejoyoga.com">www.laiaespejoyoga.com</a></p>
+    <h1>{bio.heading}</h1>
+    {bio.beforeImage.map((item) => <p>{item}</p>)}
+    <img src={bio.image.src} alt="Laia Espejo Dotti" />
+    {bio.afterImage.map((item) => <p>{item}</p>)}
+    <h2 class="display">{bio.signoff}</h2>
+    <p><a href={bio.website.href}>{bio.website.label}</a></p>
   </article>
 </BaseLayout>

@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, espacioCopy, images } from "../content/site";
 ---
 
-<BaseLayout title="Alquiler de Sala de Yoga en Gràcia - Eixample | Espai Adarsha">
+<BaseLayout title={espacioCopy.pageTitle}>
   <img class="space-hero" src={images.studioWide.src} alt="Espai Adarsha" />
   <section class="space-main">
     <div class="container">
@@ -14,7 +14,7 @@ import { contact, espacioCopy, images } from "../content/site";
       <div class="space-copy">
         {espacioCopy.body.map((item) => <p>{item}</p>)}
         <ul>{espacioCopy.uses.map((item) => <li>{item}</li>)}</ul>
-        <p class="email">Escríbenos en <a href={`mailto:${contact.email}?subject=Alquiler sala`}>{contact.email}</a> para recibir más información.</p>
+        <p class="email">{espacioCopy.emailPrefix} <a href={`mailto:${contact.email}?subject=Alquiler sala`}>{contact.email}</a> {espacioCopy.emailSuffix}</p>
       </div>
       <img class="space-wide" src={images.studioEmpty.src} alt="Sala de Espai Adarsha disponible para alquiler" />
     </div>
@@ -23,9 +23,9 @@ import { contact, espacioCopy, images } from "../content/site";
     <div class="container space-details-inner">
       <img src={images.studioDetail.src} alt="Detalle del estudio" />
       <div>
-        <h2>Dirección</h2><p>Calle Girona 166, entresuelo 3<br />Barcelona</p>
-        <h2>Contacto</h2><p><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
-        <h2>Visitas espacio</h2>{espacioCopy.visits.map((item) => <p>{item}</p>)}
+        <h2>{espacioCopy.details.addressHeading}</h2><p>{espacioCopy.details.addressLines.map((line) => <>{line}<br /></>)}</p>
+        <h2>{espacioCopy.details.contactHeading}</h2><p><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+        <h2>{espacioCopy.details.visitsHeading}</h2>{espacioCopy.visits.map((item) => <p>{item}</p>)}
       </div>
     </div>
   </section>

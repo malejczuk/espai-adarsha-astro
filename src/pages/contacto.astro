@@ -3,14 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, images } from "../content/site";
 ---
 
-<BaseLayout title="Espai Adarsha | Barcelona">
+<BaseLayout title={contact.pageTitle}>
   <section class="contact-page">
-    <h1>Contacto</h1>
+    <h1>{contact.heading}</h1>
     <div class="contact-columns">
-      <div class="contact-column"><h2>Dirección</h2><p>Calle Girona 166<br />Entresuelo 3a<br />08037 Barcelona</p></div>
-      <div class="contact-column"><h2>Contacto</h2><p>Ponte en contacto con nosotros enviándonos un mail :-)<br /><a href={`mailto:${contact.email}`}>{contact.email}</a><br />Instagram: <a href="https://www.instagram.com/espaiadarsha/">@espaiadarsha</a></p></div>
+      <div class="contact-column"><h2>{contact.addressHeading}</h2><p>{contact.addressLines.map((line) => <>{line}<br /></>)}</p></div>
+      <div class="contact-column"><h2>{contact.contactHeading}</h2><p>{contact.intro}<br /><a href={`mailto:${contact.email}`}>{contact.email}</a><br />{contact.instagram.prefix} <a href={contact.instagram.href}>{contact.instagram.label}</a></p></div>
     </div>
     <img class="contact-portrait" src={images.teamWindow.src} alt="Profesoras Espai Adarsha" />
-    <iframe class="map-frame" title="Mapa de Espai Adarsha" loading="lazy" src="https://www.google.com/maps?q=Carrer%20de%20Girona%20166%2C%20Barcelona&output=embed"></iframe>
+    <iframe class="map-frame" title="Mapa de Espai Adarsha" loading="lazy" src={contact.mapUrl}></iframe>
   </section>
 </BaseLayout>

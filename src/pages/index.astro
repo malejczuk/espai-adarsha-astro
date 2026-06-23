@@ -1,17 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { homeCopy, images } from "../content/site";
+
+const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
 ---
 
 <BaseLayout>
   <section class="home-intro">
     <div class="home-intro-copy">
-      <h1><span>Espai Adarsha,</span>Un refugio de yoga, conexión con el cuerpo y paz en medio de la ciudad.</h1>
+      <h1>
+        {titleMatch ? <><span>{titleMatch[1]}</span>{titleMatch[2]}</> : homeCopy.title}
+      </h1>
       <div class="home-intro-lead">
         <p>{homeCopy.subtitle}</p>
         {homeCopy.body.map((item) => <p>{item}</p>)}
       </div>
-      <a class="btn-outline" href="/yoga/">HORARIO CLASES</a>
+      <a class="btn-outline" href="/yoga/">{homeCopy.scheduleCta}</a>
     </div>
     <img class="home-intro-image" src={images.homeHero.src} alt="Práctica de yoga en Espai Adarsha" />
   </section>
@@ -21,47 +25,33 @@ import { homeCopy, images } from "../content/site";
     <div class="home-value-copy">
       <h2>{homeCopy.practiceTitle}</h2>
       {homeCopy.practiceBody.map((item) => <p>{item}</p>)}
-      <a class="btn-outline" href="/yoga/">Nuestro enfoque</a>
+      <a class="btn-outline" href="/yoga/">{homeCopy.approachCta}</a>
     </div>
   </section>
 
   <section class="practice-heading">
-    <h2>¿Como te gustaría practicar yoga?</h2>
+    <h2>{homeCopy.practiceHeading}</h2>
   </section>
   <section class="practice-cards">
-    <article class="practice-card">
-      <img src={images.homeGroup.src} alt="Clases grupales" />
-      <div class="practice-card-content">
-        <h3>Clases presenciales</h3>
-        <p>Profundiza en tu práctica de yoga con clases reducidas</p>
-        <a href="/yoga/">Ver clases</a>
-      </div>
-    </article>
-    <article class="practice-card">
-      <img src={images.yogaOffice1.src} alt="Yoga en la oficina" />
-      <div class="practice-card-content">
-        <h3>Yoga en tu oficina</h3>
-        <p>Clases de yoga para empresas para el bienestar de tu equipo</p>
-        <a href="/yoga/#empresas">Saber más</a>
-      </div>
-    </article>
-    <article class="practice-card">
-      <img src={images.homeIndividual.src} alt="Clases particulares" />
-      <div class="practice-card-content">
-        <h3>Sesiones individuales</h3>
-        <p>Practica yoga de forma personalizada</p>
-        <a href="/yoga/#individuales">Saber más</a>
-      </div>
-    </article>
+    {homeCopy.practiceOptions.map((option) => (
+      <article class="practice-card">
+        <img src={option.image.src} alt={option.alt} />
+        <div class="practice-card-content">
+          <h3>{option.title}</h3>
+          <p>{option.body}</p>
+          <a href={option.href}>{option.cta}</a>
+        </div>
+      </article>
+    ))}
   </section>
 
   <section class="ecosystem-band">
     <img src={images.homeEcosystem.src} alt="Movimiento y conciencia pélvica" />
     <div class="ecosystem-copy">
-      <h2>¿Quieres conocer nuestro ecosistema?</h2>
-      <p>Descubre los terapeutas con los que colaboramos, como las sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.</p>
-      <p>Si estás buscando casa para tu proyecto y quieres formar parte de nuestro equipo de colaboradores ponte en contacto con nosotros. Espai Adarsha es más que un estudio, ¡es una red de terapeutas independientes!</p>
-      <a class="btn-outline" href="/colaboradores/">Nuestros colaboradores</a>
+      <h2>{homeCopy.ecosystemTitle}</h2>
+      <p>{homeCopy.ecosystemBody}</p>
+      <p>{homeCopy.ecosystemFoot}</p>
+      <a class="btn-outline" href="/colaboradores/">{homeCopy.ecosystemCta}</a>
     </div>
   </section>
 </BaseLayout>

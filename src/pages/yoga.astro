@@ -3,19 +3,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { yogaCopy, images } from "../content/site";
 ---
 
-<BaseLayout title="Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Espai Adarsha">
+<BaseLayout title={yogaCopy.pageTitle}>
   <section class="schedule-banner">
     <img src={images.schedule.src} alt="Horario semanal de Adarsha Yoga" />
   </section>
 
   <section class="yoga-title">
-    <h1>Practica yoga en Adarsha</h1>
-    <p>¿Estas buscando un estudio<br />donde sentirte como en casa?</p>
+    <h1>{yogaCopy.introTitle}</h1>
+    <p>{yogaCopy.introQuestion}</p>
   </section>
 
   <section class="yoga-rhythm">
     <div class="yoga-rhythm-copy">
-      <h2>Tu práctica, tu ritmo</h2>
+      <h2>{yogaCopy.rhythmTitle}</h2>
       <p>{yogaCopy.intro}</p>
       <ul class="yoga-style-list">
         {yogaCopy.styles.map((style) => <li><strong>{style.title}:</strong> {style.body}</li>)}
@@ -49,19 +49,17 @@ import { yogaCopy, images } from "../content/site";
   <section id="individuales" class="individual-section">
     <img src={images.yogaIndividual.src} alt="Clase individual adaptada" />
     <div class="individual-copy">
-      <h2>Clases individuales<br />adaptadas a tu cuerpo<br />con Laia</h2>
+      <h2>{yogaCopy.individualTitle}<br />{yogaCopy.individualEyebrow}</h2>
       {yogaCopy.individualBody.map((item) => <p>{item}</p>)}
-      <p>¿Quieres empezar el programa? Empecemos con una sesión de prueba para conocernos, escuchar tus necesidades y trazar el camino de tu práctica.</p>
+      <p>{yogaCopy.individualClosing}</p>
     </div>
   </section>
 
   <section id="empresas" class="office-section">
     <div class="office-copy">
-      <h2>Yoga en la oficina<br />para la salud física y mental de tu equipo</h2>
-      <p>La integración del yoga, la meditación y la respiración consciente en la oficina transforma el entorno laboral en un espacio de concentración y bienestar.</p>
-      <p>Al liberar las tensiones del sedentarismo y regular el sistema nervioso, el equipo recupera la movilidad física y la claridad mental necesarias para afrontar cada reto.</p>
-      <p>Cuidar la salud integral de los trabajadores cultiva una cultura de presencia y vitalidad.</p>
-      <p><a href="/contacto/">Solicita más información aquí</a></p>
+      <h2>{yogaCopy.officeTitle}</h2>
+      {yogaCopy.officeBody.map((item) => <p>{item}</p>)}
+      <p><a href="/contacto/">{yogaCopy.officeCta}</a></p>
     </div>
     <div class="office-images">
       <img src={images.yogaOffice1.src} alt="Yoga para empresas" />
