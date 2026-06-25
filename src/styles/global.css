@@ -16,6 +16,7 @@
   --white: #fff;
   --ink: #2f2520;
   --brown: #764a32;
+  --schedule-brown: #764329;
   --taupe: #b69682;
   --clay: #ddcbc0;
   --rose: #bd9d89;
@@ -96,7 +97,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .section-pad { padding: 80px 0; }
 
 /* Yoga */
-.schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: #7b4c31; }
+.schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--schedule-brown); }
 .schedule-banner img { width: 604px; height: 605px; object-fit: cover; object-position: center; }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 700 50px/1.2 var(--display); }
