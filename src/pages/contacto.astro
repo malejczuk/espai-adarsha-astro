@@ -4,7 +4,7 @@ import { contact, images } from "../content/site";
 ---
 
 <BaseLayout title={contact.pageTitle}>
-  <section class="contact-page">
+  <section id="contacto" class="contact-page">
     <h1>{contact.heading}</h1>
     <div class="contact-columns">
       <div class="contact-column"><h2>{contact.addressHeading}</h2><p>{contact.addressLines.map((line) => <>{line}<br /></>)}</p></div>

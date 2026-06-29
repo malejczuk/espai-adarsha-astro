@@ -33,6 +33,8 @@ a { color: inherit; text-underline-offset: 3px; }
 p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 .container { width: min(var(--page), calc(100% - 40px)); margin-inline: auto; }
+.announcement-bar { min-height: 42px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 20px; background: var(--clay); color: var(--brown); font: 700 16px/1.35 var(--display); text-align: center; text-decoration: none; border-bottom: 1px solid rgba(118,74,50,.25); }
+.announcement-bar:hover { background: var(--brown); color: #fff; }
 .site-header { height: 293px; background: #fff; }
 .nav { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
 .brand { width: 157px; margin-top: 53px; }
@@ -46,6 +48,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .display { font-family: var(--display); font-weight: 400; color: var(--brown); }
 .btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid #000; color: #000; font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
 .btn-outline:hover { background: #000; color: #fff; }
+.btn-offer { border-color: var(--brown); background: var(--clay); color: var(--brown); }
+.btn-offer:hover { border-color: var(--brown); background: var(--brown); color: #fff; }
 
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
@@ -54,7 +58,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .home-intro h1 span { display: block; }
 .home-intro-lead { max-width: 500px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
 .home-intro-lead p + p { margin-top: 30px; }
-.home-intro .btn-outline { margin-top: 58px; }
+.home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
 .home-intro-image { min-height: 789px; object-fit: cover; object-position: 50% center; }
 
 .home-value { display: grid; grid-template-columns: 1fr 1fr; min-height: 882px; }
@@ -112,8 +116,19 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-photo-stack img:first-child { height: 731px; object-fit: cover; }
 .yoga-photo-stack img:last-child { height: 409px; object-fit: cover; }
 .yoga-prices-band { background: #7b4c31; color: #fff; }
-.yoga-prices { display: grid; grid-template-columns: 1fr; gap: 38px; padding: 46px 0 50px; text-align: center; }
+.yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
 .yoga-prices h2 { font: 400 30px/1.25 var(--display); color: #fff; }
+.summer-offer { width: min(780px, 100%); margin: 0 auto; padding: 24px 34px 26px; border: 1px solid rgba(255,255,255,.55); background: #ddcbc0; color: var(--brown); }
+.summer-offer p { font: 700 17px/1.2 var(--display); letter-spacing: 0; text-transform: uppercase; }
+.summer-offer h2 { margin-top: 7px; font-size: 29px; color: var(--brown); }
+.summer-offer-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 18px; border-top: 1px solid rgba(118,67,41,.28); border-bottom: 1px solid rgba(118,67,41,.28); }
+.summer-offer-options strong { display: grid; place-items: center; min-height: 74px; padding: 12px 24px; font-size: 18px; line-height: 1.35; font-weight: 700; }
+.summer-offer-options strong + strong { border-left: 1px solid rgba(118,67,41,.28); }
+.summer-offer span { display: block; margin-top: 13px; font-size: 14px; line-height: 1.4; }
+.summer-offer .btn-outline { margin-top: 16px; border-color: var(--brown); background: var(--brown); color: #fff; }
+.summer-offer .btn-outline:hover { background: #000; border-color: #000; color: #fff; }
+.price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
+.price-column { padding: 8px 28px 0; }
 .method-section h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
@@ -205,6 +220,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 @media (max-width: 760px) {
   body { font-size: 15px; line-height: 1.7; }
+  .announcement-bar { min-height: 40px; padding-inline: 18px; font-size: 15px; }
   .site-header { height: auto; min-height: 238px; }
   .brand { margin-top: 28px; }
   .nav-links { max-width: 350px; justify-content: center; flex-wrap: wrap; gap: 15px 24px; margin: 28px 0 30px; }
@@ -214,7 +230,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .home-intro-copy { padding: 58px 26px 65px; }
   .home-intro h1 { font-size: 31px; }
   .home-intro-lead { margin-top: 35px; font-size: 20px; }
-  .home-intro .btn-outline { margin-top: 38px; }
+  .home-cta-group { gap: 12px; margin-top: 38px; }
   .home-value-image { height: 500px; }
   .home-value-copy { padding: 55px 27px 65px; }
   .home-value-copy h2 { font-size: 34px; }
@@ -237,7 +253,15 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-photo-stack img:first-child { height: 480px; }
   .yoga-photo-stack img:last-child { height: 260px; }
   .method-inner, .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
-  .yoga-prices { padding-inline: 20px; }
+  .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
+  .summer-offer { padding: 22px 20px 24px; }
+  .summer-offer p { font-size: 16px; }
+  .summer-offer h2 { font-size: 25px; }
+  .summer-offer-options { grid-template-columns: 1fr; margin-top: 16px; }
+  .summer-offer-options strong { min-height: 0; padding: 13px 8px; font-size: 16px; }
+  .summer-offer-options strong + strong { border-top: 1px solid rgba(118,67,41,.28); border-left: 0; }
+  .price-columns { grid-template-columns: 1fr; gap: 30px; }
+  .price-column { padding: 0; }
   .method-section { padding: 64px 0; }
   .method-inner img { height: 430px; }
   .individual-section img { height: 480px; }
