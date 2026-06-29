@@ -15,7 +15,10 @@ const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
         <p>{homeCopy.subtitle}</p>
         {homeCopy.body.map((item) => <p>{item}</p>)}
       </div>
-      <a class="btn-outline" href="/yoga/">{homeCopy.scheduleCta}</a>
+      <div class="home-cta-group">
+        <a class="btn-outline" href={homeCopy.scheduleHref}>{homeCopy.scheduleCta}</a>
+        <a class="btn-outline btn-offer" href={homeCopy.ofertaHref}>{homeCopy.ofertaCta}</a>
+      </div>
     </div>
     <img class="home-intro-image" src={images.homeHero.src} alt="Práctica de yoga en Espai Adarsha" />
   </section>

@@ -8,7 +8,12 @@ const isCurrent = (href: string) => {
 };
 ---
 
-<header class="site-header">
+<header>
+  <a class="announcement-bar" href={siteMeta.announcement.href}>
+    <span>{siteMeta.announcement.text}</span>
+    <span aria-hidden="true">→</span>
+  </a>
+  <div class="site-header">
   <nav class="container nav" aria-label={siteMeta.navigationLabel}>
     <a class="brand" href="/" aria-label={siteMeta.homeLabel}>
       <img src={images.logo.src} alt={siteMeta.name} width={images.logo.width} height={images.logo.height} />
@@ -19,4 +24,5 @@ const isCurrent = (href: string) => {
       ))}
     </div>
   </nav>
+  </div>
 </header>

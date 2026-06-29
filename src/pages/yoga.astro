@@ -27,14 +27,26 @@ import { yogaCopy, images } from "../content/site";
     </div>
   </section>
 
-  <section class="yoga-prices-band">
+  <section id="precios" class="yoga-prices-band">
     <div class="container yoga-prices">
-      {yogaCopy.prices.map((group) => (
-        <div>
-          <h2>{group.title}</h2>
-          <ul class="plain-lines">{group.items.map((item) => <li>- {item}</li>)}</ul>
+      <div class="summer-offer">
+        <p>{yogaCopy.summerOffer.eyebrow}</p>
+        <h2>{yogaCopy.summerOffer.title}</h2>
+        <div class="summer-offer-options">
+          {yogaCopy.summerOffer.items.map((item) => <strong>{item}</strong>)}
         </div>
-      ))}
+        <span>{yogaCopy.summerOffer.deadline}</span>
+        <a class="btn-outline" href={yogaCopy.summerOffer.href}>{yogaCopy.summerOffer.cta}</a>
+      </div>
+
+      <div class="price-columns">
+        {yogaCopy.prices.map((group) => (
+          <div class="price-column">
+            <h2>{group.title}</h2>
+            <ul class="plain-lines">{group.items.map((item) => <li>- {item}</li>)}</ul>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -62,7 +74,7 @@ import { yogaCopy, images } from "../content/site";
     <div class="office-copy">
       <h2>{yogaCopy.officeTitle}</h2>
       {yogaCopy.officeBody.map((item) => <p>{item}</p>)}
-      <p><a href="/contacto/">{yogaCopy.officeCta}</a></p>
+      <p><a href="/contacto/#contacto">{yogaCopy.officeCta}</a></p>
     </div>
     <img class="office-image" src={images.yogaOffice2.src} alt="Yoga para empresas" />
   </section>

@@ -34,6 +34,10 @@ export const siteMeta = {
   navigationLabel: "Navegación principal",
   homeLabel: "Espai Adarsha inicio",
   copyright: "© Espai Adarsha 2026",
+  announcement: {
+    text: "🌿 Oferta Verano para nuevos alumnos · Hasta el 1 de agosto",
+    href: "/yoga/#precios",
+  },
 };
 
 export const contact = {
@@ -43,7 +47,7 @@ export const contact = {
   addressLines: ["Calle Girona 166", "Entresuelo 3a", "08037 Barcelona"],
   contactHeading: "Contacto",
   intro: "Ponte en contacto con nosotros enviándonos un mail :-)",
-  email: "espaiadarsha@gmail.com",
+  email: "hello@espaiadarsha.com",
   instagram: { prefix: "Instagram:", label: "@espaiadarsha", href: "https://www.instagram.com/espaiadarsha/" },
   mapUrl: "https://www.google.com/maps?q=Espai%20Adarsha%20Yoga%20Studio%2C%20Barcelona&output=embed",
 };
@@ -91,6 +95,9 @@ export const homeCopy = {
     "En Espai Adarsha la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
   scheduleCta: "HORARIO CLASES",
+  scheduleHref: "/yoga/",
+  ofertaCta: "¡OFERTA VERANO!",
+  ofertaHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
   practiceOptions: [
@@ -133,6 +140,17 @@ export const yogaCopy = {
     { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las sesiones están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva, asegurando que cada movimiento se realice de forma segura." },
     { title: "Evolución Tangible", body: "Trabajamos con objetivos claros. La intención es que experimentes una mejora constante en tu flexibilidad y fuerza física, evolucionando en las posturas y, sobre todo, en tu bienestar mental." },
   ],
+  summerOffer: {
+    eyebrow: "Oferta Verano",
+    title: "Promoción para alumnos nuevos",
+    deadline: "Oferta válida hasta el 1 de agosto",
+    items: [
+      "Pack 4 clases grupales: 60€",
+      "Apúntate a una mensualidad y paga agosto a 25€ (horario reducido)",
+    ],
+    cta: "Escríbenos y reserva tu primera clase",
+    href: "/contacto/#contacto",
+  },
   prices: [
     {
       title: "Clases Grupales",

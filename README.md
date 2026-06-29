@@ -1,43 +1,16 @@
-# Espai Adarsha Astro
+# Espai Adarsha Website
 
-Static Astro rebuild of [espaiadarsha.com](https://www.espaiadarsha.com) for Cloudflare Pages.
+Astro rebuild of [espaiadarsha.com](https://www.espaiadarsha.com), intended for deployment on Cloudflare Pages.
 
-## Edit the website
+## Quick Start
 
-Most day-to-day text, links, prices, contact details, and image choices live in:
-
-- `src/content/site.ts`
-
-Pages live in:
-
-- `src/pages/index.astro`
-- `src/pages/yoga.astro`
-- `src/pages/espacio.astro`
-- `src/pages/contacto.astro`
-- `src/pages/colaboradores.astro`
-
-Shared layout and form files live in:
-
-- `src/layouts/BaseLayout.astro`
-- `src/components/Header.astro`
-- `src/components/Footer.astro`
-- `src/components/ContactForm.astro`
-
-Design styles live in:
-
-- `src/styles/global.css`
-
-Images are imported from the existing `assets/` directory.
-
-## Work offline
-
-Install dependencies once while you have internet:
+Install dependencies once:
 
 ```bash
 npm install
 ```
 
-Then start the local development server:
+Run the site locally:
 
 ```bash
 npm run dev
@@ -49,33 +22,91 @@ Astro will print a local URL, usually:
 http://localhost:4321
 ```
 
-Open that URL in your browser. You can edit files while the server is running and Astro will refresh the page automatically.
+Open that URL in your browser. While the dev server is running, edits to the site files refresh automatically.
 
-Unlike Jekyll + GitHub Pages, Astro is a local build tool. The final site is generated into `dist/` when you run:
+## Editing Content
+
+Most everyday edits live in:
+
+- `src/content/site.ts`
+
+Use this file for text, links, prices, bios, contact details, navigation labels, the announcement bar, and which images appear in each section.
+
+Main pages live in:
+
+- `src/pages/index.astro`
+- `src/pages/yoga.astro`
+- `src/pages/equipo.astro`
+- `src/pages/espacio.astro`
+- `src/pages/contacto.astro`
+- `src/pages/colaboradores.astro`
+- `src/pages/bio-laia.astro`
+- `src/pages/bio-kristoff.astro`
+
+Shared layout files live in:
+
+- `src/layouts/BaseLayout.astro`
+- `src/components/Header.astro`
+- `src/components/Footer.astro`
+- `src/components/ContactForm.astro`
+
+Global design styles live in:
+
+- `src/styles/global.css`
+
+Images are stored in:
+
+- `assets/`
+
+## Common Updates
+
+To edit the top announcement bar, change `siteMeta.announcement` in `src/content/site.ts`.
+
+To edit the summer offer on the Yoga page, change `yogaCopy.summerOffer` in `src/content/site.ts`.
+
+To edit the class prices, change `yogaCopy.prices` in `src/content/site.ts`.
+
+To edit the contact email or Instagram handle, change `contact` in `src/content/site.ts`.
+
+## Build And Preview
+
+Create a production build:
 
 ```bash
 npm run build
 ```
 
-You can preview the production build locally with:
+Preview the Cloudflare build locally:
 
 ```bash
 npm run preview
 ```
 
-## Deploy on Cloudflare Pages
+The built site is generated into:
 
-In Cloudflare Pages:
+```text
+dist/
+```
+
+## Cloudflare Pages
+
+Use these settings in Cloudflare Pages:
 
 - Framework preset: `Astro`
 - Build command: `npm run build`
 - Build output directory: `dist`
 - Node version: `22`
 
-Cloudflare will run `npm install` and `npm run build` automatically on each deploy.
+Cloudflare will install dependencies and build the site automatically on deploy.
 
 ## Forms
 
-Forms submit through FormSubmit to `espaiadarsha@gmail.com`.
+The contact form submits through FormSubmit to `hello@espaiadarsha.com`.
 
-The first real submission may trigger a FormSubmit confirmation email. Open that email and activate the form endpoint once.
+The first real submission may trigger a FormSubmit confirmation email. Open that email and activate the endpoint once.
+
+## Notes For Jekyll Users
+
+Astro is similar to Jekyll in that it builds static pages from source files, but local editing normally happens through `npm run dev` instead of `bundle exec jekyll serve`.
+
+You edit source files in `src/` and `assets/`; Astro builds the final output into `dist/`.
