@@ -7,7 +7,6 @@ import studioDetail from "../../assets/54-DSC01118.jpg";
 import studioEmpty from "../../assets/SWEARxEspai Adarsha-74.jpg";
 import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
-import floorPractice from "../../assets/SWEARxEspai Adarsha-39.jpg";
 import meditation from "../../assets/SWEARxEspai Adarsha-50.jpg";
 import teamWindow from "../../assets/328-DSC01628.jpg";
 import homeHero from "../../assets/home-hero.jpg";
@@ -21,8 +20,9 @@ import equipoLaia from "../../assets/equipo-laia.avif";
 import equipoLaia1 from "../../assets/equipo-laia-1.avif";
 import equipoLaia2 from "../../assets/equipo-laia-2.avif";
 import equipoLaia3 from "../../assets/equipo-laia-3.avif";
-import equipoKristoff from "../../assets/equipo-kristoff.avif";
-import equipoKristoff2 from "../../assets/equipo-kristoff-2.jpg";
+import kristoffBio1 from "../../assets/kristoff-bio-1.jpg";
+import kristoffBio2 from "../../assets/kristoff-bio-2.avif";
+import kristoffTeam from "../../assets/kristoff-team.jpg";
 import equipoRaquel from "../../assets/equipo-raquel.avif";
 import colaboradoresMain from "../../assets/colaboradores-main.jpg";
 import colaboradoresPersonal from "../../assets/colaboradores-personal.jpg";
@@ -62,7 +62,6 @@ export const images = {
   studioEmpty,
   groupClass,
   individualSession,
-  floorPractice,
   meditation,
   teamWindow,
   homeHero,
@@ -99,6 +98,7 @@ export const homeCopy = {
   ofertaCta: "¡OFERTA VERANO!",
   ofertaHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
+  approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
   practiceOptions: [
     { title: "Clases presenciales", body: "Profundiza en tu práctica de yoga con clases reducidas", cta: "Ver clases", href: "/yoga/", image: homeGroup, alt: "Clases grupales" },
@@ -253,7 +253,7 @@ export const equipoCopy = {
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
   members: [
     { name: "Laia Espejo Dotti", role: "Fundadora & Profesora de Yoga", href: "/bio-laia/", image: equipoLaia },
-    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", href: "/bio-kristoff/", image: equipoKristoff },
+    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", href: "/bio-kristoff/", image: kristoffTeam },
     { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica · Colaboradora", href: "/colaboradores/", image: equipoRaquel },
   ],
 };
@@ -305,7 +305,7 @@ export const bioCopy = {
     heading: "Sobre Kristoff.",
     sections: [
       {
-        image: equipoKristoff2,
+        image: kristoffBio1,
         imageAlt: "Kristoff Malejczuk enseñando yoga",
         paragraphs: [
           "In the summer of 2019, at the invitation of a friend, I began to attend a weekly yoga class. By the beginning of 2021, yoga had become my sole form of exercise. At this time, I was exclusively practicing with YouTube videos.",
@@ -314,7 +314,7 @@ export const bioCopy = {
         ],
       },
       {
-        image: equipoKristoff,
+        image: kristoffBio2,
         imageAlt: "Kristoff Malejczuk practicando una inversión",
         paragraphs: [
           "Next began a year of backpacking around Latin America. In early 2025, I stumbled across a master of Karma Yoga in the Colombian Andes. His name was Gabriel, and he was the owner of the hostel where I was staying, Yambolombia. Recognizing him as a teacher, I soon returned to devote one month to the practice of Karma Yoga, with Gabriel as my teacher. Next, I headed to the Amazon jungle, where I spent a month cradled by la Madre Selva, another master teacher.",

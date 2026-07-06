@@ -28,7 +28,7 @@ const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
     <div class="home-value-copy">
       <h2>{homeCopy.practiceTitle}</h2>
       {homeCopy.practiceBody.map((item) => <p>{item}</p>)}
-      <a class="btn-outline" href="/yoga/">{homeCopy.approachCta}</a>
+      <a class="btn-outline" href={homeCopy.approachHref}>{homeCopy.approachCta}</a>
     </div>
   </section>
 
