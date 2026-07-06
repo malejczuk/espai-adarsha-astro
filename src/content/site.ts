@@ -318,7 +318,7 @@ export const bioCopy = {
         imageAlt: "Kristoff Malejczuk practicando una inversión",
         paragraphs: [
           "Next began a year of backpacking around Latin America. In early 2025, I stumbled across a master of Karma Yoga in the Colombian Andes. His name was Gabriel, and he was the owner of the hostel where I was staying, Yambolombia. Recognizing him as a teacher, I soon returned to devote one month to the practice of Karma Yoga, with Gabriel as my teacher. Next, I headed to the Amazon jungle, where I spent a month cradled by la Madre Selva, another master teacher.",
-          "In late 2025, I moved to Barcelona and began practicing Mysore-style Hatha Ashtanga under Aleix Griñó at Viveka Yoga Shala. As of 2026, I teach regularly at Espai Adarsha, also in Barcelona",
+          "In late 2025, I moved to Barcelona and began practicing Mysore-style Hatha Ashtanga under Aleix Griñó at Viveka Yoga Shala. As of 2026, I teach regularly at Espai Adarsha, also in Barcelona.",
         ],
       },
     ],
