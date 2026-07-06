@@ -23,7 +23,6 @@ import { yogaCopy, images } from "../content/site";
     </div>
     <div class="yoga-photo-stack">
       <img src={images.groupClass.src} alt="Clase grupal de yoga" />
-      <img src={images.floorPractice.src} alt="Yin yoga y pranayama" />
     </div>
   </section>
 
@@ -50,7 +49,7 @@ import { yogaCopy, images } from "../content/site";
     </div>
   </section>
 
-  <section class="method-section">
+  <section id="metodo" class="method-section">
     <div class="container method-inner">
       <img src={images.meditation.src} alt="Práctica progresiva de yoga" />
       <div>
@@ -61,21 +60,21 @@ import { yogaCopy, images } from "../content/site";
   </section>
 
   <section id="individuales" class="individual-section">
-    <img src={images.individualSession.src} alt="Clase individual adaptada" />
     <div class="individual-copy">
       <h2>{yogaCopy.individualTitle}<span>{yogaCopy.individualEyebrow}</span></h2>
       <p>{yogaCopy.individualIntro}</p>
       <ul class="individual-list">{yogaCopy.individualOptions.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}</ul>
       <p>{yogaCopy.individualClosing}</p>
     </div>
+    <img src={images.individualSession.src} alt="Clase individual adaptada" />
   </section>
 
   <section id="empresas" class="office-section">
+    <img class="office-image" src={images.yogaOffice2.src} alt="Yoga para empresas" />
     <div class="office-copy">
       <h2>{yogaCopy.officeTitle}</h2>
       {yogaCopy.officeBody.map((item) => <p>{item}</p>)}
       <p><a href="/contacto/#contacto">{yogaCopy.officeCta}</a></p>
     </div>
-    <img class="office-image" src={images.yogaOffice2.src} alt="Yoga para empresas" />
   </section>
 </BaseLayout>
