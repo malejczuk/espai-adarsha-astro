@@ -20,8 +20,7 @@ import { equipoCopy } from "../content/site";
           <article class="team-card">
             <a href={member.href}><img src={member.image.src} alt={member.name} /></a>
             <h3><a href={member.href}>{member.name}</a></h3>
-            <p>{member.role}</p>
-            {member.title && <p class="team-card-title">{member.title}</p>}
+            <p>{member.role}{member.title && <><br />{member.title}</>}</p>
           </article>
         ))}
       </div>
