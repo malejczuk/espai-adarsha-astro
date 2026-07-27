@@ -191,8 +191,7 @@ export const espacioCopy = {
   pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Espai Adarsha",
   body: [
     "¿Buscas un lugar donde desarrollar tus proyectos?",
-    "Somos un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4).",
-    "En Espai Adarsha abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento:",
+    "Espai Adarsha es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
   ],
   uses: [
     "Formaciones intensivas de fin de semana",
@@ -254,8 +253,8 @@ export const equipoCopy = {
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
   members: [
-    { name: "Laia Espejo Dotti", role: "Fundadora & Profesora de Yoga", href: "/bio-laia/", image: equipoLaia },
-    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", href: "/bio-kristoff/", image: kristoffTeam },
+    { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora y CEO", href: "/bio-laia/", image: equipoLaia },
+    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "COO", href: "/bio-kristoff/", image: kristoffTeam },
     { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica · Colaboradora", href: "/colaboradores/", image: equipoRaquel },
   ],
 };
