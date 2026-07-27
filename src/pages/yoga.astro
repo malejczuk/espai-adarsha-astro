@@ -28,14 +28,14 @@ import { yogaCopy, images } from "../content/site";
 
   <section id="precios" class="yoga-prices-band">
     <div class="container yoga-prices">
-      <div class="summer-offer">
-        <p>{yogaCopy.summerOffer.eyebrow}</p>
-        <h2>{yogaCopy.summerOffer.title}</h2>
-        <div class="summer-offer-options">
-          {yogaCopy.summerOffer.items.map((item) => <strong>{item}</strong>)}
+      <div class="special-offer">
+        <p>{yogaCopy.specialOffer.eyebrow}</p>
+        <h2>{yogaCopy.specialOffer.title}</h2>
+        <div class="special-offer-options">
+          {yogaCopy.specialOffer.items.map((item) => <strong>{item}</strong>)}
         </div>
-        <span>{yogaCopy.summerOffer.deadline}</span>
-        <a class="btn-outline" href={yogaCopy.summerOffer.href}>{yogaCopy.summerOffer.cta}</a>
+        <span>{yogaCopy.specialOffer.deadline}</span>
+        <a class="btn-outline" href={yogaCopy.specialOffer.href}>{yogaCopy.specialOffer.cta}</a>
       </div>
 
       <div class="price-columns">
