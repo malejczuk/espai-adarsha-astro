@@ -190,17 +190,19 @@ export const yogaCopy = {
 export const espacioCopy = {
   pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Espai Adarsha",
   body: [
-    "En Espai Adarsha abrimos nuestras puertas a profesionales del movimiento y terapeutas que busquen un lugar donde desarrollar sus proyectos.",
-    "Un estudio holístico con luz natural y totalmente equipado junto al metro Verdaguer.",
+    "¿Buscas un lugar donde desarrollar tus proyectos?",
+    "Somos un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4).",
+    "En Espai Adarsha abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento:",
   ],
   uses: [
-    "Formaciones intensivas de fin de semana.",
+    "Formaciones intensivas de fin de semana",
     "Workshops y talleres",
+    "Constelaciones familiares",
     "Sesiones individuales",
     "Clases regulares en los horarios disponibles",
   ],
   emailPrefix: "Escríbenos en",
-  emailSuffix: "para recibir más información.",
+  emailSuffix: "para reservas y más info.",
   details: {
     addressHeading: "Dirección",
     addressLines: ["Calle Girona 166, entresuelo 3", "Barcelona"],
