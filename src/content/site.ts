@@ -1,10 +1,10 @@
-import logo from "../../assets/espai adarsha.png";
-import scheduleCurrent from "../../assets/schedule-current.avif";
+import logo from "../../assets/adarsha-yoga.png";
+import scheduleCurrent from "../../assets/schedule-current-no-header.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
+import studioTall from "../../assets/estudio.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
 import studioWindow from "../../assets/1-DSC01027.jpg";
 import studioDetail from "../../assets/54-DSC01118.jpg";
-import studioEmpty from "../../assets/SWEARxEspai Adarsha-74.jpg";
 import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
 import meditation from "../../assets/SWEARxEspai Adarsha-50.jpg";
@@ -28,20 +28,20 @@ import colaboradoresMain from "../../assets/colaboradores-main.jpg";
 import colaboradoresPersonal from "../../assets/colaboradores-personal.jpg";
 
 export const siteMeta = {
-  name: "Espai Adarsha",
-  defaultTitle: "Estudio de Yoga en Gràcia y Eixample | Clases Reducidas | Espai Adarsha",
-  description: "Espai Adarsha es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
+  name: "Adarsha Yoga",
+  defaultTitle: "Estudio de Yoga en Gràcia y Eixample | Clases Reducidas | Adarsha Yoga",
+  description: "Adarsha Yoga es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
   navigationLabel: "Navegación principal",
-  homeLabel: "Espai Adarsha inicio",
-  copyright: "© Espai Adarsha 2026",
+  homeLabel: "Adarsha Yoga inicio",
+  copyright: "© Adarsha Yoga 2026",
   announcement: {
-    text: "🌿 Oferta Verano para nuevos alumnos · Hasta el 1 de agosto",
-    href: "/yoga/#precios",
+    text: "🏖️ El estudio está cerrado del 1/8 - 23/8. ¡Nos vemos el 24 de agosto! 🧘🏽",
+    // href: "/yoga/#precios",
   },
 };
 
 export const contact = {
-  pageTitle: "Espai Adarsha | Barcelona",
+  pageTitle: "Adarsha Yoga | Barcelona",
   heading: "Contacto",
   addressHeading: "Dirección",
   addressLines: ["Calle Girona 166", "Entresuelo 3a", "08037 Barcelona"],
@@ -56,10 +56,10 @@ export const images = {
   logo,
   schedule: scheduleCurrent,
   studioWide,
+  studioTall,
   studioShelf,
   studioWindow,
   studioDetail,
-  studioEmpty,
   groupClass,
   individualSession,
   meditation,
@@ -81,7 +81,7 @@ export const navItems = [
 ];
 
 export const homeCopy = {
-  title: "Espai Adarsha. Un refugio de yoga, conexión con el cuerpo y paz en medio de la ciudad.",
+  title: "Adarsha Yoga. Un refugio de conexión con el cuerpo y paz en medio de la ciudad.",
   subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",
@@ -91,11 +91,11 @@ export const homeCopy = {
   practiceBody: [
     "Nuestro propósito es ofrecerte un espacio donde puedas reconectarte contigo mismo, descubrir tu fuerza interior y cultivar la calma que tu mente y tu corazón necesitan. Cada práctica de yoga es una oportunidad para transformar tu cuerpo, equilibrar tus emociones y nutrir tu espíritu con herramientas que te acompañarán en tu día a día.",
     "El ritmo actual a menudo nos desconecta de nuestras necesidades reales. El yoga, entendido como una disciplina de cuidado integral, es una herramienta milenaria para recuperar nuestro centro a través del cuerpo, la respiración y la concentración.",
-    "En Espai Adarsha la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
+    "En Adarsha Yoga la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
-  scheduleCta: "HORARIO CLASES",
+  scheduleCta: "    HORARIO    ",
   scheduleHref: "/yoga/",
-  ofertaCta: "¡OFERTA VERANO!",
+  ofertaCta: "¡OFERTA OTOÑO! 🍂",
   ofertaHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
@@ -109,17 +109,17 @@ export const homeCopy = {
   ecosystemBody:
     "Descubre los terapeutas con los que colaboramos, como las sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
   ecosystemFoot:
-    "Si estás buscando casa para tu proyecto y quieres formar parte de nuestro equipo de colaboradores ponte en contacto con nosotros. Espai Adarsha es más que un estudio, ¡es una red de terapeutas independientes!",
+    "Si estás buscando casa para tu proyecto y quieres formar parte de nuestro equipo de colaboradores ponte en contacto con nosotros. Adarsha Yoga es más que un estudio, ¡es una red de terapeutas independientes!",
   ecosystemCta: "Nuestros colaboradores",
 };
 
 export const yogaCopy = {
-  pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Espai Adarsha",
+  pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Adarsha Yoga",
   introTitle: "Practica yoga en Adarsha",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   rhythmTitle: "Tu práctica, tu ritmo",
   intro:
-    "En Espai Adarsha nos alejamos de las sesiones masivas, para ofrecer un enfoque personalizado donde la práctica se adapta a ti y a tu momento actual.",
+    "En Adarsha Yoga nos alejamos de las sesiones masivas, para ofrecer un enfoque personalizado donde la práctica se adapta a ti y a tu momento actual.",
   styles: [
     {
       title: "Hatha Vinyasa Yoga",
@@ -140,13 +140,13 @@ export const yogaCopy = {
     { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las sesiones están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva, asegurando que cada movimiento se realice de forma segura." },
     { title: "Evolución Tangible", body: "Trabajamos con objetivos claros. La intención es que experimentes una mejora constante en tu flexibilidad y fuerza física, evolucionando en las posturas y, sobre todo, en tu bienestar mental." },
   ],
-  summerOffer: {
-    eyebrow: "Oferta Verano",
+  specialOffer: {
+    eyebrow: "Oferta Otoño",
     title: "Promoción para alumnos nuevos",
-    deadline: "Oferta válida hasta el 1 de agosto",
+    deadline: "Oferta válida hasta el 30 de septiembre",
     items: [
-      "Pack 4 clases grupales: 60€",
-      "Apúntate a una mensualidad y paga agosto a 25€ (horario reducido)",
+      // "Pack 4 clases grupales: 60€",
+      "Semana de prueba por 30€",
     ],
     cta: "Escríbenos y reserva tu primera clase",
     href: "/contacto/#contacto",
@@ -190,17 +190,18 @@ export const yogaCopy = {
 export const espacioCopy = {
   pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Espai Adarsha",
   body: [
-    "En Espai Adarsha abrimos nuestras puertas a profesionales del movimiento y terapeutas que busquen un lugar donde desarrollar sus proyectos.",
-    "Un estudio holístico con luz natural y totalmente equipado junto al metro Verdaguer.",
+    "¿Buscas un lugar donde desarrollar tus proyectos?",
+    "Espai Adarsha es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
   ],
   uses: [
-    "Formaciones intensivas de fin de semana.",
+    "Formaciones intensivas de fin de semana",
     "Workshops y talleres",
+    "Constelaciones familiares",
     "Sesiones individuales",
     "Clases regulares en los horarios disponibles",
   ],
   emailPrefix: "Escríbenos en",
-  emailSuffix: "para recibir más información.",
+  emailSuffix: "para reservas y más info.",
   details: {
     addressHeading: "Dirección",
     addressLines: ["Calle Girona 166, entresuelo 3", "Barcelona"],
@@ -211,9 +212,9 @@ export const espacioCopy = {
 };
 
 export const colaboradoresCopy = {
-  pageTitle: "Colaboradores | Espai Adarsha",
+  pageTitle: "Colaboradores | Adarsha Yoga",
   title: "Nuestro ecosistema de colaboradores",
-  subtitle: "Conoce otras actividades que tienen lugar en Espai Adarsha",
+  subtitle: "Conoce otras actividades que tienen lugar en Adarsha Yoga",
   activity: "Movimiento & Consciencia Pélvica",
   teacher: "con Raquel Jaroslavsky",
   question: "¿Te sientes desconectada de tu pélvis?",
@@ -225,14 +226,14 @@ export const colaboradoresCopy = {
     "Regálate un espacio para habitarte de forma plena y recuperar tu bienestar más profundo.",
   ],
   scheduleHeading: "Horarios",
-  schedule: "Sesiones grupales: Martes 17:45 - 19:00 / Jueves 17:45 - 19:00",
+  schedule: "Sesiones grupales: Miércoles 10:00 - 11:15 / Martes y Jueves 17:45 - 19:00",
   booking: { prefix: "Reservas:", email: "jarosraquel@gmail.com" },
   pricesHeading: "Sesiones de Movimiento y Conciencia Pélvica",
   prices: [
-    "Cuota trimestral de 4 sesiones al mes: 300€",
-    "Cuota trimestral de 2 sesiones al mes: 150€",
     "Sesión suelta grupal: 35€",
     "Sesión individual: 50€",
+    "Cuota trimestral de 2 sesiones al mes: 150€",
+    "Cuota trimestral de 4 sesiones al mes: 300€",
   ],
   personalizedHeading: "Acompañamiento personalizado",
   personalizedLead: "La constancia es la clave para liberar bloqueos, ganar movilidad y sentir cambios reales.",
@@ -245,22 +246,22 @@ export const colaboradoresCopy = {
 };
 
 export const equipoCopy = {
-  pageTitle: "Equipo | Espai Adarsha",
+  pageTitle: "Equipo | Adarsha Yoga",
   name: "Adarsha",
   sanskrit: "Ādarśa (आदर्श)",
-  meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Espai Adarsha: un estudio para mirarse y transformarse desde adentro hacia fuera."],
+  meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para mirarse y transformarse desde adentro hacia fuera."],
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
   members: [
-    { name: "Laia Espejo Dotti", role: "Fundadora & Profesora de Yoga", href: "/bio-laia/", image: equipoLaia },
-    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", href: "/bio-kristoff/", image: kristoffTeam },
+    { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora y CEO", href: "/bio-laia/", image: equipoLaia },
+    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "COO", href: "/bio-kristoff/", image: kristoffTeam },
     { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica · Colaboradora", href: "/colaboradores/", image: equipoRaquel },
   ],
 };
 
 export const bioCopy = {
   laia: {
-    pageTitle: "Sobre Laia | Espai Adarsha",
+    pageTitle: "Sobre Laia | Adarsha Yoga",
     heading: "Sobre Laia.",
     sections: [
       {
@@ -289,9 +290,9 @@ export const bioCopy = {
         image: equipoLaia3,
         imageAlt: "Retrato de Laia Espejo Dotti",
         paragraphs: [
-          "En Mayo de 2022 fundé Espai Adarsha, un estudio de yoga holístico. Este proyecto nació de mi necesidad de encontrar un lugar donde impartir todas mis clases, para poder acompañar el proceso de mis alumnos de forma más cercana, además de la ilusión de crear una red multidisciplinar dentro de la rama del yoga y terapias holísticas.",
+          "En mayo de 2022 fundé Adarsha Yoga, un estudio de yoga holístico. Este proyecto nació de mi necesidad de encontrar un lugar donde impartir todas mis clases, para poder acompañar el proceso de mis alumnos de forma más cercana, además de la ilusión de crear una red multidisciplinar dentro de la rama del yoga y terapias holísticas.",
           "Ese mismo año empecé a practicar con mi querido profesor Aleix Griñó. Marcó un antes y un después en mi práctica personal: a través del módulo \"Lo sutil mueve lo denso\", descubrí que lo que más me interesa son los aspectos energéticos de la práctica.",
-          "Actualmente estoy practicando Hatha Vinyasa al estilo Mysore en Viveka Yoga Shala con mis profesores Sebastian Arbondo y Aleix Griñó, con los que he realizando la Formación de Profesores Hatha Vinyasa Yoga Nivel Intermedio.",
+          "Actualmente estoy practicando Hatha Vinyasa al estilo Mysore en Viveka Yoga Shala con mis profesores Sebastian Arbondo y Aleix Griñó, con los que he realizado la Formación de Profesores Hatha Vinyasa Yoga Nivel Intermedio.",
           "Paralelamente, estoy cursando la formación de Terapia Gestalt en la Escuela Gestalt Barcelona, que después de tres intensos años finalizaré en Diciembre 2026. Para así profundizar en la psicología moderna y el potencial del crecimiento humano, podré acompañar mejor el proceso emocional y desarrollo personal de mis alumnos.",
         ],
       },
@@ -301,7 +302,7 @@ export const bioCopy = {
     instagram: { label: "@laiaespejodotti", href: "https://www.instagram.com/laiaespejodotti/" },
   },
   kristoff: {
-    pageTitle: "Sobre Kristoff | Espai Adarsha",
+    pageTitle: "Sobre Kristoff | Adarsha Yoga",
     heading: "Sobre Kristoff.",
     sections: [
       {
@@ -318,7 +319,7 @@ export const bioCopy = {
         imageAlt: "Kristoff Malejczuk practicando una inversión",
         paragraphs: [
           "Next began a year of backpacking around Latin America. In early 2025, I stumbled across a master of Karma Yoga in the Colombian Andes. His name was Gabriel, and he was the owner of the hostel where I was staying, Yambolombia. Recognizing him as a teacher, I soon returned to devote one month to the practice of Karma Yoga, with Gabriel as my teacher. Next, I headed to the Amazon jungle, where I spent a month cradled by la Madre Selva, another master teacher.",
-          "In late 2025, I moved to Barcelona and began practicing Mysore-style Hatha Ashtanga under Aleix Griñó at Viveka Yoga Shala. As of 2026, I teach regularly at Espai Adarsha, also in Barcelona.",
+          "In late 2025, I moved to Barcelona and began practicing Mysore-style Hatha Ashtanga under Aleix Griñó at Viveka Yoga Shala. As of 2026, I teach regularly at Adarsha Yoga, also in Barcelona.",
         ],
       },
     ],

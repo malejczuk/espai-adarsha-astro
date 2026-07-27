@@ -7,16 +7,17 @@ import { contact, espacioCopy, images } from "../content/site";
   <img class="space-hero" src={images.studioWide.src} alt="Espai Adarsha" />
   <section class="space-main">
     <div class="container">
-      <div class="space-pair">
-        <img src={images.studioShelf.src} alt="Material de yoga en Espai Adarsha" />
-        <img src={images.studioWindow.src} alt="Luz natural en Espai Adarsha" />
-      </div>
       <div class="space-copy">
         {espacioCopy.body.map((item) => <p>{item}</p>)}
         <ul>{espacioCopy.uses.map((item) => <li>{item}</li>)}</ul>
         <p class="email">{espacioCopy.emailPrefix} <a href={`mailto:${contact.email}?subject=Alquiler sala`}>{contact.email}</a> {espacioCopy.emailSuffix}</p>
       </div>
-      <img class="space-wide" src={images.studioEmpty.src} alt="Sala de Espai Adarsha disponible para alquiler" />
+      <div class="space-pair">
+        <img src={images.studioShelf.src} alt="Material de yoga en Espai Adarsha" />
+        <!-- <img src={images.studioWindow.src} alt="Luz natural en Espai Adarsha" /> -->
+        <img src={images.studioTall.src} alt="Luz natural en Espai Adarsha" />
+      </div>
+      <!-- <img class="space-wide" src={images.studioEmpty.src} alt="Sala de Espai Adarsha disponible para alquiler" /> -->
     </div>
   </section>
   <section class="space-details">
