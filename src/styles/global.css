@@ -102,7 +102,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Yoga */
 .schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--schedule-brown); }
-.schedule-banner img { width: 604px; height: 605px; object-fit: cover; object-position: center; }
+/* schedule-current.png is 2025x2531. Crop away the "Adarsha Yoga" title band
+   (top 522px) and the stray light column on the right edge, leaving the
+   2023x2009 grid so it frames exactly as before. */
+.schedule-crop { position: relative; width: 604px; aspect-ratio: 2023 / 2009; overflow: hidden; }
+.schedule-crop img { position: absolute; left: 0; top: calc(-100% * 522 / 2009); width: calc(100% * 2025 / 2023); height: auto; }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 700 50px/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
@@ -120,10 +124,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .special-offer { width: min(440px, 100%); margin: 0 auto; padding: 26px 32px; border: 1px solid rgba(255,255,255,.55); background: #ddcbc0; color: var(--brown); }
 .special-offer p { font: 700 17px/1.2 var(--display); letter-spacing: 0; text-transform: uppercase; }
 .special-offer h2 { margin-top: 7px; font-size: 29px; color: var(--brown); }
-.special-offer-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; margin-top: 18px; border-top: 1px solid rgba(118,67,41,.28); border-bottom: 1px solid rgba(118,67,41,.28); }
-.special-offer-options strong { display: grid; place-items: center; min-height: 64px; padding: 12px 24px; font-size: 18px; line-height: 1.35; font-weight: 700; }
-.special-offer-options strong + strong { border-left: 1px solid rgba(118,67,41,.28); }
-.special-offer span { display: block; margin-top: 13px; font-size: 14px; line-height: 1.4; }
+.special-offer-options { display: flex; flex-direction: column; gap: 0; margin-top: 18px; border-top: 1px solid rgba(118,67,41,.28); border-bottom: 1px solid rgba(118,67,41,.28); }
+.special-offer-options strong { display: grid; place-items: center; min-height: 64px; padding: 14px 20px; font-size: 18px; line-height: 1.35; font-weight: 700; text-align: center; text-wrap: balance; }
+.special-offer-options strong + strong { border-top: 1px solid rgba(118,67,41,.28); }
+.special-offer span { display: block; margin-top: 13px; font-size: 14px; line-height: 1.4; text-wrap: balance; }
 .special-offer .btn-outline { margin-top: 16px; border-color: var(--brown); background: var(--brown); color: #fff; }
 .special-offer .btn-outline:hover { background: #000; border-color: #000; color: #fff; }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
@@ -247,7 +251,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .page-title-band { padding: 60px 24px 52px; }
   .page-title-band h1 { font-size: 36px; }
   .schedule-banner { height: auto; padding: 0; }
-  .schedule-banner img { width: 100%; height: auto; }
+  .schedule-crop { width: 100%; }
   .yoga-title h1 { font-size: 38px; }
   .yoga-title p { margin-top: 28px; font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
@@ -260,7 +264,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .special-offer h2 { font-size: 25px; }
   .special-offer-options { margin-top: 16px; }
   .special-offer-options strong { min-height: 0; padding: 13px 8px; font-size: 16px; }
-  .special-offer-options strong + strong { border-top: 1px solid rgba(118,67,41,.28); border-left: 0; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
   .method-section { padding: 64px 0; }

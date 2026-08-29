@@ -1,5 +1,5 @@
 import logo from "../../assets/adarsha-yoga.png";
-import scheduleCurrent from "../../assets/schedule-current-no-header.png";
+import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
@@ -35,8 +35,8 @@ export const siteMeta = {
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
   announcement: {
-    text: "🏖️ El estudio está cerrado del 1/8 - 23/8. ¡Nos vemos el 24 de agosto! 🧘🏽",
-    // href: "/yoga/#precios",
+    text: "🌞 ¡Bienvenidos de vuelta del verano! Descubre nuestras ofertas de septiembre para nuevos alumnos →",
+    href: "/yoga/#precios",
   },
 };
 
@@ -48,7 +48,7 @@ export const contact = {
   contactHeading: "Contacto",
   intro: "Ponte en contacto con nosotros enviándonos un mail :-)",
   email: "hello@espaiadarsha.com",
-  instagram: { prefix: "Instagram:", label: "@espaiadarsha", href: "https://www.instagram.com/espaiadarsha/" },
+  instagram: { prefix: "Instagram:", label: "@adarshayoga.bcn", href: "https://www.instagram.com/adarshayoga.bcn/" },
   mapUrl: "https://www.google.com/maps?q=Espai%20Adarsha%20Yoga%20Studio%2C%20Barcelona&output=embed",
 };
 
@@ -81,7 +81,7 @@ export const navItems = [
 ];
 
 export const homeCopy = {
-  title: "Adarsha Yoga. Un refugio de conexión con el cuerpo y paz en medio de la ciudad.",
+  title: "Adarsha Yoga. Un refugio de yoga, presencia y calma en medio de la ciudad.",
   subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",
@@ -95,7 +95,7 @@ export const homeCopy = {
   ],
   scheduleCta: "    HORARIO    ",
   scheduleHref: "/yoga/",
-  ofertaCta: "¡OFERTA OTOÑO! 🍂",
+  ofertaCta: "¡OFERTA SEPTIEMBRE! 🧘🏽",
   ofertaHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
@@ -136,16 +136,16 @@ export const yogaCopy = {
   ],
   methodTitle: "Un método basado en la progresión",
   method: [
-    { title: "Atención Individualizada", body: "Al trabajar en grupos reducidos, es posible realizar un seguimiento real del progreso de cada alumno, ajustando las posturas y la intensidad según su punto de partida." },
-    { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las sesiones están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva, asegurando que cada movimiento se realice de forma segura." },
-    { title: "Evolución Tangible", body: "Trabajamos con objetivos claros. La intención es que experimentes una mejora constante en tu flexibilidad y fuerza física, evolucionando en las posturas y, sobre todo, en tu bienestar mental." },
+    { title: "Atención Individualizada", body: "Nos importa conocerte y saber desde qué punto partes. Por eso, ofrecemos una sesión individual de 30 minutos a los nuevos alumnos para valorar tus necesidades y adaptar tu integración a las clases. Después, mantenemos el acompañamiento: ofrecemos una sesión de seguimiento cada año para explorar y profundizar más en la práctica." },
+    { title: "Evolución Tangible", body: "Al trabajar en grupos reducidos, realizamos un seguimiento real del progreso de cada alumno, ajustando las posturas y la intensidad según tus necesidades." },
+    { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las clases están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva y segura, permitiendo avanzar con confianza en cada movimiento de la práctica." },
   ],
   specialOffer: {
-    eyebrow: "Oferta Otoño",
+    eyebrow: "Oferta Septiembre",
     title: "Promoción para alumnos nuevos",
-    deadline: "Oferta válida hasta el 30 de septiembre",
+    deadline: "Oferta válida hasta el 30 de septiembre para residentes en Barcelona",
     items: [
-      // "Pack 4 clases grupales: 60€",
+      "Clase de prueba gratis",
       "Semana de prueba por 30€",
     ],
     cta: "Escríbenos y reserva tu primera clase",
@@ -172,12 +172,12 @@ export const yogaCopy = {
   ],
   individualTitle: "Clases individuales adaptadas a tu cuerpo",
   individualEyebrow: "con Laia",
-  individualIntro: "Si buscas un acompañamiento exclusivo para integrar el yoga en tu vida según tus propios ritmos y objetivos, he diseñado dos formas de trabajar juntas/os.",
+  individualIntro: "Si buscas un acompañamiento exclusivo para integrar el yoga en tu vida según tus propios ritmos y objetivos, hemos diseñado dos formas de trabajar juntas/os.",
   individualOptions: [
     { title: "Sesión Individual Estratégica", body: "Ideal para resolver dudas puntuales, si hay algun grupo de posturas que necesitas aprender de forma más profunda o diseñar una secuencia personalizada que puedas practicar de forma autónoma en casa." },
     { title: "Programa de Práctica Personal", body: "Un proceso de acompañamiento profundo con sesiones semanales o quincenales. Trabajaremos de forma constante en tus metas para que experimentes los beneficios del yoga de manera integral y consciente." },
   ],
-  individualClosing: "¿Quieres empezar el programa? Empecemos con una sesión de prueba para conocernos, escuchar tus necesidades y trazar el camino de tu práctica.",
+  individualClosing: "¿Quieres empezar el programa? Empecemos con una sesión para conocernos, escuchar tus necesidades y trazar el camino de tu práctica.",
   officeTitle: "Yoga en la oficina para la salud física y mental de tu equipo",
   officeBody: [
     "La integración del yoga, la meditación y la respiración consciente en la oficina transforma el entorno laboral en un espacio de concentración y bienestar.",
@@ -249,7 +249,7 @@ export const equipoCopy = {
   pageTitle: "Equipo | Adarsha Yoga",
   name: "Adarsha",
   sanskrit: "Ādarśa (आदर्श)",
-  meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para mirarse y transformarse desde adentro hacia fuera."],
+  meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para observarse y transformarse desde adentro hacia fuera."],
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
   members: [
