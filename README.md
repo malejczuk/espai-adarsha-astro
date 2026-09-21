@@ -1,6 +1,6 @@
 # Espai Adarsha Website
 
-Astro rebuild of [espaiadarsha.com](https://www.espaiadarsha.com), intended for deployment on Cloudflare Pages.
+Astro rebuild of [adarshayoga.es](https://adarshayoga.es), intended for deployment on Cloudflare Pages. Previously served at espaiadarsha.com.
 
 ## Quick Start
 
