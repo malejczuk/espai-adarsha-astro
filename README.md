@@ -1,6 +1,6 @@
 # Espai Adarsha Website
 
-Astro rebuild of [adarshayoga.es](https://adarshayoga.es), intended for deployment on Cloudflare Pages. Previously served at espaiadarsha.com.
+Astro rebuild of [adarshayoga.es](https://adarshayoga.es), intended for deployment on Cloudflare.
 
 ## Quick Start
 
@@ -98,6 +98,35 @@ Use these settings in Cloudflare Pages:
 - Node version: `22`
 
 Cloudflare will install dependencies and build the site automatically on deploy.
+
+## Domains
+
+The site is served at `adarshayoga.es`. The `site` property in `astro.config.mjs`
+points at that apex domain; it is what Astro uses to build absolute URLs.
+
+`espaiadarsha.com` is the previous domain. It no longer serves the site: both it
+and `www.espaiadarsha.com` 301-redirect to `adarshayoga.es`, preserving the path
+and query string. `www.adarshayoga.es` likewise redirects to the apex, and both
+zones force HTTPS.
+
+These redirects are Cloudflare Redirect Rules, configured in the dashboard rather
+than in this repository. Nothing here needs to change when they change. Keep any
+future redirects there too, rather than in the Astro source, so they run at the
+edge and do not require a deploy.
+
+## Sitemap
+
+`@astrojs/sitemap` generates `sitemap-index.xml` and `sitemap-0.xml` into `dist/`
+on every build, from the routes in `src/pages/`. The URLs it writes come from the
+`site` property in `astro.config.mjs`, so that value must stay correct.
+
+There is no `robots.txt` in this repository; Cloudflare serves an auto-generated
+one. Adding `public/robots.txt` would override it, so copy over Cloudflare's
+content-signal declarations if you ever add one.
+
+The contact address `hello@espaiadarsha.com` still uses the old domain. Email
+routing is independent of the website and was intentionally left in place; moving
+it needs a separate Email Routing and SMTP2GO setup on the new domain.
 
 ## Forms
 
