@@ -155,7 +155,7 @@ export const yogaCopy = {
     {
       title: "Clases Grupales",
       items: [
-        "Mensualidad una clase por semana: 65€",
+        "Mensualidad 5 clases / mes: 65€",
         "Mensualidad clases ilimitadas: 90€",
         "Abono 10 clases: 165€ (tres meses)",
         "Clase suelta: 20€",
