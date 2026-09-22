@@ -35,7 +35,7 @@ export const siteMeta = {
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
   announcement: {
-    text: "🌞 ¡Bienvenidos de vuelta del verano! Descubre nuestras ofertas de septiembre para nuevos alumnos →",
+    text: "🍂 ¡Hola yoguis! Descubre nuestras ofertas de otoño para nuevos alumnos 🌞 →",
     href: "/yoga/#precios",
   },
 };
@@ -95,7 +95,7 @@ export const homeCopy = {
   ],
   scheduleCta: "    HORARIO    ",
   scheduleHref: "/yoga/",
-  ofertaCta: "¡OFERTA SEPTIEMBRE! 🧘🏽",
+  ofertaCta: "¡OFERTA OTOÑO! 🧘🏽",
   ofertaHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
@@ -141,9 +141,9 @@ export const yogaCopy = {
     { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las clases están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva y segura, permitiendo avanzar con confianza en cada movimiento de la práctica." },
   ],
   specialOffer: {
-    eyebrow: "Oferta Septiembre",
+    eyebrow: "Oferta Otoño",
     title: "Promoción para alumnos nuevos",
-    deadline: "Oferta válida hasta el 30 de septiembre para residentes en Barcelona",
+    deadline: "Oferta válida hasta el 31 de octubre para residentes en Barcelona",
     items: [
       "Clase de prueba gratis",
       "Semana de prueba por 30€",
@@ -155,7 +155,7 @@ export const yogaCopy = {
     {
       title: "Clases Grupales",
       items: [
-        "Mensualidad una clase por semana: 65€",
+        "Mensualidad 5 clases / mes: 65€",
         "Mensualidad clases ilimitadas: 90€",
         "Abono 10 clases: 165€ (tres meses)",
         "Clase suelta: 20€",

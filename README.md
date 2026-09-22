@@ -1,6 +1,6 @@
 # Espai Adarsha Website
 
-Astro rebuild of [espaiadarsha.com](https://www.espaiadarsha.com), intended for deployment on Cloudflare Pages.
+Astro rebuild of [adarshayoga.es](https://adarshayoga.es), intended for deployment on Cloudflare.
 
 ## Quick Start
 
@@ -88,16 +88,59 @@ The built site is generated into:
 dist/
 ```
 
-## Cloudflare Pages
+## Cloudflare
 
-Use these settings in Cloudflare Pages:
+The site runs as a Cloudflare **Worker** named `espai-adarsha-astro`, not as a
+Pages project. `wrangler.jsonc` holds that configuration: `dist/_worker.js/index.js`
+is the entry point, and `dist/` is bound as the static asset directory.
 
-- Framework preset: `Astro`
+Deploys happen through Cloudflare's Git integration. Merging to `main` triggers a
+build on Cloudflare's runners, which install dependencies and run `npm run build`
+themselves. Nothing is uploaded from a local machine, and `dist/` is gitignored,
+so what ships is built from the repository alone.
+
+Build settings, for reference:
+
 - Build command: `npm run build`
-- Build output directory: `dist`
+- Deploy command: `npx wrangler deploy`
 - Node version: `22`
 
-Cloudflare will install dependencies and build the site automatically on deploy.
+`npm run deploy` exists as a direct-upload escape hatch. It builds locally and
+pushes straight to the Worker with Wrangler, bypassing Git entirely, and needs
+`wrangler login` first. Prefer merging to `main`, so that what is deployed always
+matches what is committed.
+
+Build logs live under the Worker's Deployments tab in the Cloudflare dashboard.
+Custom domains are managed there too, under Domains & Routes.
+
+## Domains
+
+The site is served at `adarshayoga.es`. The `site` property in `astro.config.mjs`
+points at that apex domain; it is what Astro uses to build absolute URLs.
+
+`espaiadarsha.com` is the previous domain. It no longer serves the site: both it
+and `www.espaiadarsha.com` 301-redirect to `adarshayoga.es`, preserving the path
+and query string. `www.adarshayoga.es` likewise redirects to the apex, and both
+zones force HTTPS.
+
+These redirects are Cloudflare Redirect Rules, configured in the dashboard rather
+than in this repository. Nothing here needs to change when they change. Keep any
+future redirects there too, rather than in the Astro source, so they run at the
+edge and do not require a deploy.
+
+## Sitemap
+
+`@astrojs/sitemap` generates `sitemap-index.xml` and `sitemap-0.xml` into `dist/`
+on every build, from the routes in `src/pages/`. The URLs it writes come from the
+`site` property in `astro.config.mjs`, so that value must stay correct.
+
+There is no `robots.txt` in this repository; Cloudflare serves an auto-generated
+one. Adding `public/robots.txt` would override it, so copy over Cloudflare's
+content-signal declarations if you ever add one.
+
+The contact address `hello@espaiadarsha.com` still uses the old domain. Email
+routing is independent of the website and was intentionally left in place; moving
+it needs a separate Email Routing and SMTP2GO setup on the new domain.
 
 ## Forms
 
