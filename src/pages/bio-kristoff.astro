@@ -5,7 +5,7 @@ import { bioCopy } from "../content/site";
 const bio = bioCopy.kristoff;
 ---
 <BaseLayout title={bio.pageTitle}>
-  <article class="bio-page">
+  <article class="bio-page bio-page-centred">
     {bio.sections.map((section, index) => (
       <section class:list={["bio-section", { "bio-section-reverse": index % 2 === 1 }]}>
         <div class="bio-copy">
@@ -19,5 +19,9 @@ const bio = bioCopy.kristoff;
       <a href={bio.website.href}>{bio.website.label}</a>
       <a href={bio.instagram.href}>{bio.instagram.label}</a>
     </div>
+    <section class="bio-english" lang="en">
+      <h2>{bio.english.heading} <span>{bio.english.headingNote}</span></h2>
+      {bio.english.paragraphs.map((item) => <p>{item}</p>)}
+    </section>
   </article>
 </BaseLayout>

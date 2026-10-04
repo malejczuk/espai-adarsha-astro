@@ -215,13 +215,13 @@ export const colaboradoresCopy = {
   pageTitle: "Colaboradores | Adarsha Yoga",
   title: "Nuestro ecosistema de colaboradores",
   subtitle: "Conoce otras actividades que tienen lugar en Adarsha Yoga",
-  activity: "Movimiento & Consciencia Pélvica",
+  activity: "Movimiento & Conciencia Pélvica",
   teacher: "con Raquel Jaroslavsky",
   question: "¿Te sientes desconectada de tu pélvis?",
   body: [
     "Tu pelvis es el centro de tu vitalidad: un espacio de calma, fuerza y placer esperando a ser habitado.",
     "A menudo, esta parte de nuestro cuerpo queda olvidada o cargada de tensiones y memorias que no siempre sabemos cómo liberar.",
-    "Las sesiones de Movimiento y Consciencia Pélvica nacen para transformar esa sensación en una relación más cercana, sentida y vital con tu propio cuerpo, a través del movimiento y la relajación en un clima de seguridad y sin juicios.",
+    "Las sesiones de Movimiento y Conciencia Pélvica nacen para transformar esa sensación en una relación más cercana, sentida y vital con tu propio cuerpo, a través del movimiento y la relajación en un clima de seguridad y sin juicios.",
     "Raquel, terapeuta corporal especializada en suelo pélvico y sexualidad, te acompañará a redescubrir tu anatomía y a despertar tu pelvis. A través de ejercicios diseñados para relajar, flexibilizar y tonificar la musculatura del suelo pélvico, no solo mejoraremos tu salud física, sino que abriremos la puerta a nuevos lenguajes para reconectar con el deseo, la energía vital y un erotismo más consciente.",
     "Regálate un espacio para habitarte de forma plena y recuperar tu bienestar más profundo.",
   ],
@@ -253,8 +253,8 @@ export const equipoCopy = {
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
   members: [
-    { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora y CEO", href: "/bio-laia/", image: equipoLaia },
-    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "COO", href: "/bio-kristoff/", image: kristoffTeam },
+    { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora", href: "/bio-laia/", image: equipoLaia },
+    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "Director de operaciones", href: "/bio-kristoff/", image: kristoffTeam },
     { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica · Colaboradora", href: "/colaboradores/", image: equipoRaquel },
   ],
 };
@@ -309,21 +309,30 @@ export const bioCopy = {
         image: kristoffBio1,
         imageAlt: "Kristoff Malejczuk enseñando yoga",
         paragraphs: [
-          "In the summer of 2019, at the invitation of a friend, I began to attend a weekly yoga class. By the beginning of 2021, yoga had become my sole form of exercise. At this time, I was exclusively practicing with YouTube videos.",
-          "In 2022, I joined a studio for the first time, HAUM Studios in San Francisco. I quickly experienced big leaps in my practice. Several months after joining, I was looking once more for a way to deepen my practice. I signed up for the next teacher training offered at my studio.",
-          "I completed a 200-hour YTT in Hatha Vinyasa in 2023 under my teachers Danni Pomplun and Yvonne Kingsley, co-founders of HAUM. For me, the training was heart-opening: a profound paradigm shift after a life of operating at a head-level. Importantly, I realized at an internal level that my engineering job was not right for me anymore, and, in early 2024, I left my job.",
+          "En 2019 empecé a practicar yoga en la sede de Apple en California, por invitación de una amiga. A principios de 2021, el yoga asana se había convertido en mi única forma de ejercicio físico.",
+          "En 2022 me uní a HAUM Studios en San Francisco. Mi práctica dio grandes saltos y pronto quise profundizar más. Esto me llevó a inscribirme en una formación de profesorado de 200 horas en Hatha Vinyasa con Danni Pomplun e Yvonne Kingsley, cofundadores de HAUM. Esta experiencia me abrió el corazón: ¡un profundo cambio de paradigma tras una vida operando desde la cabeza! Terminé la formación en 2023, y fue la chispa que me llevó a dejar mi trabajo de ingeniero a principios de 2024.",
         ],
       },
       {
         image: kristoffBio2,
         imageAlt: "Kristoff Malejczuk practicando una inversión",
         paragraphs: [
-          "Next began a year of backpacking around Latin America. In early 2025, I stumbled across a master of Karma Yoga in the Colombian Andes. His name was Gabriel, and he was the owner of the hostel where I was staying, Yambolombia. Recognizing him as a teacher, I soon returned to devote one month to the practice of Karma Yoga, with Gabriel as my teacher. Next, I headed to the Amazon jungle, where I spent a month cradled by la Madre Selva, another master teacher.",
-          "In late 2025, I moved to Barcelona and began practicing Mysore-style Hatha Ashtanga under Aleix Griñó at Viveka Yoga Shala. As of 2026, I teach regularly at Adarsha Yoga, also in Barcelona.",
+          "Mi siguiente aventura fue un año mochileando por Latinoamérica. En 2025 me encontré con Gabriel, un alto ejemplo de Karma Yoga en forma de dueño de hostal en los Andes colombianos. Reconociéndolo como maestro, pasé un mes de servicio en su hostal, Yambolombia. Después me dirigí a la selva amazónica, donde conocí a otra gran maestra, la Madre Selva.",
+          "En otoño de 2025 me mudé a Barcelona y empecé a practicar Hatha Yoga al estilo Mysore con Aleix Griñó. Desde 2026 doy clases con regularidad en Adarsha Yoga. En otoño de 2026 completé un retiro de meditación Vipassana de 10 días. Actualmente estoy cursando mi segunda formación de profesorado de 200 horas, en Viveka Yoga Shala, con sus cofundadores Aleix Griñó y Sebas Arbondo.",
         ],
       },
     ],
     website: { label: "www.thestudio.uno", href: "https://thestudio.uno/" },
     instagram: { label: "@malejczuk", href: "https://www.instagram.com/malejczuk/" },
+    english: {
+      heading: "About Kristoff.",
+      headingNote: "(English version)",
+      paragraphs: [
+        "In 2019, I started practicing yoga at Apple’s headquarters in California, at the invitation of a friend. By the beginning of 2021, yoga asana had become my only form of exercise.",
+        "In 2022, I joined HAUM Studios in San Francisco. I experienced big leaps in my practice and was soon looking to go deeper. This led me to enroll in a 200-hour Hatha Vinyasa teacher training under Danni Pomplun and Yvonne Kingsley, co-founders of HAUM. The training was heart-opening — a profound paradigm shift after a life of operating from head-level. I completed the training in 2023. This became the catalyst for me leaving my engineering job in early 2024.",
+        "My next adventure was a year of backpacking through Latin America. In 2025, I stumbled across Gabriel, a high practitioner of Karma Yoga in the form of a hostel owner in the Colombian Andes. Recognizing him as a teacher, I spent one month of service at his hostel, Yambolombia. Next, I headed to the Amazon jungle, where I met another master teacher, la Madre Selva.",
+        "In fall 2025, I moved to Barcelona and started practicing Mysore-style Hatha Yoga under Aleix Griñó. Since 2026, I’ve been teaching regularly at Adarsha Yoga. In fall 2026, I completed a 10-day Vipassana meditation retreat. I’m currently enrolled in my second 200-hour teacher training, at Viveka Yoga Shala with its co-founders, Aleix Griñó and Sebas Arbondo.",
+      ],
+    },
   },
 };
