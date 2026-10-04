@@ -5,7 +5,7 @@ import { bioCopy } from "../content/site";
 const bio = bioCopy.kristoff;
 ---
 <BaseLayout title={bio.pageTitle}>
-  <article class="bio-page">
+  <article class="bio-page bio-page-centred">
     {bio.sections.map((section, index) => (
       <section class:list={["bio-section", { "bio-section-reverse": index % 2 === 1 }]}>
         <div class="bio-copy">
