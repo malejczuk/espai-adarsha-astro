@@ -253,8 +253,8 @@ export const equipoCopy = {
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
   members: [
-    { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora y CEO", href: "/bio-laia/", image: equipoLaia },
-    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "COO", href: "/bio-kristoff/", image: kristoffTeam },
+    { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora", href: "/bio-laia/", image: equipoLaia },
+    { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "Director de operaciones", href: "/bio-kristoff/", image: kristoffTeam },
     { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica · Colaboradora", href: "/colaboradores/", image: equipoRaquel },
   ],
 };
