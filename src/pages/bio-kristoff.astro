@@ -20,7 +20,7 @@ const bio = bioCopy.kristoff;
       <a href={bio.instagram.href}>{bio.instagram.label}</a>
     </div>
     <section class="bio-english" lang="en">
-      <h2>{bio.english.heading}</h2>
+      <h2>{bio.english.heading} <span>{bio.english.headingNote}</span></h2>
       {bio.english.paragraphs.map((item) => <p>{item}</p>)}
     </section>
   </article>

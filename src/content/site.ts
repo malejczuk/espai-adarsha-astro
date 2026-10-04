@@ -325,7 +325,8 @@ export const bioCopy = {
     website: { label: "www.thestudio.uno", href: "https://thestudio.uno/" },
     instagram: { label: "@malejczuk", href: "https://www.instagram.com/malejczuk/" },
     english: {
-      heading: "English version",
+      heading: "About Kristoff",
+      headingNote: "(English version).",
       paragraphs: [
         "In 2019, I started practicing yoga at Apple’s headquarters in California, at the invitation of a friend. By the beginning of 2021, yoga asana had become my only form of exercise.",
         "In 2022, I joined HAUM Studios in San Francisco. I experienced big leaps in my practice and was soon looking to go deeper. This led me to enroll in a 200-hour Hatha Vinyasa teacher training under Danni Pomplun and Yvonne Kingsley, co-founders of HAUM. The training was heart-opening — a profound paradigm shift after a life of operating from head-level. I completed the training in 2023. This became the catalyst for me leaving my engineering job in early 2024.",
