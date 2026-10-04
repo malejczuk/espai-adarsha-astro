@@ -309,17 +309,16 @@ export const bioCopy = {
         image: kristoffBio1,
         imageAlt: "Kristoff Malejczuk enseñando yoga",
         paragraphs: [
-          "In the summer of 2019, at the invitation of a friend, I began to attend a weekly yoga class. By the beginning of 2021, yoga had become my sole form of exercise. At this time, I was exclusively practicing with YouTube videos.",
-          "In 2022, I joined a studio for the first time, HAUM Studios in San Francisco. I quickly experienced big leaps in my practice. Several months after joining, I was looking once more for a way to deepen my practice. I signed up for the next teacher training offered at my studio.",
-          "I completed a 200-hour YTT in Hatha Vinyasa in 2023 under my teachers Danni Pomplun and Yvonne Kingsley, co-founders of HAUM. For me, the training was heart-opening: a profound paradigm shift after a life of operating at a head-level. Importantly, I realized at an internal level that my engineering job was not right for me anymore, and, in early 2024, I left my job.",
+          "En 2019 empecé a practicar yoga en la sede de Apple en California, por invitación de una amiga. A principios de 2021, el yoga asana se había convertido en mi única forma de ejercicio físico.",
+          "En 2022 me uní a HAUM Studios en San Francisco. Mi práctica dio grandes saltos y pronto quise profundizar más. Esto me llevó a inscribirme en una formación de profesorado de 200 horas en Hatha Vinyasa con Danni Pomplun e Yvonne Kingsley, cofundadores de HAUM. Esta experiencia me abrió el corazón: ¡un profundo cambio de paradigma tras una vida operando desde la cabeza! Terminé la formación en 2023, y fue la chispa que me llevó a dejar mi trabajo de ingeniero a principios de 2024.",
         ],
       },
       {
         image: kristoffBio2,
         imageAlt: "Kristoff Malejczuk practicando una inversión",
         paragraphs: [
-          "Next began a year of backpacking around Latin America. In early 2025, I stumbled across a master of Karma Yoga in the Colombian Andes. His name was Gabriel, and he was the owner of the hostel where I was staying, Yambolombia. Recognizing him as a teacher, I soon returned to devote one month to the practice of Karma Yoga, with Gabriel as my teacher. Next, I headed to the Amazon jungle, where I spent a month cradled by la Madre Selva, another master teacher.",
-          "In late 2025, I moved to Barcelona and began practicing Mysore-style Hatha Ashtanga under Aleix Griñó at Viveka Yoga Shala. As of 2026, I teach regularly at Adarsha Yoga, also in Barcelona.",
+          "Mi siguiente aventura fue un año mochileando por Latinoamérica. En 2025 me encontré con Gabriel, un alto ejemplo de Karma Yoga en forma de dueño de hostal en los Andes colombianos. Reconociéndolo como maestro, pasé un mes de servicio en su hostal, Yambolombia. Después me dirigí a la selva amazónica, donde conocí a otra gran maestra, la Madre Selva.",
+          "En otoño de 2025 me mudé a Barcelona y empecé a practicar Hatha Yoga al estilo Mysore con Aleix Griñó. Desde 2026 doy clases con regularidad en Adarsha Yoga. En otoño de 2026 completé un retiro de meditación Vipassana de 10 días. Actualmente estoy cursando mi segunda formación de profesorado de 200 horas, en Viveka Yoga Shala, con sus cofundadores Aleix Griñó y Sebas Arbondo.",
         ],
       },
     ],
