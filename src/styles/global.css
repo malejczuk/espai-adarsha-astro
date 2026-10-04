@@ -102,11 +102,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Yoga */
 .schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--schedule-brown); }
-/* schedule-current.png is 2025x2531. Crop away the "Adarsha Yoga" title band
-   (top 522px) and the stray light column on the right edge, leaving the
-   2023x2009 grid so it frames exactly as before. */
-.schedule-crop { position: relative; width: 604px; aspect-ratio: 2023 / 2009; overflow: hidden; }
-.schedule-crop img { position: absolute; left: 0; top: calc(-100% * 522 / 2009); width: calc(100% * 2025 / 2023); height: auto; }
+/* schedule-current.png is 1080x1350. Crop away the "Adarsha Yoga" title band
+   (top 270px), leaving the 1080x1080 grid. The title band ends at 242px and
+   the day dividers begin at 312px, so 270 sits cleanly between the two. */
+.schedule-crop { position: relative; width: 604px; aspect-ratio: 1 / 1; overflow: hidden; }
+.schedule-crop img { position: absolute; left: 0; top: calc(-100% * 270 / 1080); width: 100%; height: auto; }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 700 50px/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
