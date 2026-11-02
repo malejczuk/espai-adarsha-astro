@@ -3,14 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, images } from "../content/site";
 ---
 
-<BaseLayout title={contact.pageTitle}>
+<BaseLayout title={contact.pageTitle} description={contact.description}>
   <section id="contacto" class="contact-page">
     <h1>{contact.heading}</h1>
     <div class="contact-columns">
       <div class="contact-column"><h2>{contact.addressHeading}</h2><p>{contact.addressLines.map((line) => <>{line}<br /></>)}</p></div>
       <div class="contact-column"><h2>{contact.contactHeading}</h2><p>{contact.intro}<br /><a href={`mailto:${contact.email}`}>{contact.email}</a><br /><span class="contact-instagram">{contact.instagram.prefix} <a href={contact.instagram.href}>{contact.instagram.label}</a></span></p></div>
     </div>
-    <img class="contact-portrait" src={images.teamWindow.src} alt="Profesoras Espai Adarsha" />
-    <iframe class="map-frame" title="Mapa de Espai Adarsha" loading="lazy" src={contact.mapUrl}></iframe>
+    <img class="contact-portrait" src={images.teamWindow.src} alt="Profesoras Adarsha Yoga" />
+    <iframe class="map-frame" title="Mapa de Adarsha Yoga" loading="lazy" src={contact.mapUrl}></iframe>
   </section>
 </BaseLayout>

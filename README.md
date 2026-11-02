@@ -1,4 +1,4 @@
-# Espai Adarsha Website
+# Adarsha Yoga Website
 
 Astro rebuild of [adarshayoga.es](https://adarshayoga.es), intended for deployment on Cloudflare.
 
@@ -138,13 +138,14 @@ There is no `robots.txt` in this repository; Cloudflare serves an auto-generated
 one. Adding `public/robots.txt` would override it, so copy over Cloudflare's
 content-signal declarations if you ever add one.
 
-The contact address `hello@espaiadarsha.com` still uses the old domain. Email
-routing is independent of the website and was intentionally left in place; moving
-it needs a separate Email Routing and SMTP2GO setup on the new domain.
+The contact address is `hello@adarshayoga.es`. Email Routing and SMTP2GO are
+configured on the `adarshayoga.es` zone, so the address resolves. Routing is
+independent of the website: changing the address in `src/content/site.ts` changes
+only what the site displays, not where mail goes.
 
 ## Forms
 
-The contact form submits through FormSubmit to `hello@espaiadarsha.com`.
+The contact form submits through FormSubmit to `hello@adarshayoga.es`.
 
 The first real submission may trigger a FormSubmit confirmation email. Open that email and activate the endpoint once.
 

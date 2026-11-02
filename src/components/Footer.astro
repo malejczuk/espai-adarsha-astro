@@ -1,7 +1,49 @@
 ---
-import { siteMeta } from "../content/site";
+import { contact, footerCopy, siteMeta } from "../content/site";
+
+const { visit, contact: contactCol, follow } = footerCopy.columns;
+const reviews = footerCopy.googleReviews;
 ---
 
 <footer class="site-footer">
-  <p>{siteMeta.copyright}</p>
+  <div class="container footer-inner">
+    <p class="footer-tagline">{footerCopy.tagline}</p>
+
+    <a class="footer-rating" href={contact.mapLink} target="_blank" rel="noopener noreferrer">
+      <span class="footer-rating-star" aria-hidden="true">★</span>
+      <span><strong>{reviews.rating}</strong> {reviews.prefix} · {reviews.count} {reviews.suffix}</span>
+    </a>
+
+    <div class="footer-columns">
+      <section class="footer-column">
+        <h2>{visit.heading}</h2>
+        <address>
+          {contact.addressLines.map((line, index) => (
+            <>{index > 0 && <br />}{line}</>
+          ))}
+          <span class="footer-metro">{visit.metro}</span>
+        </address>
+        <a href={contact.mapLink} target="_blank" rel="noopener noreferrer">{visit.mapCta}</a>
+      </section>
+
+      <section class="footer-column">
+        <h2>{contactCol.heading}</h2>
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>
+      </section>
+
+      <section class="footer-column">
+        <h2>{follow.heading}</h2>
+        <a class="footer-instagram" href={contact.instagram.href} target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+            <circle cx="12" cy="12" r="4.2" />
+            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+          </svg>
+          <span>{contact.instagram.label}</span>
+        </a>
+      </section>
+    </div>
+
+    <p class="footer-legal">{siteMeta.copyright}</p>
+  </div>
 </footer>

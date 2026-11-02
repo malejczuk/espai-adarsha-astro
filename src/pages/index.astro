@@ -17,17 +17,14 @@ const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
       </div>
       <div class="home-cta-group">
         <a class="btn-outline" href={homeCopy.scheduleHref}>{homeCopy.scheduleCta}</a>
-        <a class="btn-outline btn-offer" href={homeCopy.ofertaHref}>{homeCopy.ofertaCta}</a>
+        <a class="btn-outline" href={homeCopy.preciosHref}>{homeCopy.preciosCta}</a>
       </div>
     </div>
-    <img class="home-intro-image" src={images.homeHero.src} alt="Práctica de yoga en Espai Adarsha" />
-  </section>
-
-  <section class="home-schedule">
+    <img class="home-intro-image" src={images.homeHero.src} alt="Práctica de yoga en Adarsha Yoga" />
   </section>
 
   <section class="home-value">
-    <img class="home-value-image" src={images.homePractice.src} alt="Práctica consciente en Espai Adarsha" />
+    <img class="home-value-image" src={images.homePractice.src} alt="Práctica consciente en Adarsha Yoga" />
     <div class="home-value-copy">
       <h2>{homeCopy.practiceTitle}</h2>
       {homeCopy.practiceBody.map((item) => <p>{item}</p>)}

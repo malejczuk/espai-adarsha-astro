@@ -3,7 +3,6 @@ import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
-import studioWindow from "../../assets/1-DSC01027.jpg";
 import studioDetail from "../../assets/54-DSC01118.jpg";
 import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
@@ -34,22 +33,21 @@ export const siteMeta = {
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
-  announcement: {
-    text: "🍂 ¡Hola yoguis! Descubre nuestras ofertas de otoño para nuevos alumnos 🌞 →",
-    href: "/yoga/#precios",
-  },
 };
 
 export const contact = {
   pageTitle: "Adarsha Yoga | Barcelona",
+  description:
+    "Estudio de yoga en Calle Girona 166, Barcelona, junto al metro Verdaguer. Escríbenos a hello@adarshayoga.es y reserva tu primera clase con nosotros.",
   heading: "Contacto",
   addressHeading: "Dirección",
   addressLines: ["Calle Girona 166", "Entresuelo 3a", "08037 Barcelona"],
   contactHeading: "Contacto",
   intro: "Ponte en contacto con nosotros enviándonos un mail :-)",
-  email: "hello@espaiadarsha.com",
+  email: "hello@adarshayoga.es",
   instagram: { prefix: "Instagram:", label: "@adarshayoga.bcn", href: "https://www.instagram.com/adarshayoga.bcn/" },
-  mapUrl: "https://www.google.com/maps?q=Espai%20Adarsha%20Yoga%20Studio%2C%20Barcelona&output=embed",
+  mapUrl: "https://www.google.com/maps?q=Adarsha%20Yoga%2C%20Carrer%20de%20Girona%20166%2C%20Barcelona&output=embed",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=Adarsha+Yoga%2C+Carrer+de+Girona+166%2C+Barcelona",
 };
 
 export const images = {
@@ -58,7 +56,6 @@ export const images = {
   studioWide,
   studioTall,
   studioShelf,
-  studioWindow,
   studioDetail,
   groupClass,
   individualSession,
@@ -85,7 +82,7 @@ export const homeCopy = {
   subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",
-    "Te acompañamos para que conectes contigo mismo a través de la practica de yoga y evoluciones a tu ritmo.",
+    "Te acompañamos para que conectes contigo mismo a través de la práctica de yoga y evoluciones a tu ritmo.",
   ],
   practiceTitle: "El valor de una práctica cuidada",
   practiceBody: [
@@ -95,8 +92,8 @@ export const homeCopy = {
   ],
   scheduleCta: "    HORARIO    ",
   scheduleHref: "/yoga/",
-  ofertaCta: "¡OFERTA OTOÑO! 🧘🏽",
-  ofertaHref: "/yoga/#precios",
+  preciosCta: "    PRECIOS    ",
+  preciosHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
@@ -115,6 +112,8 @@ export const homeCopy = {
 
 export const yogaCopy = {
   pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Adarsha Yoga",
+  description:
+    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Consulta horarios, bonos y precios en Adarsha Yoga.",
   introTitle: "Practica yoga en Adarsha",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   rhythmTitle: "Tu práctica, tu ritmo",
@@ -123,15 +122,15 @@ export const yogaCopy = {
   styles: [
     {
       title: "Hatha Vinyasa Yoga",
-      body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu practica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
+      body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
     },
     {
       title: "Yoga Integral",
       body: "Una modalidad más suave para quienes buscan un ritmo pausado y consciente, ya sea que busques una clase para aprender las bases, o practicar durante el embarazo, o en la etapa de la madurez. Nos enfocamos en técnicas de respiración, posturas estables, aprender la alineación y relajación profunda para restaurar la vitalidad y la movilidad de todo el cuerpo.",
     },
     {
-      title: "Yin Yoga & Pranayama",
-      body: "Combinamos técnicas de respiración para serenar la mente con posturas de Yin Yoga y yoga restaurativo, que invitan a la meditación y a la liberación de tensiones. Es una práctica diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior.",
+      title: "Yin Yoga Somático (presencial/online)",
+      body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
   ],
   methodTitle: "Un método basado en la progresión",
@@ -140,24 +139,14 @@ export const yogaCopy = {
     { title: "Evolución Tangible", body: "Al trabajar en grupos reducidos, realizamos un seguimiento real del progreso de cada alumno, ajustando las posturas y la intensidad según tus necesidades." },
     { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las clases están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva y segura, permitiendo avanzar con confianza en cada movimiento de la práctica." },
   ],
-  specialOffer: {
-    eyebrow: "Oferta Otoño",
-    title: "Promoción para alumnos nuevos",
-    deadline: "Oferta válida hasta el 31 de octubre para residentes en Barcelona",
-    items: [
-      "Clase de prueba gratis",
-      "Semana de prueba por 30€",
-    ],
-    cta: "Escríbenos y reserva tu primera clase",
-    href: "/contacto/#contacto",
-  },
   prices: [
     {
       title: "Clases Grupales",
       items: [
         "Mensualidad 5 clases / mes: 65€",
         "Mensualidad clases ilimitadas: 90€",
-        "Abono 10 clases: 165€ (tres meses)",
+        "Bono 3 clases: 50€",
+        "Bono 10 clases: 150€",
         "Clase suelta: 20€",
       ],
     },
@@ -165,13 +154,12 @@ export const yogaCopy = {
       title: "Clases Individuales",
       items: [
         "Sesión individual + secuencia personalizada: 60€",
-        "Abono 4 clases individuales: 180€",
-        "Abono 10 clases individuales: 400€",
+        "Bono 4 clases individuales: 180€",
+        "Bono 10 clases individuales: 400€",
       ],
     },
   ],
   individualTitle: "Clases individuales adaptadas a tu cuerpo",
-  individualEyebrow: "con Laia",
   individualIntro: "Si buscas un acompañamiento exclusivo para integrar el yoga en tu vida según tus propios ritmos y objetivos, hemos diseñado dos formas de trabajar juntas/os.",
   individualOptions: [
     { title: "Sesión Individual Estratégica", body: "Ideal para resolver dudas puntuales, si hay algun grupo de posturas que necesitas aprender de forma más profunda o diseñar una secuencia personalizada que puedas practicar de forma autónoma en casa." },
@@ -187,11 +175,38 @@ export const yogaCopy = {
   officeCta: "Solicita más información aquí",
 };
 
+export const footerCopy = {
+  tagline: "Un refugio de yoga, presencia y calma en Barcelona.",
+  // Confirmed with the studio on 2026-11-02. Google does not feed these to the
+  // site, so bump them by hand when the listing moves.
+  googleReviews: {
+    rating: "5,0",
+    count: 55,
+    prefix: "en Google",
+    suffix: "reseñas",
+  },
+  columns: {
+    visit: {
+      heading: "Dónde estamos",
+      metro: "Al lado del metro Verdaguer (L4/L5)",
+      mapCta: "Ver en el mapa",
+    },
+    contact: {
+      heading: "Contacto",
+    },
+    follow: {
+      heading: "Síguenos",
+    },
+  },
+};
+
 export const espacioCopy = {
-  pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Espai Adarsha",
+  pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Adarsha Yoga",
+  description:
+    "Alquila una sala de yoga de 50m2 con luz natural junto al metro Verdaguer, en Barcelona. Ideal para formaciones, talleres, terapias y sesiones individuales.",
+  heading: "¿Buscas un lugar donde desarrollar tus proyectos?",
   body: [
-    "¿Buscas un lugar donde desarrollar tus proyectos?",
-    "Espai Adarsha es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
+    "Adarsha Yoga es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
   ],
   uses: [
     "Formaciones intensivas de fin de semana",
@@ -208,11 +223,13 @@ export const espacioCopy = {
     contactHeading: "Contacto",
     visitsHeading: "Visitas espacio",
   },
-  visits: ["Lunes 18:15 - 18:30", "Jueves 13:15 - 13:30"],
+  visits: ["Lunes 18:15 - 18:30", "Jueves 13:15 - 13:30", "Viernes 18:30 - 18:45"],
 };
 
 export const colaboradoresCopy = {
   pageTitle: "Colaboradores | Adarsha Yoga",
+  description:
+    "Movimiento y Conciencia Pélvica con Raquel Jaroslavsky en Adarsha Yoga: sesiones para relajar, flexibilizar y tonificar el suelo pélvico en Barcelona.",
   title: "Nuestro ecosistema de colaboradores",
   subtitle: "Conoce otras actividades que tienen lugar en Adarsha Yoga",
   activity: "Movimiento & Conciencia Pélvica",
@@ -247,6 +264,8 @@ export const colaboradoresCopy = {
 
 export const equipoCopy = {
   pageTitle: "Equipo | Adarsha Yoga",
+  description:
+    "Conoce al equipo de Adarsha Yoga: Laia Espejo, Kristoff Malejczuk y Raquel Jaroslavsky. Profesores cercanos que acompañan tu práctica a tu propio ritmo.",
   name: "Adarsha",
   sanskrit: "Ādarśa (आदर्श)",
   meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para observarse y transformarse desde adentro hacia fuera."],
@@ -262,6 +281,8 @@ export const equipoCopy = {
 export const bioCopy = {
   laia: {
     pageTitle: "Sobre Laia | Adarsha Yoga",
+    description:
+      "Laia Espejo Dotti, fundadora de Adarsha Yoga y profesora de Hatha Vinyasa. Su camino en el yoga, sus formaciones y su manera de acompañar la práctica.",
     heading: "Sobre Laia.",
     sections: [
       {
@@ -298,11 +319,12 @@ export const bioCopy = {
       },
     ],
     signoff: "¡Namasté!",
-    website: { label: "www.laiaespejoyoga.com", href: "https://www.laiaespejoyoga.com" },
     instagram: { label: "@laiaespejodotti", href: "https://www.instagram.com/laiaespejodotti/" },
   },
   kristoff: {
     pageTitle: "Sobre Kristoff | Adarsha Yoga",
+    description:
+      "Kristoff Malejczuk, profesor de Hatha Vinyasa en Adarsha Yoga. De ingeniero en California a profesor de yoga en Barcelona: su recorrido y su enfoque.",
     heading: "Sobre Kristoff.",
     sections: [
       {

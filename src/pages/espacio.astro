@@ -3,21 +3,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, espacioCopy, images } from "../content/site";
 ---
 
-<BaseLayout title={espacioCopy.pageTitle}>
-  <img class="space-hero" src={images.studioWide.src} alt="Espai Adarsha" />
+<BaseLayout title={espacioCopy.pageTitle} description={espacioCopy.description}>
+  <img class="space-hero" src={images.studioWide.src} alt="Adarsha Yoga" />
   <section class="space-main">
     <div class="container">
       <div class="space-copy">
+        <h1>{espacioCopy.heading}</h1>
         {espacioCopy.body.map((item) => <p>{item}</p>)}
         <ul>{espacioCopy.uses.map((item) => <li>{item}</li>)}</ul>
         <p class="email">{espacioCopy.emailPrefix} <a href={`mailto:${contact.email}?subject=Alquiler sala`}>{contact.email}</a> {espacioCopy.emailSuffix}</p>
       </div>
       <div class="space-pair">
-        <img src={images.studioShelf.src} alt="Material de yoga en Espai Adarsha" />
-        <!-- <img src={images.studioWindow.src} alt="Luz natural en Espai Adarsha" /> -->
-        <img src={images.studioTall.src} alt="Luz natural en Espai Adarsha" />
+        <img src={images.studioShelf.src} alt="Material de yoga en Adarsha Yoga" />
+        <img src={images.studioTall.src} alt="Luz natural en Adarsha Yoga" />
       </div>
-      <!-- <img class="space-wide" src={images.studioEmpty.src} alt="Sala de Espai Adarsha disponible para alquiler" /> -->
     </div>
   </section>
   <section class="space-details">
