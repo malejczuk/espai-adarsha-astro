@@ -50,7 +50,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .footer-rating-star { color: #e8b84b; font-size: 17px; line-height: 1; }
 .footer-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; text-align: center; }
 .footer-column { display: grid; align-content: start; gap: 9px; }
-.footer-column h2 { font: 700 13px/1.2 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--clay); }
+.footer-column h2 { font: 400 15px/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--clay); }
 .footer-column address { font-style: normal; line-height: 1.75; }
 .footer-metro { display: block; margin-top: 7px; color: var(--clay); font-size: 13px; line-height: 1.5; }
 .footer-column a { color: #fff; text-decoration: underline; text-underline-offset: 4px; width: fit-content; justify-self: center; }
