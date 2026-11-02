@@ -34,10 +34,6 @@ export const siteMeta = {
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
-  announcement: {
-    text: "🍂 ¡Hola yoguis! Descubre nuestras ofertas de otoño para nuevos alumnos 🌞 →",
-    href: "/yoga/#precios",
-  },
 };
 
 export const contact = {
@@ -47,7 +43,7 @@ export const contact = {
   addressLines: ["Calle Girona 166", "Entresuelo 3a", "08037 Barcelona"],
   contactHeading: "Contacto",
   intro: "Ponte en contacto con nosotros enviándonos un mail :-)",
-  email: "hello@espaiadarsha.com",
+  email: "hello@adarshayoga.es",
   instagram: { prefix: "Instagram:", label: "@adarshayoga.bcn", href: "https://www.instagram.com/adarshayoga.bcn/" },
   mapUrl: "https://www.google.com/maps?q=Espai%20Adarsha%20Yoga%20Studio%2C%20Barcelona&output=embed",
 };
@@ -95,8 +91,6 @@ export const homeCopy = {
   ],
   scheduleCta: "    HORARIO    ",
   scheduleHref: "/yoga/",
-  ofertaCta: "¡OFERTA OTOÑO! 🧘🏽",
-  ofertaHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
@@ -130,8 +124,9 @@ export const yogaCopy = {
       body: "Una modalidad más suave para quienes buscan un ritmo pausado y consciente, ya sea que busques una clase para aprender las bases, o practicar durante el embarazo, o en la etapa de la madurez. Nos enfocamos en técnicas de respiración, posturas estables, aprender la alineación y relajación profunda para restaurar la vitalidad y la movilidad de todo el cuerpo.",
     },
     {
-      title: "Yin Yoga & Pranayama",
-      body: "Combinamos técnicas de respiración para serenar la mente con posturas de Yin Yoga y yoga restaurativo, que invitan a la meditación y a la liberación de tensiones. Es una práctica diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior.",
+      title: "Yin Yoga Somático (presencial/online)",
+      body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
+      meet: { label: "Conéctate por Google Meet", href: "https://meet.google.com/ijy-vpfn-kjo" },
     },
   ],
   methodTitle: "Un método basado en la progresión",
@@ -140,24 +135,14 @@ export const yogaCopy = {
     { title: "Evolución Tangible", body: "Al trabajar en grupos reducidos, realizamos un seguimiento real del progreso de cada alumno, ajustando las posturas y la intensidad según tus necesidades." },
     { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las clases están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva y segura, permitiendo avanzar con confianza en cada movimiento de la práctica." },
   ],
-  specialOffer: {
-    eyebrow: "Oferta Otoño",
-    title: "Promoción para alumnos nuevos",
-    deadline: "Oferta válida hasta el 31 de octubre para residentes en Barcelona",
-    items: [
-      "Clase de prueba gratis",
-      "Semana de prueba por 30€",
-    ],
-    cta: "Escríbenos y reserva tu primera clase",
-    href: "/contacto/#contacto",
-  },
   prices: [
     {
       title: "Clases Grupales",
       items: [
         "Mensualidad 5 clases / mes: 65€",
         "Mensualidad clases ilimitadas: 90€",
-        "Abono 10 clases: 165€ (tres meses)",
+        "Bono 3 clases: 50€",
+        "Bono 10 clases: 150€",
         "Clase suelta: 20€",
       ],
     },
@@ -165,8 +150,8 @@ export const yogaCopy = {
       title: "Clases Individuales",
       items: [
         "Sesión individual + secuencia personalizada: 60€",
-        "Abono 4 clases individuales: 180€",
-        "Abono 10 clases individuales: 400€",
+        "Bono 4 clases individuales: 180€",
+        "Bono 10 clases individuales: 400€",
       ],
     },
   ],
@@ -208,7 +193,7 @@ export const espacioCopy = {
     contactHeading: "Contacto",
     visitsHeading: "Visitas espacio",
   },
-  visits: ["Lunes 18:15 - 18:30", "Jueves 13:15 - 13:30"],
+  visits: ["Lunes 18:15 - 18:30", "Jueves 13:15 - 13:30", "Viernes 18:30 - 18:45"],
 };
 
 export const colaboradoresCopy = {

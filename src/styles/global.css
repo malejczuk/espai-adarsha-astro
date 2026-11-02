@@ -33,8 +33,6 @@ a { color: inherit; text-underline-offset: 3px; }
 p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 .container { width: min(var(--page), calc(100% - 40px)); margin-inline: auto; }
-.announcement-bar { min-height: 42px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 20px; background: var(--clay); color: var(--brown); font: 700 16px/1.35 var(--display); text-align: center; text-decoration: none; border-bottom: 1px solid rgba(118,74,50,.25); }
-.announcement-bar:hover { background: var(--brown); color: #fff; }
 .site-header { height: 293px; background: #fff; }
 .nav { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
 .brand { width: auto; margin-top: 38px; }
@@ -48,8 +46,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .display { font-family: var(--display); font-weight: 400; color: var(--brown); }
 .btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid #000; color: #000; font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
 .btn-outline:hover { background: #000; color: #fff; }
-.btn-offer { border-color: var(--brown); background: var(--clay); color: var(--brown); }
-.btn-offer:hover { border-color: var(--brown); background: var(--brown); color: #fff; }
 
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
@@ -116,20 +112,13 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-style-list { margin: 32px 0 0; padding-left: 28px; }
 .yoga-style-list li + li { margin-top: 30px; }
 .yoga-style-list strong { color: var(--brown); font-weight: 700; }
+.yoga-style-meet { display: block; width: fit-content; margin-top: 10px; color: var(--brown); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.yoga-style-meet:hover { text-decoration: none; }
 .yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
 .yoga-prices-band { background: #7b4c31; color: #fff; }
 .yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
 .yoga-prices h2 { font: 400 30px/1.25 var(--display); color: #fff; }
-.special-offer { width: min(440px, 100%); margin: 0 auto; padding: 26px 32px; border: 1px solid rgba(255,255,255,.55); background: #ddcbc0; color: var(--brown); }
-.special-offer p { font: 700 17px/1.2 var(--display); letter-spacing: 0; text-transform: uppercase; }
-.special-offer h2 { margin-top: 7px; font-size: 29px; color: var(--brown); }
-.special-offer-options { display: flex; flex-direction: column; gap: 0; margin-top: 18px; border-top: 1px solid rgba(118,67,41,.28); border-bottom: 1px solid rgba(118,67,41,.28); }
-.special-offer-options strong { display: grid; place-items: center; min-height: 64px; padding: 14px 20px; font-size: 18px; line-height: 1.35; font-weight: 700; text-align: center; text-wrap: balance; }
-.special-offer-options strong + strong { border-top: 1px solid rgba(118,67,41,.28); }
-.special-offer span { display: block; margin-top: 13px; font-size: 14px; line-height: 1.4; text-wrap: balance; }
-.special-offer .btn-outline { margin-top: 16px; border-color: var(--brown); background: var(--brown); color: #fff; }
-.special-offer .btn-outline:hover { background: #000; border-color: #000; color: #fff; }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
 .price-column { padding: 8px 28px 0; }
 .method-section h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
@@ -230,7 +219,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 @media (max-width: 760px) {
   body { font-size: 15px; line-height: 1.7; }
-  .announcement-bar { min-height: 40px; padding-inline: 18px; font-size: 15px; }
   .site-header { height: auto; min-height: 238px; }
   .brand { margin-top: 24px; }
   .brand img { height: 130px; }
@@ -264,11 +252,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-photo-stack img { height: 480px; }
   .method-inner, .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
-  .special-offer { padding: 22px 20px 24px; }
-  .special-offer p { font-size: 16px; }
-  .special-offer h2 { font-size: 25px; }
-  .special-offer-options { margin-top: 16px; }
-  .special-offer-options strong { min-height: 0; padding: 13px 8px; font-size: 16px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
   .method-section { padding: 64px 0; }
