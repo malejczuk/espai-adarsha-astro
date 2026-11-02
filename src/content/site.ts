@@ -186,8 +186,6 @@ export const footerCopy = {
     },
     contact: {
       heading: "Contacto",
-      writeCta: "Escríbenos",
-      writeHref: "/contacto/",
     },
     follow: {
       heading: "Síguenos",
