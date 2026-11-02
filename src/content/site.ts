@@ -37,6 +37,8 @@ export const siteMeta = {
 
 export const contact = {
   pageTitle: "Adarsha Yoga | Barcelona",
+  description:
+    "Estudio de yoga en Calle Girona 166, Barcelona, junto al metro Verdaguer. Escríbenos a hello@adarshayoga.es y reserva tu primera clase con nosotros.",
   heading: "Contacto",
   addressHeading: "Dirección",
   addressLines: ["Calle Girona 166", "Entresuelo 3a", "08037 Barcelona"],
@@ -109,6 +111,8 @@ export const homeCopy = {
 
 export const yogaCopy = {
   pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Adarsha Yoga",
+  description:
+    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Consulta horarios, bonos y precios en Adarsha Yoga.",
   introTitle: "Practica yoga en Adarsha",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   rhythmTitle: "Tu práctica, tu ritmo",
@@ -173,6 +177,8 @@ export const yogaCopy = {
 
 export const espacioCopy = {
   pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Adarsha Yoga",
+  description:
+    "Alquila una sala de yoga de 50m2 con luz natural junto al metro Verdaguer, en Barcelona. Ideal para formaciones, talleres, terapias y sesiones individuales.",
   heading: "¿Buscas un lugar donde desarrollar tus proyectos?",
   body: [
     "Adarsha Yoga es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
@@ -197,6 +203,8 @@ export const espacioCopy = {
 
 export const colaboradoresCopy = {
   pageTitle: "Colaboradores | Adarsha Yoga",
+  description:
+    "Movimiento y Conciencia Pélvica con Raquel Jaroslavsky en Adarsha Yoga: sesiones para relajar, flexibilizar y tonificar el suelo pélvico en Barcelona.",
   title: "Nuestro ecosistema de colaboradores",
   subtitle: "Conoce otras actividades que tienen lugar en Adarsha Yoga",
   activity: "Movimiento & Conciencia Pélvica",
@@ -231,6 +239,8 @@ export const colaboradoresCopy = {
 
 export const equipoCopy = {
   pageTitle: "Equipo | Adarsha Yoga",
+  description:
+    "Conoce al equipo de Adarsha Yoga: Laia Espejo, Kristoff Malejczuk y Raquel Jaroslavsky. Profesores cercanos que acompañan tu práctica a tu propio ritmo.",
   name: "Adarsha",
   sanskrit: "Ādarśa (आदर्श)",
   meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para observarse y transformarse desde adentro hacia fuera."],
@@ -246,6 +256,8 @@ export const equipoCopy = {
 export const bioCopy = {
   laia: {
     pageTitle: "Sobre Laia | Adarsha Yoga",
+    description:
+      "Laia Espejo Dotti, fundadora de Adarsha Yoga y profesora de Hatha Vinyasa. Su camino en el yoga, sus formaciones y su manera de acompañar la práctica.",
     heading: "Sobre Laia.",
     sections: [
       {
@@ -287,6 +299,8 @@ export const bioCopy = {
   },
   kristoff: {
     pageTitle: "Sobre Kristoff | Adarsha Yoga",
+    description:
+      "Kristoff Malejczuk, profesor de Hatha Vinyasa en Adarsha Yoga. De ingeniero en California a profesor de yoga en Barcelona: su recorrido y su enfoque.",
     heading: "Sobre Kristoff.",
     sections: [
       {

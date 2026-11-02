@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { yogaCopy, images } from "../content/site";
 ---
 
-<BaseLayout title={yogaCopy.pageTitle}>
+<BaseLayout title={yogaCopy.pageTitle} description={yogaCopy.description}>
   <section class="schedule-banner">
     <div class="schedule-crop">
       <img src={images.schedule.src} alt="Horario semanal de Adarsha Yoga" />

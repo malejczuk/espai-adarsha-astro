@@ -4,7 +4,7 @@ import { bioCopy } from "../content/site";
 
 const bio = bioCopy.laia;
 ---
-<BaseLayout title={bio.pageTitle}>
+<BaseLayout title={bio.pageTitle} description={bio.description}>
   <article class="bio-page">
     {bio.sections.map((section, index) => (
       <section class:list={["bio-section", { "bio-section-reverse": index % 2 === 1 }]}>

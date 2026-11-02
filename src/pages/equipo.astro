@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { equipoCopy } from "../content/site";
 ---
 
-<BaseLayout title={equipoCopy.pageTitle}>
+<BaseLayout title={equipoCopy.pageTitle} description={equipoCopy.description}>
   <section class="meaning-band">
     <h1>{equipoCopy.name}</h1>
     <p class="sanskrit">{equipoCopy.sanskrit}</p>
