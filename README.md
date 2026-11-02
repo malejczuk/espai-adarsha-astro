@@ -1,4 +1,4 @@
-# Espai Adarsha Website
+# Adarsha Yoga Website
 
 Astro rebuild of [adarshayoga.es](https://adarshayoga.es), intended for deployment on Cloudflare.
 

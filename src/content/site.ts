@@ -3,7 +3,6 @@ import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
-import studioWindow from "../../assets/1-DSC01027.jpg";
 import studioDetail from "../../assets/54-DSC01118.jpg";
 import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
@@ -45,7 +44,7 @@ export const contact = {
   intro: "Ponte en contacto con nosotros enviándonos un mail :-)",
   email: "hello@adarshayoga.es",
   instagram: { prefix: "Instagram:", label: "@adarshayoga.bcn", href: "https://www.instagram.com/adarshayoga.bcn/" },
-  mapUrl: "https://www.google.com/maps?q=Espai%20Adarsha%20Yoga%20Studio%2C%20Barcelona&output=embed",
+  mapUrl: "https://www.google.com/maps?q=Adarsha%20Yoga%2C%20Carrer%20de%20Girona%20166%2C%20Barcelona&output=embed",
 };
 
 export const images = {
@@ -54,7 +53,6 @@ export const images = {
   studioWide,
   studioTall,
   studioShelf,
-  studioWindow,
   studioDetail,
   groupClass,
   individualSession,
@@ -91,6 +89,8 @@ export const homeCopy = {
   ],
   scheduleCta: "    HORARIO    ",
   scheduleHref: "/yoga/",
+  preciosCta: "    PRECIOS    ",
+  preciosHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
@@ -173,10 +173,10 @@ export const yogaCopy = {
 };
 
 export const espacioCopy = {
-  pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Espai Adarsha",
+  pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Adarsha Yoga",
+  heading: "¿Buscas un lugar donde desarrollar tus proyectos?",
   body: [
-    "¿Buscas un lugar donde desarrollar tus proyectos?",
-    "Espai Adarsha es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
+    "Adarsha Yoga es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
   ],
   uses: [
     "Formaciones intensivas de fin de semana",

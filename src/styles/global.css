@@ -163,8 +163,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .space-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 64px; }
 .space-pair img { height: 528px; object-fit: cover; }
 .space-copy { max-width: 780px; margin: 0 auto; font: 400 21px/1.65 var(--display); }
-.space-copy p + p { margin-top: 22px; }
-.space-copy p:first-child { font-size: 26px; font-weight: 700; -webkit-text-stroke: 0.9px currentColor; }
+.space-copy p + p, .space-copy h1 + p { margin-top: 22px; }
+.space-copy h1 { font-size: 26px; font-weight: 700; -webkit-text-stroke: 0.9px currentColor; }
 .space-copy ul { margin-top: 28px; list-style: disc inside; padding: 0; display: grid; gap: 10px; }
 .space-copy .email { margin-top: 28px; }
 .space-wide { height: 300px; margin-top: 92px; object-fit: cover; }
