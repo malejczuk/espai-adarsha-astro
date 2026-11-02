@@ -160,7 +160,6 @@ export const yogaCopy = {
     },
   ],
   individualTitle: "Clases individuales adaptadas a tu cuerpo",
-  individualEyebrow: "con Laia",
   individualIntro: "Si buscas un acompañamiento exclusivo para integrar el yoga en tu vida según tus propios ritmos y objetivos, hemos diseñado dos formas de trabajar juntas/os.",
   individualOptions: [
     { title: "Sesión Individual Estratégica", body: "Ideal para resolver dudas puntuales, si hay algun grupo de posturas que necesitas aprender de forma más profunda o diseñar una secuencia personalizada que puedas practicar de forma autónoma en casa." },

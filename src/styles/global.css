@@ -149,7 +149,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
 .individual-copy { padding: 88px 80px; }
 .individual-copy h2, .office-copy h2 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
-.individual-copy h2 span { display: block; margin-top: 8px; font-size: 25px; font-style: italic; line-height: 1.3; }
 .individual-copy p, .office-copy p { margin-top: 25px; }
 .individual-list { margin: 25px 0 0; padding-left: 22px; }
 .individual-list li + li { margin-top: 22px; }
