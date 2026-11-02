@@ -81,7 +81,7 @@ export const homeCopy = {
   subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",
-    "Te acompañamos para que conectes contigo mismo a través de la practica de yoga y evoluciones a tu ritmo.",
+    "Te acompañamos para que conectes contigo mismo a través de la práctica de yoga y evoluciones a tu ritmo.",
   ],
   practiceTitle: "El valor de una práctica cuidada",
   practiceBody: [
@@ -117,7 +117,7 @@ export const yogaCopy = {
   styles: [
     {
       title: "Hatha Vinyasa Yoga",
-      body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu practica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
+      body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
     },
     {
       title: "Yoga Integral",
