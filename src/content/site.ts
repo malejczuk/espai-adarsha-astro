@@ -189,7 +189,7 @@ export const footerCopy = {
   columns: {
     visit: {
       heading: "Dónde estamos",
-      metro: "Metro Verdaguer (L4/L5)",
+      metro: "Al lado del metro Verdaguer (L4/L5)",
       mapCta: "Ver en el mapa",
     },
     contact: {

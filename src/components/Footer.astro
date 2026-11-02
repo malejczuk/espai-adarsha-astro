@@ -21,8 +21,8 @@ const reviews = footerCopy.googleReviews;
           {contact.addressLines.map((line, index) => (
             <>{index > 0 && <br />}{line}</>
           ))}
+          <span class="footer-metro">{visit.metro}</span>
         </address>
-        <p class="footer-metro">{visit.metro}</p>
         <a href={contact.mapLink} target="_blank" rel="noopener noreferrer">{visit.mapCta}</a>
       </section>
 
