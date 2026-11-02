@@ -112,8 +112,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-style-list { margin: 32px 0 0; padding-left: 28px; }
 .yoga-style-list li + li { margin-top: 30px; }
 .yoga-style-list strong { color: var(--brown); font-weight: 700; }
-.yoga-style-meet { display: block; width: fit-content; margin-top: 10px; color: var(--brown); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.yoga-style-meet:hover { text-decoration: none; }
 .yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
 .yoga-prices-band { background: #7b4c31; color: #fff; }

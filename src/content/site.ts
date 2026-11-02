@@ -126,7 +126,6 @@ export const yogaCopy = {
     {
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
-      meet: { label: "Conéctate por Google Meet", href: "https://meet.google.com/ijy-vpfn-kjo" },
     },
   ],
   methodTitle: "Un método basado en la progresión",
