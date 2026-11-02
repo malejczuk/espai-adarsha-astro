@@ -44,6 +44,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .site-footer { padding: 54px 0 0; background: var(--brown); color: #fff; font-size: 14px; }
 .footer-inner { display: grid; gap: 34px; }
 .footer-tagline { font: 400 21px/1.4 var(--display); text-align: center; text-wrap: balance; }
+.footer-rating { display: inline-flex; align-items: center; justify-self: center; gap: 8px; margin-top: -18px; padding: 7px 15px; border: 1px solid rgba(255,255,255,.3); color: #fff; text-decoration: none; font-size: 15px; }
+.footer-rating:hover { border-color: var(--clay); color: var(--clay); }
+.footer-rating strong { font-weight: 700; }
+.footer-rating-star { color: #e8b84b; font-size: 17px; line-height: 1; }
 .footer-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; text-align: center; }
 .footer-column { display: grid; align-content: start; gap: 9px; }
 .footer-column h2 { font: 700 13px/1.2 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--clay); }

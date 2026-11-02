@@ -178,6 +178,14 @@ export const yogaCopy = {
 
 export const footerCopy = {
   tagline: "Un refugio de yoga, presencia y calma en Barcelona.",
+  // Read off the Google Business listing on 2026-11-02. Google does not feed
+  // these to the site, so bump them by hand when the listing moves.
+  googleReviews: {
+    rating: "5,0",
+    count: 65,
+    prefix: "en Google",
+    suffix: "reseñas",
+  },
   columns: {
     visit: {
       heading: "Dónde estamos",
