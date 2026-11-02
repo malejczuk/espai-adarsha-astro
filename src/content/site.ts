@@ -320,7 +320,6 @@ export const bioCopy = {
       },
     ],
     signoff: "¡Namasté!",
-    website: { label: "www.laiaespejoyoga.com", href: "https://www.laiaespejoyoga.com" },
     instagram: { label: "@laiaespejodotti", href: "https://www.instagram.com/laiaespejodotti/" },
   },
   kristoff: {
