@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { contact, images } from "../content/site";
 ---
 
-<BaseLayout title={contact.pageTitle} description={contact.description}>
+<BaseLayout title={contact.pageTitle} description={contact.description} structuredData>
   <section id="contacto" class="contact-page">
     <h1>{contact.heading}</h1>
     <div class="contact-columns">

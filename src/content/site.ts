@@ -33,6 +33,7 @@ export const siteMeta = {
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
+  ogImage: "/og-image.jpg",
 };
 
 export const contact = {
@@ -48,6 +49,21 @@ export const contact = {
   instagram: { prefix: "Instagram:", label: "@adarshayoga.bcn", href: "https://www.instagram.com/adarshayoga.bcn/" },
   mapUrl: "https://www.google.com/maps?q=Adarsha%20Yoga%2C%20Carrer%20de%20Girona%20166%2C%20Barcelona&output=embed",
   mapLink: "https://www.google.com/maps/search/?api=1&query=Adarsha+Yoga%2C+Carrer+de+Girona+166%2C+Barcelona",
+};
+
+// Feeds the JSON-LD block in StructuredData.astro. Deliberately holds no
+// opening hours and no price list: both change often, and a stale copy here
+// would have Google advertising the wrong thing. Hours live in the Google
+// Business Profile, which is where the local panel reads them from anyway.
+export const localBusiness = {
+  // schema.org has no YogaStudio type; SportsActivityLocation is the closest
+  // valid LocalBusiness subtype.
+  type: "SportsActivityLocation",
+  id: "https://adarshayoga.es/#studio",
+  // Geocoded from "166-168, Carrer de Girona, 08037 Barcelona" (OpenStreetMap).
+  geo: { latitude: 41.39977, longitude: 2.16474 },
+  priceRange: "€15–€20",
+  currency: "EUR",
 };
 
 export const images = {
