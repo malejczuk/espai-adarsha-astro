@@ -41,7 +41,20 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .nav-links a { text-decoration: none; color: #000; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { text-decoration: underline; }
 
-.site-footer { min-height: 120px; display: grid; place-items: center; padding: 32px 20px; font-size: 14px; color: #000; }
+.site-footer { padding: 54px 0 0; background: var(--brown); color: #fff; font-size: 14px; }
+.footer-inner { display: grid; gap: 34px; }
+.footer-tagline { font: 400 21px/1.4 var(--display); text-align: center; text-wrap: balance; }
+.footer-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; text-align: center; }
+.footer-column { display: grid; align-content: start; gap: 9px; }
+.footer-column h2 { font: 700 13px/1.2 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--clay); }
+.footer-column address { font-style: normal; line-height: 1.75; }
+.footer-metro { color: var(--clay); }
+.footer-column a { color: #fff; text-decoration: underline; text-underline-offset: 4px; width: fit-content; justify-self: center; }
+.footer-column a:hover { text-decoration: none; color: var(--clay); }
+.footer-instagram { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+.footer-instagram span { text-decoration: underline; text-underline-offset: 4px; }
+.footer-instagram:hover span { text-decoration: none; }
+.footer-legal { margin-top: 6px; padding: 20px 0 24px; border-top: 1px solid rgba(255,255,255,.25); text-align: center; font-size: 13px; color: var(--clay); }
 
 .display { font-family: var(--display); font-weight: 400; color: var(--brown); }
 .btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid #000; color: #000; font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
@@ -221,7 +234,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .brand { margin-top: 24px; }
   .brand img { height: 130px; }
   .nav-links { max-width: 350px; justify-content: center; flex-wrap: wrap; gap: 15px 24px; margin: 28px 0 30px; }
-  .site-footer { min-height: 100px; padding-block: 26px; }
+  .site-footer { padding-top: 42px; }
+  .footer-inner { gap: 28px; }
+  .footer-tagline { font-size: 19px; }
+  .footer-columns { grid-template-columns: 1fr; gap: 28px; }
   .home-intro, .home-value, .ecosystem-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: 1fr; }
   .home-intro-image { order: -1; min-height: 0; height: 480px; }
   .home-intro-copy { padding: 58px 26px 65px; }

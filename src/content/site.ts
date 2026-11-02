@@ -47,6 +47,7 @@ export const contact = {
   email: "hello@adarshayoga.es",
   instagram: { prefix: "Instagram:", label: "@adarshayoga.bcn", href: "https://www.instagram.com/adarshayoga.bcn/" },
   mapUrl: "https://www.google.com/maps?q=Adarsha%20Yoga%2C%20Carrer%20de%20Girona%20166%2C%20Barcelona&output=embed",
+  mapLink: "https://www.google.com/maps/search/?api=1&query=Adarsha+Yoga%2C+Carrer+de+Girona+166%2C+Barcelona",
 };
 
 export const images = {
@@ -173,6 +174,25 @@ export const yogaCopy = {
     "Cuidar la salud integral de los trabajadores cultiva una cultura de presencia y vitalidad.",
   ],
   officeCta: "Solicita más información aquí",
+};
+
+export const footerCopy = {
+  tagline: "Un refugio de yoga, presencia y calma en Barcelona.",
+  columns: {
+    visit: {
+      heading: "Dónde estamos",
+      metro: "Metro Verdaguer (L4/L5)",
+      mapCta: "Ver en el mapa",
+    },
+    contact: {
+      heading: "Contacto",
+      writeCta: "Escríbenos",
+      writeHref: "/contacto/",
+    },
+    follow: {
+      heading: "Síguenos",
+    },
+  },
 };
 
 export const espacioCopy = {
