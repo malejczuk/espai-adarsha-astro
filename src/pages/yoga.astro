@@ -10,6 +10,28 @@ import { yogaCopy, images } from "../content/site";
     </div>
   </section>
 
+  <section class="momo-schedule">
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://cdn.momo.yoga/plugins/schedule-integration/schedule.css"
+    />
+    <script
+      is:inline
+      type="module"
+      crossorigin="anonymous"
+      src="https://cdn.momo.yoga/plugins/schedule-integration/schedule.js"></script>
+    <div
+      data-momo-schedule="https://www.momoyoga.com/adarsha-yoga/"
+      data-momo-view-type="Weekly"
+      data-momo-show-teacher="true"
+      data-momo-show-teacher-filter="true"
+      data-momo-show-schedule-images="true"
+      data-momo-apply-colors="true"
+      data-momo-show-end-time="true"
+      data-momo-primary-color="#000000"></div>
+  </section>
+
   <section class="yoga-title">
     <h1>{yogaCopy.introTitle}</h1>
     <p>{yogaCopy.introQuestion}</p>

@@ -120,6 +120,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    the day dividers begin at 312px, so 270 sits cleanly between the two. */
 .schedule-crop { position: relative; width: 604px; aspect-ratio: 1 / 1; overflow: hidden; }
 .schedule-crop img { position: absolute; left: 0; top: calc(-100% * 270 / 1080); width: 100%; height: auto; }
+.momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 0; }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 700 50px/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
@@ -262,6 +263,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .page-title-band h1 { font-size: 36px; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
+  .momo-schedule { padding-top: 48px; }
   .yoga-title h1 { font-size: 38px; }
   .yoga-title p { margin-top: 28px; font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
