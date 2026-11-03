@@ -70,8 +70,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .footer-legal { margin-top: 6px; padding: 20px 0 24px; border-top: 1px solid rgba(255,255,255,.25); text-align: center; font-size: 13px; color: var(--clay); }
 
 .display { font-family: var(--display); font-weight: 400; color: var(--brown); }
-.btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid #000; color: #000; font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
-.btn-outline:hover { background: #000; color: #fff; }
+.btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid var(--brown); color: var(--brown); font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
+.btn-outline:hover { background: var(--brown); color: #fff; }
 
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
@@ -100,8 +100,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .practice-card h3 { font: 400 24px/1.4 var(--display); }
 .practice-card p { max-width: 245px; margin-top: 16px; font-size: 16px; line-height: 1.45; }
 .practice-card a { margin-top: 24px; font-size: 14px; }
-.practice-card .btn-outline { min-height: 38px; padding-inline: 16px; background: #fff; color: #000; text-decoration: none; }
-.practice-card .btn-outline:hover { background: #000; color: #fff; }
+.practice-card .btn-outline { min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); text-decoration: none; }
+.practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
 
 .ecosystem-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
 .ecosystem-band img { height: 752px; object-fit: cover; }
@@ -129,7 +129,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    the day dividers begin at 312px, so 270 sits cleanly between the two. */
 .schedule-crop { position: relative; width: 604px; aspect-ratio: 1 / 1; overflow: hidden; }
 .schedule-crop img { position: absolute; left: 0; top: calc(-100% * 270 / 1080); width: 100%; height: auto; }
-.momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 0; scroll-margin-top: 24px; }
+/* min-height holds the widget's space while its data loads from the CDN, so the
+   footer does not sit high on the page and then get shoved down on arrival. */
+.momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 0; min-height: 70vh; scroll-margin-top: 24px; }
 
 /* The Momoyoga widget ships its own Inter-based styling. These rules pull it
    back to the site's look: Avenir throughout, brown headings and warm borders

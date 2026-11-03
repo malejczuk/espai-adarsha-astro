@@ -96,7 +96,7 @@ export const homeCopy = {
     "En Adarsha Yoga la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
   scheduleCta: "    HORARIO    ",
-  scheduleHref: "/yoga/",
+  scheduleHref: "/yoga/#reserva",
   preciosCta: "    PRECIOS    ",
   preciosHref: "/yoga/#precios",
   approachCta: "Nuestro enfoque",
