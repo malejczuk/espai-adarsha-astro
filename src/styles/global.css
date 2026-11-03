@@ -138,6 +138,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__day,
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__title,
 .momo-schedule .momo-schedule-wrapper .momo-date-pagination__period { font-family: var(--body); color: var(--brown); }
+/* Only the 300 weight of Avenir is loaded, so this is synthetic bold, the same
+   trick the footer headings rely on. 500 would render as plain light. */
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item__title { font-weight: 600; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--taupe); }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 2px solid rgba(118, 74, 50, .3); border-radius: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image,

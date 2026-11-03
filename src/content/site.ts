@@ -70,7 +70,7 @@ export const images = {
 };
 
 export const bannerCopy = {
-  text: "🪷 ¡Bienvenido/a! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞",
+  text: "🪷 ¡Bienvenido/a! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞\u00a0→",
   href: "/yoga/#reserva",
 };
 
