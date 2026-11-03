@@ -33,6 +33,12 @@ a { color: inherit; text-underline-offset: 3px; }
 p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 .container { width: min(var(--page), calc(100% - 40px)); margin-inline: auto; }
+
+/* Announcement strip above the header on every page. */
+.site-banner { background: var(--brown); color: var(--white); text-align: center; }
+.site-banner a { display: block; width: min(var(--page), calc(100% - 40px)); margin-inline: auto; padding: 11px 0; font-size: 14px; line-height: 1.4; text-decoration: none; text-wrap: balance; }
+.site-banner a:hover { text-decoration: underline; }
+
 .site-header { height: 293px; background: #fff; }
 .nav { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
 .brand { width: auto; margin-top: 38px; }
@@ -120,7 +126,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    the day dividers begin at 312px, so 270 sits cleanly between the two. */
 .schedule-crop { position: relative; width: 604px; aspect-ratio: 1 / 1; overflow: hidden; }
 .schedule-crop img { position: absolute; left: 0; top: calc(-100% * 270 / 1080); width: 100%; height: auto; }
-.momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 0; }
+.momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 0; scroll-margin-top: 24px; }
 
 /* The Momoyoga widget ships its own Inter-based styling. These rules pull it
    back to the site's look: Avenir throughout, brown headings and warm borders

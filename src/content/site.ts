@@ -69,6 +69,11 @@ export const images = {
   colaboradoresPersonal,
 };
 
+export const bannerCopy = {
+  text: "🪷 ¡Bienvenido/a! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞",
+  href: "/yoga/#reserva",
+};
+
 export const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/yoga/", label: "YOGA" },
