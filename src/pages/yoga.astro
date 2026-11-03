@@ -4,10 +4,32 @@ import { yogaCopy, images } from "../content/site";
 ---
 
 <BaseLayout title={yogaCopy.pageTitle} description={yogaCopy.description}>
-  <section class="schedule-banner">
+  <section class="schedule-banner" id="horario">
     <div class="schedule-crop">
       <img src={images.schedule.src} alt="Horario semanal de Adarsha Yoga" />
     </div>
+  </section>
+
+  <section class="momo-schedule" id="reserva">
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://cdn.momo.yoga/plugins/schedule-integration/schedule.css"
+    />
+    <script
+      is:inline
+      type="module"
+      crossorigin="anonymous"
+      src="https://cdn.momo.yoga/plugins/schedule-integration/schedule.js"></script>
+    <div
+      data-momo-schedule="https://www.momoyoga.com/adarsha-yoga/"
+      data-momo-view-type="Weekly"
+      data-momo-show-teacher="true"
+      data-momo-show-teacher-filter="false"
+      data-momo-show-schedule-images="true"
+      data-momo-apply-colors="true"
+      data-momo-show-end-time="true"
+      data-momo-primary-color="#764a32"></div>
   </section>
 
   <section class="yoga-title">
@@ -69,4 +91,31 @@ import { yogaCopy, images } from "../content/site";
       <p><a href="/contacto/#contacto">{yogaCopy.officeCta}</a></p>
     </div>
   </section>
+  <!-- The Momoyoga widget mounts late and grows by around a thousand pixels,
+       which drags every section below it past wherever the browser has already
+       jumped for a #hash. Re-run the jump as the widget settles, and stop the
+       moment the visitor scrolls for themselves. The jump is instant because
+       the page sets scroll-behavior: smooth, and an animated scroll would be
+       cancelled by the next correction. -->
+  <script is:inline>
+    (() => {
+      let target = null;
+      try { target = location.hash && document.querySelector(location.hash); } catch {}
+      if (!target) return;
+
+      let active = true;
+      const stop = () => { active = false; };
+      for (const event of ["wheel", "touchstart", "keydown"]) {
+        addEventListener(event, stop, { once: true, passive: true });
+      }
+
+      const settle = () => {
+        if (!active) return;
+        const drift = target.getBoundingClientRect().top;
+        if (Math.abs(drift) > 4) target.scrollIntoView({ behavior: "instant", block: "start" });
+      };
+      addEventListener("load", settle);
+      for (const delay of [500, 1500, 3000, 5000]) setTimeout(settle, delay);
+    })();
+  </script>
 </BaseLayout>

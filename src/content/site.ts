@@ -69,6 +69,11 @@ export const images = {
   colaboradoresPersonal,
 };
 
+export const bannerCopy = {
+  text: "🪷 ¡Bienvenida/o! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞\u00a0→",
+  href: "/yoga/#reserva",
+};
+
 export const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/yoga/", label: "YOGA" },
@@ -91,9 +96,9 @@ export const homeCopy = {
     "En Adarsha Yoga la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
   scheduleCta: "    HORARIO    ",
-  scheduleHref: "/yoga/",
-  preciosCta: "    PRECIOS    ",
-  preciosHref: "/yoga/#precios",
+  scheduleHref: "/yoga/#horario",
+  reservaCta: "    RESERVAR    ",
+  reservaHref: "/yoga/#reserva",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
@@ -145,9 +150,9 @@ export const yogaCopy = {
       items: [
         "Mensualidad 5 clases / mes: 65€",
         "Mensualidad clases ilimitadas: 90€",
+        "Clase suelta: 20€",
         "Bono 3 clases: 50€",
         "Bono 10 clases: 150€",
-        "Clase suelta: 20€",
       ],
     },
     {
