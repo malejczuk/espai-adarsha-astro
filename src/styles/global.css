@@ -35,7 +35,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .container { width: min(var(--page), calc(100% - 40px)); margin-inline: auto; }
 
 /* Announcement strip above the header on every page. */
-.site-banner { background: var(--brown); color: var(--white); text-align: center; }
+.site-banner { background: var(--clay); color: var(--brown); text-align: center; border-bottom: 1px solid rgba(255, 255, 255, .55); }
 .site-banner a { display: block; width: min(var(--page), calc(100% - 40px)); margin-inline: auto; padding: 11px 0; font-size: 14px; line-height: 1.4; text-decoration: none; text-wrap: balance; }
 .site-banner a:hover { text-decoration: underline; }
 
