@@ -121,6 +121,25 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .schedule-crop { position: relative; width: 604px; aspect-ratio: 1 / 1; overflow: hidden; }
 .schedule-crop img { position: absolute; left: 0; top: calc(-100% * 270 / 1080); width: 100%; height: auto; }
 .momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 0; }
+
+/* The Momoyoga widget ships its own Inter/pill-shaped styling. These rules pull
+   it back to the site's editorial look: Caudex headings, Avenir body, square
+   corners and warm brown borders instead of grey. schedule.css loads after this
+   file, so every override is scoped through .momo-schedule-wrapper to outrank
+   the plugin's own .class[data-v-*] selectors. Class names come from the
+   plugin's stylesheet, so re-check them if the widget is ever updated. */
+.momo-schedule .momo-schedule-wrapper { font-family: var(--body); font-weight: 300; color: var(--ink); }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__day,
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item__title,
+.momo-schedule .momo-schedule-wrapper .momo-date-pagination__period { font-family: var(--display); color: var(--brown); }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--taupe); }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 1px solid rgba(118, 74, 50, .25); border-radius: 0; }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item__image,
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { border-radius: 0; }
+.momo-schedule .momo-schedule-wrapper .momo-button { border-radius: 0; font-family: var(--body); font-size: 14px; }
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border-color: rgba(118, 74, 50, .35); color: var(--brown); }
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: var(--brown); color: var(--white); }
+.momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 700 50px/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
