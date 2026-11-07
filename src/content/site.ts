@@ -162,9 +162,9 @@ export const yogaCopy = {
       ],
     },
     {
-      title: "Sesiones",
+      title: "Sesiones Individuales",
       items: [
-        "Sesión individual + secuencia personalizada: 60€",
+        "Sesión individual: 60€",
         "Bono 4 sesiones: 180€",
         "Bono 10 sesiones: 400€",
       ],
