@@ -13,9 +13,14 @@ import { yogaCopy, images } from "../content/site";
     <div class="yoga-rhythm-copy">
       <h2>{yogaCopy.rhythmTitle}</h2>
       <p>{yogaCopy.intro}</p>
-      <ul class="yoga-style-list">
-        {yogaCopy.styles.map((style) => <li><strong>{style.title}:</strong> {style.body}</li>)}
-      </ul>
+      <div class="class-accordion">
+        {yogaCopy.classes.map((item) => (
+          <details class="class-item">
+            <summary>{item.title}</summary>
+            <p>{item.body}</p>
+          </details>
+        ))}
+      </div>
     </div>
     <div class="yoga-photo-stack">
       <img src={images.groupClass.src} alt="Clase grupal de yoga" />

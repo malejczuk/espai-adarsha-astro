@@ -130,9 +130,12 @@ export const yogaCopy = {
   rhythmTitle: "Tu práctica, tu ritmo",
   intro:
     "En Adarsha Yoga nos alejamos de las sesiones masivas, para ofrecer un enfoque personalizado donde la práctica se adapta a ti y a tu momento actual.",
-  styles: [
+  // One entry per class name on the schedule. Hatha Vinyasa, Yoga Integral and
+  // Yin Yoga Somático keep the descriptions this section used to list; the rest
+  // are waiting on copy.
+  classes: [
     {
-      title: "Hatha Vinyasa Yoga",
+      title: "Hatha Vinyasa (nivel I y II)",
       body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
     },
     {
@@ -143,6 +146,9 @@ export const yogaCopy = {
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
+    { title: "Dynamic Hatha", body: "PLACEHOLDER" },
+    { title: "Hatha Fuerza: Strength & Mobility", body: "PLACEHOLDER" },
+    { title: "Movimiento y Conciencia Pélvica", body: "PLACEHOLDER" },
   ],
   methodTitle: "Un método basado en la progresión",
   method: [

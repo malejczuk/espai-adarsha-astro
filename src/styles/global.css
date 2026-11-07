@@ -162,9 +162,21 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: 43% 57%; gap: 42px; padding-bottom: 86px; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }
-.yoga-style-list { margin: 32px 0 0; padding-left: 28px; }
-.yoga-style-list li + li { margin-top: 30px; }
-.yoga-style-list strong { color: var(--brown); font-weight: 700; }
+/* One <details> per class on the schedule. The marker is drawn as a +/- in
+   ::after so it sits at the end of the row whatever the title's length, and
+   the default triangle is removed in both its standard and WebKit spellings. */
+.class-accordion { margin-top: 32px; border-top: 1px solid rgba(118, 74, 50, .25); }
+.class-item { border-bottom: 1px solid rgba(118, 74, 50, .25); }
+.class-item summary {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  padding: 18px 0; cursor: pointer; list-style: none;
+  font: 700 18px/1.4 var(--display); color: var(--brown);
+}
+.class-item summary::-webkit-details-marker { display: none; }
+.class-item summary::after { content: "+"; flex: none; font-weight: 400; font-size: 22px; line-height: 1; }
+.class-item[open] summary::after { content: "\2212"; }
+.class-item summary:hover { text-decoration: underline; }
+.class-item > p { padding: 0 0 22px; }
 .yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
 .yoga-prices-band { background: #7b4c31; color: #fff; }
