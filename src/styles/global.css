@@ -107,7 +107,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .ecosystem-band img { height: 752px; object-fit: cover; }
 .ecosystem-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
 .ecosystem-copy h2 { font: 400 40px/1.28 var(--display); }
-.ecosystem-copy p { margin-top: 34px; font: 400 25px/1.55 var(--display); }
+/* Body copy, matching the paragraphs in .home-value-copy, rather than the
+   large serif the heading above it uses. */
+.ecosystem-copy p { margin-top: 34px; font: 300 16px/1.85 var(--body); color: #000; }
 .ecosystem-copy .btn-outline { margin-top: 40px; }
 
 /* Shared editorial blocks */
@@ -292,7 +294,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .ecosystem-band img { height: 460px; }
   .ecosystem-copy { padding: 60px 28px 70px; }
   .ecosystem-copy h2 { font-size: 34px; }
-  .ecosystem-copy p { font-size: 21px; }
   .page-title-band { padding: 60px 24px 52px; }
   .page-title-band h1 { font-size: 36px; }
   .schedule-banner { height: auto; padding: 0; }
