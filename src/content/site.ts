@@ -71,12 +71,12 @@ export const images = {
 
 export const bannerCopy = {
   text: "🪷 ¡Bienvenida/o! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞\u00a0→",
-  href: "/yoga/#reserva",
+  href: "/horario/#reserva",
 };
 
 export const navItems = [
-  { href: "/", label: "Inicio" },
   { href: "/yoga/", label: "YOGA" },
+  { href: "/horario/", label: "Horario" },
   { href: "/equipo/", label: "Equipo" },
   { href: "/espacio/", label: "Espacio" },
   { href: "/contacto/", label: "Contacto" },
@@ -96,9 +96,9 @@ export const homeCopy = {
     "En Adarsha Yoga la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
   scheduleCta: "    HORARIO    ",
-  scheduleHref: "/yoga/#horario",
+  scheduleHref: "/horario/#horario",
   reservaCta: "    RESERVAR    ",
-  reservaHref: "/yoga/#reserva",
+  reservaHref: "/horario/#reserva",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
@@ -115,10 +115,16 @@ export const homeCopy = {
   ecosystemCta: "Nuestros colaboradores",
 };
 
+export const horarioCopy = {
+  pageTitle: "Horario y Precios | Adarsha Yoga",
+  description:
+    "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
+};
+
 export const yogaCopy = {
   pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Adarsha Yoga",
   description:
-    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Consulta horarios, bonos y precios en Adarsha Yoga.",
+    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Un enfoque personalizado en Adarsha Yoga, Barcelona.",
   introTitle: "Practica yoga en Adarsha",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   rhythmTitle: "Tu práctica, tu ritmo",
@@ -156,11 +162,11 @@ export const yogaCopy = {
       ],
     },
     {
-      title: "Clases Individuales",
+      title: "Sesiones",
       items: [
         "Sesión individual + secuencia personalizada: 60€",
-        "Bono 4 clases individuales: 180€",
-        "Bono 10 clases individuales: 400€",
+        "Bono 4 sesiones: 180€",
+        "Bono 10 sesiones: 400€",
       ],
     },
   ],

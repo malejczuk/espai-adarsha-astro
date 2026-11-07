@@ -131,7 +131,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .schedule-crop img { position: absolute; left: 0; top: calc(-100% * 270 / 1080); width: 100%; height: auto; }
 /* min-height holds the widget's space while its data loads from the CDN, so the
    footer does not sit high on the page and then get shoved down on arrival. */
-.momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 0; min-height: 70vh; scroll-margin-top: 24px; }
+.momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 60px; min-height: 70vh; scroll-margin-top: 24px; }
 
 /* The Momoyoga widget ships its own Inter-based styling. These rules pull it
    back to the site's look: Avenir throughout, brown headings and warm borders
@@ -296,7 +296,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .page-title-band h1 { font-size: 36px; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
-  .momo-schedule { padding-top: 48px; }
+  .momo-schedule { padding: 48px 0 40px; }
   .yoga-title h1 { font-size: 38px; }
   .yoga-title p { margin-top: 28px; font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
