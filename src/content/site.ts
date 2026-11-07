@@ -1,4 +1,4 @@
-import logo from "../../assets/adarsha-yoga.png";
+import logo from "../../assets/adarsha-yoga-horizontal.png";
 import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
@@ -71,12 +71,12 @@ export const images = {
 
 export const bannerCopy = {
   text: "🪷 ¡Bienvenida/o! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞\u00a0→",
-  href: "/yoga/#reserva",
+  href: "/horario/#reserva",
 };
 
 export const navItems = [
-  { href: "/", label: "Inicio" },
   { href: "/yoga/", label: "YOGA" },
+  { href: "/horario/", label: "Horario" },
   { href: "/equipo/", label: "Equipo" },
   { href: "/espacio/", label: "Espacio" },
   { href: "/contacto/", label: "Contacto" },
@@ -96,9 +96,9 @@ export const homeCopy = {
     "En Adarsha Yoga la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
   scheduleCta: "    HORARIO    ",
-  scheduleHref: "/yoga/#horario",
+  scheduleHref: "/horario/#horario",
   reservaCta: "    RESERVAR    ",
-  reservaHref: "/yoga/#reserva",
+  reservaHref: "/horario/#reserva",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
@@ -109,24 +109,35 @@ export const homeCopy = {
   ],
   ecosystemTitle: "¿Quieres conocer nuestro ecosistema?",
   ecosystemBody:
-    "Descubre los terapeutas con los que colaboramos, como las sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
-  ecosystemFoot:
-    "Si estás buscando casa para tu proyecto y quieres formar parte de nuestro equipo de colaboradores ponte en contacto con nosotros. Adarsha Yoga es más que un estudio, ¡es una red de terapeutas independientes!",
+    "Colaboramos con Raquel Jaroslavsky, una profesora de Movimiento y Conciencia Pélvica. Descubre sus clases para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
   ecosystemCta: "Nuestros colaboradores",
+};
+
+export const horarioCopy = {
+  heading: "Horario",
+  pricesHeading: "Precios",
+  pageTitle: "Horario y Precios | Adarsha Yoga",
+  description:
+    "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
 };
 
 export const yogaCopy = {
   pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Adarsha Yoga",
   description:
-    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Consulta horarios, bonos y precios en Adarsha Yoga.",
+    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Un enfoque personalizado en Adarsha Yoga, Barcelona.",
   introTitle: "Practica yoga en Adarsha",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   rhythmTitle: "Tu práctica, tu ritmo",
   intro:
     "En Adarsha Yoga nos alejamos de las sesiones masivas, para ofrecer un enfoque personalizado donde la práctica se adapta a ti y a tu momento actual.",
-  styles: [
+  // One entry per class we teach, in schedule order of appearance. Movimiento y
+  // Conciencia Pélvica is on the schedule too but is Raquel's own class, billed
+  // separately, and lives on the Colaboradores page instead. Hatha Vinyasa, Yoga
+  // Integral and Yin Yoga Somático keep the descriptions this section used to
+  // list; the rest are waiting on copy.
+  classes: [
     {
-      title: "Hatha Vinyasa Yoga",
+      title: "Hatha Vinyasa (nivel I y II)",
       body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
     },
     {
@@ -137,6 +148,8 @@ export const yogaCopy = {
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
+    { title: "Dynamic Hatha", body: "PLACEHOLDER" },
+    { title: "Hatha Fuerza: Strength & Mobility", body: "PLACEHOLDER" },
   ],
   methodTitle: "Un método basado en la progresión",
   method: [
@@ -156,11 +169,11 @@ export const yogaCopy = {
       ],
     },
     {
-      title: "Clases Individuales",
+      title: "Sesiones Individuales",
       items: [
-        "Sesión individual + secuencia personalizada: 60€",
-        "Bono 4 clases individuales: 180€",
-        "Bono 10 clases individuales: 400€",
+        "Sesión individual: 60€",
+        "Bono 4 sesiones: 180€",
+        "Bono 10 sesiones: 400€",
       ],
     },
   ],
@@ -276,6 +289,8 @@ export const equipoCopy = {
   meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para observarse y transformarse desde adentro hacia fuera."],
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
+  invite:
+    "¿Te dedicas al movimiento consciente o a la salud holística? ¿Quieres formar parte de nuestro equipo de colaboradores? Ponte en contacto con nosotros; nos encantaría escuchar de ti.",
   members: [
     { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora", href: "/bio-laia/", image: equipoLaia },
     { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "Director de operaciones", href: "/bio-kristoff/", image: kristoffTeam },
