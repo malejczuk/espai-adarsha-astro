@@ -114,6 +114,8 @@ export const homeCopy = {
 };
 
 export const horarioCopy = {
+  heading: "Horario",
+  pricesHeading: "Precios",
   pageTitle: "Horario y Precios | Adarsha Yoga",
   description:
     "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",

@@ -4,7 +4,11 @@ import { horarioCopy, yogaCopy, images } from "../content/site";
 ---
 
 <BaseLayout title={horarioCopy.pageTitle} description={horarioCopy.description}>
-  <section class="schedule-banner" id="horario">
+  <section class="page-title-band" id="horario">
+    <h1>{horarioCopy.heading}</h1>
+  </section>
+
+  <section class="schedule-banner">
     <div class="schedule-crop">
       <img src={images.schedule.src} alt="Horario semanal de Adarsha Yoga" />
     </div>
@@ -34,10 +38,11 @@ import { horarioCopy, yogaCopy, images } from "../content/site";
 
   <section id="precios" class="yoga-prices-band">
     <div class="container yoga-prices">
+      <h2 class="prices-heading">{horarioCopy.pricesHeading}</h2>
       <div class="price-columns">
         {yogaCopy.prices.map((group) => (
           <div class="price-column">
-            <h2>{group.title}</h2>
+            <h3>{group.title}</h3>
             <ul class="plain-lines">{group.items.map((item) => <li>- {item}</li>)}</ul>
           </div>
         ))}

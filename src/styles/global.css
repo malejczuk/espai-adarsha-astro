@@ -169,7 +169,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
 .yoga-prices-band { background: #7b4c31; color: #fff; }
 .yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
-.yoga-prices h2 { font: 400 30px/1.25 var(--display); color: #fff; }
+.yoga-prices h3 { font: 400 30px/1.25 var(--display); color: #fff; }
+.prices-heading { font: 400 41px/1.2 var(--display); color: #fff; }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
 .price-column { padding: 8px 28px 0; }
 .method-section h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
