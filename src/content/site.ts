@@ -110,8 +110,6 @@ export const homeCopy = {
   ecosystemTitle: "¿Quieres conocer nuestro ecosistema?",
   ecosystemBody:
     "Descubre los terapeutas con los que colaboramos, como las sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
-  ecosystemFoot:
-    "Si estás buscando casa para tu proyecto y quieres formar parte de nuestro equipo de colaboradores ponte en contacto con nosotros. Adarsha Yoga es más que un estudio, ¡es una red de terapeutas independientes!",
   ecosystemCta: "Nuestros colaboradores",
 };
 
@@ -282,6 +280,14 @@ export const equipoCopy = {
   meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para observarse y transformarse desde adentro hacia fuera."],
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
+  // The link sits mid-sentence, so the copy is split around it rather than
+  // held as one string.
+  invite: {
+    lead: "¿Te dedicas al movimiento consciente o a la salud holística? ¿Quieres formar parte de nuestro equipo de colaboradores? ",
+    linkLabel: "Ponte en contacto con nosotros",
+    href: "/contacto/",
+    tail: "; nos encantaría escuchar de ti.",
+  },
   members: [
     { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora", href: "/bio-laia/", image: equipoLaia },
     { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "Director de operaciones", href: "/bio-kristoff/", image: kristoffTeam },

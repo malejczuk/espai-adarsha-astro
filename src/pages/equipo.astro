@@ -24,6 +24,10 @@ import { equipoCopy } from "../content/site";
           </article>
         ))}
       </div>
+      <p class="team-invite">
+        {equipoCopy.invite.lead}
+        <a href={equipoCopy.invite.href}>{equipoCopy.invite.linkLabel}</a>{equipoCopy.invite.tail}
+      </p>
     </div>
   </section>
 </BaseLayout>
