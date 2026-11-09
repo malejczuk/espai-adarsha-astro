@@ -134,8 +134,8 @@ export const yogaCopy = {
   // Conciencia Pélvica is on the schedule too but is Raquel's own class, billed
   // separately, and lives on the Colaboradores page instead. Hatha Vinyasa, Yoga
   // Integral and Yin Yoga Somático keep the descriptions this section used to
-  // list. A body may be an array when the copy runs to more than one
-  // paragraph; the accordion renders one <p> per entry.
+  // list. Every body is a single paragraph at the moment, but one may be an
+  // array when the copy runs longer; the accordion renders one <p> per entry.
   classes: [
     {
       title: "Hatha Vinyasa (nivel I y II)",
@@ -159,12 +159,7 @@ export const yogaCopy = {
       // Taught in English with Spanish support, which the closing line says in
       // both languages, the way the class is announced.
       title: "Hatha Fuerza: Strength & Mobility",
-      body: [
-        "Build strength that carries over beyond the mat and into everyday life.",
-        "This is a strong practice focused on strength and mobility in a yogic context. Poses can feel out of reach simply because we lack the strength, so we target exactly those areas.",
-        "We bring a special focus to the core and work on the mobility and articulation of our spine and shoulders.",
-        "Taught in English, con apoyo en español. All levels welcome.",
-      ],
+      body: "A class designed to strengthen your yoga practice. We bring a special focus to the core and the mobility and articulation of the pelvis, shoulders and spine. Develop strength that carries over beyond the mat and into everyday life. Taught in English, con apoyo en español. All levels welcome.",
     },
   ],
   methodTitle: "Un método basado en la progresión",
