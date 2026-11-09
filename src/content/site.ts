@@ -153,12 +153,7 @@ export const yogaCopy = {
       // Written in English because the class itself is taught in English, as
       // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
       title: "Dynamic Hatha (English)",
-      body: [
-        "A moderate-intensity class blending movement, pranayama and meditation to develop physical strength, awareness of posture and connection to the breath.",
-        "We move across dynamic sequences and slow holds, working through strong standing poses, forward folds and heart-opening extensions.",
-        "We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat.",
-        "Taught in English, all levels welcome.",
-      ],
+      body: "We move across dynamic sequences and slow holds to develop physical strength, awareness of posture and connection to the breath. We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat. Taught in English, all levels welcome.",
     },
     {
       // Taught in English with Spanish support, which the closing line says in
