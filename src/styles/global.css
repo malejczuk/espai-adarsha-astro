@@ -40,12 +40,10 @@ body { margin: 0; min-width: 320px; font: 300 16px/1.8 var(--body); }
 img { display: block; width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 3px; }
 p, h1, h2, h3, h4, h5, h6 { margin: 0; }
-/* Spanish headings run long ("Acompañamiento personalizado"), and at 320px a
-   single word can be wider than the column, which pushes the whole page
-   sideways. Hyphenate rather than overflow — the document is lang="es", so the
-   browser breaks on Spanish rules — and break the word outright if even that
-   does not fit. Neither applies while a word fits, so nothing else moves. */
-h1, h2, h3, h4, h5, h6 { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
+/* Headings wrap between words and are never broken inside one. Spanish words
+   run long ("Acompañamiento"), so where one would be wider than its column the
+   heading is sized down at the breakpoint instead — see .editorial-copy h2.
+   Splitting a word, hyphen or not, reads worse than a smaller heading. */
 
 .container { width: min(var(--page), calc(100% - 40px)); margin-inline: auto; }
 
@@ -341,6 +339,11 @@ h1, h2, h3, h4, h5, h6 { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: br
   .ecosystem-band img { height: 460px; }
   .ecosystem-copy { padding: 60px 28px 70px; }
   .ecosystem-copy h2 { font-size: 34px; }
+  /* 30px, not the 41px this heading takes on a wide screen: at 320px the
+     column is 264px and "Acompañamiento" is 330px wide at 41px, so the word
+     would not fit on a line of its own. Shrinking the heading lets it wrap
+     between words instead of being split inside one. */
+  .editorial-copy h2 { font-size: 30px; }
   .page-title-band { padding: 60px 24px 52px; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
