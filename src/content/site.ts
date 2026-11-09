@@ -201,7 +201,7 @@ export const yogaCopy = {
     "Al liberar las tensiones del sedentarismo y regular el sistema nervioso, el equipo recupera la movilidad física y la claridad mental necesarias para afrontar cada reto.",
     "Cuidar la salud integral de los trabajadores cultiva una cultura de presencia y vitalidad.",
   ],
-  officeCta: "Solicita más información aquí",
+  officeCta: "Solicita más información aquí.",
 };
 
 export const footerCopy = {
