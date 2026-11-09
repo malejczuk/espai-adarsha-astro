@@ -15,8 +15,7 @@
 :root {
   --white: #fff;
   --ink: #2f2520;
-  --brown: #764a32;
-  --schedule-brown: #764329;
+  --brown: #764329;
   --taupe: #b69682;
   --clay: #ddcbc0;
   --rose: #bd9d89;
@@ -125,7 +124,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .section-pad { padding: 80px 0; }
 
 /* Yoga */
-.schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--schedule-brown); }
+.schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--brown); }
 /* schedule-current.png is 1080x1350. Crop away the "Adarsha Yoga" title band
    (top 270px), leaving the 1080x1080 grid. The title band ends at 242px and
    the day dividers begin at 312px, so 270 sits cleanly between the two. */
@@ -179,7 +178,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item > p { padding: 0 0 22px; }
 .yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
-.yoga-prices-band { background: #7b4c31; color: #fff; }
+.yoga-prices-band { background: var(--brown); color: #fff; }
 .yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
 .yoga-prices h3 { font: 400 30px/1.25 var(--display); color: #fff; }
 .prices-heading { font: 400 41px/1.2 var(--display); color: #fff; }
