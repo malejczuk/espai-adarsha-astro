@@ -264,9 +264,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .space-details img { height: 500px; object-fit: cover; }
 .space-details h2 { margin-top: 24px; font: 400 30px/1.3 var(--display); }
 
-/* Contact. The page carries no heading of its own: Dirección and Contacto head
-   their own columns and the page is short enough to read at a glance. Spaced
-   like Equipo's team section so it does not start tight against the header. */
+/* Contact. The page opens with the same clay title band Horario uses and that
+   Equipo's meaning band echoes, so it leads the way the rest of the site does.
+   What follows is spaced like Equipo's team section. Dirección and Contacto
+   take the brown the site's headings take, not the black the page sets. */
 .contact-page { width: min(980px, calc(100% - 40px)); margin: 0 auto; padding: 86px 0 96px; color: #000; }
 .contact-columns { width: 420px; margin: 0 auto 64px; display: grid; grid-template-columns: 1fr 1.28fr; gap: 42px; }
 .contact-column + .contact-column { border-left: 1px solid #000; padding-left: 42px; }
