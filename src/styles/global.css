@@ -134,8 +134,13 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    banner, so the crop edge is invisible and only the framing matters. Crop away
    the empty top band (574px), leaving the 2295x2295 grid. The day dividers
    begin at 659px, so 574 leaves them the same breathing room the old 1080px
-   artwork had. */
-.schedule-crop { position: relative; width: 604px; aspect-ratio: 1 / 1; overflow: hidden; }
+   artwork had.
+
+   The artwork's very last row is a stray #98725f line across its full width,
+   an artboard edge left in the export. At this scale it lands on a quarter of
+   a pixel and the browser smears it into a faint rule under the grid, so the
+   crop stops 3 rows short of the bottom (2292 of 2295) to leave it outside. */
+.schedule-crop { position: relative; width: 604px; aspect-ratio: 2295 / 2292; overflow: hidden; }
 .schedule-crop img { position: absolute; left: 0; top: calc(-100% * 574 / 2295); width: 100%; height: auto; }
 /* min-height holds the widget's space while its data loads from the CDN, so the
    footer does not sit high on the page and then get shoved down on arrival. */
@@ -185,18 +190,14 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item > p { padding: 0 0 22px; }
 .yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
-/* Precios runs across two bands: the heading keeps the brown, and the lists
-   below it sit on the clay the page's own title band uses, so the prices read
-   as their own block rather than as more of the brown the footer continues.
-   The two share .yoga-prices and split the padding it used to hold, so the
-   section keeps its old height. */
-.yoga-prices-band { background: var(--brown); color: #fff; }
-.yoga-prices-band .yoga-prices { padding: 48px 0 42px; }
-.prices-detail-band { background: var(--clay); color: #000; }
-.prices-detail-band .yoga-prices { padding: 42px 0 54px; }
-.yoga-prices { display: grid; gap: 34px; text-align: center; }
+/* Precios sits on the clay the page's own title band uses, heading included,
+   so the section reads as one block and keeps a clear edge above the footer's
+   brown. Its type takes the same colours that band's does: brown headings over
+   black lines. */
+.yoga-prices-band { background: var(--clay); color: #000; }
+.yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
 .yoga-prices h3 { font: 400 30px/1.25 var(--display); color: var(--brown); }
-.prices-heading { font: 400 41px/1.2 var(--display); color: #fff; }
+.prices-heading { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
 .price-column { padding: 8px 28px 0; }
 .method-section h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
@@ -332,9 +333,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
   .yoga-photo-stack img { height: 480px; }
   .method-inner, .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
-  .yoga-prices { gap: 30px; }
-  .yoga-prices-band .yoga-prices { padding: 42px 20px 36px; }
-  .prices-detail-band .yoga-prices { padding: 36px 20px 46px; }
+  .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
   .method-section { padding: 64px 0; }
