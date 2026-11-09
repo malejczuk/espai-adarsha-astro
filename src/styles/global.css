@@ -16,6 +16,11 @@
   --white: #fff;
   --ink: #2f2520;
   --brown: #764329;
+  /* The same brown as channel numbers, for the rules and borders that want it
+     at partial alpha: rgba(var(--brown-rgb), .25). Keep the two in step.
+     color-mix() would avoid the duplication but resolves to transparent on
+     browsers older than 2023, which would drop those lines silently. */
+  --brown-rgb: 118, 67, 41;
   --taupe: #b69682;
   --clay: #ddcbc0;
   --rose: #bd9d89;
@@ -150,11 +155,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    trick the footer headings rely on. 500 would render as plain light. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__title { font-weight: 600; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--taupe); }
-.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 2px solid rgba(118, 74, 50, .3); border-radius: 0; }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 2px solid rgba(var(--brown-rgb), .3); border-radius: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image,
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { border-radius: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 2px solid rgba(118, 74, 50, .3); color: var(--brown); }
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 2px solid rgba(var(--brown-rgb), .3); color: var(--brown); }
 .momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: var(--brown); color: var(--white); }
 .momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
@@ -166,8 +171,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* One <details> per class on the schedule. The marker is drawn as a +/- in
    ::after so it sits at the end of the row whatever the title's length, and
    the default triangle is removed in both its standard and WebKit spellings. */
-.class-accordion { margin-top: 32px; border-top: 1px solid rgba(118, 74, 50, .25); }
-.class-item { border-bottom: 1px solid rgba(118, 74, 50, .25); }
+.class-accordion { margin-top: 32px; border-top: 1px solid rgba(var(--brown-rgb), .25); }
+.class-item { border-bottom: 1px solid rgba(var(--brown-rgb), .25); }
 .class-item summary {
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
   padding: 18px 0; cursor: pointer; list-style: none;
@@ -277,7 +282,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .bio-section img { width: 100%; max-height: 790px; object-fit: cover; }
 .bio-links { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 45px; font: 400 20px/1.5 var(--display); }
 .bio-links h2 { margin-bottom: 10px; font: 400 32px/1.3 var(--display); color: var(--brown); }
-.bio-english { max-width: 620px; margin: 70px auto 0; padding-top: 40px; border-top: 1px solid rgba(118,74,50,.25); }
+.bio-english { max-width: 620px; margin: 70px auto 0; padding-top: 40px; border-top: 1px solid rgba(var(--brown-rgb), .25); }
 .bio-english h2 { margin: 0 0 10px 25px; font: 400 38px/1.2 var(--display); color: #000; }
 .bio-english h2 span { font-size: 24px; color: var(--taupe); white-space: nowrap; }
 .bio-english p { margin-top: 25px; }
