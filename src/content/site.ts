@@ -83,7 +83,9 @@ export const navItems = [
 ];
 
 export const homeCopy = {
-  title: "Adarsha Yoga. Un refugio de yoga, presencia y calma en medio de la ciudad.",
+  // index.astro splits this on the first sentence: "Adarsha Yoga." takes a line
+  // of its own and the rest follows. Keep the full stop after the name.
+  title: "Adarsha Yoga. Un refugio de presencia en medio de la ciudad.",
   subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",

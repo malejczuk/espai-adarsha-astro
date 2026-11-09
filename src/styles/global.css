@@ -89,7 +89,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
 .home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 68px 70px; text-align: center; color: var(--taupe); }
-.home-intro h1 { max-width: 500px; font: 400 35px/1.2 var(--display); }
+/* The h1 takes the brown rather than the taupe the block around it sets, so
+   the name leads and the lead paragraphs under it stay the lighter colour. */
+.home-intro h1 { max-width: 500px; font: 400 35px/1.2 var(--display); color: var(--brown); }
 .home-intro h1 span { display: block; }
 .home-intro-lead { max-width: 500px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
 .home-intro-lead p + p { margin-top: 30px; }
