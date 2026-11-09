@@ -134,7 +134,8 @@ export const yogaCopy = {
   // Conciencia Pélvica is on the schedule too but is Raquel's own class, billed
   // separately, and lives on the Colaboradores page instead. Hatha Vinyasa, Yoga
   // Integral and Yin Yoga Somático keep the descriptions this section used to
-  // list; Hatha Fuerza is still waiting on copy.
+  // list. A body may be an array when the copy runs to more than one
+  // paragraph; the accordion renders one <p> per entry.
   classes: [
     {
       title: "Hatha Vinyasa (nivel I y II)",
@@ -149,9 +150,8 @@ export const yogaCopy = {
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
     {
-      // Written in English because the class itself is taught in English, the
-      // only entry here that is. A body may be an array when the copy runs to
-      // more than one paragraph.
+      // Written in English because the class itself is taught in English, as
+      // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
       title: "Dynamic Hatha",
       body: [
         "A moderate-intensity class blending movement, pranayama and meditation to develop physical strength, awareness of posture and connection to the breath.",
@@ -160,7 +160,17 @@ export const yogaCopy = {
         "Taught in English, all levels welcome.",
       ],
     },
-    { title: "Hatha Fuerza: Strength & Mobility", body: "PLACEHOLDER" },
+    {
+      // Taught in English with Spanish support, which the closing line says in
+      // both languages, the way the class is announced.
+      title: "Hatha Fuerza: Strength & Mobility",
+      body: [
+        "Build strength that carries over beyond the mat and into everyday life.",
+        "This is a strong practice focused on strength and mobility in a yogic context. Poses can feel out of reach simply because we lack the strength, so we target exactly those areas.",
+        "We bring a special focus to the core and work on the mobility and articulation of our spine and shoulders.",
+        "Taught in English, con apoyo en español. All levels welcome.",
+      ],
+    },
   ],
   methodTitle: "Un método basado en la progresión",
   method: [
