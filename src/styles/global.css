@@ -35,6 +35,12 @@ body { margin: 0; min-width: 320px; font: 300 16px/1.8 var(--body); }
 img { display: block; width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: 3px; }
 p, h1, h2, h3, h4, h5, h6 { margin: 0; }
+/* Spanish headings run long ("Acompañamiento personalizado"), and at 320px a
+   single word can be wider than the column, which pushes the whole page
+   sideways. Hyphenate rather than overflow — the document is lang="es", so the
+   browser breaks on Spanish rules — and break the word outright if even that
+   does not fit. Neither applies while a word fits, so nothing else moves. */
+h1, h2, h3, h4, h5, h6 { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
 
 .container { width: min(var(--page), calc(100% - 40px)); margin-inline: auto; }
 
@@ -306,7 +312,12 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .footer-inner { gap: 28px; }
   .footer-tagline { font-size: 19px; }
   .footer-columns { grid-template-columns: 1fr; gap: 28px; }
-  .home-intro, .home-value, .ecosystem-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: 1fr; }
+  /* minmax(0, 1fr), not 1fr: a plain 1fr track is floored by its items'
+     automatic minimum size, so a wide item pushes the column past the screen
+     instead of being made to fit. That is what sent Colaboradores 11px wide at
+     375px and 66px at 320px. The 0 lets the column shrink to the viewport and
+     the items fit themselves to it. */
+  .home-intro, .home-value, .ecosystem-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
   .home-intro-image { order: -1; min-height: 0; height: 480px; }
   .home-intro-copy { padding: 58px 26px 65px; }
   .home-intro h1 { font-size: 31px; }
