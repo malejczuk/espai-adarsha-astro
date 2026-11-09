@@ -164,7 +164,7 @@ export const yogaCopy = {
       // Taught in English with Spanish support, which the closing line says in
       // both languages, the way the class is announced.
       title: "Hatha Fuerza: Strength & Mobility",
-      body: "A class designed to strengthen your yoga practice. We bring a special focus to the core and the mobility and articulation of the pelvis, shoulders and spine. Develop strength that carries over beyond the mat and into everyday life. Taught in English, con apoyo en español. All levels welcome.",
+      body: "A class designed to strengthen your yoga practice. We bring a special focus to the core and the mobility and articulation of the shoulders and spine. Develop strength that carries over beyond the mat and into everyday life. Taught in English, con apoyo en español."
     },
   ],
   methodTitle: "Un método basado en la progresión",
