@@ -1,4 +1,4 @@
-import logo from "../../assets/adarsha-yoga.png";
+import logo from "../../assets/adarsha-yoga-horizontal.svg";
 import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
@@ -71,19 +71,23 @@ export const images = {
 
 export const bannerCopy = {
   text: "🪷 ¡Bienvenida/o! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞\u00a0→",
-  href: "/yoga/#reserva",
+  // #horario, the schedule at the top of the page, not #reserva, the booking
+  // widget below it: the banner's own words send people to the schedule first.
+  href: "/horario/#horario",
 };
 
 export const navItems = [
-  { href: "/", label: "Inicio" },
   { href: "/yoga/", label: "YOGA" },
+  { href: "/horario/", label: "Horario" },
   { href: "/equipo/", label: "Equipo" },
   { href: "/espacio/", label: "Espacio" },
   { href: "/contacto/", label: "Contacto" },
 ];
 
 export const homeCopy = {
-  title: "Adarsha Yoga. Un refugio de yoga, presencia y calma en medio de la ciudad.",
+  // index.astro splits this on the first sentence: "Adarsha Yoga." takes a line
+  // of its own and the rest follows. Keep the full stop after the name.
+  title: "Adarsha Yoga. Un refugio de presencia y calma en medio de la ciudad.",
   subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",
@@ -96,9 +100,9 @@ export const homeCopy = {
     "En Adarsha Yoga la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
   ],
   scheduleCta: "    HORARIO    ",
-  scheduleHref: "/yoga/#horario",
+  scheduleHref: "/horario/#horario",
   reservaCta: "    RESERVAR    ",
-  reservaHref: "/yoga/#reserva",
+  reservaHref: "/horario/#reserva",
   approachCta: "Nuestro enfoque",
   approachHref: "/yoga/#metodo",
   practiceHeading: "¿Cómo te gustaría practicar yoga?",
@@ -109,25 +113,44 @@ export const homeCopy = {
   ],
   ecosystemTitle: "¿Quieres conocer nuestro ecosistema?",
   ecosystemBody:
-    "Descubre los terapeutas con los que colaboramos, como las sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
-  ecosystemFoot:
-    "Si estás buscando casa para tu proyecto y quieres formar parte de nuestro equipo de colaboradores ponte en contacto con nosotros. Adarsha Yoga es más que un estudio, ¡es una red de terapeutas independientes!",
+    "Descubre las clases de Raquel Jaroslavsky, una profesora de Movimiento y Conciencia Pélvica, para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
   ecosystemCta: "Nuestros colaboradores",
+};
+
+export const horarioCopy = {
+  heading: "Horario",
+  pricesHeading: "Precios",
+  pageTitle: "Horario y Precios | Adarsha Yoga",
+  description:
+    "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
 };
 
 export const yogaCopy = {
   pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Adarsha Yoga",
   description:
-    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Consulta horarios, bonos y precios en Adarsha Yoga.",
+    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Un enfoque personalizado en Adarsha Yoga, Barcelona.",
   introTitle: "Practica yoga en Adarsha",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   rhythmTitle: "Tu práctica, tu ritmo",
   intro:
     "En Adarsha Yoga nos alejamos de las sesiones masivas, para ofrecer un enfoque personalizado donde la práctica se adapta a ti y a tu momento actual.",
-  styles: [
+  // One entry per class we teach, in the order the accordion should list them,
+  // which is not the schedule's. Movimiento y Conciencia Pélvica is on the
+  // schedule too but is Raquel's own class, billed separately, and lives on the
+  // Colaboradores page instead. Hatha Vinyasa, Yoga Integral and Yin Yoga
+  // Somático keep the descriptions this section used to list. Every body is a
+  // single paragraph at the moment, but one may be an array when the copy runs
+  // longer; the accordion renders one <p> per entry.
+  classes: [
     {
-      title: "Hatha Vinyasa Yoga",
+      title: "Hatha Vinyasa (nivel I y II)",
       body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
+    },
+    {
+      // Written in English because the class itself is taught in English, as
+      // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
+      title: "Dynamic Hatha (English)",
+      body: "We move across dynamic sequences and slow holds to develop physical strength, awareness of posture and connection to the breath. We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat. Taught in English, all levels welcome.",
     },
     {
       title: "Yoga Integral",
@@ -136,6 +159,12 @@ export const yogaCopy = {
     {
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
+    },
+    {
+      // Taught in English with Spanish support, which the closing line says in
+      // both languages, the way the class is announced.
+      title: "Hatha Fuerza: Strength & Mobility",
+      body: "A class designed to strengthen your yoga practice. We bring a special focus to the core and the mobility and articulation of the shoulders and spine. Develop strength that carries over beyond the mat and into everyday life. Taught in English, con apoyo en español."
     },
   ],
   methodTitle: "Un método basado en la progresión",
@@ -148,19 +177,19 @@ export const yogaCopy = {
     {
       title: "Clases Grupales",
       items: [
-        "Mensualidad 5 clases / mes: 65€",
-        "Mensualidad clases ilimitadas: 90€",
-        "Clase suelta: 20€",
-        "Bono 3 clases: 50€",
-        "Bono 10 clases: 150€",
+        "Mensualidad 5 clases / mes: 65\u00a0€",
+        "Mensualidad clases ilimitadas: 90\u00a0€",
+        "Clase suelta: 20\u00a0€",
+        "Bono 3 clases: 50\u00a0€",
+        "Bono 10 clases: 150\u00a0€",
       ],
     },
     {
-      title: "Clases Individuales",
+      title: "Sesiones Individuales",
       items: [
-        "Sesión individual + secuencia personalizada: 60€",
-        "Bono 4 clases individuales: 180€",
-        "Bono 10 clases individuales: 400€",
+        "Sesión individual: 60\u00a0€",
+        "Bono 4 sesiones: 180\u00a0€",
+        "Bono 10 sesiones: 400\u00a0€",
       ],
     },
   ],
@@ -177,7 +206,7 @@ export const yogaCopy = {
     "Al liberar las tensiones del sedentarismo y regular el sistema nervioso, el equipo recupera la movilidad física y la claridad mental necesarias para afrontar cada reto.",
     "Cuidar la salud integral de los trabajadores cultiva una cultura de presencia y vitalidad.",
   ],
-  officeCta: "Solicita más información aquí",
+  officeCta: "Solicita más información aquí.",
 };
 
 export const footerCopy = {
@@ -208,10 +237,10 @@ export const footerCopy = {
 export const espacioCopy = {
   pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Adarsha Yoga",
   description:
-    "Alquila una sala de yoga de 50m2 con luz natural junto al metro Verdaguer, en Barcelona. Ideal para formaciones, talleres, terapias y sesiones individuales.",
+    "Alquila una sala de yoga de 50\u00a0m\u00b2 con luz natural junto al metro Verdaguer, en Barcelona. Ideal para formaciones, talleres, terapias y sesiones individuales.",
   heading: "¿Buscas un lugar donde desarrollar tus proyectos?",
   body: [
-    "Adarsha Yoga es un estudio de 50m2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
+    "Adarsha Yoga es un estudio de 50\u00a0m\u00b2 con luz natural y totalmente equipado, junto al metro Verdaguer (L4/L5/T4). Abrimos nuestras puertas a profesionales holísticos, formadores de crecimiento personal y terapeutas del movimiento.",
   ],
   uses: [
     "Formaciones intensivas de fin de semana",
@@ -252,10 +281,10 @@ export const colaboradoresCopy = {
   booking: { prefix: "Reservas:", email: "jarosraquel@gmail.com" },
   pricesHeading: "Sesiones de Movimiento y Conciencia Pélvica",
   prices: [
-    "Sesión suelta grupal: 35€",
-    "Sesión individual: 50€",
-    "Cuota trimestral de 2 sesiones al mes: 150€",
-    "Cuota trimestral de 4 sesiones al mes: 300€",
+    "Sesión suelta grupal: 35\u00a0€",
+    "Sesión individual: 50\u00a0€",
+    "Cuota trimestral de 2 sesiones al mes: 150\u00a0€",
+    "Cuota trimestral de 4 sesiones al mes: 300\u00a0€",
   ],
   personalizedHeading: "Acompañamiento personalizado",
   personalizedLead: "La constancia es la clave para liberar bloqueos, ganar movilidad y sentir cambios reales.",
@@ -276,10 +305,12 @@ export const equipoCopy = {
   meaning: ['"Adarsha" significa "espejo" en sánscrito.', "Adarsha Yoga: un estudio para observarse y transformarse desde adentro hacia fuera."],
   heading: "Quiénes somos",
   intro: "Cada uno de nosotros aporta su propia experiencia, sensibilidad y estilo, pero compartimos un mismo propósito: acompañarte en tu proceso con cuidado, respeto y de forma cercana.",
+  invite:
+    "¿Te dedicas al movimiento consciente o a la salud holística? ¿Quieres formar parte de nuestro equipo de colaboradores? Ponte en contacto con nosotros; nos encantaría escuchar de ti.",
   members: [
     { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora", href: "/bio-laia/", image: equipoLaia },
     { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "Director de operaciones", href: "/bio-kristoff/", image: kristoffTeam },
-    { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica · Colaboradora", href: "/colaboradores/", image: equipoRaquel },
+    { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica", title: "Colaboradora", href: "/colaboradores/", image: equipoRaquel },
   ],
 };
 

@@ -4,8 +4,11 @@ import { contact, images } from "../content/site";
 ---
 
 <BaseLayout title={contact.pageTitle} description={contact.description}>
-  <section id="contacto" class="contact-page">
+  <section id="contacto" class="page-title-band">
     <h1>{contact.heading}</h1>
+  </section>
+
+  <section class="contact-page">
     <div class="contact-columns">
       <div class="contact-column"><h2>{contact.addressHeading}</h2><p>{contact.addressLines.map((line) => <>{line}<br /></>)}</p></div>
       <div class="contact-column"><h2>{contact.contactHeading}</h2><p>{contact.intro}<br /><a href={`mailto:${contact.email}`}>{contact.email}</a><br /><span class="contact-instagram">{contact.instagram.prefix} <a href={contact.instagram.href}>{contact.instagram.label}</a></span></p></div>
