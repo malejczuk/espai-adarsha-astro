@@ -134,7 +134,7 @@ export const yogaCopy = {
   // Conciencia Pélvica is on the schedule too but is Raquel's own class, billed
   // separately, and lives on the Colaboradores page instead. Hatha Vinyasa, Yoga
   // Integral and Yin Yoga Somático keep the descriptions this section used to
-  // list; the rest are waiting on copy.
+  // list; Hatha Fuerza is still waiting on copy.
   classes: [
     {
       title: "Hatha Vinyasa (nivel I y II)",
@@ -148,7 +148,18 @@ export const yogaCopy = {
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
-    { title: "Dynamic Hatha", body: "PLACEHOLDER" },
+    {
+      // Written in English because the class itself is taught in English, the
+      // only entry here that is. A body may be an array when the copy runs to
+      // more than one paragraph.
+      title: "Dynamic Hatha",
+      body: [
+        "A moderate-intensity class blending movement, pranayama and meditation to develop physical strength, awareness of posture and connection to the breath.",
+        "We move across dynamic sequences and slow holds, working through strong standing poses, forward folds and heart-opening extensions.",
+        "We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat.",
+        "Taught in English, all levels welcome.",
+      ],
+    },
     { title: "Hatha Fuerza: Strength & Mobility", body: "PLACEHOLDER" },
   ],
   methodTitle: "Un método basado en la progresión",

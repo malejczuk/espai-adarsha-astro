@@ -17,7 +17,9 @@ import { yogaCopy, images } from "../content/site";
         {yogaCopy.classes.map((item) => (
           <details class="class-item">
             <summary>{item.title}</summary>
-            <p>{item.body}</p>
+            {(Array.isArray(item.body) ? item.body : [item.body]).map((para) => (
+              <p>{para}</p>
+            ))}
           </details>
         ))}
       </div>
