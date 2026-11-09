@@ -38,7 +38,16 @@ import { horarioCopy, yogaCopy, images } from "../content/site";
 
   <section id="precios" class="yoga-prices-band">
     <div class="container yoga-prices">
-      <h2 class="prices-heading">{horarioCopy.pricesHeading}</h2>
+      <h2 class="prices-heading" id="precios-heading">{horarioCopy.pricesHeading}</h2>
+    </div>
+  </section>
+
+  <!-- The lists sit on white below the heading's clay band, the way every page
+       here opens with a band and then runs on the page's own background. They
+       are still that heading's section to a screen reader, hence
+       aria-labelledby. -->
+  <section class="prices-detail-band" aria-labelledby="precios-heading">
+    <div class="container yoga-prices">
       <div class="price-columns">
         {yogaCopy.prices.map((group) => (
           <div class="price-column">
