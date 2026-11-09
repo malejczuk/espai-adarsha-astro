@@ -1,4 +1,4 @@
-import logo from "../../assets/adarsha-yoga-horizontal.png";
+import logo from "../../assets/adarsha-yoga-horizontal.svg";
 import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
