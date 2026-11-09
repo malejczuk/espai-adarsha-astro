@@ -185,7 +185,12 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
-.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: 43% 57%; gap: 42px; padding-bottom: 86px; }
+/* fr, not percentages: 43% + 57% already fills the container, so the gap was
+   added on top and pushed the photo column past the right edge — invisible on
+   a wide screen, a sideways scrollbar below about 1066px. fr tracks divide
+   what is left after the gap. minmax(0, …) keeps a wide item from flooring
+   the track, as on Colaboradores. */
+.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding-bottom: 86px; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }
 /* One <details> per class on the schedule. The marker is drawn as a +/- in
@@ -219,7 +224,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
 .method-section { background: var(--clay); padding: 86px 0; }
-.method-inner { display: grid; grid-template-columns: 42% 58%; gap: 68px; align-items: center; }
+.method-inner { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 68px; align-items: center; }
 .method-inner img { height: 560px; object-fit: cover; }
 .method-list { padding-left: 23px; margin-top: 30px; }
 .method-list li + li { margin-top: 24px; }
@@ -249,7 +254,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .team-intro { text-align: center; }
 .team-intro h2 { font: 400 44px/1.2 var(--display); color: var(--taupe); }
 .team-intro p { max-width: 660px; margin: 26px auto 0; }
-.team-grid { width: max-content; display: grid; grid-template-columns: repeat(2, 403px); gap: 130px 58px; margin: 58px auto 0; }
+/* 864px is the two 403px cards plus their 58px gap. Capped at 100% rather
+   than fixed at max-content, so between the 760px breakpoint and 864px the
+   cards narrow instead of hanging off the side of the page. */
+.team-grid { width: min(100%, 864px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 130px 58px; margin: 58px auto 0; }
 .team-card img { height: 508px; object-fit: cover; }
 .team-card h3 { margin-top: 14px; font: 700 23px/1.3 var(--display); color: #000; }
 .team-card p { margin-top: 5px; }
