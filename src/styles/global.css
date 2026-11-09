@@ -30,7 +30,10 @@
   /* The h1 every page leads with. Yoga, Horario, Equipo and Contacto each had
      their own size (50, 45, 54 and 56px), which read as four separate pages
      rather than four parts of one site. One token so they cannot drift apart
-     again; the mobile size is set with the rest of the breakpoint. */
+     again; the mobile size is set with the rest of the breakpoint. All four
+     also share weight 600, between the 400 two of them had and the 700 of the
+     other two; Caudex is variable over 400-700, so 600 is a real weight and
+     not a synthesised one. */
   --page-title: 54px;
 }
 
@@ -89,10 +92,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
 .home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 68px 70px; text-align: center; color: var(--taupe); }
-/* The h1 takes the brown rather than the taupe the block around it sets, so
-   the name leads and the lead paragraphs under it stay the lighter colour. */
-.home-intro h1 { max-width: 500px; font: 400 35px/1.2 var(--display); color: var(--brown); }
-.home-intro h1 span { display: block; }
+.home-intro h1 { max-width: 500px; font: 400 35px/1.2 var(--display); }
+/* The span holds the first sentence, the studio's name, which index.astro
+   splits off. It takes the brown and leads; the line under it and the lead
+   paragraphs keep the taupe the block sets. */
+.home-intro h1 span { display: block; color: var(--brown); }
 .home-intro-lead { max-width: 500px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
 .home-intro-lead p + p { margin-top: 30px; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
@@ -129,7 +133,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Shared editorial blocks */
 .page-title-band { padding: 82px 20px 69px; background: var(--clay); text-align: center; }
-.page-title-band h1 { font: 400 var(--page-title)/1.2 var(--display); color: var(--brown); }
+.page-title-band h1 { font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); }
 .page-title-band p { margin-top: 30px; font-style: italic; color: #000; }
 .editorial-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .editorial-copy { padding: 64px 8vw; }
@@ -179,7 +183,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: var(--brown); color: var(--white); }
 .momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
-.yoga-title h1 { font: 700 var(--page-title)/1.2 var(--display); }
+.yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
 .yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: 43% 57%; gap: 42px; padding-bottom: 86px; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
@@ -238,7 +242,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Equipo */
 .meaning-band { background: var(--clay); padding: 88px 20px 76px; text-align: center; }
-.meaning-band h1 { font: 700 var(--page-title)/1.2 var(--display); color: var(--brown); }
+.meaning-band h1 { font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); }
 .meaning-band .sanskrit { margin-top: 12px; font: 400 20px/1.4 var(--display); }
 .meaning-band .meaning { margin-top: 38px; font-size: 18px; }
 .team-section { padding: 86px 0 96px; }
