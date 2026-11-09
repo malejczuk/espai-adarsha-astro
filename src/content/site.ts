@@ -71,7 +71,9 @@ export const images = {
 
 export const bannerCopy = {
   text: "🪷 ¡Bienvenida/o! ¿Eres alumna/o nueva/o? Consulta nuestro horario y reserva tu primera clase aquí 🌞\u00a0→",
-  href: "/horario/#reserva",
+  // #horario, the schedule at the top of the page, not #reserva, the booking
+  // widget below it: the banner's own words send people to the schedule first.
+  href: "/horario/#horario",
 };
 
 export const navItems = [
