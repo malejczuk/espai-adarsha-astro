@@ -130,16 +130,23 @@ export const yogaCopy = {
   rhythmTitle: "Tu práctica, tu ritmo",
   intro:
     "En Adarsha Yoga nos alejamos de las sesiones masivas, para ofrecer un enfoque personalizado donde la práctica se adapta a ti y a tu momento actual.",
-  // One entry per class we teach, in schedule order of appearance. Movimiento y
-  // Conciencia Pélvica is on the schedule too but is Raquel's own class, billed
-  // separately, and lives on the Colaboradores page instead. Hatha Vinyasa, Yoga
-  // Integral and Yin Yoga Somático keep the descriptions this section used to
-  // list. Every body is a single paragraph at the moment, but one may be an
-  // array when the copy runs longer; the accordion renders one <p> per entry.
+  // One entry per class we teach, in the order the accordion should list them,
+  // which is not the schedule's. Movimiento y Conciencia Pélvica is on the
+  // schedule too but is Raquel's own class, billed separately, and lives on the
+  // Colaboradores page instead. Hatha Vinyasa, Yoga Integral and Yin Yoga
+  // Somático keep the descriptions this section used to list. Every body is a
+  // single paragraph at the moment, but one may be an array when the copy runs
+  // longer; the accordion renders one <p> per entry.
   classes: [
     {
       title: "Hatha Vinyasa (nivel I y II)",
       body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
+    },
+    {
+      // Written in English because the class itself is taught in English, as
+      // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
+      title: "Dynamic Hatha (English)",
+      body: "We move across dynamic sequences and slow holds to develop physical strength, awareness of posture and connection to the breath. We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat. Taught in English, all levels welcome.",
     },
     {
       title: "Yoga Integral",
@@ -148,12 +155,6 @@ export const yogaCopy = {
     {
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
-    },
-    {
-      // Written in English because the class itself is taught in English, as
-      // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
-      title: "Dynamic Hatha (English)",
-      body: "We move across dynamic sequences and slow holds to develop physical strength, awareness of posture and connection to the breath. We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat. Taught in English, all levels welcome.",
     },
     {
       // Taught in English with Spanish support, which the closing line says in
