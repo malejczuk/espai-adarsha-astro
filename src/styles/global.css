@@ -125,11 +125,13 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Yoga */
 .schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--brown); }
-/* schedule-current.png is 1080x1350. Crop away the "Adarsha Yoga" title band
-   (top 270px), leaving the 1080x1080 grid. The title band ends at 242px and
-   the day dividers begin at 312px, so 270 sits cleanly between the two. */
+/* schedule-current.png is 2295x2869 on a #764329 ground, the same brown as the
+   banner, so the crop edge is invisible and only the framing matters. Crop away
+   the empty top band (574px), leaving the 2295x2295 grid. The day dividers
+   begin at 659px, so 574 leaves them the same breathing room the old 1080px
+   artwork had. */
 .schedule-crop { position: relative; width: 604px; aspect-ratio: 1 / 1; overflow: hidden; }
-.schedule-crop img { position: absolute; left: 0; top: calc(-100% * 270 / 1080); width: 100%; height: auto; }
+.schedule-crop img { position: absolute; left: 0; top: calc(-100% * 574 / 2295); width: 100%; height: auto; }
 /* min-height holds the widget's space while its data loads from the CDN, so the
    footer does not sit high on the page and then get shoved down on arrival. */
 .momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 60px; min-height: 70vh; scroll-margin-top: 24px; }
