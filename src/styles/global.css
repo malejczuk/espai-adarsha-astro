@@ -258,7 +258,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* The studio-rental copy is body text, so it is set in Avenir like the rest of
    the site's prose, at the 300 the family actually ships. Only the question it
    opens with stays in Caudex, in brown, to head the block. */
-.space-copy { max-width: 780px; margin: 0 auto; font: 300 21px/1.65 var(--body); }
+/* 18px, down from the 21px this block held while it was set in Caudex: the
+   serif carried the size, and Avenir at 21px ran much larger than the 16px the
+   rest of the site's prose takes. Still a step above body, since this is the
+   page's one block of copy. */
+.space-copy { max-width: 780px; margin: 0 auto; font: 300 18px/1.7 var(--body); }
 .space-copy p + p, .space-copy h1 + p { margin-top: 22px; }
 .space-copy h1 { font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--brown); -webkit-text-stroke: 0.9px currentColor; }
 .space-copy ul { margin-top: 28px; list-style: disc inside; padding: 0; display: grid; gap: 10px; }
@@ -380,7 +384,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .space-main { padding-inline: 20px; }
   .space-pair { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
   .space-pair img { height: 420px; }
-  .space-copy { font-size: 18px; }
+  .space-copy { font-size: 16px; }
   .space-wide { height: 220px; margin-top: 60px; }
   .space-details { padding: 60px 0; }
   .contact-page { padding: 65px 0; }
