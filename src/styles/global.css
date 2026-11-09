@@ -221,11 +221,16 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .individual-section { display: grid; grid-template-columns: 1fr 1fr; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
 .individual-copy { padding: 88px 80px; }
-.individual-copy h2, .office-copy h2 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
+.individual-copy h2 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
 .individual-copy p, .office-copy p { margin-top: 25px; }
 .individual-list { margin: 25px 0 0; padding-left: 22px; }
 .individual-list li + li { margin-top: 22px; }
-.office-section { display: grid; grid-template-columns: 1fr 1fr; background: #f7f7f7; }
+/* The office section is dressed like the method section above it: the same
+   clay ground rather than an off-white of its own, and a heading at the same
+   size in the same brown rather than a larger one in taupe. Its body copy
+   already took the site's Avenir, as the method list does. */
+.office-section { display: grid; grid-template-columns: 1fr 1fr; background: var(--clay); }
+.office-copy h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
 .office-image { height: 690px; object-fit: cover; }
 .office-copy { padding: 94px 80px; }
 
@@ -363,7 +368,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .method-inner img { height: 430px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }
-  .individual-copy h2, .office-copy h2 { font-size: 34px; }
+  /* .office-copy h2 is 34px at every width now, like the method heading. */
+  .individual-copy h2 { font-size: 34px; }
   .office-image { height: 480px; }
   .team-section { padding: 65px 0; }
   .team-intro h2 { font-size: 36px; }
