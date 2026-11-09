@@ -87,7 +87,7 @@ export const navItems = [
 export const homeCopy = {
   // index.astro splits this on the first sentence: "Adarsha Yoga." takes a line
   // of its own and the rest follows. Keep the full stop after the name.
-  title: "Adarsha Yoga. Un refugio de presencia en medio de la ciudad.",
+  title: "Adarsha Yoga. Un refugio de presencia y calma en medio de la ciudad.",
   subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
   body: [
     "Donde la relación entre profesor y alumno es el centro de todo.",
@@ -113,7 +113,7 @@ export const homeCopy = {
   ],
   ecosystemTitle: "¿Quieres conocer nuestro ecosistema?",
   ecosystemBody:
-    "Colaboramos con Raquel Jaroslavsky, una profesora de Movimiento y Conciencia Pélvica. Descubre sus clases para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
+    "Descubre las clases de Raquel Jaroslavsky, una profesora de Movimiento y Conciencia Pélvica, para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
   ecosystemCta: "Nuestros colaboradores",
 };
 

@@ -94,9 +94,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 68px 70px; text-align: center; color: var(--taupe); }
 .home-intro h1 { max-width: 500px; font: 400 35px/1.2 var(--display); }
 /* The span holds the first sentence, the studio's name, which index.astro
-   splits off. It takes the brown and leads; the line under it and the lead
-   paragraphs keep the taupe the block sets. */
-.home-intro h1 span { display: block; color: var(--brown); }
+   splits off onto a line of its own. The whole block, heading and lead alike,
+   takes the taupe .home-intro-copy sets. */
+.home-intro h1 span { display: block; }
 .home-intro-lead { max-width: 500px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
 .home-intro-lead p + p { margin-top: 30px; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
