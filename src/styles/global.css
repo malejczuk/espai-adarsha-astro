@@ -185,9 +185,17 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item > p { padding: 0 0 22px; }
 .yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
+/* Precios runs across two bands: the heading keeps the brown, and the lists
+   below it sit on the clay the page's own title band uses, so the prices read
+   as their own block rather than as more of the brown the footer continues.
+   The two share .yoga-prices and split the padding it used to hold, so the
+   section keeps its old height. */
 .yoga-prices-band { background: var(--brown); color: #fff; }
-.yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
-.yoga-prices h3 { font: 400 30px/1.25 var(--display); color: #fff; }
+.yoga-prices-band .yoga-prices { padding: 48px 0 42px; }
+.prices-detail-band { background: var(--clay); color: #000; }
+.prices-detail-band .yoga-prices { padding: 42px 0 54px; }
+.yoga-prices { display: grid; gap: 34px; text-align: center; }
+.yoga-prices h3 { font: 400 30px/1.25 var(--display); color: var(--brown); }
 .prices-heading { font: 400 41px/1.2 var(--display); color: #fff; }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
 .price-column { padding: 8px 28px 0; }
@@ -324,7 +332,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
   .yoga-photo-stack img { height: 480px; }
   .method-inner, .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
-  .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
+  .yoga-prices { gap: 30px; }
+  .yoga-prices-band .yoga-prices { padding: 42px 20px 36px; }
+  .prices-detail-band .yoga-prices { padding: 36px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
   .method-section { padding: 64px 0; }
