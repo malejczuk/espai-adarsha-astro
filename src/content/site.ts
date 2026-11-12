@@ -33,9 +33,9 @@ export const siteMeta = {
   // near 55-60 characters, which is about what Google shows whole; /yoga/ runs
   // longer on purpose, to name all three styles.
   //
-  // Gràcia is named here and on /espacio/ at the studio's own request. The
-  // address is in Dreta de l'Eixample, a few streets from the Gràcia boundary,
-  // so this is the neighbourhood people searching nearby will use.
+  // Gràcia is named here and on /espacio/ because the studio sits on the
+  // Gràcia–Eixample border. Both names describe where it is, and people
+  // nearby use both, so naming one would give up half of them. Leave both in.
   defaultTitle: "Estudio de Yoga en Gràcia y Eixample | Adarsha Yoga",
   description: "Adarsha Yoga es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
   navigationLabel: "Navegación principal",
