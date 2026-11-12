@@ -387,6 +387,12 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
+  /* Below the plugin's own breakpoint the card stacks, and the image stops
+     being a 200px thumbnail beside the details: it takes the full card width
+     at 16/9 and dwarfs the class it illustrates. Cap it to a band. The image
+     already carries object-fit: cover, so it crops rather than squashes. */
+  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { max-height: 100px; }
+  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { height: 100%; }
   .yoga-title p { margin-top: 28px; font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
