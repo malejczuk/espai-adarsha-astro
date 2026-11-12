@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { eventosCopy, externalLinks } from "../content/site";
+---
+
+<BaseLayout title={eventosCopy.pageTitle} description={eventosCopy.description}>
+  <section class="page-title-band" id="eventos">
+    <h1>{eventosCopy.heading}</h1>
+  </section>
+
+  <!-- The same Momoyoga widget the schedule uses, asking for events instead of
+       classes, and wearing the same .momo-schedule class so it inherits the
+       overrides in global.css that pull the plugin back to the site's type and
+       colours. The brand brown is passed as the primary colour, as on
+       /horario/, rather than the black the plugin's own snippet suggests.
+
+       The paragraph inside the widget's div is what a visitor sees until the
+       script mounts, and what stays if the CDN is unreachable: this page is
+       nothing but the widget, so without it a failure leaves a blank band. -->
+  <section class="momo-schedule" id="agenda">
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://cdn.momo.yoga/plugins/schedule-integration/schedule.css"
+    />
+    <script
+      is:inline
+      type="module"
+      crossorigin="anonymous"
+      src="https://cdn.momo.yoga/plugins/schedule-integration/schedule.js"></script>
+    <div
+      data-momo-schedule={externalLinks.momoyoga}
+      data-momo-item-type="Event"
+      data-momo-view-type="List"
+      data-momo-show-teacher="false"
+      data-momo-show-teacher-filter="false"
+      data-momo-show-schedule-images="true"
+      data-momo-apply-colors="true"
+      data-momo-show-end-time="true"
+      data-momo-view-list-days-count="30"
+      data-momo-hide-empty-days="true"
+      data-momo-primary-color="#764329"
+    >
+      <p class="momo-fallback">
+        {eventosCopy.fallback}{" "}
+        <a href={externalLinks.momoyoga + "events"}>{eventosCopy.fallbackLinkLabel}</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

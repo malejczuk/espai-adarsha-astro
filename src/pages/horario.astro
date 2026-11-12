@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { horarioCopy, yogaCopy, images } from "../content/site";
+import { externalLinks, horarioCopy, yogaCopy, images } from "../content/site";
 ---
 
 <BaseLayout title={horarioCopy.pageTitle} description={horarioCopy.description}>
@@ -26,7 +26,7 @@ import { horarioCopy, yogaCopy, images } from "../content/site";
       crossorigin="anonymous"
       src="https://cdn.momo.yoga/plugins/schedule-integration/schedule.js"></script>
     <div
-      data-momo-schedule="https://www.momoyoga.com/adarsha-yoga/"
+      data-momo-schedule={externalLinks.momoyoga}
       data-momo-view-type="Weekly"
       data-momo-show-teacher="true"
       data-momo-show-teacher-filter="false"
