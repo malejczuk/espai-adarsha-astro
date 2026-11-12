@@ -42,6 +42,14 @@ export const siteMeta = {
   ogImage: "/og-image.jpg",
 };
 
+// Addresses on other services that the site sends people to. The booking
+// widget on /horario/ points at the schedule; `events` is the workshops and
+// retreats listing, which /eventos/ redirects to.
+export const externalLinks = {
+  booking: "https://www.momoyoga.com/adarsha-yoga/",
+  events: "https://www.momoyoga.com/adarsha-yoga/events",
+};
+
 export const contact = {
   pageTitle: "Contacto · Calle Girona 166, junto a Verdaguer | Adarsha",
   description:
