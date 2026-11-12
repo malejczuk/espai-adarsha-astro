@@ -39,7 +39,7 @@ Main pages live in:
 - `src/pages/equipo.astro`
 - `src/pages/espacio.astro`
 - `src/pages/contacto.astro`
-- `src/pages/suelo-pelvico.astro`
+- `src/pages/colaboradores.astro`
 - `src/pages/bio-laia.astro`
 - `src/pages/bio-kristoff.astro`
 
@@ -137,21 +137,6 @@ than in this repository. Nothing here needs to change when they change. Keep any
 future redirects there too, rather than in the Astro source, so they run at the
 edge and do not require a deploy.
 
-### Redirect rules still to add
-
-`/colaboradores/` was renamed to `/suelo-pelvico/`, so the page's own topic is in
-its URL. The old path has been linked from the site and indexed, so it needs a
-rule of its own in the dashboard:
-
-```text
-When  URI Path equals /colaboradores/  (and /colaboradores)
-Then  Static redirect to https://adarshayoga.es/suelo-pelvico/, status 301,
-      preserve query string
-```
-
-Until that rule exists, `/colaboradores/` returns the Worker's 404 and whatever
-authority the old URL had is lost.
-
 ## Sitemap
 
 `@astrojs/sitemap` generates `sitemap-index.xml` and `sitemap-0.xml` into `dist/`
@@ -177,8 +162,8 @@ These are dashboard jobs, not repository ones. Checked 12 November 2026:
   `sitemap-index.xml`, and read the Pages report to see what is actually indexed.
 - **Bing Webmaster Tools**: still to be set up. It can import the property
   straight from Search Console once that exists, so do Google first.
-- Add `/suelo-pelvico/` to the sitemap by deploying this branch; the sitemap is
-  generated from `src/pages/` on every build.
+- The sitemap is generated from `src/pages/` on every build, so a new page is
+  listed as soon as it is deployed; there is nothing to add by hand.
 
 The contact address is `hello@adarshayoga.es`. Email Routing and SMTP2GO are
 configured on the `adarshayoga.es` zone, so the address resolves. Routing is

@@ -321,6 +321,9 @@ export const espacioCopy = {
 };
 
 export const colaboradoresCopy = {
+  // The page keeps the /colaboradores/ URL, so the title is where its subject
+  // is said: what happens here is Raquel's pelvic-floor work, and nobody
+  // searches for "colaboradores".
   pageTitle: "Suelo pélvico y movimiento consciente en Barcelona | Adarsha",
   description:
     "Movimiento y Conciencia Pélvica con Raquel Jaroslavsky en Adarsha Yoga: sesiones para relajar, flexibilizar y tonificar el suelo pélvico en Barcelona.",
@@ -370,7 +373,7 @@ export const equipoCopy = {
   members: [
     { name: "Laia Espejo Dotti", role: "Profesora de Yoga", title: "Fundadora", href: "/bio-laia/", image: equipoLaia },
     { name: "Kristoff Malejczuk", role: "Profesor de Yoga", title: "Director de operaciones", href: "/bio-kristoff/", image: kristoffTeam },
-    { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica", title: "Colaboradora", href: "/suelo-pelvico/", image: equipoRaquel },
+    { name: "Raquel Jaroslavsky", role: "Profesora de Movimiento y Conciencia Pélvica", title: "Colaboradora", href: "/colaboradores/", image: equipoRaquel },
   ],
 };
 
