@@ -2,6 +2,7 @@
 import Banner from "../components/Banner.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import StructuredData from "../components/StructuredData.astro";
 import { siteMeta } from "../content/site";
 import "../styles/global.css";
 
@@ -9,6 +10,11 @@ const {
   title = siteMeta.defaultTitle,
   description = siteMeta.description,
 } = Astro.props;
+
+// Self-referencing canonical. espaiadarsha.com still resolves and redirects,
+// and the booking widget appends query strings, so every page says plainly
+// which URL is the real one. Astro.site is set in astro.config.mjs.
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
 <!doctype html>
@@ -17,11 +23,13 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
     <!-- ?v= busts the browser's icon cache, which ignores Cache-Control.
          Bump it whenever favicon.png changes. -->
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png?v=3" />
     <link rel="apple-touch-icon" href="/favicon.png?v=3" />
     <title>{title}</title>
+    <StructuredData />
   </head>
   <body>
     <Banner />

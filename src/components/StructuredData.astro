@@ -1,0 +1,49 @@
+---
+// The studio as JSON-LD, rendered by BaseLayout on every page. Everything it
+// says comes from src/content/site.ts, so the markup and the page cannot
+// drift apart. One @id across the site means every page describes the same
+// entity rather than announcing a new business on each URL.
+//
+// No review or rating markup: Google wants those collected on the site
+// itself, and the studio's reviews live on its Google Business Profile.
+import { contact, localBusiness, siteMeta } from "../content/site";
+
+const site = Astro.site!;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": localBusiness.type,
+  "@id": localBusiness.id,
+  name: siteMeta.name,
+  description: siteMeta.description,
+  url: site.href,
+  image: new URL(siteMeta.ogImage, site).href,
+  email: contact.email,
+  priceRange: localBusiness.priceRange,
+  currenciesAccepted: localBusiness.currency,
+  address: {
+    "@type": "PostalAddress",
+    // The last line is the postcode and city, which the schema states in
+    // fields of their own.
+    streetAddress: contact.addressLines.slice(0, -1).join(", "),
+    postalCode: localBusiness.postalCode,
+    addressLocality: localBusiness.locality,
+    addressRegion: localBusiness.region,
+    addressCountry: localBusiness.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: localBusiness.geo.latitude,
+    longitude: localBusiness.geo.longitude,
+  },
+  openingHoursSpecification: localBusiness.openingHours.map((slot) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: slot.days,
+    opens: slot.opens,
+    closes: slot.closes,
+  })),
+  sameAs: [contact.instagram.href, ...localBusiness.profiles],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
