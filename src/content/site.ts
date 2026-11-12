@@ -28,15 +28,34 @@ import colaboradoresPersonal from "../../assets/colaboradores-personal.jpg";
 
 export const siteMeta = {
   name: "Adarsha Yoga",
-  defaultTitle: "Estudio de Yoga en Gràcia y Eixample | Clases Reducidas | Adarsha Yoga",
+  // Every page title leads with what the page is, then ends "| Adarsha Yoga",
+  // so a column of search results or browser tabs reads as one site. Most sit
+  // near 55-60 characters, which is about what Google shows whole; /yoga/ runs
+  // longer on purpose, to name all three styles.
+  //
+  // Gràcia is named here and on /espacio/ at the studio's own request. The
+  // address is in Dreta de l'Eixample, a few streets from the Gràcia boundary,
+  // so this is the neighbourhood people searching nearby will use.
+  defaultTitle: "Estudio de Yoga en Gràcia y Eixample | Adarsha Yoga",
   description: "Adarsha Yoga es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
+  // Served from public/, so its URL stays the same across builds and the
+  // JSON-LD can point at it with an absolute address.
+  ogImage: "/og-image.jpg",
+};
+
+// Addresses on other services that the site sends people to. The booking
+// widget on /horario/ points at the schedule; `events` is the workshops and
+// retreats listing, which /eventos/ redirects to.
+export const externalLinks = {
+  booking: "https://www.momoyoga.com/adarsha-yoga/",
+  events: "https://www.momoyoga.com/adarsha-yoga/events",
 };
 
 export const contact = {
-  pageTitle: "Adarsha Yoga | Barcelona",
+  pageTitle: "Contacto · Calle Girona 166, junto a Verdaguer | Adarsha Yoga",
   description:
     "Estudio de yoga en Calle Girona 166, Barcelona, junto al metro Verdaguer. Escríbenos a hello@adarshayoga.es y reserva tu primera clase con nosotros.",
   heading: "Contacto",
@@ -48,6 +67,42 @@ export const contact = {
   instagram: { prefix: "Instagram:", label: "@adarshayoga.bcn", href: "https://www.instagram.com/adarshayoga.bcn/" },
   mapUrl: "https://www.google.com/maps?q=Adarsha%20Yoga%2C%20Carrer%20de%20Girona%20166%2C%20Barcelona&output=embed",
   mapLink: "https://www.google.com/maps/search/?api=1&query=Adarsha+Yoga%2C+Carrer+de+Girona+166%2C+Barcelona",
+};
+
+// Feeds the JSON-LD block in StructuredData.astro, which BaseLayout renders on
+// every page. One @id across the site, so every page describes the same studio
+// rather than announcing a new business each time.
+export const localBusiness = {
+  // schema.org has no YogaStudio type; SportsActivityLocation is the closest
+  // valid LocalBusiness subtype.
+  type: "SportsActivityLocation",
+  id: "https://adarshayoga.es/#studio",
+  // Geocoded from "166-168, Carrer de Girona, 08037 Barcelona" (OpenStreetMap).
+  geo: { latitude: 41.39977, longitude: 2.16474 },
+  postalCode: "08037",
+  locality: "Barcelona",
+  region: "Barcelona",
+  country: "ES",
+  // Per class: a ten-class bono works out at 15 € and a drop-in is 20 €.
+  priceRange: "€15–€20",
+  currency: "EUR",
+  // The hours the studio is open, which are the hours classes run. These
+  // DUPLICATE the schedule on /horario/ and will go stale the moment the
+  // timetable moves, so change them together. Raquel's Conciencia Pélvica is
+  // included: the studio is open then, whoever bills the class.
+  openingHours: [
+    { days: ["Monday"], opens: "08:30", closes: "09:30" },
+    { days: ["Monday"], opens: "18:45", closes: "20:00" },
+    { days: ["Tuesday", "Thursday"], opens: "09:30", closes: "10:45" },
+    { days: ["Tuesday", "Thursday"], opens: "17:45", closes: "20:30" },
+    { days: ["Wednesday"], opens: "10:00", closes: "11:15" },
+    { days: ["Wednesday"], opens: "18:45", closes: "21:15" },
+    { days: ["Friday"], opens: "17:15", closes: "18:15" },
+  ],
+  // Other profiles that describe the same studio. The audit also asks for the
+  // ClassPass, Wellhub and Union Sport & Culture listings; add their URLs here
+  // once they are to hand, and they go into sameAs with the rest.
+  profiles: ["https://www.momoyoga.com/adarsha-yoga/"],
 };
 
 export const images = {
@@ -120,13 +175,13 @@ export const homeCopy = {
 export const horarioCopy = {
   heading: "Horario",
   pricesHeading: "Precios",
-  pageTitle: "Horario y Precios | Adarsha Yoga",
+  pageTitle: "Horario, Precio y Reservas Yoga | Adarsha Yoga",
   description:
     "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
 };
 
 export const yogaCopy = {
-  pageTitle: "Alcanza tu bienestar con las clases de Hatha Vinyasa Yoga en Adarsha Yoga",
+  pageTitle: "Clases de Hatha Vinyasa, Yin y Yoga Integral en Barcelona | Adarsha Yoga",
   description:
     "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Un enfoque personalizado en Adarsha Yoga, Barcelona.",
   introTitle: "Practica yoga en Adarsha",
@@ -141,28 +196,37 @@ export const yogaCopy = {
   // Somático keep the descriptions this section used to list. Every body is a
   // single paragraph at the moment, but one may be an array when the copy runs
   // longer; the accordion renders one <p> per entry.
+  //
+  // `id` is the fragment the accordion item answers to, so a style can be
+  // linked to directly: /yoga/#yin-yoga. Changing one breaks any link already
+  // pointing at it.
   classes: [
     {
+      id: "hatha-vinyasa",
       title: "Hatha Vinyasa (nivel I y II)",
       body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
     },
     {
       // Written in English because the class itself is taught in English, as
       // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
+      id: "dynamic-hatha",
       title: "Dynamic Hatha (English)",
       body: "We move across dynamic sequences and slow holds to develop physical strength, awareness of posture and connection to the breath. We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat. Taught in English, all levels welcome.",
     },
     {
+      id: "yoga-integral",
       title: "Yoga Integral",
       body: "Una modalidad más suave para quienes buscan un ritmo pausado y consciente, ya sea que busques una clase para aprender las bases, o practicar durante el embarazo, o en la etapa de la madurez. Nos enfocamos en técnicas de respiración, posturas estables, aprender la alineación y relajación profunda para restaurar la vitalidad y la movilidad de todo el cuerpo.",
     },
     {
+      id: "yin-yoga",
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
     {
       // Taught in English with Spanish support, which the closing line says in
       // both languages, the way the class is announced.
+      id: "hatha-fuerza",
       title: "Hatha Fuerza: Strength & Mobility",
       body: "A class designed to strengthen your yoga practice. We bring a special focus to the core and the mobility and articulation of the shoulders and spine. Develop strength that carries over beyond the mat and into everyday life. Taught in English, con apoyo en español."
     },
@@ -235,7 +299,7 @@ export const footerCopy = {
 };
 
 export const espacioCopy = {
-  pageTitle: "Alquiler de Sala de Yoga en Gràcia - Eixample | Adarsha Yoga",
+  pageTitle: "Sala de yoga para eventos en Gràcia y Eixample | Adarsha Yoga",
   description:
     "Alquila una sala de yoga de 50\u00a0m\u00b2 con luz natural junto al metro Verdaguer, en Barcelona. Ideal para formaciones, talleres, terapias y sesiones individuales.",
   heading: "¿Buscas un lugar donde desarrollar tus proyectos?",
@@ -261,7 +325,10 @@ export const espacioCopy = {
 };
 
 export const colaboradoresCopy = {
-  pageTitle: "Colaboradores | Adarsha Yoga",
+  // The page keeps the /colaboradores/ URL, so the title is where its subject
+  // is said: what happens here is Raquel's pelvic-floor work, and nobody
+  // searches for "colaboradores".
+  pageTitle: "Suelo pélvico y movimiento consciente en Barcelona | Adarsha Yoga",
   description:
     "Movimiento y Conciencia Pélvica con Raquel Jaroslavsky en Adarsha Yoga: sesiones para relajar, flexibilizar y tonificar el suelo pélvico en Barcelona.",
   title: "Nuestro ecosistema de colaboradores",
@@ -297,7 +364,7 @@ export const colaboradoresCopy = {
 };
 
 export const equipoCopy = {
-  pageTitle: "Equipo | Adarsha Yoga",
+  pageTitle: "Profesores de yoga en Barcelona | Adarsha Yoga",
   description:
     "Conoce al equipo de Adarsha Yoga: Laia Espejo, Kristoff Malejczuk y Raquel Jaroslavsky. Profesores cercanos que acompañan tu práctica a tu propio ritmo.",
   name: "Adarsha",

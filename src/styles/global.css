@@ -197,13 +197,21 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    ::after so it sits at the end of the row whatever the title's length, and
    the default triangle is removed in both its standard and WebKit spellings. */
 .class-accordion { margin-top: 32px; border-top: 1px solid rgba(var(--brown-rgb), .25); }
-.class-item { border-bottom: 1px solid rgba(var(--brown-rgb), .25); }
+/* scroll-margin-top leaves breathing room above an item scrolled to by its
+   fragment, as /yoga/#yin-yoga does. */
+.class-item { border-bottom: 1px solid rgba(var(--brown-rgb), .25); scroll-margin-top: 24px; }
 .class-item summary {
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
   padding: 18px 0; cursor: pointer; list-style: none;
   font: 700 18px/1.4 var(--display); color: var(--brown);
 }
 .class-item summary::-webkit-details-marker { display: none; }
+/* The style name is an h3 inside the summary, so each style is a heading and
+   can be linked to. It takes the summary's own type rather than the h3
+   default, and min-width: 0 lets a long name wrap instead of pushing the
+   +/- marker off the row. */
+.class-item summary h3 { font: inherit; color: inherit; min-width: 0; }
+
 .class-item summary::after { content: "+"; flex: none; font-weight: 400; font-size: 22px; line-height: 1; }
 .class-item[open] summary::after { content: "\2212"; }
 .class-item summary:hover { text-decoration: underline; }

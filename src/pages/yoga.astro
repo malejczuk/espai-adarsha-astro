@@ -14,9 +14,12 @@ import { yogaCopy, images } from "../content/site";
       <h2>{yogaCopy.rhythmTitle}</h2>
       <p>{yogaCopy.intro}</p>
       <div class="class-accordion">
+        {/* Each style is its own heading and its own anchor, so /yoga/#yin-yoga
+            lands on it and an outline of the page lists the five styles. The
+            h3 inherits the summary's type, so nothing moves. */}
         {yogaCopy.classes.map((item) => (
-          <details class="class-item">
-            <summary>{item.title}</summary>
+          <details class="class-item" id={item.id}>
+            <summary><h3>{item.title}</h3></summary>
             {(Array.isArray(item.body) ? item.body : [item.body]).map((para) => (
               <p>{para}</p>
             ))}
@@ -57,4 +60,22 @@ import { yogaCopy, images } from "../content/site";
       <p><a href="/contacto/#contacto">{yogaCopy.officeCta}</a></p>
     </div>
   </section>
+  <!-- A fragment link to a closed <details> scrolls to a shut drawer, so open
+       the one that was asked for. Runs on load and on every later hash change,
+       since the five styles link to each other within the page. -->
+  <script is:inline>
+    (() => {
+      const open = () => {
+        if (!location.hash) return;
+        let item = null;
+        try { item = document.querySelector(location.hash); } catch {}
+        if (item instanceof HTMLDetailsElement) {
+          item.open = true;
+          item.scrollIntoView({ block: "start" });
+        }
+      };
+      open();
+      addEventListener("hashchange", open);
+    })();
+  </script>
 </BaseLayout>

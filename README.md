@@ -123,7 +123,16 @@ and `www.espaiadarsha.com` 301-redirect to `adarshayoga.es`, preserving the path
 and query string. `www.adarshayoga.es` likewise redirects to the apex, and both
 zones force HTTPS.
 
-These redirects are Cloudflare Redirect Rules, configured in the dashboard rather
+`adarshayoga.es/eventos` is the exception: it is a route of this site, so it
+lives in `src/pages/eventos.ts` rather than in the dashboard. It renders nothing
+and answers with a 301 to the Momoyoga events listing, so the address can be
+printed or read out without anyone typing a momoyoga.com URL. The destination is
+`externalLinks.events` in `src/content/site.ts`. It is an on-demand route
+(`prerender = false`), which is what lets the Worker send a real 301 instead of
+the meta-refresh page a static build would emit, and it is filtered out of the
+sitemap in `astro.config.mjs`.
+
+The redirects below are Cloudflare Redirect Rules, configured in the dashboard rather
 than in this repository. Nothing here needs to change when they change. Keep any
 future redirects there too, rather than in the Astro source, so they run at the
 edge and do not require a deploy.
@@ -136,12 +145,50 @@ on every build, from the routes in `src/pages/`. The URLs it writes come from th
 
 There is no `robots.txt` in this repository; Cloudflare serves an auto-generated
 one. Adding `public/robots.txt` would override it, so copy over Cloudflare's
-content-signal declarations if you ever add one.
+content-signal declarations if you ever add one. Cloudflare's copy carries no
+`Sitemap:` line, which is why the sitemap is submitted to each search engine
+directly rather than advertised there.
+
+### Search engine setup
+
+These are dashboard jobs, not repository ones. Checked 12 November 2026:
+
+- `espaiadarsha.com`, `www.espaiadarsha.com` and `www.adarshayoga.es` all 301 to
+  `https://adarshayoga.es`, path preserved. Verified with `curl -I`. Nothing to do.
+- `https://adarshayoga.es/sitemap-index.xml` and `sitemap-0.xml` both return 200
+  and list all nine routes. Nothing to do.
+- **Google Search Console**: still to be set up. Verify the `adarshayoga.es`
+  domain property (DNS TXT record, which also covers every subdomain), submit
+  `sitemap-index.xml`, and read the Pages report to see what is actually indexed.
+- **Bing Webmaster Tools**: still to be set up. It can import the property
+  straight from Search Console once that exists, so do Google first.
+- The sitemap is generated from `src/pages/` on every build, so a new page is
+  listed as soon as it is deployed; there is nothing to add by hand.
 
 The contact address is `hello@adarshayoga.es`. Email Routing and SMTP2GO are
 configured on the `adarshayoga.es` zone, so the address resolves. Routing is
 independent of the website: changing the address in `src/content/site.ts` changes
 only what the site displays, not where mail goes.
+
+## Structured Data
+
+`src/components/StructuredData.astro` emits one JSON-LD block, rendered by
+`BaseLayout` on every page: the studio as a `SportsActivityLocation` (schema.org
+has no yoga studio type) with its address, coordinates, email, price range,
+opening hours and linked profiles. Everything it says is read from
+`localBusiness` and `contact` in `src/content/site.ts`, so there is one place to
+change.
+
+Two things to know:
+
+- The opening hours duplicate the timetable on `/horario/`. Change them together,
+  or Google will advertise classes that no longer run.
+- `localBusiness.profiles` holds the non-Instagram profiles that go into
+  `sameAs`. The ClassPass, Wellhub and Union Sport & Culture listings still need
+  their URLs added there.
+
+Test a change with Google's Rich Results Test or the schema.org validator against
+a deployed URL.
 
 ## Forms
 
