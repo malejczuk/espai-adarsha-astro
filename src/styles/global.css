@@ -182,6 +182,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 2px solid rgba(var(--brown-rgb), .3); color: var(--brown); }
 .momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: var(--brown); color: var(--white); }
 .momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
+/* Stands inside the widget's own div on /eventos/, so it is what shows until
+   the script mounts and what stays if the CDN cannot be reached. The widget
+   replaces the div's contents, so it disappears of its own accord. */
+.momo-fallback { padding: 24px 0; color: var(--taupe); }
+.momo-fallback a { color: var(--brown); }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }

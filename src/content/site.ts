@@ -36,7 +36,7 @@ export const siteMeta = {
   // Gràcia is named here and on /espacio/ because the studio sits on the
   // Gràcia–Eixample border. Both names describe where it is, and people
   // nearby use both, so naming one would give up half of them. Leave both in.
-  defaultTitle: "Estudio de Yoga en Gràcia y Eixample | Adarsha Yoga",
+  defaultTitle: "Estudio de yoga en Gràcia · Eixample | Adarsha Yoga",
   description: "Adarsha Yoga es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
@@ -49,9 +49,11 @@ export const siteMeta = {
 // Addresses on other services that the site sends people to. The booking
 // widget on /horario/ points at the schedule; `events` is the workshops and
 // retreats listing, which /eventos/ redirects to.
+// The studio's Momoyoga page. Both schedule widgets read from it and ask for
+// a different slice: /horario/ for the weekly classes, /eventos/ for the
+// one-off events.
 export const externalLinks = {
-  booking: "https://www.momoyoga.com/adarsha-yoga/",
-  events: "https://www.momoyoga.com/adarsha-yoga/events",
+  momoyoga: "https://www.momoyoga.com/adarsha-yoga/",
 };
 
 export const contact = {
@@ -134,6 +136,7 @@ export const bannerCopy = {
 export const navItems = [
   { href: "/yoga/", label: "YOGA" },
   { href: "/horario/", label: "Horario" },
+  { href: "/eventos/", label: "Eventos" },
   { href: "/equipo/", label: "Equipo" },
   { href: "/espacio/", label: "Espacio" },
   { href: "/contacto/", label: "Contacto" },
@@ -175,9 +178,23 @@ export const homeCopy = {
 export const horarioCopy = {
   heading: "Horario",
   pricesHeading: "Precios",
-  pageTitle: "Horario, Precio y Reservas Yoga | Adarsha Yoga",
+  pageTitle: "Horario, precio y reservas yoga | Adarsha Yoga",
   description:
     "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
+};
+
+// /eventos/ is the workshops, talleres and formaciones that are not part of
+// the weekly timetable. The page holds no list of its own: the Momoyoga widget
+// draws it, so the studio adds an event in one place and it appears here.
+export const eventosCopy = {
+  heading: "Eventos",
+  pageTitle: "Workshops, talleres y eventos de yoga en Barcelona | Adarsha Yoga",
+  description:
+    "Workshops, talleres y formaciones de yoga en Adarsha Yoga, junto al metro Verdaguer en Barcelona. Consulta los próximos eventos y reserva tu plaza online.",
+  // Shown while the widget loads and in its place if it never does, so the page
+  // is never a blank band. The link is the same listing the widget draws.
+  fallback: "Cargando los próximos eventos…",
+  fallbackLinkLabel: "Ver los eventos en Momoyoga",
 };
 
 export const yogaCopy = {
@@ -299,7 +316,7 @@ export const footerCopy = {
 };
 
 export const espacioCopy = {
-  pageTitle: "Sala de yoga para eventos en Gràcia y Eixample | Adarsha Yoga",
+  pageTitle: "Sala de yoga para eventos en Gràcia · Eixample | Adarsha Yoga",
   description:
     "Alquila una sala de yoga de 50\u00a0m\u00b2 con luz natural junto al metro Verdaguer, en Barcelona. Ideal para formaciones, talleres, terapias y sesiones individuales.",
   heading: "¿Buscas un lugar donde desarrollar tus proyectos?",

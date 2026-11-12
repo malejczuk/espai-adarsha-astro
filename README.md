@@ -39,6 +39,7 @@ Main pages live in:
 - `src/pages/equipo.astro`
 - `src/pages/espacio.astro`
 - `src/pages/contacto.astro`
+- `src/pages/eventos.astro`
 - `src/pages/colaboradores.astro`
 - `src/pages/bio-laia.astro`
 - `src/pages/bio-kristoff.astro`
@@ -123,15 +124,6 @@ and `www.espaiadarsha.com` 301-redirect to `adarshayoga.es`, preserving the path
 and query string. `www.adarshayoga.es` likewise redirects to the apex, and both
 zones force HTTPS.
 
-`adarshayoga.es/eventos` is the exception: it is a route of this site, so it
-lives in `src/pages/eventos.ts` rather than in the dashboard. It renders nothing
-and answers with a 301 to the Momoyoga events listing, so the address can be
-printed or read out without anyone typing a momoyoga.com URL. The destination is
-`externalLinks.events` in `src/content/site.ts`. It is an on-demand route
-(`prerender = false`), which is what lets the Worker send a real 301 instead of
-the meta-refresh page a static build would emit, and it is filtered out of the
-sitemap in `astro.config.mjs`.
-
 The redirects below are Cloudflare Redirect Rules, configured in the dashboard rather
 than in this repository. Nothing here needs to change when they change. Keep any
 future redirects there too, rather than in the Astro source, so they run at the
@@ -169,6 +161,30 @@ The contact address is `hello@adarshayoga.es`. Email Routing and SMTP2GO are
 configured on the `adarshayoga.es` zone, so the address resolves. Routing is
 independent of the website: changing the address in `src/content/site.ts` changes
 only what the site displays, not where mail goes.
+
+## The Momoyoga widgets
+
+Two pages draw their listings from Momoyoga rather than from this repository, so
+the studio adds a class or an event in one place and the site follows:
+
+- `/horario/` shows the weekly classes (`data-momo-view-type="Weekly"`).
+- `/eventos/` shows the one-off workshops and talleres for the next 30 days
+  (`data-momo-item-type="Event"`, `data-momo-view-type="List"`).
+
+Both load the plugin from `cdn.momo.yoga` and read the studio address from
+`externalLinks.momoyoga` in `src/content/site.ts`. Both sit in a
+`section.momo-schedule`, which is what applies the overrides in `global.css`
+that pull the plugin's own Inter-based styling back to the site's type and
+colours; a new Momoyoga embed should use that class too. The plugin's snippet
+suggests black as the primary colour — pass the brand brown `#764329` instead.
+
+`/eventos/` is nothing but the widget, so its `div` holds a fallback paragraph
+and a link to the Momoyoga listing. The widget replaces it on mount, and it
+stays put if the CDN cannot be reached. `/horario/` needs none: the schedule
+artwork and the prices are on the page regardless.
+
+There is no local copy of either listing, so neither can be checked by a build.
+If an event is missing, look in Momoyoga first.
 
 ## Structured Data
 
