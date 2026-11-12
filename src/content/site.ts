@@ -28,11 +28,15 @@ import colaboradoresPersonal from "../../assets/colaboradores-personal.jpg";
 
 export const siteMeta = {
   name: "Adarsha Yoga",
-  // Title tags are kept near 55-60 characters, so Google shows them whole,
-  // and each one leads with what the page is rather than with the studio
-  // name. Gràcia is gone from them: the studio is in Dreta de l'Eixample,
-  // and claiming the wrong neighbourhood helps neither search nor visitors.
-  defaultTitle: "Yoga en Eixample, Barcelona · Grupos reducidos | Adarsha",
+  // Every page title leads with what the page is, then ends "| Adarsha Yoga",
+  // so a column of search results or browser tabs reads as one site. Most sit
+  // near 55-60 characters, which is about what Google shows whole; /yoga/ runs
+  // longer on purpose, to name all three styles.
+  //
+  // Gràcia is named here and on /espacio/ at the studio's own request. The
+  // address is in Dreta de l'Eixample, a few streets from the Gràcia boundary,
+  // so this is the neighbourhood people searching nearby will use.
+  defaultTitle: "Estudio de Yoga en Gràcia y Eixample | Adarsha Yoga",
   description: "Adarsha Yoga es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
@@ -51,7 +55,7 @@ export const externalLinks = {
 };
 
 export const contact = {
-  pageTitle: "Contacto · Calle Girona 166, junto a Verdaguer | Adarsha",
+  pageTitle: "Contacto · Calle Girona 166, junto a Verdaguer | Adarsha Yoga",
   description:
     "Estudio de yoga en Calle Girona 166, Barcelona, junto al metro Verdaguer. Escríbenos a hello@adarshayoga.es y reserva tu primera clase con nosotros.",
   heading: "Contacto",
@@ -171,13 +175,13 @@ export const homeCopy = {
 export const horarioCopy = {
   heading: "Horario",
   pricesHeading: "Precios",
-  pageTitle: "Horario y Precios | Adarsha Yoga",
+  pageTitle: "Horario, Precio y Reservas Yoga | Adarsha Yoga",
   description:
     "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
 };
 
 export const yogaCopy = {
-  pageTitle: "Clases de Hatha Vinyasa, Yin y Yoga Integral en Barcelona",
+  pageTitle: "Clases de Hatha Vinyasa, Yin y Yoga Integral en Barcelona | Adarsha Yoga",
   description:
     "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Un enfoque personalizado en Adarsha Yoga, Barcelona.",
   introTitle: "Practica yoga en Adarsha",
@@ -295,7 +299,7 @@ export const footerCopy = {
 };
 
 export const espacioCopy = {
-  pageTitle: "Alquiler de sala de yoga en Eixample, Barcelona | Adarsha",
+  pageTitle: "Sala de yoga para eventos en Gràcia y Eixample | Adarsha Yoga",
   description:
     "Alquila una sala de yoga de 50\u00a0m\u00b2 con luz natural junto al metro Verdaguer, en Barcelona. Ideal para formaciones, talleres, terapias y sesiones individuales.",
   heading: "¿Buscas un lugar donde desarrollar tus proyectos?",
@@ -324,7 +328,7 @@ export const colaboradoresCopy = {
   // The page keeps the /colaboradores/ URL, so the title is where its subject
   // is said: what happens here is Raquel's pelvic-floor work, and nobody
   // searches for "colaboradores".
-  pageTitle: "Suelo pélvico y movimiento consciente en Barcelona | Adarsha",
+  pageTitle: "Suelo pélvico y movimiento consciente en Barcelona | Adarsha Yoga",
   description:
     "Movimiento y Conciencia Pélvica con Raquel Jaroslavsky en Adarsha Yoga: sesiones para relajar, flexibilizar y tonificar el suelo pélvico en Barcelona.",
   title: "Nuestro ecosistema de colaboradores",
