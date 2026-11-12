@@ -123,7 +123,16 @@ and `www.espaiadarsha.com` 301-redirect to `adarshayoga.es`, preserving the path
 and query string. `www.adarshayoga.es` likewise redirects to the apex, and both
 zones force HTTPS.
 
-These redirects are Cloudflare Redirect Rules, configured in the dashboard rather
+`adarshayoga.es/eventos` is the exception: it is a route of this site, so it
+lives in `src/pages/eventos.ts` rather than in the dashboard. It renders nothing
+and answers with a 301 to the Momoyoga events listing, so the address can be
+printed or read out without anyone typing a momoyoga.com URL. The destination is
+`externalLinks.events` in `src/content/site.ts`. It is an on-demand route
+(`prerender = false`), which is what lets the Worker send a real 301 instead of
+the meta-refresh page a static build would emit, and it is filtered out of the
+sitemap in `astro.config.mjs`.
+
+The redirects below are Cloudflare Redirect Rules, configured in the dashboard rather
 than in this repository. Nothing here needs to change when they change. Keep any
 future redirects there too, rather than in the Astro source, so they run at the
 edge and do not require a deploy.
