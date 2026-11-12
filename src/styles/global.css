@@ -187,6 +187,23 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    replaces the div's contents, so it disappears of its own accord. */
 .momo-fallback { padding: 24px 0; color: var(--taupe); }
 .momo-fallback a { color: var(--brown); }
+
+/* The plugin lays its cards out with a container query on
+   .momo-schedule-wrapper, not a media query: under 576px of container the
+   card stacks, and the image stops being a 150px thumbnail beside the
+   details to take the full width at 16/9 - on a phone a 291x164 photo above
+   roughly 215px of text, so the picture reads as the content and the class
+   name as its caption. Ask the same question of the same container, and give
+   the box a wider ratio so it stays a band.
+
+   Set the ratio rather than capping the height: the box has no height of its
+   own, only aspect-ratio, and the img inside it is height: 100%. Chrome
+   resolves that percentage against a max-height'd ratio box and Safari does
+   not, so a cap left the two browsers showing different things. Changing the
+   ratio keeps the plugin's own mechanism, which both already agree on. */
+@container (width < 576px) {
+  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { aspect-ratio: 3 / 1; }
+}
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
@@ -387,12 +404,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
-  /* Below the plugin's own breakpoint the card stacks, and the image stops
-     being a 200px thumbnail beside the details: it takes the full card width
-     at 16/9 and dwarfs the class it illustrates. Cap it to a band. The image
-     already carries object-fit: cover, so it crops rather than squashes. */
-  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { max-height: 100px; }
-  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { height: 100%; }
   .yoga-title p { margin-top: 28px; font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
