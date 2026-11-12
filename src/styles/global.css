@@ -187,6 +187,41 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    replaces the div's contents, so it disappears of its own accord. */
 .momo-fallback { padding: 24px 0; color: var(--taupe); }
 .momo-fallback a { color: var(--brown); }
+
+/* The plugin sizes its cards with a container query on
+   .momo-schedule-wrapper: under 576px of container the card stacks and the
+   image width falls back to 100%; above it the image is a 9.375rem
+   thumbnail beside the details, and above 768px a 12.5rem one.
+   .momo-schedule is the viewport less a 40px gutter until it reaches
+   1100px, so those two container widths are 616px and 808px of viewport.
+
+   Two things to put right. Stacked, the image runs the full card width at
+   16/9: on a phone a 291x164 photo above roughly 215px of text, so the
+   picture reads as the content and the class name as its caption. A wider
+   ratio keeps it a band.
+
+   And on the live site Safari stacks the cards at full desktop width, which
+   is what the plugin falls back to when its container query never matches,
+   so the photo goes full-bleed. The plugin's own two rules are restated
+   below against the viewport: where the query works they repeat what it
+   already says and change nothing, and where it does not they stand in for
+   it. This holds only because the widget is always the width of the page
+   here; it would be wrong if the widget ever sat in a narrow column.
+
+   Set the ratio rather than capping the height. The box has no height of
+   its own, only aspect-ratio, and the img inside it is height: 100%; Chrome
+   resolves that percentage against a max-height'd ratio box and Safari does
+   not, so a cap makes the two disagree. */
+@media (max-width: 615px) {
+  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { aspect-ratio: 3 / 1; }
+}
+@media (min-width: 616px) {
+  .momo-schedule .momo-schedule-wrapper .momo-schedule-item { flex-direction: row; align-items: flex-start; }
+  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { flex-shrink: 0; flex-basis: 9.375rem; max-width: 9.375rem; }
+}
+@media (min-width: 808px) {
+  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { flex-basis: 12.5rem; max-width: 12.5rem; }
+}
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
 .yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
