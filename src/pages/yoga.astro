@@ -6,7 +6,6 @@ import { yogaCopy, images } from "../content/site";
 <BaseLayout title={yogaCopy.pageTitle} description={yogaCopy.description}>
   <section class="yoga-title">
     <h1>{yogaCopy.introTitle}</h1>
-    <p>{yogaCopy.introQuestion}</p>
   </section>
 
   {/* #metodo is the anchor the section this one replaced answered to; it
@@ -28,6 +27,8 @@ import { yogaCopy, images } from "../content/site";
       </div>
     </div>
   </section>
+
+  <p class="yoga-question">{yogaCopy.introQuestion}</p>
 
   <section id="clases" class="yoga-rhythm">
     <div class="yoga-rhythm-copy">
