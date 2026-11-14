@@ -150,17 +150,15 @@ export const homeCopy = {
   // index.astro splits this on the first sentence: "Adarsha Yoga." takes a line
   // of its own and the rest follows. Keep the full stop after the name.
   title: "Adarsha Yoga. Un refugio de presencia y calma en medio de la ciudad.",
-  subtitle: "Un estudio de barrio donde te conocemos por tu nombre. Una práctica que se adapta a quien está en la sala.",
-  body: [
-    "Te acompañamos para que conectes contigo mismo y evoluciones a través de la práctica de yoga.",
-  ],
-  scheduleCta: "Ver horario",
+  subtitle: "Un estudio de barrio donde te conocemos por tu nombre.",
+  body: ["Una práctica que se adapta a quien está en la sala."],
+  scheduleCta: "HORARIO",
   scheduleHref: "/horario/#horario",
-  reservaCta: "Reserva tu primera clase",
+  reservaCta: "RESERVAS",
   reservaHref: "/horario/#reserva",
   practiceHeading: "¿Cómo te gustaría practicar?",
   practiceOptions: [
-    { title: "Clases grupales", body: "Hatha Vinyasa, Hatha dinámico, Yoga Integral, Yin somático, Fuerza y movilidad.", cta: "Ver clases", href: "/yoga/", image: homeGroup, alt: "Clases grupales de yoga en Adarsha Yoga, Barcelona" },
+    { title: "Clases grupales", body: "Hatha Vinyasa, Yin somático, Yoga Integral, Fuerza y Movilidad y más.", cta: "Ver clases", href: "/yoga/", image: homeGroup, alt: "Clases grupales de yoga en Adarsha Yoga, Barcelona" },
     { title: "Clases individuales", body: "Una sesión puntual o un acompañamiento continuo, a tu medida.", cta: "Saber más", href: "/clases-individuales/", image: homeIndividual, alt: "Clase individual de yoga en Adarsha Yoga, Barcelona" },
     { title: "Yoga en la oficina", body: "Para equipos que pasan el día sentados.", cta: "Saber más", href: "/oficina/", image: homeOficina, alt: "Yoga en la oficina con Adarsha Yoga" },
   ],
