@@ -175,7 +175,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    trick the footer headings rely on. 500 would render as plain light. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__title { font-weight: 600; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--taupe); }
-.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 2px solid rgba(var(--brown-rgb), .3); border-radius: 0; }
+/* Laia asked for the boxes around the classes and the events to be black.
+   Pure black rather than --ink, which is a brown-tinted near-black: taking
+   the brown out was the point. The booking buttons below keep the brown
+   outline, since the request was about the boxes. */
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 2px solid #000; border-radius: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image,
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { border-radius: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; }
