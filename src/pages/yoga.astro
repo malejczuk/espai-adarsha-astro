@@ -24,7 +24,6 @@ import { yogaCopy, images } from "../content/site";
       <div class="yoga-different-intro">
         <h2>{yogaCopy.differentTitle}</h2>
         {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
-        <p class="yoga-question">{yogaCopy.introQuestion}</p>
       </div>
     </div>
   </section>
@@ -57,7 +56,10 @@ import { yogaCopy, images } from "../content/site";
     <div class="yoga-photo-stack">
       <img src={images.groupClass.src} alt="Clase grupal de yoga en Adarsha Yoga, Barcelona" />
     </div>
-    <p class="yoga-rhythm-cta"><a class="btn-outline" href={yogaCopy.classesCtaHref}>{yogaCopy.classesCta}</a></p>
+    <div class="yoga-rhythm-cta">
+      <p class="yoga-question">{yogaCopy.introQuestion}</p>
+      <a class="btn-outline" href={yogaCopy.classesCtaHref}>{yogaCopy.classesCta}</a>
+    </div>
   </section>
 
   <section id="precios" class="yoga-prices-band">
@@ -83,19 +85,15 @@ import { yogaCopy, images } from "../content/site";
     </div>
   </section>
 
-  <section id="individuales" class="individual-section">
-    <div class="individual-copy">
-      <h2>{yogaCopy.individualTitle}</h2>
-      <p>{yogaCopy.individualIntro}</p>
-      <ul class="individual-list">{yogaCopy.individualOptions.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}</ul>
-      <p>{yogaCopy.individualClosing}</p>
-    </div>
-    <img src={images.individualSession.src} alt="Clase individual adaptada" />
+  {/* #individuales and #empresas were full sections, which moved to pages of
+      their own. The ids stay for links already pointing at them. */}
+  <section id="individuales" class="page-teaser page-teaser-plain">
+    <h2>{yogaCopy.individualTeaserTitle}</h2>
+    <p>{yogaCopy.individualTeaser}</p>
+    <a class="btn-outline" href={yogaCopy.individualTeaserHref}>{yogaCopy.individualTeaserCta}</a>
   </section>
 
-  {/* #empresas was the full corporate section, which moved to /oficina/. The
-      id stays for links already pointing at it. */}
-  <section id="empresas" class="office-teaser">
+  <section id="empresas" class="page-teaser">
     <h2>{yogaCopy.officeTeaserTitle}</h2>
     <p>{yogaCopy.officeTeaser}</p>
     <a class="btn-outline" href={yogaCopy.officeTeaserHref}>{yogaCopy.officeTeaserCta}</a>

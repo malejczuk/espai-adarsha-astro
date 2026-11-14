@@ -245,8 +245,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    photo there, which is the 57fr track of .yoga-rhythm less its 42px gap. On
    a phone it stays inside the item, under the description. */
 .class-photo { position: absolute; top: 86px; right: 0; width: calc((100% - 42px) * .57); height: 731px; object-fit: cover; }
-/* The booking button under the class list, across both columns. */
-.yoga-rhythm-cta { grid-column: 1 / -1; margin-top: 14px; text-align: center; }
+/* The question and the booking button that answers it, under the class
+   list and across both columns. */
+.yoga-rhythm-cta { grid-column: 1 / -1; margin-top: 30px; text-align: center; }
+.yoga-question { max-width: 540px; margin: 0 auto 30px; font: italic 400 29px/1.45 var(--display); color: var(--brown); }
 .yoga-rhythm-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .yoga-photo-stack { display: grid; align-content: start; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
@@ -273,9 +275,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-different-intro { max-width: 720px; margin: 80px auto 0; }
 .yoga-different h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
 .yoga-different-intro p { margin-top: 26px; }
-/* The question that closes "Yoga como práctica". It used to sit under the
-   page title. Two classes, to outrank the paragraph rule above. */
-.yoga-different-intro .yoga-question { max-width: 540px; margin: 56px auto 0; text-align: center; font: italic 400 29px/1.45 var(--display); color: var(--brown); }
 .membership-section { background: #f8f8f8; padding: 86px 0; }
 .membership-inner { max-width: 720px; }
 .membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
@@ -285,7 +284,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .individual-section { display: grid; grid-template-columns: 1fr 1fr; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
 .individual-copy { padding: 88px 80px; }
-.individual-copy h2 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
+/* The heading is the h1 of /clases-individuales/ and keeps the size this
+   block had as a section of /yoga/. */
+.individual-copy h1 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
 .individual-copy p, .office-copy p { margin-top: 25px; }
 .individual-list { margin: 25px 0 0; padding-left: 22px; }
 .individual-list li + li { margin-top: 22px; }
@@ -296,11 +297,14 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .office-image { height: 690px; object-fit: cover; }
 .office-copy { padding: 94px 80px; }
 .office-copy .btn-outline { margin-top: 34px; }
-/* The teaser that closes /yoga/ and sends people to /oficina/. */
-.office-teaser { background: var(--clay); padding: 80px 20px; text-align: center; scroll-margin-top: 24px; }
-.office-teaser h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
-.office-teaser p { max-width: 620px; margin: 25px auto 0; }
-.office-teaser .btn-outline { margin-top: 34px; }
+/* The teasers that close /yoga/, each sending people to an offer with a page
+   of its own. Clay by default; the plain one is white, so two in a row read
+   as two. */
+.page-teaser { background: var(--clay); padding: 80px 20px; text-align: center; scroll-margin-top: 24px; }
+.page-teaser-plain { background: var(--white); }
+.page-teaser h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.page-teaser p { max-width: 620px; margin: 25px auto 0; }
+.page-teaser .btn-outline { margin-top: 34px; }
 
 /* Equipo */
 .meaning-band { background: var(--clay); padding: 88px 20px 76px; text-align: center; }
@@ -428,7 +432,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
-  .yoga-different-intro .yoga-question { margin-top: 44px; font-size: 24px; }
+  .yoga-rhythm-cta { margin-top: 10px; }
+  .yoga-question { font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 64px 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
   .yoga-photo-stack { display: none; }
@@ -442,10 +447,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 36px; }
   .yoga-pillar { padding: 28px 24px 32px; }
   .yoga-different-intro { margin-top: 56px; }
-  .office-teaser { padding: 60px 28px; }
+  .page-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }
-  .individual-copy h2 { font-size: 34px; }
+  .individual-copy h1 { font-size: 34px; }
   .office-image { height: 480px; }
   .team-section { padding: 65px 0; }
   .team-intro h2 { font-size: 36px; }
