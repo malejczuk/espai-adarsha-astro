@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { oficinaCopy, images } from "../content/site";
+---
+
+<BaseLayout title={oficinaCopy.pageTitle} description={oficinaCopy.description}>
+  <section class="office-section">
+    <img class="office-image" src={images.yogaOffice2.src} alt={oficinaCopy.imageAlt} />
+    <div class="office-copy">
+      <h1>{oficinaCopy.heading}</h1>
+      {oficinaCopy.body.map((item) => <p>{item}</p>)}
+      <a class="btn-outline" href={oficinaCopy.ctaHref}>{oficinaCopy.cta}</a>
+    </div>
+  </section>
+</BaseLayout>

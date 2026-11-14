@@ -102,12 +102,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
 .home-intro-image { min-height: 789px; object-fit: cover; object-position: 50% center; }
 
-.home-value { display: grid; grid-template-columns: 1fr 1fr; min-height: 882px; }
-.home-value-image { height: 882px; object-fit: cover; }
-.home-value-copy { padding: 64px 74px 60px; color: #000; }
-.home-value-copy h2 { max-width: 500px; margin-inline: auto; text-align: center; font: 400 41px/1.25 var(--display); color: var(--taupe); }
-.home-value-copy p { margin-top: 43px; font-size: 16px; line-height: 1.85; }
-.home-value-copy .btn-outline { display: flex; width: max-content; margin: 43px auto 0; }
 
 .practice-heading { min-height: 185px; display: grid; place-items: center; padding: 35px 20px; background: #f8f8f8; }
 .practice-heading h2 { font: 400 33px/1.2 var(--display); color: var(--taupe); text-align: center; }
@@ -122,14 +116,14 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .practice-card .btn-outline { min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); text-decoration: none; }
 .practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
 
-.ecosystem-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
-.ecosystem-band img { height: 752px; object-fit: cover; }
-.ecosystem-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
-.ecosystem-copy h2 { font: 400 40px/1.28 var(--display); }
-/* Body copy, matching the paragraphs in .home-value-copy, rather than the
-   large serif the heading above it uses. */
-.ecosystem-copy p { margin-top: 34px; font: 300 16px/1.85 var(--body); color: #000; }
-.ecosystem-copy .btn-outline { margin-top: 40px; }
+.also-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
+.also-band img { height: 752px; object-fit: cover; }
+.also-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
+.also-copy h2 { font: 400 40px/1.28 var(--display); }
+/* Body copy in Avenir, rather than the large serif the heading above it
+   uses. */
+.also-copy p { margin-top: 34px; font: 300 16px/1.85 var(--body); color: #000; }
+.also-copy .btn-outline { margin-top: 40px; }
 
 /* Shared editorial blocks */
 .page-title-band { padding: 82px 20px 69px; background: var(--clay); text-align: center; }
@@ -221,7 +215,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    a wide screen, a sideways scrollbar below about 1066px. fr tracks divide
    what is left after the gap. minmax(0, …) keeps a wide item from flooring
    the track, as on Colaboradores. */
-.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding-bottom: 86px; }
+.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding: 86px 0; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }
 /* One <details> per class on the schedule. The marker is drawn as a +/- in
@@ -259,15 +253,26 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .prices-heading { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
 .price-column { padding: 8px 28px 0; }
-.method-section h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
-.method-section { background: var(--clay); padding: 86px 0; }
-.method-inner { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 68px; align-items: center; }
-.method-inner img { height: 560px; object-fit: cover; }
-.method-list { padding-left: 23px; margin-top: 30px; }
-.method-list li + li { margin-top: 24px; }
-.method-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
+/* "Yoga como práctica": the intro in a single centred column, then the three
+   pillars side by side. On the clay the title bands use, so it reads as the
+   page's opening statement and the class list below it starts on white. */
+.yoga-different { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
+.yoga-different h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
+.yoga-different-intro { max-width: 720px; margin: 0 auto; }
+.yoga-different-intro p { margin-top: 26px; }
+.yoga-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; margin-top: 64px; }
+.yoga-pillar { padding-top: 22px; border-top: 1px solid rgba(var(--brown-rgb), .35); }
+.yoga-pillar h3 { font: 700 22px/1.3 var(--display); color: var(--brown); }
+.yoga-pillar p { margin-top: 18px; }
+.membership-section { background: #f8f8f8; padding: 86px 0; }
+.membership-inner { max-width: 720px; }
+.membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
+.membership-list { list-style: none; padding: 0; margin: 40px 0 0; }
+.membership-list li + li { margin-top: 22px; }
+.membership-cta { margin-top: 44px; text-align: center; }
+.membership-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
 .individual-section { display: grid; grid-template-columns: 1fr 1fr; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
 .individual-copy { padding: 88px 80px; }
@@ -275,14 +280,18 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .individual-copy p, .office-copy p { margin-top: 25px; }
 .individual-list { margin: 25px 0 0; padding-left: 22px; }
 .individual-list li + li { margin-top: 22px; }
-/* The office section is dressed like the method section above it: the same
-   clay ground rather than an off-white of its own, and a heading at the same
-   size in the same brown rather than a larger one in taupe. Its body copy
-   already took the site's Avenir, as the method list does. */
+/* /oficina/: the photo beside the offer, on the clay ground. The heading is
+   the page's h1 but keeps the size this block had as a section of /yoga/. */
 .office-section { display: grid; grid-template-columns: 1fr 1fr; background: var(--clay); }
-.office-copy h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.office-copy h1 { font: 400 34px/1.25 var(--display); color: var(--brown); }
 .office-image { height: 690px; object-fit: cover; }
 .office-copy { padding: 94px 80px; }
+.office-copy .btn-outline { margin-top: 34px; }
+/* The teaser that closes /yoga/ and sends people to /oficina/. */
+.office-teaser { background: var(--clay); padding: 80px 20px; text-align: center; scroll-margin-top: 24px; }
+.office-teaser h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.office-teaser p { max-width: 620px; margin: 25px auto 0; }
+.office-teaser .btn-outline { margin-top: 34px; }
 
 /* Equipo */
 .meaning-band { background: var(--clay); padding: 88px 20px 76px; text-align: center; }
@@ -388,22 +397,19 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
      instead of being made to fit. That is what sent Colaboradores 11px wide at
      375px and 66px at 320px. The 0 lets the column shrink to the viewport and
      the items fit themselves to it. */
-  .home-intro, .home-value, .ecosystem-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
+  .home-intro, .also-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
   .home-intro-image { order: -1; min-height: 0; height: 480px; }
   .home-intro-copy { padding: 58px 26px 65px; }
   .home-intro h1 { font-size: 31px; }
   .home-intro-lead { margin-top: 35px; font-size: 20px; }
   .home-cta-group { gap: 12px; margin-top: 38px; }
-  .home-value-image { height: 500px; }
-  .home-value-copy { padding: 55px 27px 65px; }
-  .home-value-copy h2 { font-size: 34px; }
   .practice-heading { min-height: 145px; }
   .practice-heading h2 { font-size: 28px; }
   .practice-cards { grid-template-columns: 1fr; }
   .practice-card { min-height: 360px; }
-  .ecosystem-band img { height: 460px; }
-  .ecosystem-copy { padding: 60px 28px 70px; }
-  .ecosystem-copy h2 { font-size: 34px; }
+  .also-band img { height: 460px; }
+  .also-copy { padding: 60px 28px 70px; }
+  .also-copy h2 { font-size: 34px; }
   /* 30px, not the 41px this heading takes on a wide screen: at 320px the
      column is 264px and "Acompañamiento" is 330px wide at 41px, so the word
      would not fit on a line of its own. Shrinking the heading lets it wrap
@@ -414,18 +420,19 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
   .yoga-title p { margin-top: 28px; font-size: 24px; }
-  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
+  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 64px 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
   .yoga-photo-stack img { height: 480px; }
-  .method-inner, .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
+  .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
-  .method-section { padding: 64px 0; }
-  .method-inner img { height: 430px; }
+  .yoga-different, .membership-section { padding: 64px 0; }
+  .yoga-different h2, .membership-section h2 { font-size: 34px; }
+  .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 34px; margin-top: 44px; }
+  .office-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }
-  /* .office-copy h2 is 34px at every width now, like the method heading. */
   .individual-copy h2 { font-size: 34px; }
   .office-image { height: 480px; }
   .team-section { padding: 65px 0; }
