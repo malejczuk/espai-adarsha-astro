@@ -175,9 +175,9 @@ export const homeCopy = {
 
 export const horarioCopy = {
   heading: "Horario",
-  pageTitle: "Horario, precio y reservas yoga | Adarsha Yoga",
+  pageTitle: "Horario y reservas de clases de yoga | Adarsha Yoga",
   description:
-    "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
+    "Consulta el horario semanal de clases de yoga en Adarsha Yoga y reserva tu plaza online. Junto al metro Verdaguer, en Barcelona.",
 };
 
 // /eventos/ is the workshops, talleres and formaciones that are not part of
