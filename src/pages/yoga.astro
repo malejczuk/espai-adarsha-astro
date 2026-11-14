@@ -9,10 +9,28 @@ import { yogaCopy, images } from "../content/site";
     <p>{yogaCopy.introQuestion}</p>
   </section>
 
-  <section class="yoga-rhythm">
+  {/* #metodo is the anchor the section this one replaced answered to; it
+      stays so that links already pointing at it still land here. */}
+  <section id="metodo" class="yoga-different">
+    <div class="container">
+      <div class="yoga-different-intro">
+        <h2>{yogaCopy.differentTitle}</h2>
+        {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
+      </div>
+      <div class="yoga-pillars">
+        {yogaCopy.pillars.map((pillar) => (
+          <article class="yoga-pillar">
+            <h3>{pillar.title}</h3>
+            {pillar.body.map((para) => <p>{para}</p>)}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="clases" class="yoga-rhythm">
     <div class="yoga-rhythm-copy">
-      <h2>{yogaCopy.rhythmTitle}</h2>
-      <p>{yogaCopy.intro}</p>
+      <h2>{yogaCopy.classesTitle}</h2>
       <div class="class-accordion">
         {/* Each style is its own heading and its own anchor, so /yoga/#yin-yoga
             lands on it and an outline of the page lists the five styles. The
@@ -28,17 +46,17 @@ import { yogaCopy, images } from "../content/site";
       </div>
     </div>
     <div class="yoga-photo-stack">
-      <img src={images.groupClass.src} alt="Clase grupal de yoga" />
+      <img src={images.groupClass.src} alt="Clase grupal de yoga en Adarsha Yoga, Barcelona" />
     </div>
   </section>
 
-  <section id="metodo" class="method-section">
-    <div class="container method-inner">
-      <img src={images.meditation.src} alt="Práctica progresiva de yoga" />
-      <div>
-        <h2>{yogaCopy.methodTitle}</h2>
-        <ul class="method-list">{yogaCopy.method.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}</ul>
-      </div>
+  <section id="mensualidad" class="membership-section">
+    <div class="container membership-inner">
+      <h2>{yogaCopy.membershipTitle}</h2>
+      <ul class="membership-list">
+        {yogaCopy.membership.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}
+      </ul>
+      <p class="membership-cta"><a class="btn-outline" href={yogaCopy.membershipHref}>{yogaCopy.membershipCta}</a></p>
     </div>
   </section>
 
@@ -52,13 +70,12 @@ import { yogaCopy, images } from "../content/site";
     <img src={images.individualSession.src} alt="Clase individual adaptada" />
   </section>
 
-  <section id="empresas" class="office-section">
-    <img class="office-image" src={images.yogaOffice2.src} alt="Yoga para empresas" />
-    <div class="office-copy">
-      <h2>{yogaCopy.officeTitle}</h2>
-      {yogaCopy.officeBody.map((item) => <p>{item}</p>)}
-      <p><a href="/contacto/#contacto">{yogaCopy.officeCta}</a></p>
-    </div>
+  {/* #empresas was the full corporate section, which moved to /oficina/. The
+      id stays for links already pointing at it. */}
+  <section id="empresas" class="office-teaser">
+    <h2>{yogaCopy.officeTeaserTitle}</h2>
+    <p>{yogaCopy.officeTeaser}</p>
+    <a class="btn-outline" href={yogaCopy.officeTeaserHref}>{yogaCopy.officeTeaserCta}</a>
   </section>
   <!-- A fragment link to a closed <details> scrolls to a shut drawer, so open
        the one that was asked for. Runs on load and on every later hash change,
