@@ -215,7 +215,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    a wide screen, a sideways scrollbar below about 1066px. fr tracks divide
    what is left after the gap. minmax(0, …) keeps a wide item from flooring
    the track, as on Colaboradores. */
-.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding: 86px 0; }
+.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding: 86px 0; position: relative; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }
 /* One <details> per class on the schedule. The marker is drawn as a +/- in
@@ -241,7 +241,12 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item[open] summary::after { content: "\2212"; }
 .class-item summary:hover { text-decoration: underline; }
 .class-item > p { padding: 0 0 22px; }
-.yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
+/* The open style's photo. On a wide screen it is lifted out of the item and
+   laid over the photo column: same top, width and height as the default
+   photo there, which is the 57fr track of .yoga-rhythm less its 42px gap. On
+   a phone it stays inside the item, under the description. */
+.class-photo { position: absolute; top: 86px; right: 0; width: calc((100% - 42px) * .57); height: 731px; object-fit: cover; }
+.yoga-photo-stack { display: grid; align-content: start; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
 /* Precios sits on the clay the page's own title band uses, heading included,
    so the section reads as one block and keeps a clear edge above the footer's
@@ -255,17 +260,18 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .price-column { padding: 8px 28px 0; }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
-/* "Yoga como práctica": the intro in a single centred column, then the three
-   pillars side by side. On the clay the title bands use, so it reads as the
-   page's opening statement and the class list below it starts on white. */
+/* The three pillars open the page, each a white card lifted off the clay
+   with a brown bar across its top and a large numeral, so they read as three
+   distinct claims. "Yoga como práctica" follows in a single centred column. */
 .yoga-different { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
-.yoga-different h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
-.yoga-different-intro { max-width: 720px; margin: 0 auto; }
-.yoga-different-intro p { margin-top: 26px; }
-.yoga-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; margin-top: 64px; }
-.yoga-pillar { padding-top: 22px; border-top: 1px solid rgba(var(--brown-rgb), .35); }
-.yoga-pillar h3 { font: 700 22px/1.3 var(--display); color: var(--brown); }
+.yoga-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.yoga-pillar { padding: 34px 30px 40px; background: var(--white); border-top: 5px solid var(--brown); box-shadow: 0 18px 40px -22px rgba(var(--brown-rgb), .55); }
+.yoga-pillar-number { display: block; font: 400 54px/1 var(--display); color: var(--taupe); }
+.yoga-pillar h3 { margin-top: 18px; font: 700 27px/1.25 var(--display); color: var(--brown); text-wrap: balance; }
 .yoga-pillar p { margin-top: 18px; }
+.yoga-different-intro { max-width: 720px; margin: 80px auto 0; }
+.yoga-different h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
+.yoga-different-intro p { margin-top: 26px; }
 .membership-section { background: #f8f8f8; padding: 86px 0; }
 .membership-inner { max-width: 720px; }
 .membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
@@ -422,14 +428,17 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-title p { margin-top: 28px; font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 64px 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
-  .yoga-photo-stack img { height: 480px; }
+  .yoga-photo-stack { display: none; }
+  .class-photo { position: static; width: 100%; height: 420px; margin-bottom: 24px; }
   .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
   .yoga-different, .membership-section { padding: 64px 0; }
   .yoga-different h2, .membership-section h2 { font-size: 34px; }
-  .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 34px; margin-top: 44px; }
+  .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .yoga-pillar { padding: 28px 24px 32px; }
+  .yoga-different-intro { margin-top: 56px; }
   .office-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }

@@ -13,6 +13,11 @@ import homeIndividual from "../../assets/home-individual.png";
 import homeEcosystem from "../../assets/home-ecosystem.jpg";
 import homeOficina from "../../assets/home-oficina.png";
 import yogaOffice2 from "../../assets/yoga-office-2.jpg";
+import yogaHathaVinyasa from "../../assets/yoga-hatha-vinyasa.jpg";
+import yogaHathaDinamico from "../../assets/yoga-hatha-dinamico.jpg";
+import yogaIntegral from "../../assets/yoga-integral.jpg";
+import yogaYinSomatico from "../../assets/yoga-yin-somatico.jpg";
+import yogaHathaFuerza from "../../assets/yoga-hatha-fuerza.jpg";
 import equipoLaia from "../../assets/equipo-laia.avif";
 import equipoLaia1 from "../../assets/equipo-laia-1.avif";
 import equipoLaia2 from "../../assets/equipo-laia-2.avif";
@@ -232,12 +237,17 @@ export const yogaCopy = {
   // single paragraph at the moment, but one may be an array when the copy runs
   // longer; the accordion renders one <p> per entry.
   //
+  // `image` is the photo shown while the style is open: beside the list on a
+  // wide screen, inside the item on a phone.
+  //
   // `id` is the fragment the accordion item answers to, so a style can be
   // linked to directly: /yoga/#yin-yoga. Changing one breaks any link already
   // pointing at it.
   classes: [
     {
       id: "hatha-vinyasa",
+      image: yogaHathaVinyasa,
+      imageAlt: "Clase de Hatha Vinyasa en Adarsha Yoga, Barcelona",
       title: "Hatha Vinyasa (nivel I y II)",
       body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
     },
@@ -245,16 +255,22 @@ export const yogaCopy = {
       // Written in English because the class itself is taught in English, as
       // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
       id: "dynamic-hatha",
+      image: yogaHathaDinamico,
+      imageAlt: "Clase de Hatha dinámico en Adarsha Yoga, Barcelona",
       title: "Dynamic Hatha (English)",
       body: "We move across dynamic sequences and slow holds to develop physical strength, awareness of posture and connection to the breath. We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat. Taught in English, all levels welcome.",
     },
     {
       id: "yoga-integral",
+      image: yogaIntegral,
+      imageAlt: "Clase de Yoga Integral en Adarsha Yoga, Barcelona",
       title: "Yoga Integral",
       body: "Una modalidad más suave para quienes buscan un ritmo pausado y consciente, ya sea que busques una clase para aprender las bases, o practicar durante el embarazo, o en la etapa de la madurez. Nos enfocamos en técnicas de respiración, posturas estables, aprender la alineación y relajación profunda para restaurar la vitalidad y la movilidad de todo el cuerpo.",
     },
     {
       id: "yin-yoga",
+      image: yogaYinSomatico,
+      imageAlt: "Clase de Yin Yoga en Adarsha Yoga, Barcelona",
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
@@ -262,6 +278,8 @@ export const yogaCopy = {
       // Taught in English with Spanish support, which the closing line says in
       // both languages, the way the class is announced.
       id: "hatha-fuerza",
+      image: yogaHathaFuerza,
+      imageAlt: "Clase de Hatha Fuerza en Adarsha Yoga, Barcelona",
       title: "Hatha Fuerza: Strength & Mobility",
       body: "A class designed to strengthen your yoga practice. We bring a special focus to the core and the mobility and articulation of the shoulders and spine. Develop strength that carries over beyond the mat and into everyday life. Taught in English, con apoyo en español."
     },

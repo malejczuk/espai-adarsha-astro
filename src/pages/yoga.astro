@@ -13,17 +13,18 @@ import { yogaCopy, images } from "../content/site";
       stays so that links already pointing at it still land here. */}
   <section id="metodo" class="yoga-different">
     <div class="container">
-      <div class="yoga-different-intro">
-        <h2>{yogaCopy.differentTitle}</h2>
-        {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
-      </div>
       <div class="yoga-pillars">
-        {yogaCopy.pillars.map((pillar) => (
+        {yogaCopy.pillars.map((pillar, index) => (
           <article class="yoga-pillar">
+            <span class="yoga-pillar-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
             <h3>{pillar.title}</h3>
             {pillar.body.map((para) => <p>{para}</p>)}
           </article>
         ))}
+      </div>
+      <div class="yoga-different-intro">
+        <h2>{yogaCopy.differentTitle}</h2>
+        {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
       </div>
     </div>
   </section>
@@ -34,17 +35,25 @@ import { yogaCopy, images } from "../content/site";
       <div class="class-accordion">
         {/* Each style is its own heading and its own anchor, so /yoga/#yin-yoga
             lands on it and an outline of the page lists the five styles. The
-            h3 inherits the summary's type, so nothing moves. */}
-        {yogaCopy.classes.map((item) => (
-          <details class="class-item" id={item.id}>
+            h3 inherits the summary's type, so nothing moves.
+
+            The shared name makes the five one group, so opening a style
+            closes the one that was open and a single photo shows at a time.
+            The first starts open so the photo column is never without one
+            of the styles. */}
+        {yogaCopy.classes.map((item, index) => (
+          <details class="class-item" id={item.id} name="yoga-class" open={index === 0}>
             <summary><h3>{item.title}</h3></summary>
             {(Array.isArray(item.body) ? item.body : [item.body]).map((para) => (
               <p>{para}</p>
             ))}
+            <img class="class-photo" src={item.image.src} alt={item.imageAlt} loading={index === 0 ? "eager" : "lazy"} />
           </details>
         ))}
       </div>
     </div>
+    {/* What the photo column shows when every style is closed. An open
+        style's own photo is laid over it. */}
     <div class="yoga-photo-stack">
       <img src={images.groupClass.src} alt="Clase grupal de yoga en Adarsha Yoga, Barcelona" />
     </div>
