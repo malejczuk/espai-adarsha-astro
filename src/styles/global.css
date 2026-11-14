@@ -195,26 +195,17 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    .momo-schedule is the viewport less a 40px gutter until it reaches
    1100px, so those two container widths are 616px and 808px of viewport.
 
-   Two things to put right. Stacked, the image runs the full card width at
-   16/9: on a phone a 291x164 photo above roughly 215px of text, so the
-   picture reads as the content and the class name as its caption. A wider
-   ratio keeps it a band.
+   On the live site Safari stacks the cards at full desktop width, which is
+   what the plugin falls back to when its container query never matches, so
+   the photo goes full-bleed. The plugin's own two rules are restated below
+   against the viewport: where the query works they repeat what it already
+   says and change nothing, and where it does not they stand in for it. This
+   holds only because the widget is always the width of the page here; it
+   would be wrong if the widget ever sat in a narrow column.
 
-   And on the live site Safari stacks the cards at full desktop width, which
-   is what the plugin falls back to when its container query never matches,
-   so the photo goes full-bleed. The plugin's own two rules are restated
-   below against the viewport: where the query works they repeat what it
-   already says and change nothing, and where it does not they stand in for
-   it. This holds only because the widget is always the width of the page
-   here; it would be wrong if the widget ever sat in a narrow column.
-
-   Set the ratio rather than capping the height. The box has no height of
-   its own, only aspect-ratio, and the img inside it is height: 100%; Chrome
-   resolves that percentage against a max-height'd ratio box and Safari does
-   not, so a cap makes the two disagree. */
-@media (max-width: 615px) {
-  .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { aspect-ratio: 3 / 1; }
-}
+   Nothing below 616px. The stacked layout is the one the plugin intends on
+   a phone, it is what both browsers already show there, and it was never
+   the problem. */
 @media (min-width: 616px) {
   .momo-schedule .momo-schedule-wrapper .momo-schedule-item { flex-direction: row; align-items: flex-start; }
   .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { flex-shrink: 0; flex-basis: 9.375rem; max-width: 9.375rem; }
