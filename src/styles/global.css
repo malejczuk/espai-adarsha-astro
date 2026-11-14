@@ -209,15 +209,12 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
-/* The question that leads into the class list. It used to sit under the page
-   title; it now opens the white ground the classes stand on. */
-.yoga-question { max-width: 540px; margin: 86px auto 0; padding: 0 20px; text-align: center; font: italic 400 29px/1.45 var(--display); color: var(--brown); }
 /* fr, not percentages: 43% + 57% already fills the container, so the gap was
    added on top and pushed the photo column past the right edge — invisible on
    a wide screen, a sideways scrollbar below about 1066px. fr tracks divide
    what is left after the gap. minmax(0, …) keeps a wide item from flooring
    the track, as on Colaboradores. */
-.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding: 60px 0 86px; position: relative; }
+.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding: 86px 0; position: relative; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }
 /* One <details> per class on the schedule. The marker is drawn as a +/- in
@@ -247,14 +244,17 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    laid over the photo column: same top, width and height as the default
    photo there, which is the 57fr track of .yoga-rhythm less its 42px gap. On
    a phone it stays inside the item, under the description. */
-.class-photo { position: absolute; top: 60px; right: 0; width: calc((100% - 42px) * .57); height: 731px; object-fit: cover; }
+.class-photo { position: absolute; top: 86px; right: 0; width: calc((100% - 42px) * .57); height: 731px; object-fit: cover; }
+/* The booking button under the class list, across both columns. */
+.yoga-rhythm-cta { grid-column: 1 / -1; margin-top: 14px; text-align: center; }
+.yoga-rhythm-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .yoga-photo-stack { display: grid; align-content: start; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
-/* Precios sits on the clay the page's own title band uses, heading included,
-   so the section reads as one block and keeps a clear edge above the footer's
-   brown. Its type takes the same colours that band's does: brown headings over
-   black lines. */
-.yoga-prices-band { background: var(--clay); color: #000; }
+/* Precios, on /yoga/ between the class list and what the membership
+   includes. It sits on clay, heading included, so it reads as one block
+   between the white above and the off-white below. Brown headings over black
+   lines. */
+.yoga-prices-band { background: var(--clay); color: #000; scroll-margin-top: 24px; }
 .yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
 .yoga-prices h3 { font: 400 30px/1.25 var(--display); color: var(--brown); }
 .prices-heading { font: 400 41px/1.2 var(--display); color: var(--brown); }
@@ -273,12 +273,14 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-different-intro { max-width: 720px; margin: 80px auto 0; }
 .yoga-different h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
 .yoga-different-intro p { margin-top: 26px; }
+/* The question that closes "Yoga como práctica". It used to sit under the
+   page title. Two classes, to outrank the paragraph rule above. */
+.yoga-different-intro .yoga-question { max-width: 540px; margin: 56px auto 0; text-align: center; font: italic 400 29px/1.45 var(--display); color: var(--brown); }
 .membership-section { background: #f8f8f8; padding: 86px 0; }
 .membership-inner { max-width: 720px; }
 .membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
 .membership-list { list-style: none; padding: 0; margin: 40px 0 0; }
 .membership-list li + li { margin-top: 22px; }
-.membership-cta { margin-top: 44px; text-align: center; }
 .membership-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
 .individual-section { display: grid; grid-template-columns: 1fr 1fr; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
@@ -426,8 +428,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
-  .yoga-question { margin-top: 64px; font-size: 24px; }
-  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 44px 0 64px; }
+  .yoga-different-intro .yoga-question { margin-top: 44px; font-size: 24px; }
+  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 64px 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
   .yoga-photo-stack { display: none; }
   .class-photo { position: static; width: 100%; height: 420px; margin-bottom: 24px; }

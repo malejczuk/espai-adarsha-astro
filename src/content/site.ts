@@ -175,7 +175,6 @@ export const homeCopy = {
 
 export const horarioCopy = {
   heading: "Horario",
-  pricesHeading: "Precios",
   pageTitle: "Horario, precio y reservas yoga | Adarsha Yoga",
   description:
     "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
@@ -230,6 +229,10 @@ export const yogaCopy = {
     },
   ],
   classesTitle: "Clases",
+  // Closes the class list and sends people to the booking widget on /horario/.
+  classesCta: "Reserva tu primera clase hoy",
+  classesCtaHref: "/horario/#reserva",
+  pricesHeading: "Precios",
   // One entry per class we teach, in the order the accordion should list them,
   // which is not the schedule's. Movimiento y Conciencia Pélvica is on the
   // schedule too but is Raquel's own class, billed separately, and lives on the
@@ -292,8 +295,6 @@ export const yogaCopy = {
     { title: "Descuento en talleres", body: "[\"precio reducido\"]" },
     { title: "Sesión de seguimiento anual", body: "Una vez al año, 30 minutos para revisar tu práctica y profundizar." },
   ],
-  membershipCta: "Ver precios",
-  membershipHref: "/horario/#precios",
   prices: [
     {
       title: "Clases Grupales",
