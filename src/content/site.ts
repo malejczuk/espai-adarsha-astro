@@ -203,6 +203,7 @@ export const yogaCopy = {
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   // Copy still to come is left in [brackets], as the refresh brief has it, and
   // shows on the page as it stands. Search for "[" in this object to find it.
+  pillarsTitle: "¿Qué nos hace diferentes?",
   differentTitle: "Yoga como práctica",
   differentIntro: [
     "Hoy es fácil encontrar yoga como ejercicio: empieza cuando desenrollas la esterilla y termina cuando la recoges. Por otro lado, una práctica no tiene horario ni dirección; se extiende a toda la vida. En Adarsha volvemos a eso.",

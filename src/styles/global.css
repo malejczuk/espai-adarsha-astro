@@ -264,7 +264,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    with a brown bar across its top and a large numeral, so they read as three
    distinct claims. "Yoga como práctica" follows in a single centred column. */
 .yoga-different { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
-.yoga-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.yoga-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 52px; }
 .yoga-pillar { padding: 34px 30px 40px; background: var(--white); border-top: 5px solid var(--brown); box-shadow: 0 18px 40px -22px rgba(var(--brown-rgb), .55); }
 .yoga-pillar-number { display: block; font: 400 54px/1 var(--display); color: var(--taupe); }
 .yoga-pillar h3 { margin-top: 18px; font: 700 27px/1.25 var(--display); color: var(--brown); text-wrap: balance; }
@@ -436,7 +436,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .price-column { padding: 0; }
   .yoga-different, .membership-section { padding: 64px 0; }
   .yoga-different h2, .membership-section h2 { font-size: 34px; }
-  .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 36px; }
   .yoga-pillar { padding: 28px 24px 32px; }
   .yoga-different-intro { margin-top: 56px; }
   .office-teaser { padding: 60px 28px; }
