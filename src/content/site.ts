@@ -57,6 +57,9 @@ export const siteMeta = {
 // one-off events.
 export const externalLinks = {
   momoyoga: "https://www.momoyoga.com/adarsha-yoga/",
+  // Where a pass or a single class is bought. The button under Precios on
+  // /yoga/ goes here.
+  momoyogaBuy: "https://www.momoyoga.com/adarsha-yoga/member/order/create/choose-product",
 };
 
 export const contact = {
@@ -138,7 +141,6 @@ export const navItems = [
   { href: "/yoga/", label: "YOGA" },
   { href: "/horario/", label: "Horario" },
   { href: "/eventos/", label: "Eventos" },
-  { href: "/oficina/", label: "Oficina" },
   { href: "/equipo/", label: "Equipo" },
   { href: "/espacio/", label: "Espacio" },
   { href: "/contacto/", label: "Contacto" },
@@ -233,6 +235,7 @@ export const yogaCopy = {
   classesCta: "Reserva tu primera clase hoy",
   classesCtaHref: "/horario/#reserva",
   pricesHeading: "Precios",
+  pricesCta: "Comprar tu clase",
   // One entry per class we teach, in the order the accordion should list them,
   // which is not the schedule's. Movimiento y Conciencia Pélvica is on the
   // schedule too but is Raquel's own class, billed separately, and lives on the

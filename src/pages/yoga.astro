@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { yogaCopy, images } from "../content/site";
+import { externalLinks, yogaCopy, images } from "../content/site";
 ---
 
 <BaseLayout title={yogaCopy.pageTitle} description={yogaCopy.description}>
@@ -73,6 +73,7 @@ import { yogaCopy, images } from "../content/site";
           </div>
         ))}
       </div>
+      <p class="prices-cta"><a class="btn-outline" href={externalLinks.momoyogaBuy} target="_blank" rel="noopener noreferrer">{yogaCopy.pricesCta}</a></p>
     </div>
   </section>
 
