@@ -15,9 +15,8 @@ import { yogaCopy, images } from "../content/site";
     <div class="container">
       <h2>{yogaCopy.pillarsTitle}</h2>
       <div class="yoga-pillars">
-        {yogaCopy.pillars.map((pillar, index) => (
+        {yogaCopy.pillars.map((pillar) => (
           <article class="yoga-pillar">
-            <span class="yoga-pillar-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
             <h3>{pillar.title}</h3>
             {pillar.body.map((para) => <p>{para}</p>)}
           </article>

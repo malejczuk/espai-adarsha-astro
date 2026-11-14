@@ -218,7 +218,7 @@ export const yogaCopy = {
       ],
     },
     {
-      title: "Clases que se adaptan a la sala",
+      title: "Clases que se adaptan a ti",
       body: [
         "[PLACEHOLDER]",
         "Si tienes una lesión o eres nuevo en la práctica, te damos modificaciones para que la postura se adapte a ti. Si tu cuerpo está abierto y fuerte y quieres profundizar, tenemos variantes avanzadas para llevarte más allá.",
