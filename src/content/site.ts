@@ -7,7 +7,7 @@ import studioDetail from "../../assets/54-DSC01118.jpg";
 import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
 import teamWindow from "../../assets/328-DSC01628.jpg";
-import homeHero from "../../assets/home-hero-estudio.jpg";
+import homeHero from "../../assets/home-hero.jpg";
 import homeGroup from "../../assets/home-group.png";
 import homeIndividual from "../../assets/home-individual.png";
 import homeEcosystem from "../../assets/home-ecosystem.jpg";
