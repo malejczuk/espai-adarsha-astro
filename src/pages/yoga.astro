@@ -12,7 +12,11 @@ import { externalLinks, yogaCopy, images } from "../content/site";
       stays so that links already pointing at it still land here. */}
   <section id="metodo" class="yoga-different">
     <div class="container">
-      <h2>{yogaCopy.pillarsTitle}</h2>
+      <div class="yoga-different-intro">
+        <h2>{yogaCopy.differentTitle}</h2>
+        {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
+      </div>
+      <h2 class="yoga-pillars-title">{yogaCopy.pillarsTitle}</h2>
       <div class="yoga-pillars">
         {yogaCopy.pillars.map((pillar) => (
           <article class="yoga-pillar">
@@ -20,10 +24,6 @@ import { externalLinks, yogaCopy, images } from "../content/site";
             {pillar.body.map((para) => <p>{para}</p>)}
           </article>
         ))}
-      </div>
-      <div class="yoga-different-intro">
-        <h2>{yogaCopy.differentTitle}</h2>
-        {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
       </div>
     </div>
   </section>

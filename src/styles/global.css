@@ -265,15 +265,17 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .prices-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
-/* The three pillars open the page, each a white card lifted off the clay
-   with a brown bar across its top, so they read as three distinct claims.
-   They carry no numbers: the three are not ranked. "Yoga como práctica" follows in a single centred column. */
+/* "Yoga como práctica" leads the section in a single centred column. The
+   three pillars follow under their own heading, each a white card lifted
+   off the clay with a brown bar across its top, so they read as three
+   distinct claims. They carry no numbers: the three are not ranked. */
 .yoga-different { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
 .yoga-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 52px; }
 .yoga-pillar { padding: 34px 30px 40px; background: var(--white); border-top: 5px solid var(--brown); box-shadow: 0 18px 40px -22px rgba(var(--brown-rgb), .55); }
 .yoga-pillar h3 { font: 700 27px/1.25 var(--display); color: var(--brown); text-wrap: balance; }
 .yoga-pillar p { margin-top: 18px; }
-.yoga-different-intro { max-width: 720px; margin: 80px auto 0; }
+.yoga-different-intro { max-width: 720px; margin: 0 auto; }
+.yoga-pillars-title { margin-top: 80px; }
 .yoga-different h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
 .yoga-different-intro p { margin-top: 26px; }
 .membership-section { background: #f8f8f8; padding: 86px 0; }
@@ -447,7 +449,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-different h2, .membership-section h2 { font-size: 34px; }
   .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 36px; }
   .yoga-pillar { padding: 28px 24px 32px; }
-  .yoga-different-intro { margin-top: 56px; }
+  .yoga-pillars-title { margin-top: 56px; }
   .page-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }
