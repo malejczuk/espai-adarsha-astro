@@ -6,6 +6,7 @@ import studioShelf from "../../assets/48-DSC01109.jpg";
 import studioDetail from "../../assets/54-DSC01118.jpg";
 import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
+import meditation from "../../assets/SWEARxEspai Adarsha-50.jpg";
 import teamWindow from "../../assets/328-DSC01628.jpg";
 import homeHero from "../../assets/home-hero.jpg";
 import homeGroup from "../../assets/home-group.png";
@@ -122,6 +123,7 @@ export const images = {
   studioDetail,
   groupClass,
   individualSession,
+  meditation,
   teamWindow,
   homeHero,
   homeEcosystem,

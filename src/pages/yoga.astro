@@ -8,18 +8,23 @@ import { externalLinks, yogaCopy, images } from "../content/site";
     <h1>{yogaCopy.introTitle}</h1>
   </section>
 
-  {/* #metodo is the anchor the section this one replaced answered to; it
+  <section class="yoga-intro">
+    <div class="yoga-intro-inner">
+      <h2>{yogaCopy.differentTitle}</h2>
+      {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
+    </div>
+  </section>
+
+  {/* Laid out like the "Un método basado en la progresión" block it replaced:
+      the photo beside the copy on clay. #metodo was that block's anchor; it
       stays so that links already pointing at it still land here. */}
-  <section id="metodo" class="yoga-different">
-    <div class="container">
-      <div class="yoga-different-intro">
-        <h2>{yogaCopy.differentTitle}</h2>
-        {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
-      </div>
-      <h2 class="yoga-pillars-title">{yogaCopy.pillarsTitle}</h2>
-      <div class="yoga-pillars">
+  <section id="metodo" class="method-section">
+    <div class="container method-inner">
+      <img src={images.meditation.src} alt="Práctica de yoga en la sala de Adarsha Yoga, Barcelona" />
+      <div class="method-copy">
+        <h2>{yogaCopy.pillarsTitle}</h2>
         {yogaCopy.pillars.map((pillar) => (
-          <article class="yoga-pillar">
+          <article class="method-pillar">
             <h3>{pillar.title}</h3>
             {pillar.body.map((para) => <p>{para}</p>)}
           </article>

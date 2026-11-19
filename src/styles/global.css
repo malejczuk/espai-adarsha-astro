@@ -265,19 +265,30 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .prices-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
-/* "Yoga como práctica" leads the section in a single centred column. The
-   three pillars follow under their own heading, each a white card lifted
-   off the clay with a brown bar across its top, so they read as three
-   distinct claims. They carry no numbers: the three are not ranked. */
-.yoga-different { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
-.yoga-pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 52px; }
-.yoga-pillar { padding: 34px 30px 40px; background: var(--white); border-top: 5px solid var(--brown); box-shadow: 0 18px 40px -22px rgba(var(--brown-rgb), .55); }
-.yoga-pillar h3 { font: 700 27px/1.25 var(--display); color: var(--brown); text-wrap: balance; }
-.yoga-pillar p { margin-top: 18px; }
-.yoga-different-intro { max-width: 720px; margin: 0 auto; }
-.yoga-pillars-title { margin-top: 80px; }
-.yoga-different h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
-.yoga-different-intro p { margin-top: 26px; }
+/* "Yoga como práctica" opens /yoga/ on white, in a single centred column. */
+.yoga-intro { padding: 86px 20px 80px; }
+.yoga-intro-inner { max-width: 720px; margin: 0 auto; }
+.yoga-intro h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
+.yoga-intro p { margin-top: 26px; }
+
+/* "¿Qué nos hace diferentes?", laid out as the old "Un método basado en la
+   progresión" block was: clay ground, the photo beside the copy, a brown
+   Caudex heading. The heading takes the 41px the page's other section
+   headings use, a step above the pillar names. The photo stretches to the height of the copy,
+   which runs longer than the old list did.
+
+   The three pillar names are the block's centre of gravity, so they are set
+   large in the display face rather than as the small bold lead-ins the old
+   list used, each over a fine brown rule. No cards, no numerals: they read
+   as headings in an editorial page, the way the rest of the site is set. */
+.method-section { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
+.method-inner { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 68px; align-items: stretch; }
+.method-inner img { height: 100%; min-height: 560px; object-fit: cover; }
+.method-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
+.method-pillar { margin-top: 40px; padding-top: 26px; border-top: 1px solid rgba(var(--brown-rgb), .35); }
+.method-pillar h3 { font: 400 32px/1.2 var(--display); color: var(--brown); letter-spacing: -.005em; text-wrap: balance; }
+.method-pillar p { margin-top: 14px; }
+.method-pillar h3 + p { margin-top: 18px; }
 .membership-section { background: #f8f8f8; padding: 86px 0; }
 .membership-inner { max-width: 720px; }
 .membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
@@ -445,11 +456,14 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
-  .yoga-different, .membership-section { padding: 64px 0; }
-  .yoga-different h2, .membership-section h2 { font-size: 34px; }
-  .yoga-pillars { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 36px; }
-  .yoga-pillar { padding: 28px 24px 32px; }
-  .yoga-pillars-title { margin-top: 56px; }
+  .method-section, .membership-section { padding: 64px 0; }
+  .yoga-intro { padding: 64px 28px 60px; }
+  .yoga-intro h2, .membership-section h2 { font-size: 34px; }
+  .method-inner { grid-template-columns: minmax(0, 1fr); gap: 45px; }
+  .method-inner img { height: 430px; min-height: 0; }
+  .method-copy h2 { font-size: 34px; }
+  .method-pillar { margin-top: 32px; padding-top: 22px; }
+  .method-pillar h3 { font-size: 28px; }
   .page-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }
