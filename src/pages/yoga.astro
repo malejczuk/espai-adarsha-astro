@@ -1,64 +1,108 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { yogaCopy, images } from "../content/site";
+import { externalLinks, yogaCopy, images } from "../content/site";
 ---
 
 <BaseLayout title={yogaCopy.pageTitle} description={yogaCopy.description}>
   <section class="yoga-title">
     <h1>{yogaCopy.introTitle}</h1>
-    <p>{yogaCopy.introQuestion}</p>
   </section>
 
-  <section class="yoga-rhythm">
+  <section class="yoga-intro">
+    <div class="yoga-intro-inner">
+      <h2>{yogaCopy.differentTitle}</h2>
+      {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
+    </div>
+  </section>
+
+  {/* Laid out like the "Un método basado en la progresión" block it replaced:
+      the photo beside the copy on clay. #metodo was that block's anchor; it
+      stays so that links already pointing at it still land here. */}
+  <section id="metodo" class="method-section">
+    <div class="container method-inner">
+      <img src={images.meditation.src} alt="Práctica de yoga en la sala de Adarsha Yoga, Barcelona" />
+      <div class="method-copy">
+        <h2>{yogaCopy.pillarsTitle}</h2>
+        {yogaCopy.pillars.map((pillar) => (
+          <article class="method-pillar">
+            <h3>{pillar.title}</h3>
+            {pillar.body.map((para) => <p>{para}</p>)}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="clases" class="yoga-rhythm">
     <div class="yoga-rhythm-copy">
-      <h2>{yogaCopy.rhythmTitle}</h2>
-      <p>{yogaCopy.intro}</p>
+      <h2>{yogaCopy.classesTitle}</h2>
       <div class="class-accordion">
         {/* Each style is its own heading and its own anchor, so /yoga/#yin-yoga
             lands on it and an outline of the page lists the five styles. The
-            h3 inherits the summary's type, so nothing moves. */}
-        {yogaCopy.classes.map((item) => (
-          <details class="class-item" id={item.id}>
+            h3 inherits the summary's type, so nothing moves.
+
+            The shared name makes the five one group, so opening a style
+            closes the one that was open and a single photo shows at a time.
+            The first starts open so the photo column is never without one
+            of the styles. */}
+        {yogaCopy.classes.map((item, index) => (
+          <details class="class-item" id={item.id} name="yoga-class" open={index === 0}>
             <summary><h3>{item.title}</h3></summary>
             {(Array.isArray(item.body) ? item.body : [item.body]).map((para) => (
               <p>{para}</p>
             ))}
+            <img class="class-photo" src={item.image.src} alt={item.imageAlt} loading={index === 0 ? "eager" : "lazy"} />
           </details>
         ))}
       </div>
     </div>
+    {/* What the photo column shows when every style is closed. An open
+        style's own photo is laid over it. */}
     <div class="yoga-photo-stack">
-      <img src={images.groupClass.src} alt="Clase grupal de yoga" />
+      <img src={images.groupClass.src} alt="Clase grupal de yoga en Adarsha Yoga, Barcelona" />
+    </div>
+    <div class="yoga-rhythm-cta">
+      <p class="yoga-question">{yogaCopy.introQuestion}</p>
+      <a class="btn-outline" href={yogaCopy.classesCtaHref}>{yogaCopy.classesCta}</a>
     </div>
   </section>
 
-  <section id="metodo" class="method-section">
-    <div class="container method-inner">
-      <img src={images.meditation.src} alt="Práctica progresiva de yoga" />
-      <div>
-        <h2>{yogaCopy.methodTitle}</h2>
-        <ul class="method-list">{yogaCopy.method.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}</ul>
+  <section id="precios" class="yoga-prices-band">
+    <div class="container yoga-prices">
+      <h2 class="prices-heading">{yogaCopy.pricesHeading}</h2>
+      <div class="price-columns">
+        {yogaCopy.prices.map((group) => (
+          <div class="price-column">
+            <h3>{group.title}</h3>
+            <ul class="plain-lines">{group.items.map((item) => <li>- {item}</li>)}</ul>
+          </div>
+        ))}
       </div>
+      <p class="prices-cta"><a class="btn-outline" href={externalLinks.momoyogaBuy} target="_blank" rel="noopener noreferrer">{yogaCopy.pricesCta}</a></p>
     </div>
   </section>
 
-  <section id="individuales" class="individual-section">
-    <div class="individual-copy">
-      <h2>{yogaCopy.individualTitle}</h2>
-      <p>{yogaCopy.individualIntro}</p>
-      <ul class="individual-list">{yogaCopy.individualOptions.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}</ul>
-      <p>{yogaCopy.individualClosing}</p>
+  <section id="mensualidad" class="membership-section">
+    <div class="container membership-inner">
+      <h2>{yogaCopy.membershipTitle}</h2>
+      <ul class="membership-list">
+        {yogaCopy.membership.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}
+      </ul>
     </div>
-    <img src={images.individualSession.src} alt="Clase individual adaptada" />
   </section>
 
-  <section id="empresas" class="office-section">
-    <img class="office-image" src={images.yogaOffice2.src} alt="Yoga para empresas" />
-    <div class="office-copy">
-      <h2>{yogaCopy.officeTitle}</h2>
-      {yogaCopy.officeBody.map((item) => <p>{item}</p>)}
-      <p><a href="/contacto/#contacto">{yogaCopy.officeCta}</a></p>
-    </div>
+  {/* #individuales and #empresas were full sections, which moved to pages of
+      their own. The ids stay for links already pointing at them. */}
+  <section id="individuales" class="page-teaser page-teaser-plain">
+    <h2>{yogaCopy.individualTeaserTitle}</h2>
+    <p>{yogaCopy.individualTeaser}</p>
+    <a class="btn-outline" href={yogaCopy.individualTeaserHref}>{yogaCopy.individualTeaserCta}</a>
+  </section>
+
+  <section id="empresas" class="page-teaser">
+    <h2>{yogaCopy.officeTeaserTitle}</h2>
+    <p>{yogaCopy.officeTeaser}</p>
+    <a class="btn-outline" href={yogaCopy.officeTeaserHref}>{yogaCopy.officeTeaserCta}</a>
   </section>
   <!-- A fragment link to a closed <details> scrolls to a shut drawer, so open
        the one that was asked for. Runs on load and on every later hash change,

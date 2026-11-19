@@ -102,12 +102,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
 .home-intro-image { min-height: 789px; object-fit: cover; object-position: 50% center; }
 
-.home-value { display: grid; grid-template-columns: 1fr 1fr; min-height: 882px; }
-.home-value-image { height: 882px; object-fit: cover; }
-.home-value-copy { padding: 64px 74px 60px; color: #000; }
-.home-value-copy h2 { max-width: 500px; margin-inline: auto; text-align: center; font: 400 41px/1.25 var(--display); color: var(--taupe); }
-.home-value-copy p { margin-top: 43px; font-size: 16px; line-height: 1.85; }
-.home-value-copy .btn-outline { display: flex; width: max-content; margin: 43px auto 0; }
 
 .practice-heading { min-height: 185px; display: grid; place-items: center; padding: 35px 20px; background: #f8f8f8; }
 .practice-heading h2 { font: 400 33px/1.2 var(--display); color: var(--taupe); text-align: center; }
@@ -122,14 +116,14 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .practice-card .btn-outline { min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); text-decoration: none; }
 .practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
 
-.ecosystem-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
-.ecosystem-band img { height: 752px; object-fit: cover; }
-.ecosystem-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
-.ecosystem-copy h2 { font: 400 40px/1.28 var(--display); }
-/* Body copy, matching the paragraphs in .home-value-copy, rather than the
-   large serif the heading above it uses. */
-.ecosystem-copy p { margin-top: 34px; font: 300 16px/1.85 var(--body); color: #000; }
-.ecosystem-copy .btn-outline { margin-top: 40px; }
+.also-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
+.also-band img { height: 752px; object-fit: cover; }
+.also-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
+.also-copy h2 { font: 400 40px/1.28 var(--display); }
+/* Body copy in Avenir, rather than the large serif the heading above it
+   uses. */
+.also-copy p { margin-top: 34px; font: 300 16px/1.85 var(--body); color: #000; }
+.also-copy .btn-outline { margin-top: 40px; }
 
 /* Shared editorial blocks */
 .page-title-band { padding: 82px 20px 69px; background: var(--clay); text-align: center; }
@@ -215,13 +209,12 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 }
 .yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
-.yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
 /* fr, not percentages: 43% + 57% already fills the container, so the gap was
    added on top and pushed the photo column past the right edge — invisible on
    a wide screen, a sideways scrollbar below about 1066px. fr tracks divide
    what is left after the gap. minmax(0, …) keeps a wide item from flooring
    the track, as on Colaboradores. */
-.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding-bottom: 86px; }
+.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding: 86px 0; position: relative; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }
 /* One <details> per class on the schedule. The marker is drawn as a +/- in
@@ -247,42 +240,85 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item[open] summary::after { content: "\2212"; }
 .class-item summary:hover { text-decoration: underline; }
 .class-item > p { padding: 0 0 22px; }
-.yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
+/* The open style's photo. On a wide screen it is lifted out of the item and
+   laid over the photo column: same top, width and height as the default
+   photo there, which is the 57fr track of .yoga-rhythm less its 42px gap. On
+   a phone it stays inside the item, under the description. */
+.class-photo { position: absolute; top: 86px; right: 0; width: calc((100% - 42px) * .57); height: 731px; object-fit: cover; }
+/* The question and the booking button that answers it, under the class
+   list and across both columns. */
+.yoga-rhythm-cta { grid-column: 1 / -1; margin-top: 30px; text-align: center; }
+.yoga-question { max-width: 540px; margin: 0 auto 30px; font: 400 29px/1.45 var(--display); color: var(--brown); }
+.yoga-rhythm-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
+.yoga-photo-stack { display: grid; align-content: start; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
-/* Precios sits on the clay the page's own title band uses, heading included,
-   so the section reads as one block and keeps a clear edge above the footer's
-   brown. Its type takes the same colours that band's does: brown headings over
-   black lines. */
-.yoga-prices-band { background: var(--clay); color: #000; }
+/* Precios, on /yoga/ between the class list and what the membership
+   includes. It sits on clay, heading included, so it reads as one block
+   between the white above and the off-white below. Brown headings over black
+   lines. */
+.yoga-prices-band { background: var(--clay); color: #000; scroll-margin-top: 24px; }
 .yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
 .yoga-prices h3 { font: 400 30px/1.25 var(--display); color: var(--brown); }
 .prices-heading { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
 .price-column { padding: 8px 28px 0; }
-.method-section h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.prices-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
-.method-section { background: var(--clay); padding: 86px 0; }
-.method-inner { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 68px; align-items: center; }
-.method-inner img { height: 560px; object-fit: cover; }
-.method-list { padding-left: 23px; margin-top: 30px; }
-.method-list li + li { margin-top: 24px; }
-.method-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
+/* "Yoga como práctica" opens /yoga/ on white, in a single centred column. */
+.yoga-intro { padding: 86px 20px 80px; }
+.yoga-intro-inner { max-width: 720px; margin: 0 auto; }
+.yoga-intro h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
+.yoga-intro p { margin-top: 26px; }
+
+/* "¿Qué nos hace diferentes?", laid out as the old "Un método basado en la
+   progresión" block was: clay ground, the photo beside the copy, a brown
+   Caudex heading. The heading takes the 41px the page's other section
+   headings use, a step above the pillar names. The photo stretches to the height of the copy,
+   which runs longer than the old list did.
+
+   The three pillar names are the block's centre of gravity, so they are set
+   large in the display face rather than as the small bold lead-ins the old
+   list used, each over a fine brown rule. No cards, no numerals: they read
+   as headings in an editorial page, the way the rest of the site is set. */
+.method-section { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
+.method-inner { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 68px; align-items: stretch; }
+.method-inner img { height: 100%; min-height: 560px; object-fit: cover; }
+.method-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
+.method-pillar { margin-top: 40px; padding-top: 26px; border-top: 1px solid rgba(var(--brown-rgb), .35); }
+.method-pillar h3 { font: 400 32px/1.2 var(--display); color: var(--brown); letter-spacing: -.005em; text-wrap: balance; }
+.method-pillar p { margin-top: 14px; }
+.method-pillar h3 + p { margin-top: 18px; }
+.membership-section { background: #f8f8f8; padding: 86px 0; }
+.membership-inner { max-width: 720px; }
+.membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
+.membership-list { list-style: none; padding: 0; margin: 40px 0 0; }
+.membership-list li + li { margin-top: 22px; }
+.membership-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
 .individual-section { display: grid; grid-template-columns: 1fr 1fr; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
 .individual-copy { padding: 88px 80px; }
-.individual-copy h2 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
+/* The heading is the h1 of /sesiones-particulares/ and keeps the size this
+   block had as a section of /yoga/. */
+.individual-copy h1 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
 .individual-copy p, .office-copy p { margin-top: 25px; }
 .individual-list { margin: 25px 0 0; padding-left: 22px; }
 .individual-list li + li { margin-top: 22px; }
-/* The office section is dressed like the method section above it: the same
-   clay ground rather than an off-white of its own, and a heading at the same
-   size in the same brown rather than a larger one in taupe. Its body copy
-   already took the site's Avenir, as the method list does. */
+/* /oficina/: the photo beside the offer, on the clay ground. The heading is
+   the page's h1 but keeps the size this block had as a section of /yoga/. */
 .office-section { display: grid; grid-template-columns: 1fr 1fr; background: var(--clay); }
-.office-copy h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.office-copy h1 { font: 400 34px/1.25 var(--display); color: var(--brown); }
 .office-image { height: 690px; object-fit: cover; }
 .office-copy { padding: 94px 80px; }
+.office-copy .btn-outline { margin-top: 34px; }
+/* The teasers that close /yoga/, each sending people to an offer with a page
+   of its own. Clay by default; the plain one is white, so two in a row read
+   as two. */
+.page-teaser { background: var(--clay); padding: 80px 20px; text-align: center; scroll-margin-top: 24px; }
+.page-teaser-plain { background: var(--white); }
+.page-teaser h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.page-teaser p { max-width: 620px; margin: 25px auto 0; }
+.page-teaser .btn-outline { margin-top: 34px; }
 
 /* Equipo */
 .meaning-band { background: var(--clay); padding: 88px 20px 76px; text-align: center; }
@@ -388,22 +424,19 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
      instead of being made to fit. That is what sent Colaboradores 11px wide at
      375px and 66px at 320px. The 0 lets the column shrink to the viewport and
      the items fit themselves to it. */
-  .home-intro, .home-value, .ecosystem-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
+  .home-intro, .also-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
   .home-intro-image { order: -1; min-height: 0; height: 480px; }
   .home-intro-copy { padding: 58px 26px 65px; }
   .home-intro h1 { font-size: 31px; }
   .home-intro-lead { margin-top: 35px; font-size: 20px; }
   .home-cta-group { gap: 12px; margin-top: 38px; }
-  .home-value-image { height: 500px; }
-  .home-value-copy { padding: 55px 27px 65px; }
-  .home-value-copy h2 { font-size: 34px; }
   .practice-heading { min-height: 145px; }
   .practice-heading h2 { font-size: 28px; }
   .practice-cards { grid-template-columns: 1fr; }
   .practice-card { min-height: 360px; }
-  .ecosystem-band img { height: 460px; }
-  .ecosystem-copy { padding: 60px 28px 70px; }
-  .ecosystem-copy h2 { font-size: 34px; }
+  .also-band img { height: 460px; }
+  .also-copy { padding: 60px 28px 70px; }
+  .also-copy h2 { font-size: 34px; }
   /* 30px, not the 41px this heading takes on a wide screen: at 320px the
      column is 264px and "Acompañamiento" is 330px wide at 41px, so the word
      would not fit on a line of its own. Shrinking the heading lets it wrap
@@ -413,20 +446,28 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
-  .yoga-title p { margin-top: 28px; font-size: 24px; }
-  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
+  .yoga-rhythm-cta { margin-top: 10px; }
+  .yoga-question { font-size: 24px; }
+  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 64px 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
-  .yoga-photo-stack img { height: 480px; }
-  .method-inner, .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
+  .yoga-photo-stack { display: none; }
+  .class-photo { position: static; width: 100%; height: 420px; margin-bottom: 24px; }
+  .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
-  .method-section { padding: 64px 0; }
-  .method-inner img { height: 430px; }
+  .method-section, .membership-section { padding: 64px 0; }
+  .yoga-intro { padding: 64px 28px 60px; }
+  .yoga-intro h2, .membership-section h2 { font-size: 34px; }
+  .method-inner { grid-template-columns: minmax(0, 1fr); gap: 45px; }
+  .method-inner img { height: 430px; min-height: 0; }
+  .method-copy h2 { font-size: 34px; }
+  .method-pillar { margin-top: 32px; padding-top: 22px; }
+  .method-pillar h3 { font-size: 28px; }
+  .page-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }
-  /* .office-copy h2 is 34px at every width now, like the method heading. */
-  .individual-copy h2 { font-size: 34px; }
+  .individual-copy h1 { font-size: 34px; }
   .office-image { height: 480px; }
   .team-section { padding: 65px 0; }
   .team-intro h2 { font-size: 36px; }
