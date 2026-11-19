@@ -298,7 +298,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .individual-section { display: grid; grid-template-columns: 1fr 1fr; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
 .individual-copy { padding: 88px 80px; }
-/* The heading is the h1 of /clases-individuales/ and keeps the size this
+/* The heading is the h1 of /sesiones-particulares/ and keeps the size this
    block had as a section of /yoga/. */
 .individual-copy h1 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
 .individual-copy p, .office-copy p { margin-top: 25px; }

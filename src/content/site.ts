@@ -41,7 +41,7 @@ export const siteMeta = {
   // Gràcia–Eixample border. Both names describe where it is, and people
   // nearby use both, so naming one would give up half of them. Leave both in.
   defaultTitle: "Estudio de yoga en Gràcia · Eixample | Adarsha Yoga",
-  description: "Adarsha Yoga es un estudio de yoga de barrio en Barcelona, junto al metro Verdaguer. Clases grupales, clases individuales, yoga en la oficina y alquiler de sala.",
+  description: "Adarsha Yoga es un estudio de yoga de barrio en Barcelona, junto al metro Verdaguer. Clases grupales, sesiones particulares, yoga en la oficina y alquiler de sala.",
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
@@ -161,7 +161,7 @@ export const homeCopy = {
   practiceHeading: "¿Cómo te gustaría practicar?",
   practiceOptions: [
     { title: "Clases grupales", body: "Hatha Vinyasa, Yin somático, Yoga Integral, Fuerza y Movilidad y más.", cta: "Ver clases", href: "/yoga/", image: homeGroup, alt: "Clases grupales de yoga en Adarsha Yoga, Barcelona" },
-    { title: "Clases individuales", body: "Una sesión puntual o un acompañamiento continuo, a tu medida.", cta: "Saber más", href: "/clases-individuales/", image: homeIndividual, alt: "Clase individual de yoga en Adarsha Yoga, Barcelona" },
+    { title: "Sesiones particulares", body: "Una sesión puntual o un acompañamiento continuo, a tu medida.", cta: "Saber más", href: "/sesiones-particulares/", image: homeIndividual, alt: "Sesión particular de yoga en Adarsha Yoga, Barcelona" },
     { title: "Yoga en la oficina", body: "Para equipos que pasan el día sentados.", cta: "Saber más", href: "/oficina/", image: homeOficina, alt: "Yoga en la oficina con Adarsha Yoga" },
   ],
   // The band that introduces what else happens in the studio. At the moment
@@ -310,7 +310,7 @@ export const yogaCopy = {
       ],
     },
     {
-      title: "Sesiones Individuales",
+      title: "Sesiones Particulares",
       items: [
         "Sesión individual: 60\u00a0€",
         "Bono 4 sesiones: 180\u00a0€",
@@ -319,11 +319,11 @@ export const yogaCopy = {
     },
   ],
   // Two teasers close /yoga/, one for each offer that has a page of its own:
-  // /clases-individuales/ and /oficina/.
-  individualTeaserTitle: "Clases individuales",
+  // /sesiones-particulares/ and /oficina/.
+  individualTeaserTitle: "Sesiones particulares",
   individualTeaser: "Una sesión puntual o un acompañamiento continuo, a tu medida.",
   individualTeaserCta: "Saber más",
-  individualTeaserHref: "/clases-individuales/",
+  individualTeaserHref: "/sesiones-particulares/",
   officeTeaserTitle: "Yoga en la oficina",
   officeTeaser:
     "Llevamos el yoga, la meditación y la respiración consciente a tu oficina. Para equipos que pasan el día sentados: menos tensión, más movilidad y más claridad mental.",
@@ -331,20 +331,22 @@ export const yogaCopy = {
   officeTeaserHref: "/oficina/",
 };
 
-// /clases-individuales/: one-to-one sessions. This copy used to be a section
+// /sesiones-particulares/: one-to-one sessions. The studio calls these
+// "sesiones", never "clases", which name the group classes. This copy used
+// to be a section
 // of /yoga/, which now carries a short teaser that links here.
 export const individualesCopy = {
-  pageTitle: "Clases individuales de yoga en Barcelona | Adarsha Yoga",
+  pageTitle: "Sesiones particulares de yoga en Barcelona | Adarsha Yoga",
   description:
-    "Clases individuales de yoga en Barcelona: una sesión puntual o un programa de práctica personal, adaptados a tu cuerpo, tus ritmos y tus objetivos.",
-  heading: "Clases individuales adaptadas a tu cuerpo",
+    "Sesiones particulares de yoga en Barcelona: una sesión puntual o un programa de práctica personal, adaptados a tu cuerpo, tus ritmos y tus objetivos.",
+  heading: "Sesiones particulares adaptadas a tu cuerpo",
   intro: "Si buscas un acompañamiento exclusivo para integrar el yoga en tu vida según tus propios ritmos y objetivos, hemos diseñado dos formas de trabajar juntas/os.",
   options: [
     { title: "Sesión Individual Estratégica", body: "Ideal para resolver dudas puntuales, si hay algun grupo de posturas que necesitas aprender de forma más profunda o diseñar una secuencia personalizada que puedas practicar de forma autónoma en casa." },
     { title: "Programa de Práctica Personal", body: "Un proceso de acompañamiento profundo con sesiones semanales o quincenales. Trabajaremos de forma constante en tus metas para que experimentes los beneficios del yoga de manera integral y consciente." },
   ],
   closing: "¿Quieres empezar el programa? Empecemos con una sesión para conocernos, escuchar tus necesidades y trazar el camino de tu práctica.",
-  imageAlt: "Clase individual de yoga en Adarsha Yoga, Barcelona",
+  imageAlt: "Sesión particular de yoga en Adarsha Yoga, Barcelona",
 };
 
 // /oficina/: yoga, meditation and breathing for companies. This copy used to
