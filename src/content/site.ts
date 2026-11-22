@@ -169,7 +169,7 @@ export const homeCopy = {
   alsoTitle: "En Adarsha también",
   alsoBody: [
     "Raquel Jaroslavsky, una terapeuta corporal especializada en suelo pélvico y sexualidad.",
-    "Descubre sus clases de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
+    "Descubre sus sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
   ],
   alsoCta: "Raquel — Conciencia Pélvica",
   alsoHref: "/colaboradores/",
@@ -200,15 +200,16 @@ export const yogaCopy = {
   pageTitle: "Clases de Hatha Vinyasa, Yin y Yoga Integral en Barcelona | Adarsha Yoga",
   description:
     "Clases de Hatha Vinyasa, Yin Yoga y Yoga Integral en Barcelona, junto al metro Verdaguer. Yoga como práctica: ajustes físicos, clases que se adaptan a ti y progresión.",
-  introTitle: "Practica yoga en Adarsha",
+      introTitle: "¿Qué nos hace diferentes?",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   // Copy still to come is left in [brackets], as the refresh brief has it, and
   // shows on the page as it stands. Search for "[" in this object to find it.
-  pillarsTitle: "¿Qué nos hace diferentes?",
+  pillarsTitle: "¿Qué esperar de la práctica en Adarsha?",
   differentTitle: "Yoga como práctica",
   differentIntro: [
-    "Hoy es fácil encontrar yoga como ejercicio: empieza cuando desenrollas la esterilla y termina cuando la recoges. Por otro lado, una práctica no tiene horario ni dirección; se extiende a toda la vida. En Adarsha volvemos a eso.",
-    "Vas a trabajar el cuerpo, y según la clase, mucho. Pero ese trabajo no va solo: es parte de un camino hacia más equilibrio, más claridad y más calma.",
+    "Hoy en día es fácil encontrar yoga como ejercicio. Tiene sus beneficios y sus límites. Empieza cuando desenrollas tu esterilla y termina cuando la recoges.",
+    "Por otro lado: la práctica. Una práctica se extiende a toda la vida. Es la forma de vivir en el mundo, de relacionar con el cuerpo, la respiración y la mente.",
+        "En Adarsha, volvemos a la base: yoga como práctica. Vas a volver más fuerte, flexible y móvil. Según la clase, tendrás agujetas el día siguiente.  Pero ese trabajo no va solo: es parte de un camino hacia más equilibrio, más claridad y más calma.",
   ],
   pillars: [
     {
