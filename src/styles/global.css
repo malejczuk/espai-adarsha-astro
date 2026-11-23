@@ -346,20 +346,23 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .team-invite { max-width: 660px; margin: 90px auto 0; text-align: center; }
 
 /* Espacio */
+/* The question opens the page above the photo, as its title, at the size
+   every page title takes. */
+.space-title { padding: 66px 20px 56px; text-align: center; }
+.space-title h1 { max-width: 820px; margin: 0 auto; font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); text-wrap: balance; }
 .space-hero { height: 611px; object-fit: cover; }
 .space-main { padding: 48px 0 80px; text-align: center; color: #000; }
 .space-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 64px; }
 .space-pair img { height: 528px; object-fit: cover; }
 /* The studio-rental copy is body text, so it is set in Avenir like the rest of
-   the site's prose, at the 300 the family actually ships. Only the question it
-   opens with stays in Caudex, in brown, to head the block. */
+   the site's prose, at the 300 the family actually ships. The question that
+   used to head it is now the page title, above the photo. */
 /* 18px, down from the 21px this block held while it was set in Caudex: the
    serif carried the size, and Avenir at 21px ran much larger than the 16px the
    rest of the site's prose takes. Still a step above body, since this is the
    page's one block of copy. */
 .space-copy { max-width: 780px; margin: 0 auto; font: 300 18px/1.7 var(--body); }
-.space-copy p + p, .space-copy h1 + p { margin-top: 22px; }
-.space-copy h1 { font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--brown); -webkit-text-stroke: 0.9px currentColor; }
+.space-copy p + p { margin-top: 22px; }
 .space-copy ul { margin-top: 28px; list-style: disc inside; padding: 0; display: grid; gap: 10px; }
 .space-copy .email { margin-top: 28px; }
 .space-wide { height: 300px; margin-top: 92px; object-fit: cover; }
@@ -480,6 +483,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .team-grid { width: 100%; grid-template-columns: 1fr; gap: 65px; }
   .team-card img { height: auto; aspect-ratio: 403 / 508; }
   .team-invite { margin-top: 60px; }
+  .space-title { padding: 48px 24px 40px; }
   .space-hero { height: 430px; }
   .space-main { padding-inline: 20px; }
   .space-pair { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
