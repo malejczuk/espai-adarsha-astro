@@ -346,10 +346,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .team-invite { max-width: 660px; margin: 90px auto 0; text-align: center; }
 
 /* Espacio */
-/* The question opens the page above the photo, as its title, at the size
-   every page title takes. */
-.space-title { padding: 66px 20px 56px; text-align: center; }
-.space-title h1 { max-width: 820px; margin: 0 auto; font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); text-wrap: balance; }
+/* The question opens the page above the photo, as its title. It runs much
+   longer than the other pages' one- or two-word titles, so it is set well
+   below their size, at the 34px the section headings use. */
+.space-title { padding: 56px 20px 44px; text-align: center; }
+.space-title h1 { max-width: 760px; margin: 0 auto; font: 400 34px/1.25 var(--display); color: var(--brown); text-wrap: balance; }
 .space-hero { height: 611px; object-fit: cover; }
 .space-main { padding: 48px 0 80px; text-align: center; color: #000; }
 .space-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 64px; }
@@ -483,7 +484,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .team-grid { width: 100%; grid-template-columns: 1fr; gap: 65px; }
   .team-card img { height: auto; aspect-ratio: 403 / 508; }
   .team-invite { margin-top: 60px; }
-  .space-title { padding: 48px 24px 40px; }
+  .space-title { padding: 40px 24px 32px; }
+  .space-title h1 { font-size: 27px; }
   .space-hero { height: 430px; }
   .space-main { padding-inline: 20px; }
   .space-pair { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
