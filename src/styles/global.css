@@ -105,18 +105,19 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 .practice-heading { min-height: 185px; display: grid; place-items: center; padding: 35px 20px; background: #f8f8f8; }
 .practice-heading h2 { font: 400 33px/1.2 var(--display); color: var(--taupe); text-align: center; }
-/* Each card is its photo over its copy. The photos are pale studio shots
-   with the hands or feet at the centre, so nothing is laid over them: the
-   title, line and button sit below on white, in the site's brown. */
-.practice-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.practice-card { display: flex; flex-direction: column; text-align: center; }
-.practice-card img { aspect-ratio: 3 / 2; object-fit: cover; }
-.practice-card-content { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 34px 28px 50px; }
-.practice-card h3 { font: 400 26px/1.3 var(--display); color: var(--brown); }
-.practice-card p { max-width: 280px; margin: 14px 0 24px; font-size: 16px; line-height: 1.55; }
-/* margin-top: auto keeps the three buttons on one line when one card's
-   line runs longer than the others. */
-.practice-card .btn-outline { margin-top: auto; min-height: 38px; padding-inline: 16px; font-size: 14px; }
+/* Each card's copy sits over its photo, as the cards always have. The new
+   photos are pale studio shots, so the veil over them is darker than the
+   old 18% to keep the white type legible, and a soft shadow lifts it off
+   the wall. */
+.practice-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 381px; }
+.practice-card { position: relative; min-height: 381px; overflow: hidden; color: #fff; text-align: center; }
+.practice-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; }
+.practice-card::after { content: ""; position: absolute; inset: 0; background: rgba(42, 31, 25, .38); }
+.practice-card-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; text-shadow: 0 1px 12px rgba(42, 31, 25, .35); }
+.practice-card h3 { font: 400 28px/1.3 var(--display); }
+.practice-card p { max-width: 260px; margin-top: 14px; font-size: 16px; line-height: 1.45; }
+.practice-card .btn-outline { margin-top: 24px; min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); font-size: 14px; text-shadow: none; }
+.practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
 
 .also-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
 .also-band img { height: 752px; object-fit: cover; }
@@ -209,7 +210,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 @media (min-width: 808px) {
   .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { flex-basis: 12.5rem; max-width: 12.5rem; }
 }
-.yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
+.yoga-title { padding: 66px 20px 48px; text-align: center; color: var(--brown); }
 .yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
 /* fr, not percentages: 43% + 57% already fills the container, so the gap was
    added on top and pushed the photo column past the right edge — invisible on
@@ -272,6 +273,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .yoga-intro-inner { max-width: 720px; margin: 0 auto; }
 .yoga-intro h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
 .yoga-intro p { margin-top: 26px; }
+/* Straight under the page title the two share one white ground, so the
+   intro drops its own top padding and the title band's spacing is the only
+   gap between them. Stacked, the two paddings left 148px of empty white. */
+.yoga-title + .yoga-intro { padding-top: 0; }
 
 /* "¿Qué nos hace diferentes?", laid out as the old "Un método basado en la
    progresión" block was: clay ground, the photo beside the copy, a brown
@@ -435,7 +440,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .practice-heading { min-height: 145px; }
   .practice-heading h2 { font-size: 28px; }
   .practice-cards { grid-template-columns: 1fr; }
-  .practice-card-content { padding: 28px 26px 44px; }
+  .practice-card { min-height: 360px; }
   .also-band img { height: 460px; }
   .also-copy { padding: 60px 28px 70px; }
   .also-copy h2 { font-size: 34px; }
