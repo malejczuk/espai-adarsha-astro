@@ -106,17 +106,16 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .practice-heading { min-height: 185px; display: grid; place-items: center; padding: 35px 20px; background: #f8f8f8; }
 .practice-heading h2 { font: 400 33px/1.2 var(--display); color: var(--taupe); text-align: center; }
 /* Each card's copy sits over its photo, as the cards always have. The new
-   photos are pale studio shots, so the veil over them is darker than the
-   old 18% to keep the white type legible, and a soft shadow lifts it off
-   the wall. */
+   photos are pale studio shots, so the type is dark ink straight on the
+   photo, with no veil to grey it, and the photos keep their own light. */
 .practice-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 381px; }
-.practice-card { position: relative; min-height: 381px; overflow: hidden; color: #fff; text-align: center; }
+.practice-card { position: relative; min-height: 381px; overflow: hidden; color: var(--ink); text-align: center; }
 .practice-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; }
-.practice-card::after { content: ""; position: absolute; inset: 0; background: rgba(42, 31, 25, .38); }
-.practice-card-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; text-shadow: 0 1px 12px rgba(42, 31, 25, .35); }
-.practice-card h3 { font: 400 28px/1.3 var(--display); }
-.practice-card p { max-width: 260px; margin-top: 14px; font-size: 16px; line-height: 1.45; }
-.practice-card .btn-outline { margin-top: 24px; min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); font-size: 14px; text-shadow: none; }
+.practice-card-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; }
+.practice-card h3 { font: 400 28px/1.3 var(--display); color: #000; }
+/* 300px holds each line to two at desktop and phone widths. */
+.practice-card p { max-width: 300px; margin-top: 14px; font-size: 16px; line-height: 1.45; }
+.practice-card .btn-outline { margin-top: 24px; min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); font-size: 14px; }
 .practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
 
 .also-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
