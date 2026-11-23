@@ -9,10 +9,12 @@ import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
 import meditation from "../../assets/SWEARxEspai Adarsha-50.jpg";
 import teamWindow from "../../assets/328-DSC01628.jpg";
 import homeHero from "../../assets/home-hero.jpg";
-import homeGroup from "../../assets/home-group.png";
-import homeIndividual from "../../assets/home-individual.png";
+// The three home cards: feet, joined hands and a raised hand, from the new
+// shoot, for group classes, private sessions and office yoga in that order.
+import homeGroup from "../../assets/home-card-pies.jpg";
+import homeIndividual from "../../assets/home-card-manos.jpg";
 import homeEcosystem from "../../assets/home-ecosystem.jpg";
-import homeOficina from "../../assets/home-oficina.png";
+import homeOficina from "../../assets/home-card-mano.jpg";
 import yogaOffice2 from "../../assets/yoga-office-2.jpg";
 import yogaHathaVinyasa from "../../assets/yoga-hatha-vinyasa.jpg";
 import yogaHathaDinamico from "../../assets/yoga-hatha-dinamico.jpg";
@@ -313,7 +315,7 @@ export const yogaCopy = {
     {
       title: "Sesiones Particulares",
       items: [
-        "Sesión individual: 60\u00a0€",
+        "Sesión suelta: 60\u00a0€",
         "Bono 4 sesiones: 180\u00a0€",
         "Bono 10 sesiones: 400\u00a0€",
       ],

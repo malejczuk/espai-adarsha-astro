@@ -105,16 +105,18 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 .practice-heading { min-height: 185px; display: grid; place-items: center; padding: 35px 20px; background: #f8f8f8; }
 .practice-heading h2 { font: 400 33px/1.2 var(--display); color: var(--taupe); text-align: center; }
-.practice-cards { display: grid; grid-template-columns: repeat(3, 1fr); min-height: 381px; }
-.practice-card { position: relative; min-height: 381px; overflow: hidden; color: #fff; text-align: center; }
-.practice-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; }
-.practice-card::after { content: ""; position: absolute; inset: 0; background: rgba(42, 31, 25, .18); }
-.practice-card-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; }
-.practice-card h3 { font: 400 24px/1.4 var(--display); }
-.practice-card p { max-width: 245px; margin-top: 16px; font-size: 16px; line-height: 1.45; }
-.practice-card a { margin-top: 24px; font-size: 14px; }
-.practice-card .btn-outline { min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); text-decoration: none; }
-.practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
+/* Each card is its photo over its copy. The photos are pale studio shots
+   with the hands or feet at the centre, so nothing is laid over them: the
+   title, line and button sit below on white, in the site's brown. */
+.practice-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.practice-card { display: flex; flex-direction: column; text-align: center; }
+.practice-card img { aspect-ratio: 3 / 2; object-fit: cover; }
+.practice-card-content { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 34px 28px 50px; }
+.practice-card h3 { font: 400 26px/1.3 var(--display); color: var(--brown); }
+.practice-card p { max-width: 280px; margin: 14px 0 24px; font-size: 16px; line-height: 1.55; }
+/* margin-top: auto keeps the three buttons on one line when one card's
+   line runs longer than the others. */
+.practice-card .btn-outline { margin-top: auto; min-height: 38px; padding-inline: 16px; font-size: 14px; }
 
 .also-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
 .also-band img { height: 752px; object-fit: cover; }
@@ -433,7 +435,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .practice-heading { min-height: 145px; }
   .practice-heading h2 { font-size: 28px; }
   .practice-cards { grid-template-columns: 1fr; }
-  .practice-card { min-height: 360px; }
+  .practice-card-content { padding: 28px 26px 44px; }
   .also-band img { height: 460px; }
   .also-copy { padding: 60px 28px 70px; }
   .also-copy h2 { font-size: 34px; }
