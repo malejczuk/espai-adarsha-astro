@@ -73,7 +73,7 @@ import { externalLinks, yogaCopy, images } from "../content/site";
         {yogaCopy.prices.map((group) => (
           <div class="price-column">
             <h3>{group.title}</h3>
-            <ul class="plain-lines">{group.items.map((item) => <li>- {item}</li>)}</ul>
+            <ul class="price-list">{group.items.map((item) => <li>{item}</li>)}</ul>
           </div>
         ))}
       </div>

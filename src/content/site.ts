@@ -9,7 +9,8 @@ import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
 import yogaPractice from "../../edited/DE_02052_edit.jpg";
 // Beside "Qué incluye tu mensualidad" on /yoga/.
 import yogaMembership from "../../edited/DE_01780.jpg";
-import teamWindow from "../../assets/328-DSC01628.jpg";
+// The photo on /contacto/.
+import contactPhoto from "../../edited/DE_01666.jpg";
 // import homeHero from "../../edited/DE_02052_edit.jpg";
 import homeHero from "../../edited/DE_01998.jpg";
 // import homeHero from "../../edited/DE_02194.jpg";
@@ -130,7 +131,7 @@ export const images = {
   individualSession,
   yogaPractice,
   yogaMembership,
-  teamWindow,
+  contactPhoto,
   homeHero,
   homeEcosystem,
   yogaOffice2,
