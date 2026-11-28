@@ -5,11 +5,23 @@
   font-weight: 300;
 }
 
+/* Marcellus, self-hosted from Google Fonts (SIL Open Font License), in the
+   same two subsets Google serves: Latin, and Latin Extended for anything
+   beyond it. It ships in one weight, 400; the 600 and 700 the headings ask
+   for are drawn by the browser. */
 @font-face {
-  font-family: "Caudex Adarsha";
-  src: url("/fonts/caudex.woff2") format("woff2");
+  font-family: "Marcellus Adarsha";
+  src: url("/fonts/marcellus-latin.woff2") format("woff2");
   font-display: swap;
-  font-weight: 400 700;
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Marcellus Adarsha";
+  src: url("/fonts/marcellus-latin-ext.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 :root {
@@ -25,15 +37,14 @@
   --clay: #ddcbc0;
   --rose: #bd9d89;
   --body: "Avenir Adarsha", Arial, sans-serif;
-  --display: "Caudex Adarsha", Georgia, serif;
+  --display: "Marcellus Adarsha", Georgia, serif;
   --page: 980px;
   /* The h1 every page leads with. Yoga, Horario, Equipo and Contacto each had
      their own size (50, 45, 54 and 56px), which read as four separate pages
      rather than four parts of one site. One token so they cannot drift apart
      again; the mobile size is set with the rest of the breakpoint. All four
      also share weight 600, between the 400 two of them had and the 700 of the
-     other two; Caudex is variable over 400-700, so 600 is a real weight and
-     not a synthesised one. */
+     other two. */
   --page-title: 54px;
 }
 
@@ -91,7 +102,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
-.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 48px 70px; text-align: center; color: var(--taupe); }
+.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 48px 70px; text-align: center; background: var(--clay); color: var(--brown); }
 /* Sized to match /yoga/: the name as that page's title ("¿Qué nos hace
    diferentes?"), the rest at the site's 41px section-heading size. */
 .home-intro h1 { max-width: 600px; font: 400 41px/1.2 var(--display); }
@@ -265,10 +276,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    photo there, which is the 57fr track of .yoga-rhythm less its 42px gap. On
    a phone it stays inside the item, under the description. */
 .class-photo { position: absolute; top: 86px; right: 0; width: calc((100% - 42px) * .57); height: 731px; object-fit: cover; }
-/* The question and the booking button that answers it, under the class
-   list and across both columns. */
-.yoga-rhythm-cta { grid-column: 1 / -1; margin-top: 30px; text-align: center; }
-.yoga-question { max-width: 540px; margin: 0 auto 30px; font: 400 29px/1.45 var(--display); color: var(--brown); }
+/* The question sits above the class list, whose own top padding is the gap
+   below it. The booking button closes the list, across both columns. */
+.yoga-question-band { padding: 86px 20px 0; text-align: center; }
+.yoga-question { max-width: 540px; margin: 0 auto; font: 400 29px/1.45 var(--display); color: var(--brown); }
+.yoga-rhythm-cta { grid-column: 1 / -1; margin-top: 10px; text-align: center; }
 .yoga-rhythm-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .yoga-photo-stack { display: grid; align-content: start; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
@@ -288,7 +300,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* "¿Qué nos hace diferentes?", laid out as the old "Un método basado en la
    progresión" block was: clay ground, the photo beside the copy, a brown
-   Caudex heading. The heading takes the 41px the page's other section
+   display-face heading. The heading takes the 41px the page's other section
    headings use, a step above the pillar names. The photo stretches to the height of the copy,
    which runs longer than the old list did.
 
@@ -369,7 +381,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* The studio-rental copy is body text, so it is set in Avenir like the rest of
    the site's prose, at the 300 the family actually ships. The question that
    used to head it is now the page title, above the photo. */
-/* 18px, down from the 21px this block held while it was set in Caudex: the
+/* 18px, down from the 21px this block held while it was set in the display serif: the
    serif carried the size, and Avenir at 21px ran much larger than the 16px the
    rest of the site's prose takes. Still a step above body, since this is the
    page's one block of copy. */
@@ -467,7 +479,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .schedule-banner { height: auto; padding: 0; }
   .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
-  .yoga-rhythm-cta { margin-top: 10px; }
+  .yoga-question-band { padding-top: 64px; }
   .yoga-question { font-size: 24px; }
   .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 64px 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }

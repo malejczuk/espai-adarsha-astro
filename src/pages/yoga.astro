@@ -26,6 +26,13 @@ import { externalLinks, yogaCopy, images } from "../content/site";
     </div>
   </section>
 
+  {/* The question, just above the class list. Its own section, outside
+      .yoga-rhythm, because the open style's photo is placed from the top of
+      that one. The booking button that answers it closes the class list. */}
+  <section class="yoga-question-band">
+    <p class="yoga-question">{yogaCopy.introQuestion}</p>
+  </section>
+
   <section id="clases" class="yoga-rhythm">
     <div class="yoga-rhythm-copy">
       <h2>{yogaCopy.classesTitle}</h2>
@@ -55,7 +62,6 @@ import { externalLinks, yogaCopy, images } from "../content/site";
       <img src={images.groupClass.src} alt="Clase grupal de yoga en Adarsha Yoga, Barcelona" />
     </div>
     <div class="yoga-rhythm-cta">
-      <p class="yoga-question">{yogaCopy.introQuestion}</p>
       <a class="btn-outline" href={yogaCopy.classesCtaHref}>{yogaCopy.classesCta}</a>
     </div>
   </section>
