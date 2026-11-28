@@ -6,15 +6,18 @@ import studioShelf from "../../assets/48-DSC01109.jpg";
 import studioDetail from "../../assets/54-DSC01118.jpg";
 import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
-import meditation from "../../assets/SWEARxEspai Adarsha-50.jpg";
+// The photo beside "¿Qué esperar de la práctica en Adarsha?" on /yoga/.
+import yogaPractice from "../../edited/DE_02052_edit.jpg";
 import teamWindow from "../../assets/328-DSC01628.jpg";
-import homeHero from "../../assets/home-hero.jpg";
-// The three home cards: feet, joined hands and a raised hand, from the new
+// import homeHero from "../../edited/DE_02052_edit.jpg";
+import homeHero from "../../edited/DE_01998.jpg";
+// import homeHero from "../../edited/DE_02194.jpg";
+// The three home cards: a raised hand, feet and joined hands, from the new
 // shoot, for group classes, private sessions and office yoga in that order.
-import homeGroup from "../../assets/home-card-pies.jpg";
-import homeIndividual from "../../assets/home-card-manos.jpg";
-import homeEcosystem from "../../assets/home-ecosystem.jpg";
-import homeOficina from "../../assets/home-card-mano.jpg";
+import homeGroup from "../../assets/home-card-mano.jpg";
+import homeIndividual from "../../assets/home-card-pies.jpg";
+import homeEcosystem from "../../assets/SWEARxEspai Adarsha-39.jpg";
+import homeOficina from "../../assets/home-card-manos.jpg";
 import yogaOffice2 from "../../assets/yoga-office-2.jpg";
 import yogaHathaVinyasa from "../../assets/yoga-hatha-vinyasa.jpg";
 import yogaHathaDinamico from "../../assets/yoga-hatha-dinamico.jpg";
@@ -125,7 +128,7 @@ export const images = {
   studioDetail,
   groupClass,
   individualSession,
-  meditation,
+  yogaPractice,
   teamWindow,
   homeHero,
   homeEcosystem,
@@ -152,10 +155,14 @@ export const navItems = [
 
 export const homeCopy = {
   // index.astro splits this on the first sentence: "Adarsha Yoga." takes a line
-  // of its own and the rest follows. Keep the full stop after the name.
-  title: "Adarsha Yoga. Un refugio de presencia y calma en medio de la ciudad.",
-  subtitle: "Un estudio de barrio donde te conocemos por tu nombre.",
-  body: ["Una práctica que se adapta a quien está en la sala."],
+  // of its own and the rest follows. Keep the full stop after the name. The
+  // body is "Yoga como práctica", moved here from the top of /yoga/.
+  title: "Adarsha Yoga. Yoga como práctica.",
+  body: [
+    "Hoy en día es fácil encontrar yoga como ejercicio. Tiene sus beneficios y sus límites. Empieza cuando desenrollas tu esterilla y termina cuando la recoges.",
+    "Por otro lado: la práctica. Una práctica se extiende a toda la vida. Es la forma de vivir en el mundo, de relacionar con el cuerpo, la respiración y la mente.",
+    "En Adarsha, volvemos a la base: yoga como práctica. Vas a volver más fuerte, flexible y móvil. Según la clase, tendrás agujetas el día siguiente. Pero ese trabajo no va solo: es parte de un camino hacia más equilibrio, más claridad y más calma.",
+  ],
   scheduleCta: "HORARIO",
   scheduleHref: "/horario/#horario",
   reservaCta: "RESERVAS",
@@ -168,7 +175,7 @@ export const homeCopy = {
   ],
   // The band that introduces what else happens in the studio. At the moment
   // that is Raquel's classes, which live on /colaboradores/.
-  alsoTitle: "En Adarsha también",
+  alsoTitle: "¿Qué más hay en Adarsha?",
   alsoBody: [
     "Raquel Jaroslavsky, una terapeuta corporal especializada en suelo pélvico y sexualidad.",
     "Descubre sus sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
@@ -206,31 +213,20 @@ export const yogaCopy = {
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
   // Copy still to come is left in [brackets], as the refresh brief has it, and
   // shows on the page as it stands. Search for "[" in this object to find it.
-  pillarsTitle: "¿Qué esperar de la práctica en Adarsha?",
-  differentTitle: "Yoga como práctica",
-  differentIntro: [
-    "Hoy en día es fácil encontrar yoga como ejercicio. Tiene sus beneficios y sus límites. Empieza cuando desenrollas tu esterilla y termina cuando la recoges.",
-    "Por otro lado: la práctica. Una práctica se extiende a toda la vida. Es la forma de vivir en el mundo, de relacionar con el cuerpo, la respiración y la mente.",
-        "En Adarsha, volvemos a la base: yoga como práctica. Vas a volver más fuerte, flexible y móvil. Según la clase, tendrás agujetas el día siguiente.  Pero ese trabajo no va solo: es parte de un camino hacia más equilibrio, más claridad y más calma.",
-  ],
   pillars: [
     {
-      title: "Ajustes físicos",
-      body: [
-        "A veces crees estar haciendo algo que en realidad no haces. O la instrucción no se traduce en movimiento. Ahí el tacto llega donde las palabras no llegan.",
-        "Observamos tu cuerpo y, cuando un ajuste puede transformar la postura o desbloquear un movimiento, ajustamos: con propósito, con cuidado y con la alineación y la respiración como guía. Si prefieres practicar sin ajustes, dínoslo al inicio de la clase y lo respetamos.",
-      ],
-    },
-    {
-      title: "Clases que se adaptan a ti",
-      body: [
-        "[PLACEHOLDER]",
-        "Si tienes una lesión o eres nuevo en la práctica, te damos modificaciones para que la postura se adapte a ti. Si tu cuerpo está abierto y fuerte y quieres profundizar, tenemos variantes avanzadas para llevarte más allá.",
+      title: "Primero, la base",
+      body: ["Empezamos por lo que muchas veces se pasa por alto: la alineación y la respiración. Aprendes a sentir qué músculo activar y qué tensión soltar y, con el tiempo, desarrollas más conexión con el cuerpo. Desde ahí, permite profundizar en la práctica con más autonomía, y fluir en las posturas sin forzarlas.",
       ],
     },
     {
       title: "Progresión que se nota",
-      body: ["[PLACEHOLDER]"],
+      body: ["Las clases están organizadas por grupos de posturas que preparan el cuerpo de forma progresiva y segura, para que avances con confianza en cada movimiento. Con una práctica constante, te vamos presentando los distintos tipos de posturas: aprendes a entrar tanto en una flexión como en una extensión, tanto en posturas de pie como sobre la cabeza. Trabajamos el cuerpo entero. Y un día, casi sin darte cuenta, te encuentras a gusto en la postura que hace unos meses parecía imposible.",
+      ],
+    },
+    {
+      title: "Una práctica que se adapta a ti",
+      body: ["Nos interesa tu historia: quién eres, por qué practicas, qué necesitas en este momento de tu vida. Enseñamos, pero sobre todo observamos: tanto si estás empezando como si tienes una lesión o una práctica avanzada, te damos modificaciones para que las posturas se adapten a ti. Y cuando las palabras no llegan, un ajuste físico sí, siempre con propósito y cuidado. Seguimos tu progreso de verdad, semana a semana, y te acompañamos en el camino."],
     },
   ],
   classesTitle: "Clases",
@@ -297,8 +293,8 @@ export const yogaCopy = {
   membershipTitle: "Qué incluye tu mensualidad",
   membership: [
     { title: "Tutoría inicial (30 min)", body: "Antes de empezar, una sesión individual para saber de dónde partes: lesiones, objetivos, qué buscas en la práctica." },
-    { title: "Comunidad", body: "[Sunday Yoga Club placeholder]" },
-    { title: "Descuento en talleres", body: "[\"precio reducido\"]" },
+    { title: "Comunidad", body: "Un domingo al mes nos encontramos para el Sunday Yoga Club. Primero practicamos; luego conectamos más allá de la esterilla con chai, conversación y galletas hechas en casa con mucho amor." },
+    { title: "Descuento en talleres", body: "Participación a precio reducido en talleres especiales para profundizar en posturas avanzadas y aspectos específicos de la práctica." },
     { title: "Sesión de seguimiento anual", body: "Una vez al año, 30 minutos para revisar tu práctica y profundizar." },
   ],
   prices: [

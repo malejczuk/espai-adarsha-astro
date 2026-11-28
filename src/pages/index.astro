@@ -11,12 +11,11 @@ const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
       <h1>
         {/* The span is display: block, so the two halves already sit on
             separate lines. Without the space between them, though, the H1's
-            text content reads "Adarsha Yoga.Un refugio" to a search engine
+            text content reads "Adarsha Yoga.Yoga como" to a search engine
             and to a screen reader. */}
         {titleMatch ? <><span>{titleMatch[1]}</span>{" "}{titleMatch[2]}</> : homeCopy.title}
       </h1>
       <div class="home-intro-lead">
-        <p>{homeCopy.subtitle}</p>
         {homeCopy.body.map((item) => <p>{item}</p>)}
       </div>
       <div class="home-cta-group">

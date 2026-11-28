@@ -86,41 +86,58 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .footer-legal { margin-top: 6px; padding: 20px 0 24px; border-top: 1px solid rgba(255,255,255,.25); text-align: center; font-size: 13px; color: var(--clay); }
 
 .display { font-family: var(--display); font-weight: 400; color: var(--brown); }
-.btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid var(--brown); color: var(--brown); font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
-.btn-outline:hover { background: var(--brown); color: #fff; }
+.btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid #000; color: #000; font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
+.btn-outline:hover { background: #000; color: #fff; }
 
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
-.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 68px 70px; text-align: center; color: var(--taupe); }
-.home-intro h1 { max-width: 500px; font: 400 35px/1.2 var(--display); }
+.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 48px 70px; text-align: center; color: var(--taupe); }
+/* Sized to match /yoga/: the name as that page's title ("¿Qué nos hace
+   diferentes?"), the rest at the site's 41px section-heading size. */
+.home-intro h1 { max-width: 600px; font: 400 41px/1.2 var(--display); }
 /* The span holds the first sentence, the studio's name, which index.astro
-   splits off onto a line of its own. The whole block, heading and lead alike,
-   takes the taupe .home-intro-copy sets. */
-.home-intro h1 span { display: block; }
-.home-intro-lead { max-width: 500px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
+   splits off onto a line of its own. */
+.home-intro h1 span { display: block; font-size: var(--page-title); font-weight: 600; }
+.home-intro-lead { max-width: 600px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
 .home-intro-lead p + p { margin-top: 30px; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
-.home-intro-image { min-height: 789px; object-fit: cover; object-position: 50% center; }
+/* height: 100% fills the row the copy sets. Without it a landscape photo stops
+   at its min-height and leaves a white strip under it. */
+.home-intro-image { height: 100%; min-height: 789px; object-fit: cover; object-position: 50% center; }
 
 
 .practice-heading { min-height: 185px; display: grid; place-items: center; padding: 35px 20px; background: #f8f8f8; }
 .practice-heading h2 { font: 400 33px/1.2 var(--display); color: var(--taupe); text-align: center; }
 /* Each card's copy sits over its photo, as the cards always have. The new
-   photos are pale studio shots, so the type is dark ink, and a white veil
-   pales them further so the hands and feet sit back behind the words. */
+   photos are pale grey studio shots, so three layers give them an analog-film
+   look and enough depth for white type: the photo itself is faded (a little
+   sepia, softer contrast), a grey-beige tint is laid over it in multiply, and a
+   fine grain sits on top. The 1% scale hides the soft edge the filter leaves,
+   which otherwise shows as a pale seam between cards. */
 .practice-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 381px; }
-.practice-card { position: relative; min-height: 381px; overflow: hidden; color: var(--ink); text-align: center; }
-.practice-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; }
-.practice-card::after { content: ""; position: absolute; inset: 0; background: rgba(255, 255, 255, .4); }
+.practice-card { position: relative; min-height: 381px; overflow: hidden; color: #fff; text-align: center; }
+.practice-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; filter: sepia(.1) contrast(.95) brightness(1.02); transform: scale(1.01); }
+/* The feet sit lower in their frame than the hands do in theirs, and the photo
+   has no height to spare under cover. Making it taller and lifting it brings
+   the toes up past the title, as the fingertips are in the other two cards.
+   The feet are the middle card's photo. */
+.practice-card:nth-child(2) img { top: -32%; height: 132%; }
+/* The raised hand on the left card, enlarged a little. */
+.practice-card:first-child img { top: -12%; height: 115%; }
+/* The joined hands on the right card, a touch larger. */
+.practice-card:nth-child(3) img { top: -5%; height: 106%; }
+.practice-card::after { content: ""; position: absolute; inset: 0; background: rgb(200, 168, 136); mix-blend-mode: multiply; opacity: .65; }
+.practice-card::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: overlay; opacity: .25; }
 .practice-card-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; }
-.practice-card h3 { font: 400 28px/1.3 var(--display); color: #000; }
+.practice-card h3 { font: 400 28px/1.3 var(--display); color: #fff; }
 /* 300px holds each line to two at desktop and phone widths. */
 .practice-card p { max-width: 300px; margin-top: 14px; font-size: 16px; line-height: 1.45; }
-.practice-card .btn-outline { margin-top: 24px; min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); font-size: 14px; }
-.practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
+.practice-card .btn-outline { margin-top: 24px; min-height: 38px; padding-inline: 16px; font-size: 14px; }
 
 .also-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
-.also-band img { height: 752px; object-fit: cover; }
+/* The photo is wide and the slot tall, so the sides are cropped; holding the
+   crop at the photo's right edge keeps all of the middle woman's hair in frame. */
+.also-band img { height: 752px; object-fit: cover; object-position: right center; }
 .also-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
 .also-copy h2 { font: 400 40px/1.28 var(--display); }
 /* Body copy in Avenir, rather than the large serif the heading above it
@@ -176,8 +193,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image,
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { border-radius: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 2px solid rgba(var(--brown-rgb), .3); color: var(--brown); }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: var(--brown); color: var(--white); }
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 2px solid rgba(0, 0, 0, .3); color: #000; }
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: #000; color: var(--white); }
 .momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
 /* Stands inside the widget's own div on /eventos/, so it is what shows until
    the script mounts and what stays if the CDN cannot be reached. The widget
@@ -268,15 +285,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .prices-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
-/* "Yoga como práctica" opens /yoga/ on white, in a single centred column. */
-.yoga-intro { padding: 86px 20px 80px; }
-.yoga-intro-inner { max-width: 720px; margin: 0 auto; }
-.yoga-intro h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
-.yoga-intro p { margin-top: 26px; }
-/* Straight under the page title the two share one white ground, so the
-   intro drops its own top padding and the title band's spacing is the only
-   gap between them. Stacked, the two paddings left 148px of empty white. */
-.yoga-title + .yoga-intro { padding-top: 0; }
 
 /* "¿Qué nos hace diferentes?", laid out as the old "Un método basado en la
    progresión" block was: clay ground, the photo beside the copy, a brown
@@ -288,14 +296,16 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    large in the display face rather than as the small bold lead-ins the old
    list used, each over a fine brown rule. No cards, no numerals: they read
    as headings in an editorial page, the way the rest of the site is set. */
-.method-section { background: var(--clay); padding: 86px 0; scroll-margin-top: 24px; }
-.method-inner { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 68px; align-items: stretch; }
+.method-section { background: var(--clay); scroll-margin-top: 24px; }
+.method-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
 .method-inner img { height: 100%; min-height: 560px; object-fit: cover; }
-.method-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
-.method-pillar { margin-top: 40px; padding-top: 26px; border-top: 1px solid rgba(var(--brown-rgb), .35); }
-.method-pillar h3 { font: 400 32px/1.2 var(--display); color: var(--brown); letter-spacing: -.005em; text-wrap: balance; }
+.method-copy { max-width: 720px; padding: 86px 68px; }
+/* The three points follow the page title straight on, the first with no gap
+   above it; they are the h2s now the section heading is gone. */
+.method-pillar + .method-pillar { margin-top: 48px; }
+.method-pillar h2 { font: 400 32px/1.2 var(--display); color: var(--brown); letter-spacing: -.005em; text-wrap: balance; }
 .method-pillar p { margin-top: 14px; }
-.method-pillar h3 + p { margin-top: 18px; }
+.method-pillar h2 + p { margin-top: 18px; }
 .membership-section { background: #f8f8f8; padding: 86px 0; }
 .membership-inner { max-width: 720px; }
 .membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
@@ -438,7 +448,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .home-intro, .also-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
   .home-intro-image { order: -1; min-height: 0; height: 480px; }
   .home-intro-copy { padding: 58px 26px 65px; }
-  .home-intro h1 { font-size: 31px; }
+  .home-intro h1 { font-size: 34px; }
   .home-intro-lead { margin-top: 35px; font-size: 20px; }
   .home-cta-group { gap: 12px; margin-top: 38px; }
   .practice-heading { min-height: 145px; }
@@ -467,14 +477,13 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
-  .method-section, .membership-section { padding: 64px 0; }
-  .yoga-intro { padding: 64px 28px 60px; }
-  .yoga-intro h2, .membership-section h2 { font-size: 34px; }
-  .method-inner { grid-template-columns: minmax(0, 1fr); gap: 45px; }
+  .membership-section { padding: 64px 0; }
+  .membership-section h2 { font-size: 34px; }
+  .method-inner { grid-template-columns: minmax(0, 1fr); }
+  .method-copy { padding: 52px 28px 64px; }
   .method-inner img { height: 430px; min-height: 0; }
-  .method-copy h2 { font-size: 34px; }
-  .method-pillar { margin-top: 32px; padding-top: 22px; }
-  .method-pillar h3 { font-size: 28px; }
+  .method-pillar + .method-pillar { margin-top: 38px; }
+  .method-pillar h2 { font-size: 28px; }
   .page-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }

@@ -8,24 +8,17 @@ import { externalLinks, yogaCopy, images } from "../content/site";
     <h1>{yogaCopy.introTitle}</h1>
   </section>
 
-  <section class="yoga-intro">
-    <div class="yoga-intro-inner">
-      <h2>{yogaCopy.differentTitle}</h2>
-      {yogaCopy.differentIntro.map((para) => <p>{para}</p>)}
-    </div>
-  </section>
-
-  {/* Laid out like the "Un método basado en la progresión" block it replaced:
-      the photo beside the copy on clay. #metodo was that block's anchor; it
-      stays so that links already pointing at it still land here. */}
+  {/* Laid out like the home intro: the photo fills the left half of the page
+      edge to edge, the copy sits in the right half on clay. #metodo was the
+      old "Un método basado en la progresión" block's anchor; it stays so that
+      links already pointing at it still land here. */}
   <section id="metodo" class="method-section">
-    <div class="container method-inner">
-      <img src={images.meditation.src} alt="Práctica de yoga en la sala de Adarsha Yoga, Barcelona" />
+    <div class="method-inner">
+      <img src={images.yogaPractice.src} alt="Práctica de yoga en la sala de Adarsha Yoga, Barcelona" />
       <div class="method-copy">
-        <h2>{yogaCopy.pillarsTitle}</h2>
         {yogaCopy.pillars.map((pillar) => (
           <article class="method-pillar">
-            <h3>{pillar.title}</h3>
+            <h2>{pillar.title}</h2>
             {pillar.body.map((para) => <p>{para}</p>)}
           </article>
         ))}
