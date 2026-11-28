@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { externalLinks, horarioCopy } from "../content/site";
+import { externalLinks, horarioCopy, images } from "../content/site";
 ---
 
 <BaseLayout title={horarioCopy.pageTitle} description={horarioCopy.description}>
@@ -28,6 +28,11 @@ import { externalLinks, horarioCopy } from "../content/site";
       data-momo-apply-colors="true"
       data-momo-show-end-time="true"
       data-momo-primary-color="#764329"></div>
+  </section>
+
+  {/* A photo of the studio under the schedule, edge to edge. */}
+  <section class="horario-photo">
+    <img src={images.horarioPhoto.src} alt="Práctica de yoga en la sala de Adarsha Yoga, Barcelona" loading="lazy" />
   </section>
 
   <!-- The Momoyoga widget mounts late and grows by around a thousand pixels,

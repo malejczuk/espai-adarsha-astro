@@ -11,6 +11,8 @@ import yogaPractice from "../../edited/DE_02052_edit.jpg";
 import yogaMembership from "../../edited/DE_01780.jpg";
 // The photo on /contacto/.
 import contactPhoto from "../../edited/DE_01666.jpg";
+// The band under the schedule on /horario/.
+import horarioPhoto from "../../edited/DE_02162.jpg";
 // import homeHero from "../../edited/DE_02052_edit.jpg";
 import homeHero from "../../edited/DE_01998.jpg";
 // import homeHero from "../../edited/DE_02194.jpg";
@@ -132,6 +134,7 @@ export const images = {
   yogaPractice,
   yogaMembership,
   contactPhoto,
+  horarioPhoto,
   homeHero,
   homeEcosystem,
   yogaOffice2,
@@ -232,6 +235,7 @@ export const yogaCopy = {
     },
   ],
   classesTitle: "Clases",
+  classesIntro: "[PLACEHOLDER]",
   // Closes the class list and sends people to the booking widget on /horario/.
   classesCta: "Reserva tu primera clase hoy",
   classesCtaHref: "/horario/#reserva",

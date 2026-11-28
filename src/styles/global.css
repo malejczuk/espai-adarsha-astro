@@ -219,6 +219,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    replaces the div's contents, so it disappears of its own accord. */
 .momo-fallback { padding: 24px 0; color: var(--taupe); }
 .momo-fallback a { color: var(--brown); }
+.horario-photo img { height: 560px; object-fit: cover; object-position: 50% 45%; }
 
 /* /horario/ only (.momo-schedule--compact): the schedule on the pale grey of
    /yoga/'s "Qué incluye tu mensualidad", carried edge to edge by a shadow the
@@ -569,6 +570,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .price-column + .price-column { border-left: 0; border-top: 1px solid rgba(var(--brown-rgb), .35); margin-left: 0; padding: 30px 0 0; }
   .membership-section { grid-template-columns: minmax(0, 1fr); }
   .membership-section img { height: 430px; min-height: 0; }
+  .horario-photo img { height: 300px; }
   .membership-inner { padding: 52px 28px 64px; }
   .membership-section h2 { font-size: 34px; }
   .method-inner { grid-template-columns: minmax(0, 1fr); }
