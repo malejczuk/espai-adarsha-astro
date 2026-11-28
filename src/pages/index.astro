@@ -11,12 +11,11 @@ const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
       <h1>
         {/* The span is display: block, so the two halves already sit on
             separate lines. Without the space between them, though, the H1's
-            text content reads "Adarsha Yoga.Un refugio" to a search engine
+            text content reads "Adarsha Yoga.Yoga como" to a search engine
             and to a screen reader. */}
         {titleMatch ? <><span>{titleMatch[1]}</span>{" "}{titleMatch[2]}</> : homeCopy.title}
       </h1>
       <div class="home-intro-lead">
-        <p>{homeCopy.subtitle}</p>
         {homeCopy.body.map((item) => <p>{item}</p>)}
       </div>
       <div class="home-cta-group">
@@ -25,15 +24,6 @@ const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
       </div>
     </div>
     <img class="home-intro-image" src={images.homeHero.src} alt="Práctica de yoga en Adarsha Yoga" />
-  </section>
-
-  <section class="home-value">
-    <img class="home-value-image" src={images.homePractice.src} alt="Práctica consciente en Adarsha Yoga" />
-    <div class="home-value-copy">
-      <h2>{homeCopy.practiceTitle}</h2>
-      {homeCopy.practiceBody.map((item) => <p>{item}</p>)}
-      <a class="btn-outline" href={homeCopy.approachHref}>{homeCopy.approachCta}</a>
-    </div>
   </section>
 
   <section class="practice-heading">
@@ -52,12 +42,12 @@ const titleMatch = homeCopy.title.match(/^(.+?[.!?])\s+(.+)$/);
     ))}
   </section>
 
-  <section class="ecosystem-band">
+  <section class="also-band">
     <img src={images.homeEcosystem.src} alt="Movimiento y conciencia pélvica" />
-    <div class="ecosystem-copy">
-      <h2>{homeCopy.ecosystemTitle}</h2>
-      <p>{homeCopy.ecosystemBody}</p>
-      <a class="btn-outline" href="/colaboradores/">{homeCopy.ecosystemCta}</a>
+    <div class="also-copy">
+      <h2>{homeCopy.alsoTitle}</h2>
+      {homeCopy.alsoBody.map((item) => <p>{item}</p>)}
+      <a class="btn-outline" href={homeCopy.alsoHref}>{homeCopy.alsoCta}</a>
     </div>
   </section>
 </BaseLayout>

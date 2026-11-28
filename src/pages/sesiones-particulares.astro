@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { individualesCopy, images } from "../content/site";
+---
+
+<BaseLayout title={individualesCopy.pageTitle} description={individualesCopy.description}>
+  <section class="individual-section">
+    <div class="individual-copy">
+      <h1>{individualesCopy.heading}</h1>
+      <p>{individualesCopy.intro}</p>
+      <ul class="individual-list">{individualesCopy.options.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}</ul>
+      <p>{individualesCopy.closing}</p>
+    </div>
+    <img src={images.individualSession.src} alt={individualesCopy.imageAlt} />
+  </section>
+</BaseLayout>

@@ -1,20 +1,33 @@
 import logo from "../../assets/adarsha-yoga-horizontal.svg";
-import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
 import studioDetail from "../../assets/54-DSC01118.jpg";
-import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
+import groupClass from "../../edited/DE_02386.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
-import meditation from "../../assets/SWEARxEspai Adarsha-50.jpg";
-import teamWindow from "../../assets/328-DSC01628.jpg";
-import homeHero from "../../assets/home-hero.jpg";
-import homePractice from "../../assets/home-practice.jpg";
-import homeGroup from "../../assets/home-group.png";
-import homeIndividual from "../../assets/home-individual.png";
-import homeEcosystem from "../../assets/home-ecosystem.jpg";
-import homeOficina from "../../assets/home-oficina.png";
+// The photo beside "¿Qué esperar de la práctica en Adarsha?" on /yoga/.
+import yogaPractice from "../../edited/DE_02052_edit.jpg";
+// Beside "Qué incluye tu mensualidad" on /yoga/.
+import yogaMembership from "../../edited/DE_01780.jpg";
+// The photo on /contacto/.
+import contactPhoto from "../../edited/DE_01666.jpg";
+// The band under the schedule on /horario/.
+import horarioPhoto from "../../edited/DE_02162.jpg";
+// import homeHero from "../../edited/DE_02052_edit.jpg";
+import homeHero from "../../edited/DE_01998.jpg";
+// import homeHero from "../../edited/DE_02194.jpg";
+// The three home cards: a raised hand, feet and joined hands, from the new
+// shoot, for group classes, private sessions and office yoga in that order.
+import homeGroup from "../../assets/home-card-mano.jpg";
+import homeIndividual from "../../assets/home-card-pies.jpg";
+import homeEcosystem from "../../assets/SWEARxEspai Adarsha-39.jpg";
+import homeOficina from "../../assets/home-card-manos.jpg";
 import yogaOffice2 from "../../assets/yoga-office-2.jpg";
+import yogaHathaVinyasa from "../../edited/DE_01891.jpg";
+import yogaHathaDinamico from "../../edited/DE_02097.jpg";
+import yogaIntegral from "../../assets/SWEARxEspai Adarsha-50.jpg";
+import yogaYinSomatico from "../../edited/DE_02427.jpg";
+import yogaHathaFuerza from "../../edited/DE_01654.jpg";
 import equipoLaia from "../../assets/equipo-laia.avif";
 import equipoLaia1 from "../../assets/equipo-laia-1.avif";
 import equipoLaia2 from "../../assets/equipo-laia-2.avif";
@@ -37,7 +50,7 @@ export const siteMeta = {
   // Gràcia–Eixample border. Both names describe where it is, and people
   // nearby use both, so naming one would give up half of them. Leave both in.
   defaultTitle: "Estudio de yoga en Gràcia · Eixample | Adarsha Yoga",
-  description: "Adarsha Yoga es un estudio íntimo de yoga y movimiento en Barcelona, con grupos reducidos, atención personalizada y alquiler de sala para proyectos holísticos.",
+  description: "Adarsha Yoga es un estudio de yoga de barrio en Barcelona, junto al metro Verdaguer. Clases grupales, sesiones particulares, yoga en la oficina y alquiler de sala.",
   navigationLabel: "Navegación principal",
   homeLabel: "Adarsha Yoga inicio",
   copyright: "© Adarsha Yoga 2026",
@@ -54,6 +67,9 @@ export const siteMeta = {
 // one-off events.
 export const externalLinks = {
   momoyoga: "https://www.momoyoga.com/adarsha-yoga/",
+  // Where a pass or a single class is bought. The button under Precios on
+  // /yoga/ goes here.
+  momoyogaBuy: "https://www.momoyoga.com/adarsha-yoga/member/order/create/choose-product",
 };
 
 export const contact = {
@@ -109,17 +125,17 @@ export const localBusiness = {
 
 export const images = {
   logo,
-  schedule: scheduleCurrent,
   studioWide,
   studioTall,
   studioShelf,
   studioDetail,
   groupClass,
   individualSession,
-  meditation,
-  teamWindow,
+  yogaPractice,
+  yogaMembership,
+  contactPhoto,
+  horarioPhoto,
   homeHero,
-  homePractice,
   homeEcosystem,
   yogaOffice2,
   colaboradoresMain,
@@ -144,43 +160,40 @@ export const navItems = [
 
 export const homeCopy = {
   // index.astro splits this on the first sentence: "Adarsha Yoga." takes a line
-  // of its own and the rest follows. Keep the full stop after the name.
-  title: "Adarsha Yoga. Un refugio de presencia y calma en medio de la ciudad.",
-  subtitle: "Somos un estudio íntimo, con grupos reducidos y atención personalizada.",
+  // of its own and the rest follows. Keep the full stop after the name. The
+  // body is "Yoga como práctica", moved here from the top of /yoga/.
+  title: "Adarsha Yoga. Yoga como práctica.",
   body: [
-    "Donde la relación entre profesor y alumno es el centro de todo.",
-    "Te acompañamos para que conectes contigo mismo a través de la práctica de yoga y evoluciones a tu ritmo.",
+    "Hoy en día es fácil encontrar yoga como ejercicio. Tiene sus beneficios y sus límites. Empieza cuando desenrollas tu esterilla y termina cuando la recoges.",
+    "Por otro lado: la práctica. Una práctica se extiende a toda la vida. Es la forma de vivir en el mundo, de relacionar con el cuerpo, la respiración y la mente.",
+    "En Adarsha, volvemos a la base: yoga como práctica. Vas a volver más fuerte, flexible y móvil. Según la clase, tendrás agujetas el día siguiente. Pero ese trabajo no va solo: es parte de un camino hacia más equilibrio, más claridad y más calma.",
   ],
-  practiceTitle: "El valor de una práctica cuidada",
-  practiceBody: [
-    "Nuestro propósito es ofrecerte un espacio donde puedas reconectarte contigo mismo, descubrir tu fuerza interior y cultivar la calma que tu mente y tu corazón necesitan. Cada práctica de yoga es una oportunidad para transformar tu cuerpo, equilibrar tus emociones y nutrir tu espíritu con herramientas que te acompañarán en tu día a día.",
-    "El ritmo actual a menudo nos desconecta de nuestras necesidades reales. El yoga, entendido como una disciplina de cuidado integral, es una herramienta milenaria para recuperar nuestro centro a través del cuerpo, la respiración y la concentración.",
-    "En Adarsha Yoga la enseñanza no es genérica. Nos alejamos de las sesiones masivas para ofrecer un enfoque personalizado donde la práctica se adapta a tu momento actual, y no al revés.",
-  ],
-  scheduleCta: "    HORARIO    ",
+  scheduleCta: "HORARIO",
   scheduleHref: "/horario/#horario",
-  reservaCta: "    RESERVAR    ",
+  reservaCta: "RESERVAS",
   reservaHref: "/horario/#reserva",
-  approachCta: "Nuestro enfoque",
-  approachHref: "/yoga/#metodo",
-  practiceHeading: "¿Cómo te gustaría practicar yoga?",
+  practiceHeading: "¿Cómo te gustaría practicar?",
   practiceOptions: [
-    { title: "Clases presenciales", body: "Profundiza en tu práctica de yoga con clases reducidas", cta: "Ver clases", href: "/yoga/", image: homeGroup, alt: "Clases grupales" },
-    { title: "Yoga en tu oficina", body: "Clases de yoga para empresas para el bienestar de tu equipo", cta: "Saber más", href: "/yoga/#empresas", image: homeOficina, alt: "Yoga en la oficina" },
-    { title: "Sesiones individuales", body: "Practica yoga de forma personalizada", cta: "Saber más", href: "/yoga/#individuales", image: homeIndividual, alt: "Clases particulares" },
+    { title: "Clases grupales", body: "Hatha Vinyasa, Yin somático, Yoga Integral, Fuerza y Movilidad y más.", cta: "Ver clases", href: "/yoga/", image: homeGroup, alt: "Clases grupales de yoga en Adarsha Yoga, Barcelona" },
+    { title: "Sesiones particulares", body: "Una sesión puntual o un acompañamiento continuo, a tu medida.", cta: "Saber más", href: "/sesiones-particulares/", image: homeIndividual, alt: "Sesión particular de yoga en Adarsha Yoga, Barcelona" },
+    { title: "Yoga en la oficina", body: "Para equipos que pasan el día sentados.", cta: "Saber más", href: "/oficina/", image: homeOficina, alt: "Yoga en la oficina con Adarsha Yoga" },
   ],
-  ecosystemTitle: "¿Quieres conocer nuestro ecosistema?",
-  ecosystemBody:
-    "Descubre las clases de Raquel Jaroslavsky, una profesora de Movimiento y Conciencia Pélvica, para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
-  ecosystemCta: "Nuestros colaboradores",
+  // The band that introduces what else happens in the studio. At the moment
+  // that is Raquel's classes, which live on /colaboradores/.
+  alsoTitle: "¿Qué más hay en Adarsha?",
+  alsoBody: [
+    "Raquel Jaroslavsky, una terapeuta corporal especializada en suelo pélvico y sexualidad.",
+    "Descubre sus sesiones de Movimiento y Conciencia Pélvica para relajar, flexibilizar y tonificar la musculatura del suelo pélvico.",
+  ],
+  alsoCta: "Raquel — Conciencia Pélvica",
+  alsoHref: "/colaboradores/",
 };
 
 export const horarioCopy = {
   heading: "Horario",
-  pricesHeading: "Precios",
-  pageTitle: "Horario, precio y reservas yoga | Adarsha Yoga",
+  pageTitle: "Horario y reservas de clases de yoga | Adarsha Yoga",
   description:
-    "Consulta el horario semanal de clases de yoga en Adarsha Yoga, reserva tu plaza online y descubre nuestros bonos y precios. Junto al metro Verdaguer, Barcelona.",
+    "Consulta el horario semanal de clases de yoga en Adarsha Yoga y reserva tu plaza online. Junto al metro Verdaguer, en Barcelona.",
 };
 
 // /eventos/ is the workshops, talleres and formaciones that are not part of
@@ -200,12 +213,34 @@ export const eventosCopy = {
 export const yogaCopy = {
   pageTitle: "Clases de Hatha Vinyasa, Yin y Yoga Integral en Barcelona | Adarsha Yoga",
   description:
-    "Clases de Hatha Vinyasa, Yoga Integral y Yin Yoga Somático en grupos reducidos, junto al metro Verdaguer. Un enfoque personalizado en Adarsha Yoga, Barcelona.",
-  introTitle: "Practica yoga en Adarsha",
+    "Clases de Hatha Vinyasa, Yin Yoga y Yoga Integral en Barcelona, junto al metro Verdaguer. Yoga como práctica: ajustes físicos, clases que se adaptan a ti y progresión.",
+      introTitle: "¿Qué nos hace diferentes?",
   introQuestion: "¿Estás buscando un estudio donde sentirte como en casa?",
-  rhythmTitle: "Tu práctica, tu ritmo",
-  intro:
-    "En Adarsha Yoga nos alejamos de las sesiones masivas, para ofrecer un enfoque personalizado donde la práctica se adapta a ti y a tu momento actual.",
+  // Copy still to come is left in [brackets], as the refresh brief has it, and
+  // shows on the page as it stands. Search for "[" in this object to find it.
+  pillars: [
+    {
+      title: "Primero, la base",
+      body: ["Empezamos por lo que muchas veces se pasa por alto: la alineación y la respiración. Aprendes a sentir qué músculo activar y qué tensión soltar y, con el tiempo, desarrollas más conexión con el cuerpo. Desde ahí, permite profundizar en la práctica con más autonomía, y fluir en las posturas sin forzarlas.",
+      ],
+    },
+    {
+      title: "Progresión que se nota",
+      body: ["Las clases están organizadas por grupos de posturas que preparan el cuerpo de forma progresiva y segura, para que avances con confianza en cada movimiento. Con una práctica constante, te vamos presentando los distintos tipos de posturas: aprendes a entrar tanto en una flexión como en una extensión, tanto en posturas de pie como sobre la cabeza. Trabajamos el cuerpo entero. Y un día, casi sin darte cuenta, te encuentras a gusto en la postura que hace unos meses parecía imposible.",
+      ],
+    },
+    {
+      title: "Una práctica que se adapta a ti",
+      body: ["Nos interesa tu historia: quién eres, por qué practicas, qué necesitas en este momento de tu vida. Enseñamos, pero sobre todo observamos: tanto si estás empezando como si tienes una lesión o una práctica avanzada, te damos modificaciones para que las posturas se adapten a ti. Y cuando las palabras no llegan, un ajuste físico sí, siempre con propósito y cuidado. Seguimos tu progreso de verdad, semana a semana, y te acompañamos en el camino."],
+    },
+  ],
+  classesTitle: "Clases",
+  classesIntro: "[PLACEHOLDER]",
+  // Closes the class list and sends people to the booking widget on /horario/.
+  classesCta: "Reserva tu primera clase hoy",
+  classesCtaHref: "/horario/#reserva",
+  pricesHeading: "Precios",
+  pricesCta: "Comprar tu clase",
   // One entry per class we teach, in the order the accordion should list them,
   // which is not the schedule's. Movimiento y Conciencia Pélvica is on the
   // schedule too but is Raquel's own class, billed separately, and lives on the
@@ -214,12 +249,17 @@ export const yogaCopy = {
   // single paragraph at the moment, but one may be an array when the copy runs
   // longer; the accordion renders one <p> per entry.
   //
+  // `image` is the photo shown while the style is open: beside the list on a
+  // wide screen, inside the item on a phone.
+  //
   // `id` is the fragment the accordion item answers to, so a style can be
   // linked to directly: /yoga/#yin-yoga. Changing one breaks any link already
   // pointing at it.
   classes: [
     {
       id: "hatha-vinyasa",
+      image: yogaHathaVinyasa,
+      imageAlt: "Clase de Hatha Vinyasa en Adarsha Yoga, Barcelona",
       title: "Hatha Vinyasa (nivel I y II)",
       body: "Una práctica dinámica y de mayor intensidad. Sincronizamos movimiento y respiración en secuencias fluidas que desafían la fuerza y la flexibilidad, para llevar tu práctica a otro nivel. Manteniendo la atención en la respiración, llevamos la mente a un estado de calma activa y profunda para fortalecer el sistema nervioso.",
     },
@@ -227,16 +267,22 @@ export const yogaCopy = {
       // Written in English because the class itself is taught in English, as
       // is Hatha Fuerza below. The three Spanish classes stay in Spanish.
       id: "dynamic-hatha",
+      image: yogaHathaDinamico,
+      imageAlt: "Clase de Hatha dinámico en Adarsha Yoga, Barcelona",
       title: "Dynamic Hatha (English)",
       body: "We move across dynamic sequences and slow holds to develop physical strength, awareness of posture and connection to the breath. We pay special attention to alignment, teaching your body to adapt and respond to each pose, so you can carry what you learn off the mat. Taught in English, all levels welcome.",
     },
     {
       id: "yoga-integral",
+      image: yogaIntegral,
+      imageAlt: "Clase de Yoga Integral en Adarsha Yoga, Barcelona",
       title: "Yoga Integral",
       body: "Una modalidad más suave para quienes buscan un ritmo pausado y consciente, ya sea que busques una clase para aprender las bases, o practicar durante el embarazo, o en la etapa de la madurez. Nos enfocamos en técnicas de respiración, posturas estables, aprender la alineación y relajación profunda para restaurar la vitalidad y la movilidad de todo el cuerpo.",
     },
     {
       id: "yin-yoga",
+      image: yogaYinSomatico,
+      imageAlt: "Clase de Yin Yoga en Adarsha Yoga, Barcelona",
       title: "Yin Yoga Somático (presencial/online)",
       body: "Diseñada para soltar el ritmo diario, restaurar el sistema nervioso y reencontrar el equilibrio interior. Combinamos técnicas de respiración suave con movimiento somático y posturas restaurativas para liberar tensiones y acceder a un estado meditativo.",
     },
@@ -244,50 +290,86 @@ export const yogaCopy = {
       // Taught in English with Spanish support, which the closing line says in
       // both languages, the way the class is announced.
       id: "hatha-fuerza",
+      image: yogaHathaFuerza,
+      imageAlt: "Clase de Hatha Fuerza en Adarsha Yoga, Barcelona",
       title: "Hatha Fuerza: Strength & Mobility",
       body: "A class designed to strengthen your yoga practice. We bring a special focus to the core and the mobility and articulation of the shoulders and spine. Develop strength that carries over beyond the mat and into everyday life. Taught in English, con apoyo en español."
     },
   ],
-  methodTitle: "Un método basado en la progresión",
-  method: [
-    { title: "Atención Individualizada", body: "Nos importa conocerte y saber desde qué punto partes. Por eso, ofrecemos una sesión individual de 30 minutos a los nuevos alumnos para valorar tus necesidades y adaptar tu integración a las clases. Después, mantenemos el acompañamiento: ofrecemos una sesión de seguimiento cada año para explorar y profundizar más en la práctica." },
-    { title: "Evolución Tangible", body: "Al trabajar en grupos reducidos, realizamos un seguimiento real del progreso de cada alumno, ajustando las posturas y la intensidad según tus necesidades." },
-    { title: "Base Sólida y Segura", body: "Ponemos especial énfasis en la alineación y la respiración. Las clases están organizadas por grupos de posturas para preparar el cuerpo de forma progresiva y segura, permitiendo avanzar con confianza en cada movimiento de la práctica." },
+  membershipTitle: "Qué incluye tu mensualidad",
+  membership: [
+    { title: "Tutoría inicial (30 min)", body: "Antes de empezar, una sesión individual para saber de dónde partes: lesiones, objetivos, qué buscas en la práctica." },
+    { title: "Comunidad", body: "Un domingo al mes nos encontramos para el Sunday Yoga Club. Primero practicamos; luego conectamos más allá de la esterilla con chai, conversación y galletas hechas en casa con mucho amor." },
+    { title: "Descuento en talleres", body: "Participación a precio reducido en talleres especiales para profundizar en posturas avanzadas y aspectos específicos de la práctica." },
+    { title: "Sesión de seguimiento anual", body: "Una vez al año, 30 minutos para revisar tu práctica y profundizar." },
+    { title: "Material online", body: "[PLACEHOLDER]" },
   ],
   prices: [
     {
       title: "Clases Grupales",
       items: [
         "Mensualidad 5 clases / mes: 65\u00a0€",
-        "Mensualidad clases ilimitadas: 90\u00a0€",
+        "Mensualidad ilimitada: 90\u00a0€",
         "Clase suelta: 20\u00a0€",
         "Bono 3 clases: 50\u00a0€",
         "Bono 10 clases: 150\u00a0€",
       ],
     },
     {
-      title: "Sesiones Individuales",
+      title: "Sesiones Particulares",
       items: [
-        "Sesión individual: 60\u00a0€",
+        "Sesión suelta: 60\u00a0€",
         "Bono 4 sesiones: 180\u00a0€",
         "Bono 10 sesiones: 400\u00a0€",
       ],
     },
   ],
-  individualTitle: "Clases individuales adaptadas a tu cuerpo",
-  individualIntro: "Si buscas un acompañamiento exclusivo para integrar el yoga en tu vida según tus propios ritmos y objetivos, hemos diseñado dos formas de trabajar juntas/os.",
-  individualOptions: [
+  // Two teasers close /yoga/, one for each offer that has a page of its own:
+  // /sesiones-particulares/ and /oficina/.
+  individualTeaserTitle: "Sesiones particulares",
+  individualTeaser: "Una sesión puntual o un acompañamiento continuo, a tu medida.",
+  individualTeaserCta: "Saber más",
+  individualTeaserHref: "/sesiones-particulares/",
+  officeTeaserTitle: "Yoga en la oficina",
+  officeTeaser:
+    "Llevamos el yoga, la meditación y la respiración consciente a tu oficina. Para equipos que pasan el día sentados: menos tensión, más movilidad y más claridad mental.",
+  officeTeaserCta: "Saber más",
+  officeTeaserHref: "/oficina/",
+};
+
+// /sesiones-particulares/: one-to-one sessions. The studio calls these
+// "sesiones", never "clases", which name the group classes. This copy used
+// to be a section
+// of /yoga/, which now carries a short teaser that links here.
+export const individualesCopy = {
+  pageTitle: "Sesiones particulares de yoga en Barcelona | Adarsha Yoga",
+  description:
+    "Sesiones particulares de yoga en Barcelona: una sesión puntual o un programa de práctica personal, adaptados a tu cuerpo, tus ritmos y tus objetivos.",
+  heading: "Sesiones particulares adaptadas a tu cuerpo",
+  intro: "Si buscas un acompañamiento exclusivo para integrar el yoga en tu vida según tus propios ritmos y objetivos, hemos diseñado dos formas de trabajar juntas/os.",
+  options: [
     { title: "Sesión Individual Estratégica", body: "Ideal para resolver dudas puntuales, si hay algun grupo de posturas que necesitas aprender de forma más profunda o diseñar una secuencia personalizada que puedas practicar de forma autónoma en casa." },
     { title: "Programa de Práctica Personal", body: "Un proceso de acompañamiento profundo con sesiones semanales o quincenales. Trabajaremos de forma constante en tus metas para que experimentes los beneficios del yoga de manera integral y consciente." },
   ],
-  individualClosing: "¿Quieres empezar el programa? Empecemos con una sesión para conocernos, escuchar tus necesidades y trazar el camino de tu práctica.",
-  officeTitle: "Yoga en la oficina para la salud física y mental de tu equipo",
-  officeBody: [
+  closing: "¿Quieres empezar el programa? Empecemos con una sesión para conocernos, escuchar tus necesidades y trazar el camino de tu práctica.",
+  imageAlt: "Sesión particular de yoga en Adarsha Yoga, Barcelona",
+};
+
+// /oficina/: yoga, meditation and breathing for companies. This copy used to
+// close /yoga/, which now carries a short teaser that links here.
+export const oficinaCopy = {
+  pageTitle: "Yoga en la oficina para empresas en Barcelona | Adarsha Yoga",
+  description:
+    "Yoga, meditación y respiración consciente en tu oficina, en Barcelona. Clases para empresas que cuidan la salud física y mental de su equipo.",
+  heading: "Yoga en la oficina para la salud física y mental de tu equipo",
+  body: [
     "La integración del yoga, la meditación y la respiración consciente en la oficina transforma el entorno laboral en un espacio de concentración y bienestar.",
     "Al liberar las tensiones del sedentarismo y regular el sistema nervioso, el equipo recupera la movilidad física y la claridad mental necesarias para afrontar cada reto.",
     "Cuidar la salud integral de los trabajadores cultiva una cultura de presencia y vitalidad.",
   ],
-  officeCta: "Solicita más información aquí.",
+  cta: "Solicita más información",
+  ctaHref: "/contacto/#contacto",
+  imageAlt: "Yoga en la oficina para empresas",
 };
 
 export const footerCopy = {
@@ -348,7 +430,7 @@ export const colaboradoresCopy = {
   pageTitle: "Suelo pélvico y movimiento consciente en Barcelona | Adarsha Yoga",
   description:
     "Movimiento y Conciencia Pélvica con Raquel Jaroslavsky en Adarsha Yoga: sesiones para relajar, flexibilizar y tonificar el suelo pélvico en Barcelona.",
-  title: "Nuestro ecosistema de colaboradores",
+  title: "Nuestros colaboradores",
   subtitle: "Conoce otras actividades que tienen lugar en Adarsha Yoga",
   activity: "Movimiento & Conciencia Pélvica",
   teacher: "con Raquel Jaroslavsky",

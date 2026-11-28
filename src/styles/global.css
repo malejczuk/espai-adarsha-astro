@@ -5,11 +5,24 @@
   font-weight: 300;
 }
 
+/* Marcellus, self-hosted from Google Fonts (SIL Open Font License), in the
+   same two subsets Google serves: Latin, and Latin Extended for anything
+   beyond it. It ships in one weight, 400, and no italic, so everything set
+   in it stays at 400 upright: a heavier or slanted style would be one the
+   browser fakes. */
 @font-face {
-  font-family: "Caudex Adarsha";
-  src: url("/fonts/caudex.woff2") format("woff2");
+  font-family: "Marcellus Adarsha";
+  src: url("/fonts/marcellus-latin.woff2") format("woff2");
   font-display: swap;
-  font-weight: 400 700;
+  font-weight: 400;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Marcellus Adarsha";
+  src: url("/fonts/marcellus-latin-ext.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 :root {
@@ -25,15 +38,13 @@
   --clay: #ddcbc0;
   --rose: #bd9d89;
   --body: "Avenir Adarsha", Arial, sans-serif;
-  --display: "Caudex Adarsha", Georgia, serif;
+  --display: "Marcellus Adarsha", Georgia, serif;
   --page: 980px;
   /* The h1 every page leads with. Yoga, Horario, Equipo and Contacto each had
      their own size (50, 45, 54 and 56px), which read as four separate pages
      rather than four parts of one site. One token so they cannot drift apart
      again; the mobile size is set with the rest of the breakpoint. All four
-     also share weight 600, between the 400 two of them had and the 700 of the
-     other two; Caudex is variable over 400-700, so 600 is a real weight and
-     not a synthesised one. */
+     also share the display face's one weight, 400. */
   --page-title: 54px;
 }
 
@@ -86,54 +97,70 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .footer-legal { margin-top: 6px; padding: 20px 0 24px; border-top: 1px solid rgba(255,255,255,.25); text-align: center; font-size: 13px; color: var(--clay); }
 
 .display { font-family: var(--display); font-weight: 400; color: var(--brown); }
-.btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid var(--brown); color: var(--brown); font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
-.btn-outline:hover { background: var(--brown); color: #fff; }
+.btn-outline { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 7px 11px; border: 1px solid #000; color: #000; font-size: 14px; line-height: 1; text-decoration: none; background: #fff; }
+.btn-outline:hover { background: #000; color: #fff; }
 
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
-.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 68px 70px; text-align: center; color: var(--taupe); }
-.home-intro h1 { max-width: 500px; font: 400 35px/1.2 var(--display); }
+.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 48px 70px; text-align: center; color: var(--taupe); }
+/* Sized to match /yoga/: the name as that page's title ("¿Qué nos hace
+   diferentes?"), the rest at the site's 41px section-heading size. */
+.home-intro h1 { max-width: 600px; font: 400 41px/1.2 var(--display); }
 /* The span holds the first sentence, the studio's name, which index.astro
-   splits off onto a line of its own. The whole block, heading and lead alike,
-   takes the taupe .home-intro-copy sets. */
-.home-intro h1 span { display: block; }
-.home-intro-lead { max-width: 500px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
+   splits off onto a line of its own. */
+.home-intro h1 span { display: block; font-size: var(--page-title); }
+/* The paragraphs in Avenir, the site's prose face, at the light 300 the
+   family ships; the heading above stays in the display face. */
+.home-intro-lead { max-width: 600px; margin-top: 53px; font: 300 23px/1.5 var(--body); }
 .home-intro-lead p + p { margin-top: 30px; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
-.home-intro-image { min-height: 789px; object-fit: cover; object-position: 50% center; }
+/* height: 100% fills the row the copy sets. Without it a landscape photo stops
+   at its min-height and leaves a white strip under it. */
+.home-intro-image { height: 100%; min-height: 789px; object-fit: cover; object-position: 50% center; }
 
-.home-value { display: grid; grid-template-columns: 1fr 1fr; min-height: 882px; }
-.home-value-image { height: 882px; object-fit: cover; }
-.home-value-copy { padding: 64px 74px 60px; color: #000; }
-.home-value-copy h2 { max-width: 500px; margin-inline: auto; text-align: center; font: 400 41px/1.25 var(--display); color: var(--taupe); }
-.home-value-copy p { margin-top: 43px; font-size: 16px; line-height: 1.85; }
-.home-value-copy .btn-outline { display: flex; width: max-content; margin: 43px auto 0; }
 
 .practice-heading { min-height: 185px; display: grid; place-items: center; padding: 35px 20px; background: #f8f8f8; }
 .practice-heading h2 { font: 400 33px/1.2 var(--display); color: var(--taupe); text-align: center; }
-.practice-cards { display: grid; grid-template-columns: repeat(3, 1fr); min-height: 381px; }
+/* Each card's copy sits over its photo, as the cards always have. The new
+   photos are pale grey studio shots, so three layers give them an analog-film
+   look and enough depth for white type: the photo itself is faded (a little
+   sepia, softer contrast), a grey-beige tint is laid over it in multiply, and a
+   fine grain sits on top. The 1% scale hides the soft edge the filter leaves,
+   which otherwise shows as a pale seam between cards. */
+.practice-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 381px; }
 .practice-card { position: relative; min-height: 381px; overflow: hidden; color: #fff; text-align: center; }
-.practice-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; }
-.practice-card::after { content: ""; position: absolute; inset: 0; background: rgba(42, 31, 25, .18); }
+.practice-card img { position: absolute; inset: 0; height: 100%; object-fit: cover; filter: sepia(.1) contrast(.95) brightness(1.02); transform: scale(1.01); }
+/* The feet sit lower in their frame than the hands do in theirs, and the photo
+   has no height to spare under cover. Making it taller and lifting it brings
+   the toes up past the title, as the fingertips are in the other two cards.
+   The feet are the middle card's photo. */
+.practice-card:nth-child(2) img { top: -32%; height: 132%; }
+/* The raised hand on the left card, enlarged a little. */
+.practice-card:first-child img { top: -12%; height: 115%; }
+/* The joined hands on the right card, a touch larger. */
+.practice-card:nth-child(3) img { top: -5%; height: 106%; }
+.practice-card::after { content: ""; position: absolute; inset: 0; background: rgb(200, 168, 136); mix-blend-mode: multiply; opacity: .65; }
+.practice-card::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); mix-blend-mode: overlay; opacity: .25; }
 .practice-card-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; }
-.practice-card h3 { font: 400 24px/1.4 var(--display); }
-.practice-card p { max-width: 245px; margin-top: 16px; font-size: 16px; line-height: 1.45; }
-.practice-card a { margin-top: 24px; font-size: 14px; }
-.practice-card .btn-outline { min-height: 38px; padding-inline: 16px; background: #fff; color: var(--brown); text-decoration: none; }
-.practice-card .btn-outline:hover { background: var(--brown); color: #fff; }
+.practice-card h3 { font: 400 28px/1.3 var(--display); color: #fff; }
+/* 300px holds each line to two at desktop and phone widths. */
+.practice-card p { max-width: 300px; margin-top: 14px; font-size: 16px; line-height: 1.45; }
+.practice-card .btn-outline { margin-top: 24px; min-height: 38px; padding-inline: 16px; font-size: 14px; }
 
-.ecosystem-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
-.ecosystem-band img { height: 752px; object-fit: cover; }
-.ecosystem-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
-.ecosystem-copy h2 { font: 400 40px/1.28 var(--display); }
-/* Body copy, matching the paragraphs in .home-value-copy, rather than the
-   large serif the heading above it uses. */
-.ecosystem-copy p { margin-top: 34px; font: 300 16px/1.85 var(--body); color: #000; }
-.ecosystem-copy .btn-outline { margin-top: 40px; }
+.also-band { display: grid; grid-template-columns: 1fr 1fr; min-height: 752px; }
+/* The photo is wide and the slot tall, so the sides are cropped; holding the
+   crop at the photo's right edge keeps all of the middle woman's hair in frame. */
+.also-band img { height: 752px; object-fit: cover; object-position: right center; }
+.also-copy { padding: 123px 76px 70px; text-align: center; color: var(--taupe); }
+.also-copy h2 { font: 400 40px/1.28 var(--display); }
+/* Body copy in Avenir, rather than the large serif the heading above it
+   uses. */
+.also-copy p { margin-top: 34px; font: 300 16px/1.85 var(--body); color: #000; }
+.also-copy .btn-outline { margin-top: 40px; }
 
 /* Shared editorial blocks */
 .page-title-band { padding: 82px 20px 69px; background: var(--clay); text-align: center; }
-.page-title-band h1 { font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); }
+.page-title-band h1 { font: 400 var(--page-title)/1.2 var(--display); color: var(--brown); }
 .page-title-band p { margin-top: 30px; font-style: italic; color: #000; }
 .editorial-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .editorial-copy { padding: 64px 8vw; }
@@ -144,26 +171,13 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .section-pad { padding: 80px 0; }
 
 /* Yoga */
-.schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--brown); }
-/* schedule-current.png is 2295x2869 on a #764329 ground, the same brown as the
-   banner, so the crop edge is invisible and only the framing matters. Crop away
-   the empty top band (574px), leaving the 2295x2295 grid. The day dividers
-   begin at 659px, so 574 leaves them the same breathing room the old 1080px
-   artwork had.
-
-   The artwork's very last row is a stray #98725f line across its full width,
-   an artboard edge left in the export. At this scale it lands on a quarter of
-   a pixel and the browser smears it into a faint rule under the grid, so the
-   crop stops 3 rows short of the bottom (2292 of 2295) to leave it outside. */
-.schedule-crop { position: relative; width: 604px; aspect-ratio: 2295 / 2292; overflow: hidden; }
-.schedule-crop img { position: absolute; left: 0; top: calc(-100% * 574 / 2295); width: 100%; height: auto; }
 /* min-height holds the widget's space while its data loads from the CDN, so the
    footer does not sit high on the page and then get shoved down on arrival. */
 .momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 60px; min-height: 70vh; scroll-margin-top: 24px; }
 
 /* The Momoyoga widget ships its own Inter-based styling. These rules pull it
-   back to the site's look: Avenir throughout, brown headings and warm borders
-   instead of grey. schedule.css loads after this file, so every override is
+   back to the site's look: Avenir throughout, brown headings, borderless
+   cards and square black buttons. schedule.css loads after this file, so every override is
    scoped through .momo-schedule-wrapper to outrank the plugin's own
    .class[data-v-*] selectors. Class names come from the plugin's stylesheet,
    so re-check them if the widget is ever updated. */
@@ -174,19 +188,92 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* Only the 300 weight of Avenir is loaded, so this is synthetic bold, the same
    trick the footer headings rely on. 500 would render as plain light. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__title { font-weight: 600; }
-.momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--taupe); }
-.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 2px solid rgba(var(--brown-rgb), .3); border-radius: 0; }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--brown); }
+/* No border at rest; the card takes the sand ground under the pointer. */
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 0; border-radius: 0; transition: background-color .2s ease; }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item:hover { background: var(--clay); }
+/* /horario/ hides the class photos; /eventos/ still shows them. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image,
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { border-radius: 0; }
-.momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 2px solid rgba(var(--brown-rgb), .3); color: var(--brown); }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: var(--brown); color: var(--white); }
+/* Every widget button square, the arrows included, like the site's own. */
+.momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; border-radius: 0; }
+/* The secondary buttons (the week arrows and "Esta semana") take exactly the
+   Reservar treatment below, so all the widget's buttons read as one kind. */
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 1px solid #000; background: #fff; color: #000; }
+/* The plugin draws its primary button, Reservar, as a pill filled in the
+   widget's primary colour. Square and outlined in black instead, like the
+   site's own .btn-outline buttons. */
+.momo-schedule .momo-schedule-wrapper .momo-button--primary { border: 1px solid #000; border-radius: 0; background: #fff; color: #000; }
+/* One hover for both kinds. The plugin's own hover rules match as strongly as
+   a plain .momo-button--x:hover here and load later, so this adds the
+   .momo-button class and the :not(disabled) they use to outrank them, and
+   cancels the 80% fade the plugin gives its primary button. */
+.momo-schedule .momo-schedule-wrapper .momo-button.momo-button--primary:is(:hover, :active):not(.momo-button--disabled),
+.momo-schedule .momo-schedule-wrapper .momo-button.momo-button--secondary:is(:hover, :active):not(.momo-button--disabled) { border-color: #000; background: #000; color: var(--white); opacity: 1; }
+/* The arrows are a dark SVG in ::after, not text, so color cannot reach them;
+   invert turns them white on the black hover. */
+.momo-schedule .momo-schedule-wrapper .momo-date-pagination__arrow:is(:hover, :active):not(.momo-button--disabled)::after { filter: invert(1); }
 .momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
 /* Stands inside the widget's own div on /eventos/, so it is what shows until
    the script mounts and what stays if the CDN cannot be reached. The widget
    replaces the div's contents, so it disappears of its own accord. */
 .momo-fallback { padding: 24px 0; color: var(--taupe); }
 .momo-fallback a { color: var(--brown); }
+.horario-photo img { height: 560px; object-fit: cover; object-position: 50% 45%; }
+
+/* /horario/ only (.momo-schedule--compact): the schedule on the pale grey of
+   /yoga/'s "Qué incluye tu mensualidad", carried edge to edge by a shadow the
+   clip-path trims to the section's height, and each class as one row: time,
+   then the class with its teacher beneath, then Reservar. The plugin nests
+   the time inside the details, so its two wrappers are flattened with
+   display: contents and the card's grid places their children directly.
+   The avatar and "Mostrar más" (the description) are dropped to keep the row
+   short; the booking page Reservar opens still has the description.
+   /eventos/ keeps the plugin's own card, photos and all. */
+.momo-schedule--compact { background: #f8f8f8; box-shadow: 0 0 0 100vmax #f8f8f8; clip-path: inset(0 -100vmax); }
+/* The rows are only as wide as time, class and Reservar need, so the whole
+   schedule, week controls and day names included, is held to that width and
+   centred on the page, rather than hugging its left edge. */
+.momo-schedule--compact .momo-schedule-wrapper { max-width: 700px; margin-inline: auto; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule__weekly { gap: 28px; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule__weekly-grid { gap: 2px; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-day-title { margin-bottom: 6px; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item {
+  display: grid; grid-template-columns: 130px minmax(0, 360px) auto; justify-content: start; gap: 0 24px; align-items: center;
+  padding: 12px 16px;
+}
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__details,
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__info { display: contents; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__info > p:first-child { grid-column: 1; grid-row: 1 / span 2; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__title-wrapper { grid-column: 2; grid-row: 1; }
+.momo-schedule--compact .momo-schedule-wrapper .teacher-avatar { grid-column: 2; grid-row: 2; }
+.momo-schedule--compact .momo-schedule-wrapper .teacher-avatar__image,
+.momo-schedule--compact .momo-schedule-wrapper .momo-read-more { display: none; }
+.momo-schedule--compact .momo-schedule-wrapper .teacher-avatar p { font-size: 14px; line-height: 1.5; color: var(--brown); }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__button { grid-column: 3; grid-row: 1 / span 2; margin: 0; }
+/* The day names, a step up from the plugin's 20px so each day stands out. */
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-day-title__day { font-size: 26px; }
+/* The plugin drops Reservar from a class once it has started, and every
+   future class keeps one, so a card without a button is a past class. It
+   gets a greyed stand-in drawn in Reservar's place and size. The text after
+   the slash is what a screen reader hears: nothing, since it does nothing. */
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item:not(:has(.momo-schedule-item__button))::after {
+  content: "Reservar"; content: "Reservar" / "";
+  grid-column: 3; grid-row: 1 / span 2;
+  padding: 12px 24px; border: 1px solid #c9c9c9; background: #fff;
+  font: 300 14px/24px var(--body); color: #b0b0b0; cursor: default;
+}
+/* On a phone there is no room for a time column: the time goes above the
+   class name and Reservar keeps the right-hand edge. */
+@media (max-width: 615px) {
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item { grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__info > p:first-child { grid-column: 1; grid-row: 1; font-size: 14px; line-height: 1.5; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__title-wrapper { grid-column: 1; grid-row: 2; }
+  .momo-schedule--compact .momo-schedule-wrapper .teacher-avatar { grid-column: 1; grid-row: 3; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__button { grid-column: 2; grid-row: 1 / span 3; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item:not(:has(.momo-schedule-item__button))::after { grid-column: 2; grid-row: 1 / span 3; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-day-title__day { font-size: 24px; }
+}
 
 /* The plugin sizes its cards with a container query on
    .momo-schedule-wrapper: under 576px of container the card stacks and the
@@ -213,15 +300,14 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 @media (min-width: 808px) {
   .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { flex-basis: 12.5rem; max-width: 12.5rem; }
 }
-.yoga-title { padding: 66px 20px 62px; text-align: center; color: var(--brown); }
-.yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
-.yoga-title p { max-width: 500px; margin: 42px auto 0; font: italic 400 29px/1.45 var(--display); }
+.yoga-title { padding: 66px 20px 48px; text-align: center; color: var(--brown); }
+.yoga-title h1 { font: 400 var(--page-title)/1.2 var(--display); }
 /* fr, not percentages: 43% + 57% already fills the container, so the gap was
    added on top and pushed the photo column past the right edge — invisible on
    a wide screen, a sideways scrollbar below about 1066px. fr tracks divide
    what is left after the gap. minmax(0, …) keeps a wide item from flooring
    the track, as on Colaboradores. */
-.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding-bottom: 86px; }
+.yoga-rhythm { width: min(980px, calc(100% - 40px)); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 43fr) minmax(0, 57fr); gap: 42px; padding: 86px 0; position: relative; }
 .yoga-rhythm-copy h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .yoga-rhythm-copy > p { margin-top: 30px; }
 /* One <details> per class on the schedule. The marker is drawn as a +/- in
@@ -234,7 +320,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item summary {
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
   padding: 18px 0; cursor: pointer; list-style: none;
-  font: 700 18px/1.4 var(--display); color: var(--brown);
+  font: 400 18px/1.4 var(--display); color: var(--brown);
 }
 .class-item summary::-webkit-details-marker { display: none; }
 /* The style name is an h3 inside the summary, so each style is a heading and
@@ -247,46 +333,105 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item[open] summary::after { content: "\2212"; }
 .class-item summary:hover { text-decoration: underline; }
 .class-item > p { padding: 0 0 22px; }
-.yoga-photo-stack { display: grid; align-content: center; gap: 18px; }
+/* The open style's photo. On a wide screen it is lifted out of the item and
+   laid over the photo column: same top, width and height as the default
+   photo there, which is the 57fr track of .yoga-rhythm less its 42px gap. On
+   a phone it stays inside the item, under the description. */
+.class-photo { position: absolute; top: 86px; right: 0; width: calc((100% - 42px) * .57); height: 731px; object-fit: cover; }
+/* The question sits above the class list, whose own top padding is the gap
+   below it. The booking button closes the list, across both columns. */
+.yoga-question-band { padding: 86px 20px 0; text-align: center; }
+.yoga-question { max-width: 540px; margin: 0 auto; font: 400 29px/1.45 var(--display); color: var(--brown); }
+.yoga-rhythm-cta { grid-column: 1 / -1; margin-top: 10px; text-align: center; }
+.yoga-rhythm-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
+.yoga-photo-stack { display: grid; align-content: start; gap: 18px; }
 .yoga-photo-stack img { height: 731px; object-fit: cover; }
-/* Precios sits on the clay the page's own title band uses, heading included,
-   so the section reads as one block and keeps a clear edge above the footer's
-   brown. Its type takes the same colours that band's does: brown headings over
-   black lines. */
-.yoga-prices-band { background: var(--clay); color: #000; }
+/* Precios, on /yoga/ between the class list and what the membership
+   includes. It sits on clay, heading included, so it reads as one block
+   between the white above and the off-white below. Brown headings over black
+   lines. */
+.yoga-prices-band { background: var(--clay); color: #000; scroll-margin-top: 24px; }
 .yoga-prices { display: grid; gap: 34px; padding: 48px 0 54px; text-align: center; }
 .yoga-prices h3 { font: 400 30px/1.25 var(--display); color: var(--brown); }
 .prices-heading { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
-.price-column { padding: 8px 28px 0; }
-.method-section h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
-.plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
-.plain-lines li + li { margin-top: 8px; }
-.method-section { background: var(--clay); padding: 86px 0; }
-.method-inner { display: grid; grid-template-columns: minmax(0, 42fr) minmax(0, 58fr); gap: 68px; align-items: center; }
-.method-inner img { height: 560px; object-fit: cover; }
-.method-list { padding-left: 23px; margin-top: 30px; }
-.method-list li + li { margin-top: 24px; }
-.method-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
+/* Each column's heading and list read left-aligned, as one block sized to its
+   longest line and centred in its half, so the pair sits evenly either side
+   of the dividing rule. */
+.price-column { display: grid; justify-content: center; align-content: start; padding: 8px 28px 0; text-align: left; }
+/* A thin rule between Clases Grupales and Sesiones Particulares: down the
+   middle of the gap on a wide screen, across it once they stack. */
+.price-column + .price-column { border-left: 1px solid rgba(var(--brown-rgb), .35); margin-left: -26px; padding-left: 54px; }
+/* Outlined on the sand itself rather than a white fill. */
+.prices-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; background: transparent; }
+.prices-cta .btn-outline:hover { background: #000; }
+/* Real list bullets in the brown, hung outside the text so every line
+   starts flush under the heading. */
+.price-list { margin: 24px 0 0; padding-left: 1.1em; list-style: disc; }
+.price-list li { padding-left: .3em; }
+.price-list li::marker { color: var(--brown); }
+.price-list li + li { margin-top: 8px; }
+
+/* "¿Qué nos hace diferentes?", laid out as the old "Un método basado en la
+   progresión" block was: clay ground, the photo beside the copy, a brown
+   display-face heading. The heading takes the 41px the page's other section
+   headings use, a step above the pillar names. The photo stretches to the height of the copy,
+   which runs longer than the old list did.
+
+   The three pillar names are the block's centre of gravity, so they are set
+   large in the display face rather than as the small bold lead-ins the old
+   list used, each over a fine brown rule. No cards, no numerals: they read
+   as headings in an editorial page, the way the rest of the site is set. */
+.method-section { background: var(--clay); scroll-margin-top: 24px; }
+.method-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
+.method-inner img { height: 100%; min-height: 560px; object-fit: cover; }
+.method-copy { max-width: 720px; padding: 86px 68px; }
+/* The three points follow the page title straight on, the first with no gap
+   above it; they are the h2s now the section heading is gone. */
+.method-pillar + .method-pillar { margin-top: 48px; }
+.method-pillar h2 { font: 400 32px/1.2 var(--display); color: var(--brown); letter-spacing: -.005em; text-wrap: balance; }
+.method-pillar p { margin-top: 14px; }
+.method-pillar h2 + p { margin-top: 18px; }
+.membership-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; background: #f8f8f8; }
+/* The hands and feet sit low in the frame, so the crop holds below centre. */
+/* height: 0 keeps the portrait photo out of the row's height, which the list
+   then sets (560px at least); min-height: 100% fills it. Without this the
+   photo stood at its own ratio, 1080px tall. */
+.membership-section { min-height: 560px; }
+.membership-section img { height: 0; min-height: 100%; object-fit: cover; object-position: 50% 70%; }
+.membership-inner { max-width: 720px; padding: 86px 68px; }
+.membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
+.membership-list { list-style: none; padding: 0; margin: 40px 0 0; }
+.membership-list li + li { margin-top: 22px; }
+.membership-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
 .individual-section { display: grid; grid-template-columns: 1fr 1fr; }
 .individual-section img { height: 710px; object-fit: cover; object-position: center 20%; }
 .individual-copy { padding: 88px 80px; }
-.individual-copy h2 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
+/* The heading is the h1 of /sesiones-particulares/ and keeps the size this
+   block had as a section of /yoga/. */
+.individual-copy h1 { font: 400 40px/1.28 var(--display); color: var(--taupe); }
 .individual-copy p, .office-copy p { margin-top: 25px; }
 .individual-list { margin: 25px 0 0; padding-left: 22px; }
 .individual-list li + li { margin-top: 22px; }
-/* The office section is dressed like the method section above it: the same
-   clay ground rather than an off-white of its own, and a heading at the same
-   size in the same brown rather than a larger one in taupe. Its body copy
-   already took the site's Avenir, as the method list does. */
+/* /oficina/: the photo beside the offer, on the clay ground. The heading is
+   the page's h1 but keeps the size this block had as a section of /yoga/. */
 .office-section { display: grid; grid-template-columns: 1fr 1fr; background: var(--clay); }
-.office-copy h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.office-copy h1 { font: 400 34px/1.25 var(--display); color: var(--brown); }
 .office-image { height: 690px; object-fit: cover; }
 .office-copy { padding: 94px 80px; }
+.office-copy .btn-outline { margin-top: 34px; }
+/* The teasers that close /yoga/, each sending people to an offer with a page
+   of its own. Clay by default; the plain one is white, so two in a row read
+   as two. */
+.page-teaser { background: var(--clay); padding: 80px 20px; text-align: center; scroll-margin-top: 24px; }
+.page-teaser-plain { background: var(--white); }
+.page-teaser h2 { font: 400 34px/1.25 var(--display); color: var(--brown); }
+.page-teaser p { max-width: 620px; margin: 25px auto 0; }
+.page-teaser .btn-outline { margin-top: 34px; }
 
 /* Equipo */
 .meaning-band { background: var(--clay); padding: 88px 20px 76px; text-align: center; }
-.meaning-band h1 { font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); }
+.meaning-band h1 { font: 400 var(--page-title)/1.2 var(--display); color: var(--brown); }
 .meaning-band .sanskrit { margin-top: 12px; font: 400 20px/1.4 var(--display); }
 .meaning-band .meaning { margin-top: 38px; font-size: 18px; }
 .team-section { padding: 86px 0 96px; }
@@ -298,26 +443,30 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    cards narrow instead of hanging off the side of the page. */
 .team-grid { width: min(100%, 864px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 130px 58px; margin: 58px auto 0; }
 .team-card img { height: 508px; object-fit: cover; }
-.team-card h3 { margin-top: 14px; font: 700 23px/1.3 var(--display); color: #000; }
+.team-card h3 { margin-top: 14px; font: 400 23px/1.3 var(--display); color: #000; }
 .team-card p { margin-top: 5px; }
 .team-card a { color: #000; }
 .team-invite { max-width: 660px; margin: 90px auto 0; text-align: center; }
 
 /* Espacio */
+/* The question opens the page above the photo, as its title. It runs much
+   longer than the other pages' one- or two-word titles, so it is set well
+   below their size, at the 34px the section headings use. */
+.space-title { padding: 56px 20px 44px; text-align: center; }
+.space-title h1 { max-width: 760px; margin: 0 auto; font: 400 34px/1.25 var(--display); color: var(--brown); text-wrap: balance; }
 .space-hero { height: 611px; object-fit: cover; }
 .space-main { padding: 48px 0 80px; text-align: center; color: #000; }
 .space-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 64px; }
 .space-pair img { height: 528px; object-fit: cover; }
 /* The studio-rental copy is body text, so it is set in Avenir like the rest of
-   the site's prose, at the 300 the family actually ships. Only the question it
-   opens with stays in Caudex, in brown, to head the block. */
-/* 18px, down from the 21px this block held while it was set in Caudex: the
+   the site's prose, at the 300 the family actually ships. The question that
+   used to head it is now the page title, above the photo. */
+/* 18px, down from the 21px this block held while it was set in the display serif: the
    serif carried the size, and Avenir at 21px ran much larger than the 16px the
    rest of the site's prose takes. Still a step above body, since this is the
    page's one block of copy. */
 .space-copy { max-width: 780px; margin: 0 auto; font: 300 18px/1.7 var(--body); }
-.space-copy p + p, .space-copy h1 + p { margin-top: 22px; }
-.space-copy h1 { font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--brown); -webkit-text-stroke: 0.9px currentColor; }
+.space-copy p + p { margin-top: 22px; }
 .space-copy ul { margin-top: 28px; list-style: disc inside; padding: 0; display: grid; gap: 10px; }
 .space-copy .email { margin-top: 28px; }
 .space-wide { height: 300px; margin-top: 92px; object-fit: cover; }
@@ -336,7 +485,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .contact-column h2 { font: 400 26px/1.3 var(--display); color: var(--brown); }
 .contact-column p { margin-top: 22px; font-size: 16px; line-height: 1.8; }
 .contact-instagram { white-space: nowrap; }
-.contact-portrait { height: 400px; object-fit: cover; object-position: center 55%; filter: grayscale(1); }
+.contact-portrait { height: 400px; object-fit: cover; object-position: center 55%; }
 .map-frame { width: 100%; height: 300px; margin-top: 135px; border: 0; background: #e5e3df; }
 
 /* Colaboradores */
@@ -345,10 +494,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .collab-main .editorial-image { min-height: 1124px; }
 .collab-main h2 { text-align: center; }
 .collab-subtitle { text-align: center; font: 400 28px/1.4 var(--display); color: var(--taupe); }
-.collab-question { margin-top: 55px !important; font: italic 700 24px/1.4 var(--display); color: var(--taupe); }
+.collab-question { margin-top: 55px !important; font: 400 24px/1.4 var(--display); color: var(--taupe); }
 .collab-prices { padding: 40px 20px 54px; background: var(--rose); color: #fff; text-align: center; }
-.collab-prices h2 { font: 700 34px/1.3 var(--display); }
-.collab-prices h3 { margin-top: 32px; font: 700 30px/1.3 var(--display); }
+.collab-prices h2 { font: 400 34px/1.3 var(--display); }
+.collab-prices h3 { margin-top: 32px; font: 400 30px/1.3 var(--display); }
 .collab-prices p { font-size: 18px; line-height: 1.7; }
 .collab-personal { display: grid; grid-template-columns: 1fr 1fr; }
 .collab-personal img { height: 560px; object-fit: cover; }
@@ -388,51 +537,59 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
      instead of being made to fit. That is what sent Colaboradores 11px wide at
      375px and 66px at 320px. The 0 lets the column shrink to the viewport and
      the items fit themselves to it. */
-  .home-intro, .home-value, .ecosystem-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
+  .home-intro, .also-band, .editorial-grid, .individual-section, .office-section, .collab-personal { grid-template-columns: minmax(0, 1fr); }
   .home-intro-image { order: -1; min-height: 0; height: 480px; }
   .home-intro-copy { padding: 58px 26px 65px; }
-  .home-intro h1 { font-size: 31px; }
+  .home-intro h1 { font-size: 34px; }
   .home-intro-lead { margin-top: 35px; font-size: 20px; }
   .home-cta-group { gap: 12px; margin-top: 38px; }
-  .home-value-image { height: 500px; }
-  .home-value-copy { padding: 55px 27px 65px; }
-  .home-value-copy h2 { font-size: 34px; }
   .practice-heading { min-height: 145px; }
   .practice-heading h2 { font-size: 28px; }
   .practice-cards { grid-template-columns: 1fr; }
   .practice-card { min-height: 360px; }
-  .ecosystem-band img { height: 460px; }
-  .ecosystem-copy { padding: 60px 28px 70px; }
-  .ecosystem-copy h2 { font-size: 34px; }
+  .also-band img { height: 460px; }
+  .also-copy { padding: 60px 28px 70px; }
+  .also-copy h2 { font-size: 34px; }
   /* 30px, not the 41px this heading takes on a wide screen: at 320px the
      column is 264px and "Acompañamiento" is 330px wide at 41px, so the word
      would not fit on a line of its own. Shrinking the heading lets it wrap
      between words instead of being split inside one. */
   .editorial-copy h2 { font-size: 30px; }
   .page-title-band { padding: 60px 24px 52px; }
-  .schedule-banner { height: auto; padding: 0; }
-  .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
-  .yoga-title p { margin-top: 28px; font-size: 24px; }
-  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; }
+  .yoga-question-band { padding-top: 64px; }
+  .yoga-question { font-size: 24px; }
+  .yoga-rhythm { grid-template-columns: 1fr; gap: 36px; padding: 64px 0; }
   .yoga-rhythm-copy h2 { font-size: 34px; }
-  .yoga-photo-stack img { height: 480px; }
-  .method-inner, .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
+  .yoga-photo-stack { display: none; }
+  .class-photo { position: static; width: 100%; height: 420px; margin-bottom: 24px; }
+  .space-details-inner { grid-template-columns: 1fr; gap: 45px; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
-  .method-section { padding: 64px 0; }
-  .method-inner img { height: 430px; }
+  .price-column + .price-column { border-left: 0; border-top: 1px solid rgba(var(--brown-rgb), .35); margin-left: 0; padding: 30px 0 0; }
+  .membership-section { grid-template-columns: minmax(0, 1fr); }
+  .membership-section img { height: 430px; min-height: 0; }
+  .horario-photo img { height: 300px; }
+  .membership-inner { padding: 52px 28px 64px; }
+  .membership-section h2 { font-size: 34px; }
+  .method-inner { grid-template-columns: minmax(0, 1fr); }
+  .method-copy { padding: 52px 28px 64px; }
+  .method-inner img { height: 430px; min-height: 0; }
+  .method-pillar + .method-pillar { margin-top: 38px; }
+  .method-pillar h2 { font-size: 28px; }
+  .page-teaser { padding: 60px 28px; }
   .individual-section img { height: 480px; }
   .individual-copy, .office-copy { padding: 60px 28px; }
-  /* .office-copy h2 is 34px at every width now, like the method heading. */
-  .individual-copy h2 { font-size: 34px; }
+  .individual-copy h1 { font-size: 34px; }
   .office-image { height: 480px; }
   .team-section { padding: 65px 0; }
   .team-intro h2 { font-size: 36px; }
   .team-grid { width: 100%; grid-template-columns: 1fr; gap: 65px; }
   .team-card img { height: auto; aspect-ratio: 403 / 508; }
   .team-invite { margin-top: 60px; }
+  .space-title { padding: 40px 24px 32px; }
+  .space-title h1 { font-size: 27px; }
   .space-hero { height: 430px; }
   .space-main { padding-inline: 20px; }
   .space-pair { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }

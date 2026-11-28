@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { externalLinks, horarioCopy, yogaCopy, images } from "../content/site";
+import { externalLinks, horarioCopy, images } from "../content/site";
 ---
 
 <BaseLayout title={horarioCopy.pageTitle} description={horarioCopy.description}>
@@ -8,13 +8,7 @@ import { externalLinks, horarioCopy, yogaCopy, images } from "../content/site";
     <h1>{horarioCopy.heading}</h1>
   </section>
 
-  <section class="schedule-banner">
-    <div class="schedule-crop">
-      <img src={images.schedule.src} alt="Horario semanal de Adarsha Yoga" />
-    </div>
-  </section>
-
-  <section class="momo-schedule" id="reserva">
+  <section class="momo-schedule momo-schedule--compact" id="reserva">
     <link
       rel="stylesheet"
       crossorigin="anonymous"
@@ -30,25 +24,17 @@ import { externalLinks, horarioCopy, yogaCopy, images } from "../content/site";
       data-momo-view-type="Weekly"
       data-momo-show-teacher="true"
       data-momo-show-teacher-filter="false"
-      data-momo-show-schedule-images="true"
+      data-momo-show-schedule-images="false"
       data-momo-apply-colors="true"
       data-momo-show-end-time="true"
       data-momo-primary-color="#764329"></div>
   </section>
 
-  <section id="precios" class="yoga-prices-band">
-    <div class="container yoga-prices">
-      <h2 class="prices-heading">{horarioCopy.pricesHeading}</h2>
-      <div class="price-columns">
-        {yogaCopy.prices.map((group) => (
-          <div class="price-column">
-            <h3>{group.title}</h3>
-            <ul class="plain-lines">{group.items.map((item) => <li>- {item}</li>)}</ul>
-          </div>
-        ))}
-      </div>
-    </div>
+  {/* A photo of the studio under the schedule, edge to edge. */}
+  <section class="horario-photo">
+    <img src={images.horarioPhoto.src} alt="Práctica de yoga en la sala de Adarsha Yoga, Barcelona" loading="lazy" />
   </section>
+
   <!-- The Momoyoga widget mounts late and grows by around a thousand pixels,
        which drags every section below it past wherever the browser has already
        jumped for a #hash. Re-run the jump as the widget settles, and stop the
