@@ -1,5 +1,4 @@
 import logo from "../../assets/adarsha-yoga-horizontal.svg";
-import scheduleCurrent from "../../assets/schedule-current.png";
 import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
@@ -123,7 +122,6 @@ export const localBusiness = {
 
 export const images = {
   logo,
-  schedule: scheduleCurrent,
   studioWide,
   studioTall,
   studioShelf,
@@ -299,13 +297,14 @@ export const yogaCopy = {
     { title: "Comunidad", body: "Un domingo al mes nos encontramos para el Sunday Yoga Club. Primero practicamos; luego conectamos más allá de la esterilla con chai, conversación y galletas hechas en casa con mucho amor." },
     { title: "Descuento en talleres", body: "Participación a precio reducido en talleres especiales para profundizar en posturas avanzadas y aspectos específicos de la práctica." },
     { title: "Sesión de seguimiento anual", body: "Una vez al año, 30 minutos para revisar tu práctica y profundizar." },
+    { title: "Material online", body: "[PLACEHOLDER]" },
   ],
   prices: [
     {
       title: "Clases Grupales",
       items: [
         "Mensualidad 5 clases / mes: 65\u00a0€",
-        "Mensualidad clases ilimitadas: 90\u00a0€",
+        "Mensualidad ilimitada: 90\u00a0€",
         "Clase suelta: 20\u00a0€",
         "Bono 3 clases: 50\u00a0€",
         "Bono 10 clases: 150\u00a0€",

@@ -1,17 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { externalLinks, horarioCopy, images } from "../content/site";
+import { externalLinks, horarioCopy } from "../content/site";
 ---
 
 <BaseLayout title={horarioCopy.pageTitle} description={horarioCopy.description}>
   <section class="page-title-band" id="horario">
     <h1>{horarioCopy.heading}</h1>
-  </section>
-
-  <section class="schedule-banner">
-    <div class="schedule-crop">
-      <img src={images.schedule.src} alt="Horario semanal de Adarsha Yoga" />
-    </div>
   </section>
 
   <section class="momo-schedule momo-schedule--compact" id="reserva">

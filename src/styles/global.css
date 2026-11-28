@@ -109,7 +109,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* The span holds the first sentence, the studio's name, which index.astro
    splits off onto a line of its own. */
 .home-intro h1 span { display: block; font-size: var(--page-title); }
-.home-intro-lead { max-width: 600px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
+/* The paragraphs in Avenir, the site's prose face, at the light 300 the
+   family ships; the heading above stays in the display face. */
+.home-intro-lead { max-width: 600px; margin-top: 53px; font: 300 23px/1.5 var(--body); }
 .home-intro-lead p + p { margin-top: 30px; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
 /* height: 100% fills the row the copy sets. Without it a landscape photo stops
@@ -169,19 +171,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .section-pad { padding: 80px 0; }
 
 /* Yoga */
-.schedule-banner { height: 655px; display: grid; place-items: center; overflow: hidden; background: var(--brown); }
-/* schedule-current.png is 2295x2869 on a #764329 ground, the same brown as the
-   banner, so the crop edge is invisible and only the framing matters. Crop away
-   the empty top band (574px), leaving the 2295x2295 grid. The day dividers
-   begin at 659px, so 574 leaves them the same breathing room the old 1080px
-   artwork had.
-
-   The artwork's very last row is a stray #98725f line across its full width,
-   an artboard edge left in the export. At this scale it lands on a quarter of
-   a pixel and the browser smears it into a faint rule under the grid, so the
-   crop stops 3 rows short of the bottom (2292 of 2295) to leave it outside. */
-.schedule-crop { position: relative; width: 604px; aspect-ratio: 2295 / 2292; overflow: hidden; }
-.schedule-crop img { position: absolute; left: 0; top: calc(-100% * 574 / 2295); width: 100%; height: auto; }
 /* min-height holds the widget's space while its data loads from the CDN, so the
    footer does not sit high on the page and then get shoved down on arrival. */
 .momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 60px; min-height: 70vh; scroll-margin-top: 24px; }
@@ -366,6 +355,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .prices-heading { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .price-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 52px; }
 .price-column { padding: 8px 28px 0; }
+/* A thin rule between Clases Grupales and Sesiones Particulares: down the
+   middle of the gap on a wide screen, across it once they stack. */
+.price-column + .price-column { border-left: 1px solid rgba(var(--brown-rgb), .35); margin-left: -26px; padding-left: 54px; }
 .prices-cta .btn-outline { min-height: 46px; padding-inline: 22px; font-size: 15px; }
 .plain-lines { list-style: none; padding: 0; margin: 24px 0 0; }
 .plain-lines li + li { margin-top: 8px; }
@@ -392,7 +384,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .method-pillar h2 + p { margin-top: 18px; }
 .membership-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; background: #f8f8f8; }
 /* The hands and feet sit low in the frame, so the crop holds below centre. */
-.membership-section img { height: 100%; min-height: 560px; object-fit: cover; object-position: 50% 70%; }
+/* height: 0 keeps the portrait photo out of the row's height, which the list
+   then sets (560px at least); min-height: 100% fills it. Without this the
+   photo stood at its own ratio, 1080px tall. */
+.membership-section { min-height: 560px; }
+.membership-section img { height: 0; min-height: 100%; object-fit: cover; object-position: 50% 70%; }
 .membership-inner { max-width: 720px; padding: 86px 68px; }
 .membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .membership-list { list-style: none; padding: 0; margin: 40px 0 0; }
@@ -550,8 +546,6 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
      between words instead of being split inside one. */
   .editorial-copy h2 { font-size: 30px; }
   .page-title-band { padding: 60px 24px 52px; }
-  .schedule-banner { height: auto; padding: 0; }
-  .schedule-crop { width: 100%; }
   .momo-schedule { padding: 48px 0 40px; }
   .yoga-question-band { padding-top: 64px; }
   .yoga-question { font-size: 24px; }
@@ -563,6 +557,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
+  .price-column + .price-column { border-left: 0; border-top: 1px solid rgba(var(--brown-rgb), .35); margin-left: 0; padding: 30px 0 0; }
   .membership-section { grid-template-columns: minmax(0, 1fr); }
   .membership-section img { height: 430px; min-height: 0; }
   .membership-inner { padding: 52px 28px 64px; }
