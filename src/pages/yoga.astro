@@ -81,8 +81,11 @@ import { externalLinks, yogaCopy, images } from "../content/site";
     </div>
   </section>
 
+  {/* Laid out like the practice section above: the photo fills the left half
+      of the page edge to edge, the list sits in the right half. */}
   <section id="mensualidad" class="membership-section">
-    <div class="container membership-inner">
+    <img src={images.yogaMembership.src} alt="Práctica de yoga en la sala de Adarsha Yoga, Barcelona" loading="lazy" />
+    <div class="membership-inner">
       <h2>{yogaCopy.membershipTitle}</h2>
       <ul class="membership-list">
         {yogaCopy.membership.map((item) => <li><strong>{item.title}:</strong> {item.body}</li>)}

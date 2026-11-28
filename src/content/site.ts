@@ -4,10 +4,12 @@ import studioWide from "../../assets/57-DSC01123.jpg";
 import studioTall from "../../assets/estudio.jpg";
 import studioShelf from "../../assets/48-DSC01109.jpg";
 import studioDetail from "../../assets/54-DSC01118.jpg";
-import groupClass from "../../assets/SWEARxEspai Adarsha-32.jpg";
+import groupClass from "../../edited/DE_02386.jpg";
 import individualSession from "../../assets/SWEARxEspai Adarsha-37.jpg";
 // The photo beside "¿Qué esperar de la práctica en Adarsha?" on /yoga/.
 import yogaPractice from "../../edited/DE_02052_edit.jpg";
+// Beside "Qué incluye tu mensualidad" on /yoga/.
+import yogaMembership from "../../edited/DE_01780.jpg";
 import teamWindow from "../../assets/328-DSC01628.jpg";
 // import homeHero from "../../edited/DE_02052_edit.jpg";
 import homeHero from "../../edited/DE_01998.jpg";
@@ -19,11 +21,11 @@ import homeIndividual from "../../assets/home-card-pies.jpg";
 import homeEcosystem from "../../assets/SWEARxEspai Adarsha-39.jpg";
 import homeOficina from "../../assets/home-card-manos.jpg";
 import yogaOffice2 from "../../assets/yoga-office-2.jpg";
-import yogaHathaVinyasa from "../../assets/yoga-hatha-vinyasa.jpg";
-import yogaHathaDinamico from "../../assets/yoga-hatha-dinamico.jpg";
-import yogaIntegral from "../../assets/yoga-integral.jpg";
-import yogaYinSomatico from "../../assets/yoga-yin-somatico.jpg";
-import yogaHathaFuerza from "../../assets/yoga-hatha-fuerza.jpg";
+import yogaHathaVinyasa from "../../edited/DE_01891.jpg";
+import yogaHathaDinamico from "../../edited/DE_02097.jpg";
+import yogaIntegral from "../../assets/SWEARxEspai Adarsha-50.jpg";
+import yogaYinSomatico from "../../edited/DE_02427.jpg";
+import yogaHathaFuerza from "../../edited/DE_01654.jpg";
 import equipoLaia from "../../assets/equipo-laia.avif";
 import equipoLaia1 from "../../assets/equipo-laia-1.avif";
 import equipoLaia2 from "../../assets/equipo-laia-2.avif";
@@ -129,6 +131,7 @@ export const images = {
   groupClass,
   individualSession,
   yogaPractice,
+  yogaMembership,
   teamWindow,
   homeHero,
   homeEcosystem,

@@ -7,8 +7,9 @@
 
 /* Marcellus, self-hosted from Google Fonts (SIL Open Font License), in the
    same two subsets Google serves: Latin, and Latin Extended for anything
-   beyond it. It ships in one weight, 400; the 600 and 700 the headings ask
-   for are drawn by the browser. */
+   beyond it. It ships in one weight, 400, and no italic, so everything set
+   in it stays at 400 upright: a heavier or slanted style would be one the
+   browser fakes. */
 @font-face {
   font-family: "Marcellus Adarsha";
   src: url("/fonts/marcellus-latin.woff2") format("woff2");
@@ -43,8 +44,7 @@
      their own size (50, 45, 54 and 56px), which read as four separate pages
      rather than four parts of one site. One token so they cannot drift apart
      again; the mobile size is set with the rest of the breakpoint. All four
-     also share weight 600, between the 400 two of them had and the 700 of the
-     other two. */
+     also share the display face's one weight, 400. */
   --page-title: 54px;
 }
 
@@ -102,13 +102,13 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Home */
 .home-intro { display: grid; grid-template-columns: 1fr 1fr; min-height: 789px; }
-.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 48px 70px; text-align: center; background: var(--clay); color: var(--brown); }
+.home-intro-copy { display: flex; flex-direction: column; align-items: center; padding: 102px 48px 70px; text-align: center; color: var(--taupe); }
 /* Sized to match /yoga/: the name as that page's title ("¿Qué nos hace
    diferentes?"), the rest at the site's 41px section-heading size. */
 .home-intro h1 { max-width: 600px; font: 400 41px/1.2 var(--display); }
 /* The span holds the first sentence, the studio's name, which index.astro
    splits off onto a line of its own. */
-.home-intro h1 span { display: block; font-size: var(--page-title); font-weight: 600; }
+.home-intro h1 span { display: block; font-size: var(--page-title); }
 .home-intro-lead { max-width: 600px; margin-top: 53px; font: 400 23px/1.41 var(--display); }
 .home-intro-lead p + p { margin-top: 30px; }
 .home-cta-group { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 58px; }
@@ -158,7 +158,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Shared editorial blocks */
 .page-title-band { padding: 82px 20px 69px; background: var(--clay); text-align: center; }
-.page-title-band h1 { font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); }
+.page-title-band h1 { font: 400 var(--page-title)/1.2 var(--display); color: var(--brown); }
 .page-title-band p { margin-top: 30px; font-style: italic; color: #000; }
 .editorial-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .editorial-copy { padding: 64px 8vw; }
@@ -187,8 +187,8 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .momo-schedule { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 70px 0 60px; min-height: 70vh; scroll-margin-top: 24px; }
 
 /* The Momoyoga widget ships its own Inter-based styling. These rules pull it
-   back to the site's look: Avenir throughout, brown headings and warm borders
-   instead of grey. schedule.css loads after this file, so every override is
+   back to the site's look: Avenir throughout, brown headings, borderless
+   cards and square black buttons. schedule.css loads after this file, so every override is
    scoped through .momo-schedule-wrapper to outrank the plugin's own
    .class[data-v-*] selectors. Class names come from the plugin's stylesheet,
    so re-check them if the widget is ever updated. */
@@ -200,12 +200,21 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    trick the footer headings rely on. 500 would render as plain light. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__title { font-weight: 600; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--taupe); }
-.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 2px solid rgba(var(--brown-rgb), .3); border-radius: 0; }
+/* No border at rest; the card takes the sand ground under the pointer. */
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 0; border-radius: 0; transition: background-color .2s ease; }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-item:hover { background: var(--clay); }
+/* /horario/ hides the class photos; /eventos/ still shows them. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image,
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { border-radius: 0; }
-.momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 2px solid rgba(0, 0, 0, .3); color: #000; }
+/* Every widget button square, the arrows included, like the site's own. */
+.momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; border-radius: 0; }
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 1px solid #000; color: #000; }
 .momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: #000; color: var(--white); }
+/* The plugin draws its primary button, Reservar, as a pill filled in the
+   widget's primary colour. Square and outlined in black instead, like the
+   site's own .btn-outline buttons. */
+.momo-schedule .momo-schedule-wrapper .momo-button--primary { border: 1px solid #000; border-radius: 0; background: #fff; color: #000; }
+.momo-schedule .momo-schedule-wrapper .momo-button--primary:hover { background: #000; color: var(--white); }
 .momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
 /* Stands inside the widget's own div on /eventos/, so it is what shows until
    the script mounts and what stays if the CDN cannot be reached. The widget
@@ -239,7 +248,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image { flex-basis: 12.5rem; max-width: 12.5rem; }
 }
 .yoga-title { padding: 66px 20px 48px; text-align: center; color: var(--brown); }
-.yoga-title h1 { font: 600 var(--page-title)/1.2 var(--display); }
+.yoga-title h1 { font: 400 var(--page-title)/1.2 var(--display); }
 /* fr, not percentages: 43% + 57% already fills the container, so the gap was
    added on top and pushed the photo column past the right edge — invisible on
    a wide screen, a sideways scrollbar below about 1066px. fr tracks divide
@@ -258,7 +267,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .class-item summary {
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
   padding: 18px 0; cursor: pointer; list-style: none;
-  font: 700 18px/1.4 var(--display); color: var(--brown);
+  font: 400 18px/1.4 var(--display); color: var(--brown);
 }
 .class-item summary::-webkit-details-marker { display: none; }
 /* The style name is an h3 inside the summary, so each style is a heading and
@@ -318,9 +327,11 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .method-pillar h2 { font: 400 32px/1.2 var(--display); color: var(--brown); letter-spacing: -.005em; text-wrap: balance; }
 .method-pillar p { margin-top: 14px; }
 .method-pillar h2 + p { margin-top: 18px; }
-.membership-section { background: #f8f8f8; padding: 86px 0; }
-.membership-inner { max-width: 720px; }
-.membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); text-align: center; }
+.membership-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; background: #f8f8f8; }
+/* The hands and feet sit low in the frame, so the crop holds below centre. */
+.membership-section img { height: 100%; min-height: 560px; object-fit: cover; object-position: 50% 70%; }
+.membership-inner { max-width: 720px; padding: 86px 68px; }
+.membership-section h2 { font: 400 41px/1.2 var(--display); color: var(--brown); }
 .membership-list { list-style: none; padding: 0; margin: 40px 0 0; }
 .membership-list li + li { margin-top: 22px; }
 .membership-list strong, .individual-list strong, .collab-options strong { color: var(--brown); font-weight: 700; }
@@ -351,7 +362,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 
 /* Equipo */
 .meaning-band { background: var(--clay); padding: 88px 20px 76px; text-align: center; }
-.meaning-band h1 { font: 600 var(--page-title)/1.2 var(--display); color: var(--brown); }
+.meaning-band h1 { font: 400 var(--page-title)/1.2 var(--display); color: var(--brown); }
 .meaning-band .sanskrit { margin-top: 12px; font: 400 20px/1.4 var(--display); }
 .meaning-band .meaning { margin-top: 38px; font-size: 18px; }
 .team-section { padding: 86px 0 96px; }
@@ -363,7 +374,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
    cards narrow instead of hanging off the side of the page. */
 .team-grid { width: min(100%, 864px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 130px 58px; margin: 58px auto 0; }
 .team-card img { height: 508px; object-fit: cover; }
-.team-card h3 { margin-top: 14px; font: 700 23px/1.3 var(--display); color: #000; }
+.team-card h3 { margin-top: 14px; font: 400 23px/1.3 var(--display); color: #000; }
 .team-card p { margin-top: 5px; }
 .team-card a { color: #000; }
 .team-invite { max-width: 660px; margin: 90px auto 0; text-align: center; }
@@ -414,10 +425,10 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .collab-main .editorial-image { min-height: 1124px; }
 .collab-main h2 { text-align: center; }
 .collab-subtitle { text-align: center; font: 400 28px/1.4 var(--display); color: var(--taupe); }
-.collab-question { margin-top: 55px !important; font: italic 700 24px/1.4 var(--display); color: var(--taupe); }
+.collab-question { margin-top: 55px !important; font: 400 24px/1.4 var(--display); color: var(--taupe); }
 .collab-prices { padding: 40px 20px 54px; background: var(--rose); color: #fff; text-align: center; }
-.collab-prices h2 { font: 700 34px/1.3 var(--display); }
-.collab-prices h3 { margin-top: 32px; font: 700 30px/1.3 var(--display); }
+.collab-prices h2 { font: 400 34px/1.3 var(--display); }
+.collab-prices h3 { margin-top: 32px; font: 400 30px/1.3 var(--display); }
 .collab-prices p { font-size: 18px; line-height: 1.7; }
 .collab-personal { display: grid; grid-template-columns: 1fr 1fr; }
 .collab-personal img { height: 560px; object-fit: cover; }
@@ -489,7 +500,9 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
   .yoga-prices { gap: 30px; padding: 42px 20px 46px; }
   .price-columns { grid-template-columns: 1fr; gap: 30px; }
   .price-column { padding: 0; }
-  .membership-section { padding: 64px 0; }
+  .membership-section { grid-template-columns: minmax(0, 1fr); }
+  .membership-section img { height: 430px; min-height: 0; }
+  .membership-inner { padding: 52px 28px 64px; }
   .membership-section h2 { font-size: 34px; }
   .method-inner { grid-template-columns: minmax(0, 1fr); }
   .method-copy { padding: 52px 28px 64px; }
