@@ -43,15 +43,15 @@ import { externalLinks, yogaCopy, images } from "../content/site";
 
             The shared name makes the five one group, so opening a style
             closes the one that was open and a single photo shows at a time.
-            The first starts open so the photo column is never without one
-            of the styles. */}
-        {yogaCopy.classes.map((item, index) => (
-          <details class="class-item" id={item.id} name="yoga-class" open={index === 0}>
+            Every style starts closed, so the photo column opens on the
+            default class photo beside it. */}
+        {yogaCopy.classes.map((item) => (
+          <details class="class-item" id={item.id} name="yoga-class">
             <summary><h3>{item.title}</h3></summary>
             {(Array.isArray(item.body) ? item.body : [item.body]).map((para) => (
               <p>{para}</p>
             ))}
-            <img class="class-photo" src={item.image.src} alt={item.imageAlt} loading={index === 0 ? "eager" : "lazy"} />
+            <img class="class-photo" src={item.image.src} alt={item.imageAlt} loading="lazy" />
           </details>
         ))}
       </div>

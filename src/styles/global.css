@@ -199,7 +199,7 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 /* Only the 300 weight of Avenir is loaded, so this is synthetic bold, the same
    trick the footer headings rely on. 500 would render as plain light. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__title { font-weight: 600; }
-.momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--taupe); }
+.momo-schedule .momo-schedule-wrapper .momo-schedule-day-title__date { font-size: 14px; color: var(--brown); }
 /* No border at rest; the card takes the sand ground under the pointer. */
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item { border: 0; border-radius: 0; transition: background-color .2s ease; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item:hover { background: var(--clay); }
@@ -208,19 +208,82 @@ p, h1, h2, h3, h4, h5, h6 { margin: 0; }
 .momo-schedule .momo-schedule-wrapper .momo-schedule-item__image img { border-radius: 0; }
 /* Every widget button square, the arrows included, like the site's own. */
 .momo-schedule .momo-schedule-wrapper .momo-button { font-family: var(--body); font-size: 14px; border-radius: 0; }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 1px solid #000; color: #000; }
-.momo-schedule .momo-schedule-wrapper .momo-button--secondary:hover { background: #000; color: var(--white); }
+/* The secondary buttons (the week arrows and "Esta semana") take exactly the
+   Reservar treatment below, so all the widget's buttons read as one kind. */
+.momo-schedule .momo-schedule-wrapper .momo-button--secondary { border: 1px solid #000; background: #fff; color: #000; }
 /* The plugin draws its primary button, Reservar, as a pill filled in the
    widget's primary colour. Square and outlined in black instead, like the
    site's own .btn-outline buttons. */
 .momo-schedule .momo-schedule-wrapper .momo-button--primary { border: 1px solid #000; border-radius: 0; background: #fff; color: #000; }
-.momo-schedule .momo-schedule-wrapper .momo-button--primary:hover { background: #000; color: var(--white); }
+/* One hover for both kinds. The plugin's own hover rules match as strongly as
+   a plain .momo-button--x:hover here and load later, so this adds the
+   .momo-button class and the :not(disabled) they use to outrank them, and
+   cancels the 80% fade the plugin gives its primary button. */
+.momo-schedule .momo-schedule-wrapper .momo-button.momo-button--primary:is(:hover, :active):not(.momo-button--disabled),
+.momo-schedule .momo-schedule-wrapper .momo-button.momo-button--secondary:is(:hover, :active):not(.momo-button--disabled) { border-color: #000; background: #000; color: var(--white); opacity: 1; }
+/* The arrows are a dark SVG in ::after, not text, so color cannot reach them;
+   invert turns them white on the black hover. */
+.momo-schedule .momo-schedule-wrapper .momo-date-pagination__arrow:is(:hover, :active):not(.momo-button--disabled)::after { filter: invert(1); }
 .momo-schedule .momo-schedule-wrapper .momo-read-more__more { color: var(--brown); }
 /* Stands inside the widget's own div on /eventos/, so it is what shows until
    the script mounts and what stays if the CDN cannot be reached. The widget
    replaces the div's contents, so it disappears of its own accord. */
 .momo-fallback { padding: 24px 0; color: var(--taupe); }
 .momo-fallback a { color: var(--brown); }
+
+/* /horario/ only (.momo-schedule--compact): the schedule on the pale grey of
+   /yoga/'s "Qué incluye tu mensualidad", carried edge to edge by a shadow the
+   clip-path trims to the section's height, and each class as one row: time,
+   then the class with its teacher beneath, then Reservar. The plugin nests
+   the time inside the details, so its two wrappers are flattened with
+   display: contents and the card's grid places their children directly.
+   The avatar and "Mostrar más" (the description) are dropped to keep the row
+   short; the booking page Reservar opens still has the description.
+   /eventos/ keeps the plugin's own card, photos and all. */
+.momo-schedule--compact { background: #f8f8f8; box-shadow: 0 0 0 100vmax #f8f8f8; clip-path: inset(0 -100vmax); }
+/* The rows are only as wide as time, class and Reservar need, so the whole
+   schedule, week controls and day names included, is held to that width and
+   centred on the page, rather than hugging its left edge. */
+.momo-schedule--compact .momo-schedule-wrapper { max-width: 700px; margin-inline: auto; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule__weekly { gap: 28px; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule__weekly-grid { gap: 2px; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-day-title { margin-bottom: 6px; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item {
+  display: grid; grid-template-columns: 130px minmax(0, 360px) auto; justify-content: start; gap: 0 24px; align-items: center;
+  padding: 12px 16px;
+}
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__details,
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__info { display: contents; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__info > p:first-child { grid-column: 1; grid-row: 1 / span 2; }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__title-wrapper { grid-column: 2; grid-row: 1; }
+.momo-schedule--compact .momo-schedule-wrapper .teacher-avatar { grid-column: 2; grid-row: 2; }
+.momo-schedule--compact .momo-schedule-wrapper .teacher-avatar__image,
+.momo-schedule--compact .momo-schedule-wrapper .momo-read-more { display: none; }
+.momo-schedule--compact .momo-schedule-wrapper .teacher-avatar p { font-size: 14px; line-height: 1.5; color: var(--brown); }
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__button { grid-column: 3; grid-row: 1 / span 2; margin: 0; }
+/* The day names, a step up from the plugin's 20px so each day stands out. */
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-day-title__day { font-size: 26px; }
+/* The plugin drops Reservar from a class once it has started, and every
+   future class keeps one, so a card without a button is a past class. It
+   gets a greyed stand-in drawn in Reservar's place and size. The text after
+   the slash is what a screen reader hears: nothing, since it does nothing. */
+.momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item:not(:has(.momo-schedule-item__button))::after {
+  content: "Reservar"; content: "Reservar" / "";
+  grid-column: 3; grid-row: 1 / span 2;
+  padding: 12px 24px; border: 1px solid #c9c9c9; background: #fff;
+  font: 300 14px/24px var(--body); color: #b0b0b0; cursor: default;
+}
+/* On a phone there is no room for a time column: the time goes above the
+   class name and Reservar keeps the right-hand edge. */
+@media (max-width: 615px) {
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item { grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__info > p:first-child { grid-column: 1; grid-row: 1; font-size: 14px; line-height: 1.5; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__title-wrapper { grid-column: 1; grid-row: 2; }
+  .momo-schedule--compact .momo-schedule-wrapper .teacher-avatar { grid-column: 1; grid-row: 3; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item__button { grid-column: 2; grid-row: 1 / span 3; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-item:not(:has(.momo-schedule-item__button))::after { grid-column: 2; grid-row: 1 / span 3; }
+  .momo-schedule--compact .momo-schedule-wrapper .momo-schedule-day-title__day { font-size: 24px; }
+}
 
 /* The plugin sizes its cards with a container query on
    .momo-schedule-wrapper: under 576px of container the card stacks and the
